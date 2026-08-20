@@ -15,6 +15,7 @@ export function DestinationsSection({ onOpenConsultation }: { onOpenConsultation
     switzerland: "/images/destinations/switzerland.jpg",
     spain: "/images/destinations/spain.jpg",
     netherlands: "/images/destinations/netherlands.jpg",
+    germany: "/images/destinations/germany.jpg",
     europe: "/images/destinations/europe.jpg",
   };
 
@@ -108,6 +109,24 @@ export function DestinationsSection({ onOpenConsultation }: { onOpenConsultation
         "SRH Haarlem University of Applied Sciences",
         "TIO University of Applied Sciences (Tio Business School)",
         "EIT InnoEnergy & ISE - Institute of Sustainable Energy",
+      ],
+    },
+    germany: {
+      pswBadge: "18-Month Post-Study Job Seeker Visa • EU Work Mobility",
+      intakes: "Winter (September/October) & Summer (March/April)",
+      visaRate: "96% Success Rate",
+      avgTuition: "€0 - €14,000 / Year (Low / No Tuition options)",
+      overview:
+        "Germany is Europe's economic powerhouse with world-leading engineering, tech, and business education. Graduates receive an 18-month job seeker visa to launch high-paying European careers.",
+      featuredUnis: [
+        "University of Europe for Applied Sciences (UE)",
+        "SRH Higher Education (Heidelberg / Berlin / NRW)",
+        "GISMA University of Applied Sciences",
+        "Berlin School of Business & Innovation (BSBI)",
+        "Munich Business School",
+        "IU International University of Applied Sciences",
+        "Macromedia University of Applied Sciences",
+        "ISM International School of Management",
       ],
     },
     turkey: {

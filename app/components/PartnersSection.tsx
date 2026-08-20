@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Search, MapPin, Building2, Globe2, ChevronDown } from "lucide-react";
-import { partnerUniversities, turkishUniversities, ukUniversities, australianUniversities, irishUniversities, swissUniversities, spanishUniversities, canadianUniversities, dutchUniversities } from "~/data/siteData";
+import { partnerUniversities, turkishUniversities, ukUniversities, australianUniversities, irishUniversities, swissUniversities, spanishUniversities, canadianUniversities, dutchUniversities, germanUniversities } from "~/data/siteData";
 
 export function PartnersSection() {
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
@@ -22,13 +22,15 @@ export function PartnersSection() {
                   ? uni.country.toLowerCase() === "spain"
                   : selectedFilter === "netherlands"
                     ? uni.country.toLowerCase().includes("netherlands") || uni.country.toLowerCase().includes("holland")
-                    : selectedFilter === "canada"
-                      ? uni.country.toLowerCase() === "canada"
-                      : selectedFilter === "uk"
-                        ? uni.country.toLowerCase().includes("united kingdom")
-                        : selectedFilter === "australia"
-                          ? uni.country.toLowerCase().includes("australia")
-                          : true;
+                    : selectedFilter === "germany"
+                      ? uni.country.toLowerCase().includes("germany")
+                      : selectedFilter === "canada"
+                        ? uni.country.toLowerCase() === "canada"
+                        : selectedFilter === "uk"
+                          ? uni.country.toLowerCase().includes("united kingdom")
+                          : selectedFilter === "australia"
+                            ? uni.country.toLowerCase().includes("australia")
+                            : true;
 
       const matchesSearch =
         uni.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -122,6 +124,17 @@ export function PartnersSection() {
               }}
             >
               🇳🇱 Netherlands ({dutchUniversities.length})
+            </button>
+            <button
+              type="button"
+              className={`btn ${selectedFilter === "germany" ? "btn-primary" : "btn-outline"}`}
+              style={{ padding: "10px 18px", fontSize: "0.9rem" }}
+              onClick={() => {
+                setSelectedFilter("germany");
+                setVisibleCount(36);
+              }}
+            >
+              🇩🇪 Germany ({germanUniversities.length})
             </button>
             <button
               type="button"
