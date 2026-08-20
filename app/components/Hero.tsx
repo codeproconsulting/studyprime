@@ -15,10 +15,10 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
 
       <div className="container hero-container-relative">
         <div className="exact-hero-main-grid">
-          {/* Left Column: Headings, CTA & Trust Badge */}
+          {/* Left Column (Desktop) / Top Heading Group (Mobile) */}
           <div className="hero-left-content">
             <div className="hero-tagline-text">
-              Your Study Abroad Partner,
+              Your Study Abroad Partner
             </div>
 
             <h1 className="hero-main-title">
@@ -31,7 +31,8 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
               </span>
             </h1>
 
-            <div className="hero-action-row">
+            {/* Desktop-only action row */}
+            <div className="hero-action-row desktop-only-hero-action">
               <button
                 type="button"
                 className="btn-hero-assessment"
@@ -41,8 +42,8 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
               </button>
             </div>
 
-            {/* 200+ Satisfied Students Badge */}
-            <div className="satisfied-students-badge">
+            {/* Desktop-only 200+ Satisfied Students Badge */}
+            <div className="satisfied-students-badge desktop-only-trust-badge">
               <div className="student-avatars-group">
                 <div className="avatar-circle avatar-1">
                   <img
@@ -70,7 +71,7 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
             </div>
           </div>
 
-          {/* Right Column: Student Cutout Anchored to the Top of the Results Banner */}
+          {/* Right Column (Desktop) / Student Media Frame with Floating Mobile Elements */}
           <div className="hero-student-media-col">
             <div className="student-image-frame">
               <img
@@ -78,6 +79,30 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
                 alt="Study Prime Student"
                 className="student-cutout-img"
               />
+
+              {/* Mobile-Only Floating Action Button (Right Side of Student) */}
+              <div className="mobile-floating-cta">
+                <button
+                  type="button"
+                  className="btn-mobile-hero-assessment"
+                  onClick={onOpenConsultation}
+                >
+                  Get Free Assessment
+                </button>
+              </div>
+
+              {/* Mobile-Only Floating Trust Badge (Bottom Right of Student) */}
+              <div className="mobile-floating-trust-badge">
+                <div className="mobile-avatars-group">
+                  <div className="mobile-avatar-circle circle-1"></div>
+                  <div className="mobile-avatar-circle circle-2"></div>
+                  <div className="mobile-avatar-circle circle-3"></div>
+                </div>
+                <div className="mobile-trust-info">
+                  <span className="mobile-trust-label">Trusted by</span>
+                  <span className="mobile-trust-count">200+ Students</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -85,37 +110,37 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
         {/* Bottom Results Banner */}
         <div className="results-partnership-banner">
           <div className="results-badge-white">
-            <div className="results-badge-title">Results That Define</div>
-            <div className="results-badge-title">a True Partnership</div>
+            <span className="results-badge-title">Results That Define a True Partnership</span>
           </div>
 
-          <div className="results-vertical-divider"></div>
+          {/* Yellow accent bar */}
+          <div className="results-yellow-divider-bar"></div>
 
-          <div className="results-stat-group">
-            <div className="results-stat-icon-wrap">
-              <img
-                src="/icon/credit_score.png"
-                alt="Assessments Done"
-                className="stat-gold-icon"
-              />
+          <div className="results-stats-row-container">
+            <div className="results-stat-group">
+              <div className="results-stat-icon-wrap stat-card-icon-box">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="#FDB813">
+                  <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                  <path d="M6 14h6v2H6z" fill="#081736"/>
+                </svg>
+              </div>
+              <div className="results-stat-text-wrap">
+                <div className="results-stat-number">3500+</div>
+                <div className="results-stat-label">Assessments Done</div>
+              </div>
             </div>
-            <div className="results-stat-text-wrap">
-              <div className="results-stat-number">3500+</div>
-              <div className="results-stat-label">Assessments Done</div>
-            </div>
-          </div>
 
-          <div className="results-stat-group">
-            <div className="results-stat-icon-wrap">
-              <img
-                src="/icon/passport.png"
-                alt="Visas Granted"
-                className="stat-gold-icon"
-              />
-            </div>
-            <div className="results-stat-text-wrap">
-              <div className="results-stat-number">800+</div>
-              <div className="results-stat-label">Visas Granted</div>
+            <div className="results-stat-group">
+              <div className="results-stat-icon-wrap stat-globe-icon-box">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="#FDB813">
+                  <rect x="3" y="3" width="18" height="18" rx="2" fill="#FDB813"/>
+                  <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 7.5 12 7.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5zm-1-8h2v2h-2zm0 3h2v4h-2z" fill="#081736"/>
+                </svg>
+              </div>
+              <div className="results-stat-text-wrap">
+                <div className="results-stat-number">800+</div>
+                <div className="results-stat-label">Visas Granted</div>
+              </div>
             </div>
           </div>
         </div>

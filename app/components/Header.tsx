@@ -66,7 +66,15 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation"
             >
-              {mobileMenuOpen ? <X size={28} color="#0B1B3D" /> : <Menu size={28} color="#0B1B3D" />}
+              {mobileMenuOpen ? (
+                <X size={28} color="#081736" strokeWidth={2.5} />
+              ) : (
+                <div className="custom-hamburger-bars">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              )}
             </button>
           </div>
         </div>

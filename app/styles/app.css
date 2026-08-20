@@ -170,16 +170,28 @@ button, input, select, textarea {
   white-space: nowrap;
 }
 
-.btn-header-assessment:hover {
-  background: #E69100;
-}
-
 .mobile-hamburger-btn {
   display: none;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 6px;
+}
+
+.custom-hamburger-bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 20px;
+}
+
+.custom-hamburger-bars span {
+  display: block;
+  height: 3.5px;
+  width: 100%;
+  background-color: var(--primary-navy);
+  border-radius: 2px;
 }
 
 .mobile-nav-dropdown {
@@ -437,9 +449,23 @@ button, input, select, textarea {
   margin-bottom: 0;
 }
 
-/* ============================================================
-   3. BOTTOM RESULTS BANNER (FLUSH AGAINST STUDENT WAIST)
-============================================================ */
+.desktop-only-hero-action {
+  display: block;
+}
+
+.desktop-only-trust-badge {
+  display: inline-flex;
+}
+
+.mobile-floating-cta,
+.mobile-floating-trust-badge {
+  display: none;
+}
+
+.results-yellow-divider-bar {
+  display: none;
+}
+
 .results-partnership-banner {
   background: var(--primary-navy);
   border-radius: 18px;
@@ -468,23 +494,21 @@ button, input, select, textarea {
   line-height: 1.18;
 }
 
-.results-vertical-divider {
-  width: 3.5px;
-  height: 48px;
-  background: var(--brand-yellow);
-  border-radius: 2px;
-  flex-shrink: 0;
+.results-stats-row-container {
+  display: flex;
+  align-items: center;
+  gap: 36px;
 }
 
 .results-stat-group {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .results-stat-icon-wrap {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -492,8 +516,8 @@ button, input, select, textarea {
 }
 
 .stat-gold-icon {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
 }
 
@@ -1228,67 +1252,269 @@ button, input, select, textarea {
 
 @media (max-width: 768px) {
   .header-inner {
-    height: 70px;
+    height: 68px;
   }
   .logo-main-text {
-    font-size: 1.95rem;
+    font-size: 1.85rem;
   }
+  .logo-sub-text {
+    font-size: 0.48rem;
+    letter-spacing: 1.8px;
+  }
+  
   .exact-hero-section {
-    padding-top: 24px;
-    padding-bottom: 35px;
+    padding-top: 20px;
+    padding-bottom: 0px;
     text-align: center;
+    overflow: hidden;
   }
-  .landmarks-bg-img {
-    width: 100%;
-    height: 70%;
-    filter: grayscale(100%) opacity(0.2);
+  .hero-container-relative {
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .exact-hero-main-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    gap: 0px;
   }
   .hero-left-content {
     padding-right: 0;
     padding-bottom: 0;
     text-align: center;
+    width: 100%;
   }
   .hero-tagline-text {
-    font-size: 2.1rem;
-    margin-bottom: 4px;
+    font-family: var(--font-heading);
+    font-size: 1.95rem;
+    font-style: italic;
+    font-weight: 800;
+    color: var(--primary-navy);
+    line-height: 1.1;
+    margin-bottom: 2px;
+    letter-spacing: -0.3px;
   }
   .hero-main-title {
-    font-size: 3.2rem;
-    margin-bottom: 20px;
+    font-size: 3.15rem;
+    line-height: 1.04;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .hero-action-row {
-    margin-bottom: 16px;
+  .title-row-1 {
+    display: block;
+    color: #081736;
   }
-  .satisfied-students-badge {
-    margin-top: 8px;
+  .title-row-2 {
+    margin-top: 2px;
   }
+  .highlight-future-box {
+    padding: 0 14px 2px 12px;
+  }
+  .highlight-future-brush-bg {
+    inset: -4px -16px -6px -14px;
+  }
+  .highlight-future-text {
+    color: #000000;
+  }
+
+  .desktop-only-hero-action {
+    display: none !important;
+  }
+  .desktop-only-trust-badge {
+    display: none !important;
+  }
+
+  /* Student Frame & Floating Mobile Elements */
   .hero-student-media-col {
-    margin-bottom: -15px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 8px;
+    margin-bottom: 0;
+    z-index: 5;
+  }
+  .student-image-frame {
+    position: relative;
+    width: 100%;
+    max-width: 375px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 0 auto;
   }
   .student-cutout-img {
-    max-height: 380px;
+    height: auto;
+    width: 82%;
+    max-width: 310px;
+    object-fit: contain;
+    display: block;
+    margin-left: -10px;
+    margin-bottom: 0;
   }
-  .results-partnership-banner {
+
+  /* Mobile Floating CTA (Right side of student) */
+  .mobile-floating-cta {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    z-index: 15;
+  }
+  .btn-mobile-hero-assessment {
+    background: #081736;
+    color: #FDB813;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 4px 14px rgba(8, 23, 54, 0.25);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition);
+  }
+  .btn-mobile-hero-assessment:active {
+    transform: scale(0.97);
+  }
+
+  /* Mobile Floating Trust Badge (Bottom right of student) */
+  .mobile-floating-trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 38px;
+    right: 4px;
+    z-index: 15;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    padding: 4px 8px;
+    border-radius: 20px;
+  }
+  .mobile-avatars-group {
+    display: flex;
+    align-items: center;
+  }
+  .mobile-avatar-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #CBD5E1;
+    border: 1.5px solid #FFFFFF;
+    margin-left: -6px;
+    background-size: cover;
+    background-position: center;
+  }
+  .mobile-avatar-circle.circle-1 {
+    margin-left: 0;
+    background-image: url('/images/avatars/student-1.jpg');
+  }
+  .mobile-avatar-circle.circle-2 {
+    background-image: url('/images/avatars/student-2.jpg');
+  }
+  .mobile-avatar-circle.circle-3 {
+    background-image: url('/images/avatars/student-3.jpg');
+  }
+  .mobile-trust-info {
+    display: flex;
     flex-direction: column;
-    padding: 22px 18px;
-    gap: 18px;
-    text-align: center;
+    text-align: left;
   }
-  .results-vertical-divider {
-    display: none;
+  .mobile-trust-label {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    color: #475569;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+  .mobile-trust-count {
+    font-family: var(--font-body);
+    font-size: 0.76rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+    line-height: 1.1;
+  }
+
+  /* Results Card on Mobile */
+  .results-partnership-banner {
+    background: #081736;
+    border-radius: 22px 22px 0 0;
+    padding: 16px 14px 20px 14px;
+    margin-top: -16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    box-shadow: 0 -4px 20px rgba(8, 23, 54, 0.15);
   }
   .results-badge-white {
+    background: #FFFFFF;
+    border-radius: 9999px;
+    padding: 7px 18px;
     width: 100%;
+    max-width: 360px;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  .results-badge-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #081736;
+    letter-spacing: -0.2px;
+    display: block;
+  }
+  .results-yellow-divider-bar {
+    display: block;
+    width: 90%;
+    max-width: 340px;
+    height: 3px;
+    background: #FDB813;
+    border-radius: 2px;
+    margin: 10px auto 14px auto;
+  }
+  .results-stats-row-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+    max-width: 360px;
+    padding: 0 4px;
   }
   .results-stat-group {
-    justify-content: center;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
   }
+  .results-stat-icon-wrap {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .results-stat-number {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #FDB813;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .results-stat-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #FDB813;
+    line-height: 1.15;
+  }
+
   .process-grid {
     grid-template-columns: 1fr;
   }
