@@ -16,6 +16,7 @@ export function DestinationsSection({ onOpenConsultation }: { onOpenConsultation
     spain: "/images/destinations/spain.jpg",
     netherlands: "/images/destinations/netherlands.jpg",
     germany: "/images/destinations/germany.jpg",
+    finland: "/images/destinations/finland.jpg",
     europe: "/images/destinations/europe.jpg",
   };
 
@@ -127,6 +128,24 @@ export function DestinationsSection({ onOpenConsultation }: { onOpenConsultation
         "IU International University of Applied Sciences",
         "Macromedia University of Applied Sciences",
         "ISM International School of Management",
+      ],
+    },
+    finland: {
+      pswBadge: "2-Year Post-Study Residence Permit • World #1 Education",
+      intakes: "Autumn (August/September) & Spring (January)",
+      visaRate: "97% High Approval",
+      avgTuition: "€6,000 - €13,000 / Year (Scholarships up to 100%)",
+      overview:
+        "Finland offers the world's highest-ranked education system, safe and modern society, generous international scholarships, and clear pathways to Finnish permanent residency for graduates.",
+      featuredUnis: [
+        "LUT University (Lappeenranta-Lahti)",
+        "University of Vaasa",
+        "South-Eastern Finland UAS (XAMK)",
+        "Metropolia UAS (Helsinki)",
+        "Arcada UAS (Helsinki)",
+        "LAB University of Applied Sciences",
+        "Turku University of Applied Sciences",
+        "Edunation Finland Network",
       ],
     },
     turkey: {

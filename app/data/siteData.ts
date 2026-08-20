@@ -249,6 +249,15 @@ export const destinations: StudyDestination[] = [
     flagImage: "/images/flags/germany.svg",
   },
   {
+    id: "finland",
+    name: "Finland",
+    slug: "finland",
+    description: "Ranked the happiest country in the world with Europe's top-rated education system, cutting-edge technology & innovation hubs, generous scholarships, and post-study residence permits.",
+    popularUniversities: ["LUT University", "University of Vaasa", "XAMK University", "Metropolia UAS", "Arcada UAS", "LAB UAS", "Turku UAS", "Edunation Finland"],
+    keyHighlights: ["2-Year Post-Study Work Permit", "Ranked #1 World's Best Education System", "Generous merit-based scholarships up to 100%", "Fast track to Finnish & EU permanent residency"],
+    flagImage: "/images/flags/finland.svg",
+  },
+  {
     id: "europe",
     name: "Europe",
     slug: "europe",
@@ -1634,6 +1643,26 @@ export const germanUniversities = [
   { name: "HIU - University of Applied Sciences", city: "Germany", country: "Germany", logo: "/images/universities/germany/hiu-germany.svg" },
 ];
 
+export const finnishUniversities = [
+  { name: "South-Eastern Finland UAS (XAMK)", city: "Mikkeli / Kotka / Kouvola", country: "Finland", logo: "/images/universities/finland/xamk.svg" },
+  { name: "LUT University (Lappeenranta-Lahti)", city: "Lappeenranta / Lahti", country: "Finland", logo: "/images/universities/finland/lut-university.svg" },
+  { name: "University of Vaasa", city: "Vaasa", country: "Finland", logo: "/images/universities/finland/university-of-vaasa.svg" },
+  { name: "Edunation Finland", city: "Helsinki", country: "Finland", logo: "/images/universities/finland/edunation.svg" },
+  { name: "Arcada University of Applied Sciences", city: "Helsinki", country: "Finland", logo: "/images/universities/finland/arcada.svg" },
+  { name: "Kajaani University of Applied Sciences (KAMK)", city: "Kajaani", country: "Finland", logo: "/images/universities/finland/kamk.svg" },
+  { name: "Karelia University of Applied Sciences", city: "Joensuu", country: "Finland", logo: "/images/universities/finland/karelia.svg" },
+  { name: "LAB University of Applied Sciences", city: "Lahti / Lappeenranta", country: "Finland", logo: "/images/universities/finland/lab-uas.svg" },
+  { name: "Metropolia University of Applied Sciences", city: "Helsinki / Espoo / Vantaa", country: "Finland", logo: "/images/universities/finland/metropolia.svg" },
+  { name: "Seinäjoki University of Applied Sciences (SeAMK)", city: "Seinäjoki", country: "Finland", logo: "/images/universities/finland/seamk.svg" },
+  { name: "Turku University of Applied Sciences", city: "Turku", country: "Finland", logo: "/images/universities/finland/turku-uas.svg" },
+  { name: "Edusampo Vocational College", city: "Lappeenranta / Imatra", country: "Finland", logo: "/images/universities/finland/edusampo.svg" },
+  { name: "Sasky Municipal Education and Training", city: "Sastamala / Tampere", country: "Finland", logo: "/images/universities/finland/sasky.svg" },
+  { name: "STEP Education (STEP-Koulutus)", city: "Järvenpää / Ruokolahti", country: "Finland", logo: "/images/universities/finland/step-education.svg" },
+  { name: "WinNova Vocational Education", city: "Pori / Rauma", country: "Finland", logo: "/images/universities/finland/winnova.svg" },
+  { name: "Taito-Koulutus", city: "Finland", country: "Finland", logo: "/images/universities/finland/taito-koulutus.svg" },
+  { name: "Helsinki Business College", city: "Helsinki", country: "Finland", logo: "/images/universities/finland/helsinki-business-college.svg" },
+];
+
 export const partnerUniversities: UniversityPartner[] = [
   ...turkishUniversities,
   ...irishUniversities,
@@ -1641,6 +1670,7 @@ export const partnerUniversities: UniversityPartner[] = [
   ...spanishUniversities,
   ...dutchUniversities,
   ...germanUniversities,
+  ...finnishUniversities,
   ...canadianUniversities,
   ...ukUniversities,
   ...australianUniversities
