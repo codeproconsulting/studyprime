@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Search, MapPin, Building2, Globe2, ChevronDown } from "lucide-react";
-import { partnerUniversities, turkishUniversities, ukUniversities, australianUniversities, irishUniversities, swissUniversities, spanishUniversities, canadianUniversities, dutchUniversities, germanUniversities, finnishUniversities } from "~/data/siteData";
+import { partnerUniversities, turkishUniversities, ukUniversities, australianUniversities, irishUniversities, swissUniversities, spanishUniversities, canadianUniversities, dutchUniversities, germanUniversities, finnishUniversities, frenchUniversities } from "~/data/siteData";
 
 export function PartnersSection() {
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
@@ -26,13 +26,15 @@ export function PartnersSection() {
                       ? uni.country.toLowerCase().includes("germany")
                       : selectedFilter === "finland"
                         ? uni.country.toLowerCase().includes("finland")
-                        : selectedFilter === "canada"
-                          ? uni.country.toLowerCase() === "canada"
-                          : selectedFilter === "uk"
-                            ? uni.country.toLowerCase().includes("united kingdom")
-                            : selectedFilter === "australia"
-                              ? uni.country.toLowerCase().includes("australia")
-                              : true;
+                        : selectedFilter === "france"
+                          ? uni.country.toLowerCase().includes("france")
+                          : selectedFilter === "canada"
+                            ? uni.country.toLowerCase() === "canada"
+                            : selectedFilter === "uk"
+                              ? uni.country.toLowerCase().includes("united kingdom")
+                              : selectedFilter === "australia"
+                                ? uni.country.toLowerCase().includes("australia")
+                                : true;
 
       const matchesSearch =
         uni.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -148,6 +150,17 @@ export function PartnersSection() {
               }}
             >
               🇫🇮 Finland ({finnishUniversities.length})
+            </button>
+            <button
+              type="button"
+              className={`btn ${selectedFilter === "france" ? "btn-primary" : "btn-outline"}`}
+              style={{ padding: "10px 18px", fontSize: "0.9rem" }}
+              onClick={() => {
+                setSelectedFilter("france");
+                setVisibleCount(36);
+              }}
+            >
+              🇫🇷 France ({frenchUniversities.length})
             </button>
             <button
               type="button"

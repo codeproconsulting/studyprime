@@ -17,6 +17,7 @@ export function DestinationsSection({ onOpenConsultation }: { onOpenConsultation
     netherlands: "/images/destinations/netherlands.jpg",
     germany: "/images/destinations/germany.jpg",
     finland: "/images/destinations/finland.jpg",
+    france: "/images/destinations/france.jpg",
     europe: "/images/destinations/europe.jpg",
   };
 
@@ -146,6 +147,24 @@ export function DestinationsSection({ onOpenConsultation }: { onOpenConsultation
         "LAB University of Applied Sciences",
         "Turku University of Applied Sciences",
         "Edunation Finland Network",
+      ],
+    },
+    france: {
+      pswBadge: "2-Year Post-Study APS Visa • CAF Housing Subsidy",
+      intakes: "September / October & January / February",
+      visaRate: "96% Success Rate",
+      avgTuition: "€7,000 - €16,000 / Year (CAF assistance up to 40%)",
+      overview:
+        "France is a global capital for business, fashion, engineering, gastronomy, and cinema. International students benefit from a 2-year post-study work visa (APS) and French government CAF housing subsidies.",
+      featuredUnis: [
+        "Le Cordon Bleu Paris",
+        "Toulouse Business School (Paris & Toulouse)",
+        "NEOMA Business School",
+        "Montpellier Business School",
+        "ESSCA School of Management",
+        "PSB Paris School of Business",
+        "EPITECH Digital Innovation",
+        "OMNES Education Group",
       ],
     },
     turkey: {
