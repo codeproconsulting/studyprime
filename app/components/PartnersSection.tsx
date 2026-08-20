@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Search, MapPin, Building2, Globe2, ChevronDown } from "lucide-react";
-import { partnerUniversities, turkishUniversities, ukUniversities, australianUniversities, irishUniversities, swissUniversities, spanishUniversities, canadianUniversities } from "~/data/siteData";
+import { partnerUniversities, turkishUniversities, ukUniversities, australianUniversities, irishUniversities, swissUniversities, spanishUniversities, canadianUniversities, dutchUniversities } from "~/data/siteData";
 
 export function PartnersSection() {
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
@@ -20,13 +20,15 @@ export function PartnersSection() {
                 ? uni.country.toLowerCase() === "switzerland"
                 : selectedFilter === "spain"
                   ? uni.country.toLowerCase() === "spain"
-                  : selectedFilter === "canada"
-                    ? uni.country.toLowerCase() === "canada"
-                    : selectedFilter === "uk"
-                      ? uni.country.toLowerCase().includes("united kingdom")
-                      : selectedFilter === "australia"
-                        ? uni.country.toLowerCase().includes("australia")
-                        : true;
+                  : selectedFilter === "netherlands"
+                    ? uni.country.toLowerCase().includes("netherlands") || uni.country.toLowerCase().includes("holland")
+                    : selectedFilter === "canada"
+                      ? uni.country.toLowerCase() === "canada"
+                      : selectedFilter === "uk"
+                        ? uni.country.toLowerCase().includes("united kingdom")
+                        : selectedFilter === "australia"
+                          ? uni.country.toLowerCase().includes("australia")
+                          : true;
 
       const matchesSearch =
         uni.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -109,6 +111,17 @@ export function PartnersSection() {
               }}
             >
               🇪🇸 Spain ({spanishUniversities.length})
+            </button>
+            <button
+              type="button"
+              className={`btn ${selectedFilter === "netherlands" ? "btn-primary" : "btn-outline"}`}
+              style={{ padding: "10px 18px", fontSize: "0.9rem" }}
+              onClick={() => {
+                setSelectedFilter("netherlands");
+                setVisibleCount(36);
+              }}
+            >
+              🇳🇱 Netherlands ({dutchUniversities.length})
             </button>
             <button
               type="button"

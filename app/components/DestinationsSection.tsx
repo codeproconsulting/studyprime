@@ -14,6 +14,7 @@ export function DestinationsSection({ onOpenConsultation }: { onOpenConsultation
     ireland: "/images/destinations/ireland.jpg",
     switzerland: "/images/destinations/switzerland.jpg",
     spain: "/images/destinations/spain.jpg",
+    netherlands: "/images/destinations/netherlands.jpg",
     europe: "/images/destinations/europe.jpg",
   };
 
@@ -95,6 +96,20 @@ export function DestinationsSection({ onOpenConsultation }: { onOpenConsultation
         "LaSalle College International Barcelona",
       ],
     },
+    netherlands: {
+      pswBadge: "1-Year Zoekjaar Post-Study Work Visa",
+      intakes: "September & February",
+      visaRate: "96% Success Rate",
+      avgTuition: "€8,000 - €16,000 / Year",
+      overview:
+        "The Netherlands is continental Europe's top destination for English-taught degrees. Home to global tech leaders, sustainable energy institutes, and dynamic applied science universities with a post-study orientation year.",
+      featuredUnis: [
+        "CEG - ONCAMPUS Amsterdam",
+        "SRH Haarlem University of Applied Sciences",
+        "TIO University of Applied Sciences (Tio Business School)",
+        "EIT InnoEnergy & ISE - Institute of Sustainable Energy",
+      ],
+    },
     turkey: {
       pswBadge: "No IELTS Required • Affordable European Degrees",
       intakes: "Fall (September/October) & Spring (February)",
@@ -156,19 +171,6 @@ export function DestinationsSection({ onOpenConsultation }: { onOpenConsultation
         "Top State & Private Research Universities across 50 States",
         "Public Ivy Institutions",
         "Renowned Community Colleges & Transfer Pathways",
-      ],
-    },
-    canada: {
-      pswBadge: "Up to 3-Year PGWP Work Permit",
-      intakes: "Fall (Sept), Winter (Jan), Summer (May)",
-      visaRate: "95% Success Rate",
-      avgTuition: "CAD $16,000 - $28,000 / Year",
-      overview:
-        "Renowned for student-friendly immigration policies, co-op work-integrated learning, affordable tuition options, and transparent pathways to permanent residency.",
-      featuredUnis: [
-        "Public Universities in Ontario, BC, and Alberta",
-        "Renowned Designated Learning Institutions (DLIs)",
-        "Post-Graduate Diploma Colleges",
       ],
     },
     europe: {

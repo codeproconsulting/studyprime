@@ -231,6 +231,15 @@ export const destinations: StudyDestination[] = [
     flagImage: "/images/flags/spain.svg",
   },
   {
+    id: "netherlands",
+    name: "Netherlands",
+    slug: "netherlands",
+    description: "A European innovation powerhouse offering world-class applied sciences, sustainable energy, and business education taught 100% in English in Amsterdam, Haarlem, and Utrecht.",
+    popularUniversities: ["CEG ONCAMPUS Amsterdam", "SRH Haarlem University", "Tio Business School", "EIT InnoEnergy & ISE"],
+    keyHighlights: ["1-Year Orientation Year (Zoekjaar) Post-Study Visa", "95%+ English proficiency across the country", "Hub for tech, sustainable energy & logistics", "High graduate employability across the EU"],
+    flagImage: "/images/flags/netherlands.svg",
+  },
+  {
     id: "europe",
     name: "Europe",
     slug: "europe",
@@ -1576,11 +1585,19 @@ export const canadianUniversities = [
   { name: "TAIE International Institute", city: "Toronto, ON", country: "Canada", logo: "/images/universities/canada/taie-international-institute.svg" },
 ];
 
+export const dutchUniversities = [
+  { name: "CEG - ONCAMPUS Amsterdam", city: "Amsterdam", country: "Netherlands", logo: "/images/universities/netherlands/oncampus-amsterdam.svg" },
+  { name: "SRH Haarlem University of Applied Sciences", city: "Haarlem", country: "Netherlands", logo: "/images/universities/netherlands/srh-haarlem.svg" },
+  { name: "TIO University of Applied Sciences (Tio Business School)", city: "Amsterdam / Utrecht / Rotterdam", country: "Netherlands", logo: "/images/universities/netherlands/tio-business-school.svg" },
+  { name: "EIT InnoEnergy & ISE - Institute of Sustainable Energy", city: "Eindhoven / Amsterdam", country: "Netherlands", logo: "/images/universities/netherlands/eit-innoenergy.svg" },
+];
+
 export const partnerUniversities: UniversityPartner[] = [
   ...turkishUniversities,
   ...irishUniversities,
   ...swissUniversities,
   ...spanishUniversities,
+  ...dutchUniversities,
   ...canadianUniversities,
   ...ukUniversities,
   ...australianUniversities
