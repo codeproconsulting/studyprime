@@ -18,7 +18,8 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
           {/* Left Column (Desktop) / Top Heading Group (Mobile) */}
           <div className="hero-left-content">
             <div className="hero-tagline-text">
-              Your Study Abroad Partner,
+              <span className="desktop-tagline-text">Your Study Abroad Partner,</span>
+              <span className="mobile-tagline-text">Your Study Abroad Partner</span>
             </div>
 
             <h1 className="hero-main-title">

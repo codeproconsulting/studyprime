@@ -1,18 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" preserveAspectRatio="none" width="100%" height="100%">
-  <!-- Base yellow paint stroke -->
-  <path d="M12,38 C30,22 70,16 130,14 C240,10 390,12 480,18 C515,20 532,28 536,44 C540,62 526,84 485,98 C420,114 280,118 160,114 C85,110 30,102 12,82 C2,68 2,52 12,38 Z" fill="#FFA700" />
-  <!-- Inner vibrant gold fill -->
-  <path d="M22,32 C45,20 90,14 160,12 C260,9 410,12 490,18 C522,22 534,34 532,52 C528,72 505,92 460,104 C390,114 250,116 140,112 C75,108 32,98 18,78 C8,62 10,44 22,32 Z" fill="#FFB800" />
-  <!-- Realistic jagged paint bristles on left -->
-  <path d="M14,18 C4,24 0,34 8,40 Z" fill="#FFA700" />
-  <path d="M6,36 C-2,44 -1,56 7,58 Z" fill="#FFB800" />
-  <path d="M8,58 C0,66 2,78 12,76 Z" fill="#FFA700" />
-  <path d="M15,76 C8,84 10,94 22,90 Z" fill="#FFB800" />
-  <path d="M24,92 C18,100 24,108 34,104 Z" fill="#FFA700" />
-  <!-- Realistic jagged paint bristles on right -->
-  <path d="M526,22 C536,18 544,28 536,36 Z" fill="#FFA700" />
-  <path d="M530,38 C542,36 546,48 534,54 Z" fill="#FFB800" />
-  <path d="M532,56 C544,58 542,70 530,74 Z" fill="#FFA700" />
-  <path d="M524,76 C536,78 534,90 520,88 Z" fill="#FFB800" />
-  <path d="M510,90 C522,94 516,104 502,100 Z" fill="#FFA700" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 110" preserveAspectRatio="none" width="100%" height="100%">
+  <!-- Top textured stroke -->
+  <path d="M22,34 C50,22 110,18 200,16 C310,14 420,18 480,24 C505,27 512,38 510,50 C506,66 490,82 460,92 C390,102 260,104 150,102 C80,100 35,92 18,78 C6,66 8,48 22,34 Z" fill="#FFA700" />
+  <!-- Vibrant golden layer -->
+  <path d="M12,42 C30,28 85,20 170,18 C280,15 390,18 470,26 C500,29 514,40 512,56 C508,74 482,90 440,98 C360,106 230,106 130,102 C65,98 25,88 12,72 C2,58 3,48 12,42 Z" fill="#FFB800" />
+  <!-- Jagged left bristle marks -->
+  <path d="M18,22 C8,28 2,38 12,44 Z" fill="#FFA700" />
+  <path d="M10,38 C-2,46 -1,58 8,62 Z" fill="#FFB800" />
+  <path d="M6,58 C-2,66 1,78 12,76 Z" fill="#FFA700" />
+  <path d="M14,76 C6,84 10,96 22,92 Z" fill="#FFB800" />
+  <path d="M24,90 C16,98 22,106 34,102 Z" fill="#FFA700" />
+  <path d="M28,14 C18,20 14,30 24,32 Z" fill="#FFB800" />
+  <!-- Jagged right bristle marks -->
+  <path d="M496,18 C508,16 516,26 506,34 Z" fill="#FFA700" />
+  <path d="M504,32 C518,32 522,44 510,50 Z" fill="#FFB800" />
+  <path d="M506,50 C518,54 516,66 504,70 Z" fill="#FFA700" />
+  <path d="M498,68 C512,72 508,84 494,86 Z" fill="#FFB800" />
+  <path d="M484,84 C498,90 492,102 476,98 Z" fill="#FFA700" />
+  <path d="M468,96 C480,102 472,110 456,106 Z" fill="#FFB800" />
 </svg>
