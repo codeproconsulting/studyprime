@@ -17,98 +17,13 @@ export default function Index() {
       {/* 1. Hero Section with Attached Media */}
       <Hero onOpenConsultation={openConsultation} />
 
-      {/* 2. About Us / Vision Overview */}
-      <section className="section-padding" style={{ backgroundColor: "#FFFFFF" }}>
-        <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }}>
-            <div style={{ position: "relative" }}>
-              <div style={{ borderRadius: "20px", overflow: "hidden", boxShadow: "var(--shadow-lg)" }}>
-                <img
-                  src="/Countries Background - Study Prime.jpg"
-                  alt="Study Prime Consultation"
-                  style={{ width: "100%", height: "420px", objectFit: "cover" }}
-                />
-              </div>
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "-25px",
-                  right: "-20px",
-                  background: "#FFFFFF",
-                  padding: "20px 24px",
-                  borderRadius: "16px",
-                  boxShadow: "var(--shadow-lg)",
-                  border: "1px solid var(--border-light)",
-                  maxWidth: "240px",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "6px" }}>
-                  <Award color="#FFB200" size={24} />
-                  <span style={{ fontWeight: 800, fontSize: "1.1rem", color: "var(--primary)" }}>10+ Years</span>
-                </div>
-                <p style={{ fontSize: "0.825rem", color: "var(--text-muted)", margin: 0 }}>
-                  Empowering international students with genuine guidance.
-                </p>
-              </div>
-            </div>
+      {/* 2. Our Services Section (Directly After Hero) */}
+      <ServicesSection onOpenConsultation={openConsultation} />
 
-            <div>
-              <div className="badge badge-gold" style={{ marginBottom: "14px" }}>
-                <Sparkles size={14} /> Who We Are
-              </div>
-              <h2 style={{ fontSize: "2.3rem", marginBottom: "18px" }}>
-                Visa Consultancy: Making Global Dreams a Reality.
-              </h2>
-              <p style={{ color: "var(--text-muted)", fontSize: "1rem", lineHeight: "1.7", marginBottom: "20px" }}>
-                {siteConfig.vision}
-              </p>
-              <p style={{ color: "var(--text-muted)", fontSize: "1rem", lineHeight: "1.7", marginBottom: "28px" }}>
-                {siteConfig.mission}
-              </p>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "32px" }}>
-                <div style={{ display: "flex", gap: "10px", alignItems: "center", fontWeight: 600, fontSize: "0.95rem" }}>
-                  <CheckCircle2 color="#0066FF" size={20} />
-                  <span>100% Free Assessment</span>
-                </div>
-                <div style={{ display: "flex", gap: "10px", alignItems: "center", fontWeight: 600, fontSize: "0.95rem" }}>
-                  <CheckCircle2 color="#0066FF" size={20} />
-                  <span>Panel Universities</span>
-                </div>
-                <div style={{ display: "flex", gap: "10px", alignItems: "center", fontWeight: 600, fontSize: "0.95rem" }}>
-                  <CheckCircle2 color="#0066FF" size={20} />
-                  <span>SOP Writing Help</span>
-                </div>
-                <div style={{ display: "flex", gap: "10px", alignItems: "center", fontWeight: 600, fontSize: "0.95rem" }}>
-                  <CheckCircle2 color="#0066FF" size={20} />
-                  <span>Visa Mock Interviews</span>
-                </div>
-              </div>
-
-              <div style={{ display: "flex", gap: "16px" }}>
-                <Link to="/about" className="btn btn-primary">
-                  Learn More About Us <ArrowRight size={16} />
-                </Link>
-                <button
-                  type="button"
-                  className="btn btn-outline"
-                  onClick={openConsultation}
-                >
-                  Book Appointment
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Destinations Section */}
+      {/* 3. Destinations Section */}
       <DestinationsSection />
 
-      {/* 5. Services Section */}
-      <ServicesSection />
-
-      {/* 6. Working Process Section */}
+      {/* 4. Working Process Section */}
       <ProcessSection onOpenConsultation={openConsultation} />
 
       {/* 7. Partner Universities */}
