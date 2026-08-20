@@ -217,15 +217,19 @@ button, input, select, textarea {
 }
 
 /* ============================================================
-   2. EXACT HERO SECTION (GROUNDED STUDENT ON STATS BAR)
+   2. EXACT HERO SECTION (EXPANSIVE TALL HERO ON DESKTOP & MOBILE)
 ============================================================ */
 .exact-hero-section {
   position: relative;
   background: #FFFFFF;
   overflow: hidden;
-  padding-top: 25px;
-  padding-bottom: 45px;
-  min-height: 600px;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  min-height: calc(92vh - 74px);
+  min-height: clamp(740px, 88vh, 920px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Subtle Architectural Blueprint Grid */
@@ -233,8 +237,8 @@ button, input, select, textarea {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
   background-size: 36px 36px;
   pointer-events: none;
   z-index: 1;
@@ -253,10 +257,10 @@ button, input, select, textarea {
 }
 
 .landmarks-bg-img {
-  width: 90%;
-  max-width: 1160px;
-  height: auto;
-  max-height: 520px;
+  width: 95%;
+  max-width: 1280px;
+  height: 100%;
+  max-height: 680px;
   object-fit: contain;
   object-position: center bottom;
   filter: grayscale(100%) opacity(0.22);
@@ -265,13 +269,14 @@ button, input, select, textarea {
 .hero-container-relative {
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .exact-hero-main-grid {
   display: grid;
-  grid-template-columns: 1.12fr 0.88fr;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: flex-end;
-  min-height: 460px;
+  min-height: 560px;
   position: relative;
   z-index: 2;
 }
@@ -433,7 +438,7 @@ button, input, select, textarea {
 
 .student-image-frame {
   position: relative;
-  max-width: 520px;
+  max-width: 560px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -441,8 +446,8 @@ button, input, select, textarea {
 }
 
 .student-cutout-img {
-  height: 560px;
-  max-height: 580px;
+  height: 640px;
+  max-height: 680px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -1263,19 +1268,30 @@ button, input, select, textarea {
   }
   
   .exact-hero-section {
-    padding-top: 20px;
+    padding-top: 28px;
     padding-bottom: 0px;
     text-align: center;
     overflow: hidden;
+    min-height: calc(100vh - 68px);
+    min-height: clamp(700px, 94vh, 920px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .hero-container-relative {
     padding-left: 16px;
     padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
   }
   .exact-hero-main-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1;
+    justify-content: space-between;
     min-height: auto;
     gap: 0px;
   }
@@ -1287,18 +1303,18 @@ button, input, select, textarea {
   }
   .hero-tagline-text {
     font-family: var(--font-heading);
-    font-size: 1.95rem;
+    font-size: 2.15rem;
     font-style: italic;
     font-weight: 800;
     color: var(--primary-navy);
     line-height: 1.1;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     letter-spacing: -0.3px;
   }
   .hero-main-title {
-    font-size: 3.15rem;
+    font-size: 3.35rem;
     line-height: 1.04;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     letter-spacing: -0.5px;
     display: flex;
     flex-direction: column;
@@ -1309,13 +1325,13 @@ button, input, select, textarea {
     color: #081736;
   }
   .title-row-2 {
-    margin-top: 2px;
+    margin-top: 3px;
   }
   .highlight-future-box {
-    padding: 0 14px 2px 12px;
+    padding: 0 16px 3px 14px;
   }
   .highlight-future-brush-bg {
-    inset: -4px -16px -6px -14px;
+    inset: -5px -18px -7px -16px;
   }
   .highlight-future-text {
     color: #000000;
@@ -1335,26 +1351,27 @@ button, input, select, textarea {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-top: 8px;
+    margin-top: 12px;
     margin-bottom: 0;
     z-index: 5;
+    flex: 1;
   }
   .student-image-frame {
     position: relative;
     width: 100%;
-    max-width: 375px;
+    max-width: 410px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
     margin: 0 auto;
   }
   .student-cutout-img {
-    height: auto;
-    width: 82%;
-    max-width: 310px;
+    height: clamp(400px, 54vh, 520px);
+    width: auto;
+    max-width: 90%;
     object-fit: contain;
     display: block;
-    margin-left: -10px;
+    margin-left: -12px;
     margin-bottom: 0;
   }
 
@@ -1362,7 +1379,7 @@ button, input, select, textarea {
   .mobile-floating-cta {
     display: block;
     position: absolute;
-    top: 60px;
+    top: 85px;
     right: 0px;
     z-index: 15;
   }
@@ -1371,11 +1388,11 @@ button, input, select, textarea {
     color: #FDB813;
     font-family: var(--font-body);
     font-weight: 700;
-    font-size: 0.88rem;
-    padding: 10px 18px;
-    border-radius: 6px;
+    font-size: 0.92rem;
+    padding: 11px 20px;
+    border-radius: 8px;
     border: none;
-    box-shadow: 0 4px 14px rgba(8, 23, 54, 0.25);
+    box-shadow: 0 6px 18px rgba(8, 23, 54, 0.28);
     cursor: pointer;
     white-space: nowrap;
     transition: var(--transition);
@@ -1390,25 +1407,26 @@ button, input, select, textarea {
     align-items: center;
     gap: 8px;
     position: absolute;
-    bottom: 38px;
+    bottom: 42px;
     right: 4px;
     z-index: 15;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(4px);
-    padding: 4px 8px;
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(6px);
+    padding: 6px 12px;
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
   .mobile-avatars-group {
     display: flex;
     align-items: center;
   }
   .mobile-avatar-circle {
-    width: 22px;
-    height: 22px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     background: #CBD5E1;
     border: 1.5px solid #FFFFFF;
-    margin-left: -6px;
+    margin-left: -7px;
     background-size: cover;
     background-position: center;
   }
@@ -1429,14 +1447,14 @@ button, input, select, textarea {
   }
   .mobile-trust-label {
     font-family: var(--font-body);
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     color: #475569;
     font-weight: 500;
     line-height: 1.1;
   }
   .mobile-trust-count {
     font-family: var(--font-body);
-    font-size: 0.76rem;
+    font-size: 0.82rem;
     font-weight: 800;
     color: var(--primary-navy);
     line-height: 1.1;
