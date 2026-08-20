@@ -28,12 +28,16 @@
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-white);
   color: var(--text-main);
   line-height: 1.5;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -1279,6 +1283,7 @@ button, input, select, textarea {
 }
 
 @media (max-width: 768px) {
+  /* ── Header ── */
   .header-inner {
     height: 64px;
   }
@@ -1289,25 +1294,30 @@ button, input, select, textarea {
     font-size: 0.48rem;
     letter-spacing: 1.8px;
   }
-  
+
+  /* ── Hero Section Shell ── */
   .exact-hero-section {
-    padding-top: 14px;
+    padding-top: 12px;
     padding-bottom: 0px;
     text-align: center;
-    overflow: hidden;
+    overflow: visible;
     min-height: calc(100vh - 64px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+
   .hero-container-relative {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
     display: flex;
     flex-direction: column;
     flex: 1;
     justify-content: space-between;
+    width: 100%;
   }
+
+  /* ── Main Grid ── */
   .exact-hero-main-grid {
     display: flex;
     flex-direction: column;
@@ -1315,68 +1325,84 @@ button, input, select, textarea {
     flex: 1;
     justify-content: flex-start;
     min-height: auto;
-    gap: 0px;
+    gap: 0;
   }
+
+  /* ── Headings (Centered on mobile) ── */
   .hero-left-content {
     padding-right: 0;
     padding-bottom: 0;
     text-align: center;
     width: 100%;
+    flex-shrink: 0;
   }
-  .desktop-tagline-text {
-    display: none;
-  }
-  .mobile-tagline-text {
-    display: block;
-  }
+
+  .desktop-tagline-text { display: none; }
+  .mobile-tagline-text  { display: block; }
+
   .hero-tagline-text {
     font-family: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: 2.15rem;
+    font-size: 1.95rem;
     font-style: italic;
     font-weight: 800;
     color: var(--primary-navy);
     line-height: 1.1;
     margin-bottom: 2px;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.4px;
   }
+
   .hero-main-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: 3.45rem;
+    font-size: 3.1rem;
     font-weight: 800;
+    color: var(--primary-navy);
     line-height: 1.02;
-    margin-bottom: 4px;
-    letter-spacing: -1.6px;
+    margin-bottom: 2px;
+    letter-spacing: -1.5px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .title-row-1 {
     display: block;
-    color: #000000;
+    color: var(--primary-navy);
   }
+
   .title-row-2 {
     margin-top: 2px;
+    position: relative;
+    display: inline-block;
   }
+
   .highlight-future-box {
     padding: 0 16px 4px 14px;
+    position: relative;
+    display: inline-block;
   }
+
   .highlight-future-brush-bg {
-    inset: -10px -18px -6px -16px;
+    inset: -10px -22px -6px -18px;
+    position: absolute;
+    background-image: url('/brush-stroke.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
   }
+
   .highlight-future-text {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     font-weight: 800;
-    color: #000000;
+    color: var(--primary-navy);
+    position: relative;
+    z-index: 2;
   }
 
-  .desktop-only-hero-action {
-    display: none !important;
-  }
-  .desktop-only-trust-badge {
-    display: none !important;
-  }
+  /* Hide desktop items */
+  .desktop-only-hero-action  { display: none !important; }
+  .desktop-only-trust-badge  { display: none !important; }
 
-  /* Student Frame & Floating Mobile Elements */
+  /* ── Student Column & Floating Elements ── */
   .hero-student-media-col {
     width: 100%;
     position: relative;
@@ -1387,70 +1413,76 @@ button, input, select, textarea {
     margin-bottom: 0;
     z-index: 5;
     flex: 1;
+    overflow: visible;
   }
+
   .student-image-frame {
     position: relative;
     width: 100%;
-    max-width: 390px;
+    max-width: 380px;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
     margin: 0 auto;
   }
+
   .student-cutout-img {
-    height: clamp(330px, 45vh, 410px);
+    height: clamp(310px, 42vh, 390px);
     width: auto;
-    max-width: 88%;
+    max-width: 90%;
     object-fit: contain;
     display: block;
-    margin-left: -8px;
+    margin-left: -12px;
     margin-bottom: 0;
   }
 
-  /* Mobile Floating CTA (Right side of student) */
+  /* ── Floating CTA Button (Right of Student) ── */
   .mobile-floating-cta {
     display: block;
     position: absolute;
-    top: 42px;
-    right: 0px;
+    top: 30px;
+    right: 2px;
     z-index: 15;
   }
+
   .btn-mobile-hero-assessment {
     background: #081736;
     color: #FFA700;
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.92rem;
-    padding: 11px 18px;
+    padding: 11px 16px;
     border-radius: 8px;
     border: none;
-    box-shadow: 0 4px 16px rgba(8, 23, 54, 0.28);
+    box-shadow: 0 4px 16px rgba(8, 23, 54, 0.3);
     cursor: pointer;
     white-space: nowrap;
     transition: var(--transition);
   }
+
   .btn-mobile-hero-assessment:active {
     transform: scale(0.97);
   }
 
-  /* Mobile Floating Trust Badge (Bottom right of student) */
+  /* ── Floating Trust Badge (Bottom Right) ── */
   .mobile-floating-trust-badge {
     display: flex;
     align-items: center;
     gap: 8px;
     position: absolute;
-    bottom: 24px;
+    bottom: 20px;
     right: 4px;
     z-index: 15;
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(4px);
-    padding: 5px 12px;
-    border-radius: 20px;
+    background: transparent;
+    padding: 0;
   }
+
   .mobile-avatars-group {
     display: flex;
     align-items: center;
   }
+
   .mobile-avatar-circle {
     width: 22px;
     height: 22px;
@@ -1459,14 +1491,14 @@ button, input, select, textarea {
     border: 2px solid #FFFFFF;
     margin-left: -6px;
   }
-  .mobile-avatar-circle.circle-1 {
-    margin-left: 0;
-  }
+  .mobile-avatar-circle.circle-1 { margin-left: 0; }
+
   .mobile-trust-info {
     display: flex;
     flex-direction: column;
     text-align: left;
   }
+
   .mobile-trust-label {
     font-family: var(--font-body);
     font-size: 0.65rem;
@@ -1474,29 +1506,33 @@ button, input, select, textarea {
     font-weight: 600;
     line-height: 1.1;
   }
+
   .mobile-trust-count {
     font-family: var(--font-body);
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 800;
     color: #081736;
     line-height: 1.1;
   }
 
-  /* Results Card on Mobile */
+  /* ── Results Banner on Mobile ── */
   .results-partnership-banner {
     background: #081736;
     border-radius: 22px 22px 0 0;
-    padding: 14px 14px 18px 14px;
+    padding: 14px 16px 18px 16px;
     margin-top: -12px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0px;
+    gap: 0;
     box-shadow: 0 -4px 24px rgba(8, 23, 54, 0.2);
+    position: relative;
+    z-index: 10;
+    width: 100%;
   }
-  .desktop-badge-text {
-    display: none;
-  }
+
+  .desktop-badge-text { display: none; }
+
   .mobile-badge-text {
     display: block;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
@@ -1505,6 +1541,7 @@ button, input, select, textarea {
     color: #081736;
     letter-spacing: -0.2px;
   }
+
   .results-badge-white {
     background: #FFFFFF;
     border-radius: 9999px;
@@ -1515,6 +1552,7 @@ button, input, select, textarea {
     justify-content: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
+
   .results-yellow-divider {
     display: block;
     width: 90%;
@@ -1524,6 +1562,7 @@ button, input, select, textarea {
     border-radius: 2px;
     margin: 8px auto 12px auto;
   }
+
   .results-stats-row-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1532,22 +1571,26 @@ button, input, select, textarea {
     max-width: 360px;
     padding: 0 4px;
   }
+
   .results-stat-group {
     display: flex;
     align-items: center;
     gap: 8px;
     text-align: left;
   }
+
   .results-stat-icon-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
+
   .results-stat-icon-wrap svg {
     width: 44px;
     height: 38px;
   }
+
   .results-stat-number {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     font-size: 2.15rem;
@@ -1557,6 +1600,7 @@ button, input, select, textarea {
     margin-bottom: 2px;
     letter-spacing: -0.5px;
   }
+
   .results-stat-label {
     font-family: var(--font-body);
     font-size: 0.88rem;
@@ -1565,10 +1609,15 @@ button, input, select, textarea {
     line-height: 1.15;
   }
 
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-  .footer-grid {
+  .services-grid,
+  .destinations-grid,
+  .about-grid,
+  .stats-grid,
+  .process-grid,
+  .footer-grid,
+  .testimonials-grid,
+  .partners-grid {
     grid-template-columns: 1fr;
   }
 }
+
