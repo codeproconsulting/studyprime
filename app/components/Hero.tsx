@@ -119,9 +119,10 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
           <div className="results-stats-row-container">
             <div className="results-stat-group">
               <div className="results-stat-icon-wrap stat-card-icon-box">
-                <svg viewBox="0 0 24 24" width="36" height="36" fill="#FDB813">
-                  <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
-                  <path d="M6 14h6v2H6z" fill="#081736"/>
+                <svg viewBox="0 0 32 32" width="40" height="40" fill="none">
+                  <rect width="32" height="32" rx="6" fill="#FFA700"/>
+                  <path d="M7 10h18v3H7v-3z" fill="#081736"/>
+                  <path d="M12 21l-4-4 1.5-1.5 2.5 2.5 7-7 1.5 1.5-8.5 8.5z" fill="#081736"/>
                 </svg>
               </div>
               <div className="results-stat-text-wrap">
@@ -132,9 +133,11 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
 
             <div className="results-stat-group">
               <div className="results-stat-icon-wrap stat-globe-icon-box">
-                <svg viewBox="0 0 24 24" width="36" height="36" fill="#FDB813">
-                  <rect x="3" y="3" width="18" height="18" rx="2" fill="#FDB813"/>
-                  <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10.5c-2.48 0-4.5-2.02-4.5-4.5S9.52 7.5 12 7.5s4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5zm-1-8h2v2h-2zm0 3h2v4h-2z" fill="#081736"/>
+                <svg viewBox="0 0 32 32" width="40" height="40" fill="none">
+                  <rect width="32" height="32" rx="6" fill="#FFA700"/>
+                  <circle cx="16" cy="16" r="8" stroke="#081736" strokeWidth="2"/>
+                  <ellipse cx="16" cy="16" rx="4" ry="8" stroke="#081736" strokeWidth="1.5"/>
+                  <line x1="8" y1="16" x2="24" y2="16" stroke="#081736" strokeWidth="1.5"/>
                 </svg>
               </div>
               <div className="results-stat-text-wrap">
