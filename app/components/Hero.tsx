@@ -18,7 +18,7 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
           {/* Left Column (Desktop) / Top Heading Group (Mobile) */}
           <div className="hero-left-content">
             <div className="hero-tagline-text">
-              Your Study Abroad Partner
+              Your Study Abroad Partner,
             </div>
 
             <h1 className="hero-main-title">
@@ -31,7 +31,7 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
               </span>
             </h1>
 
-            {/* Desktop-only action row */}
+            {/* Desktop-only action button */}
             <div className="hero-action-row desktop-only-hero-action">
               <button
                 type="button"
@@ -109,20 +109,31 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
 
         {/* Bottom Results Banner */}
         <div className="results-partnership-banner">
+          {/* Desktop Badge (2 lines) / Mobile Badge (1 line pill) */}
           <div className="results-badge-white">
-            <span className="results-badge-title">Results That Define a True Partnership</span>
+            <span className="desktop-badge-text">
+              <span className="badge-line-1">Results That Define</span>
+              <span className="badge-line-2">a True Partnership</span>
+            </span>
+            <span className="mobile-badge-text">
+              Results That Define a True Partnership
+            </span>
           </div>
 
-          {/* Yellow accent bar */}
-          <div className="results-yellow-divider-bar"></div>
+          {/* Vertical yellow bar for Desktop / Horizontal yellow bar for Mobile */}
+          <div className="results-yellow-divider"></div>
 
           <div className="results-stats-row-container">
+            {/* Stat 1: Assessments Done */}
             <div className="results-stat-group">
-              <div className="results-stat-icon-wrap stat-card-icon-box">
-                <svg viewBox="0 0 32 32" width="40" height="40" fill="none">
-                  <rect width="32" height="32" rx="6" fill="#FFA700"/>
-                  <path d="M7 10h18v3H7v-3z" fill="#081736"/>
-                  <path d="M12 21l-4-4 1.5-1.5 2.5 2.5 7-7 1.5 1.5-8.5 8.5z" fill="#081736"/>
+              <div className="results-stat-icon-wrap">
+                <svg viewBox="0 0 54 44" width="48" height="40" fill="none">
+                  {/* Card base */}
+                  <rect x="2" y="3" width="50" height="38" rx="6" fill="#FFA700"/>
+                  {/* Card top stripe */}
+                  <rect x="2" y="9" width="50" height="6" fill="#081736"/>
+                  {/* Checkmark in bottom right */}
+                  <path d="M22 28 L30 36 L46 18" stroke="#081736" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <div className="results-stat-text-wrap">
@@ -131,13 +142,19 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
               </div>
             </div>
 
+            {/* Stat 2: Visas Granted */}
             <div className="results-stat-group">
-              <div className="results-stat-icon-wrap stat-globe-icon-box">
-                <svg viewBox="0 0 32 32" width="40" height="40" fill="none">
-                  <rect width="32" height="32" rx="6" fill="#FFA700"/>
-                  <circle cx="16" cy="16" r="8" stroke="#081736" strokeWidth="2"/>
-                  <ellipse cx="16" cy="16" rx="4" ry="8" stroke="#081736" strokeWidth="1.5"/>
-                  <line x1="8" y1="16" x2="24" y2="16" stroke="#081736" strokeWidth="1.5"/>
+              <div className="results-stat-icon-wrap">
+                <svg viewBox="0 0 40 48" width="40" height="44" fill="none">
+                  {/* Passport card base */}
+                  <rect x="2" y="2" width="36" height="44" rx="5" fill="#FFA700"/>
+                  {/* Globe circle */}
+                  <circle cx="20" cy="18" r="9" stroke="#081736" strokeWidth="2.5" fill="none"/>
+                  <ellipse cx="20" cy="18" rx="4.5" ry="9" stroke="#081736" strokeWidth="2" fill="none"/>
+                  <line x1="11" y1="18" x2="29" y2="18" stroke="#081736" strokeWidth="2.2"/>
+                  {/* Document lines */}
+                  <line x1="8" y1="34" x2="32" y2="34" stroke="#081736" strokeWidth="3" strokeLinecap="round"/>
+                  <line x1="12" y1="39" x2="28" y2="39" stroke="#081736" strokeWidth="2.5" strokeLinecap="round"/>
                 </svg>
               </div>
               <div className="results-stat-text-wrap">
