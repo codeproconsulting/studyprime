@@ -2,6 +2,7 @@ import { useOutletContext, Link } from "@remix-run/react";
 import { ArrowRight, Sparkles, CheckCircle2, Globe2, ShieldCheck, Award } from "lucide-react";
 import { Hero } from "~/components/Hero";
 import { DestinationsSection } from "~/components/DestinationsSection";
+import { CoursesSection } from "~/components/CoursesSection";
 import { ServicesSection } from "~/components/ServicesSection";
 import { ProcessSection } from "~/components/ProcessSection";
 import { PartnersSection } from "~/components/PartnersSection";
@@ -23,10 +24,13 @@ export default function Index() {
       {/* 3. Destinations Section */}
       <DestinationsSection />
 
-      {/* 4. Working Process Section */}
+      {/* 4. Top Academic Courses & Degree Programs */}
+      <CoursesSection />
+
+      {/* 5. Working Process Section */}
       <ProcessSection onOpenConsultation={openConsultation} />
 
-      {/* 7. Partner Universities */}
+      {/* 6. Partner Universities */}
       <PartnersSection />
 
       {/* 8. Student Testimonials */}

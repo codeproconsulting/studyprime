@@ -12,6 +12,7 @@ export interface StudyDestination {
 export interface UniversityPartner {
   name: string;
   country: string;
+  city?: string;
   logo: string;
 }
 
@@ -35,6 +36,27 @@ export interface ServiceItem {
   shortDesc: string;
   fullDesc: string;
   features: string[];
+  icon: string;
+}
+
+export interface CourseItem {
+  slug: string;
+  title: string;
+  category: string;
+  badge: string;
+  duration: string;
+  level: string;
+  intakes: string[];
+  estimatedTuition: string;
+  averageSalary: string;
+  shortDescription: string;
+  fullDescription: string;
+  whyStudy: string[];
+  topDestinations: string[];
+  entryRequirements: string[];
+  careerProspects: string[];
+  popularUniversities: string[];
+  keyModules: string[];
   icon: string;
 }
 
@@ -126,20 +148,6 @@ export const services: ServiceItem[] = [
       "Recommendation letter refinement",
     ],
     icon: "PenTool",
-  },
-  {
-    id: "ielts-prep",
-    title: "IELTS / PTE / Language Preparation",
-    shortDesc: "Targeted coaching and mock exam assessments to achieve the required band score for your dream universities.",
-    fullDesc:
-      "Preparation courses designed to help students secure their desired language scores for international admissions and visa compliance.",
-    features: [
-      "Comprehensive test practice & feedback",
-      "Strategies for Speaking, Writing, Reading & Listening",
-      "Flexible schedule and personalized doubt clearing",
-      "Guidance on English proficiency waivers",
-    ],
-    icon: "BookOpen",
   },
   {
     id: "departure-briefing",
@@ -1757,26 +1765,107 @@ export const processSteps = [
   },
 ];
 
+export interface GoogleReview {
+  id: string;
+  authorName: string;
+  authorPhoto?: string;
+  rating: number;
+  relativeTime: string;
+  destination: string;
+  university?: string;
+  reviewText: string;
+  isVerified: boolean;
+}
+
+export const googleReviews: GoogleReview[] = [
+  {
+    id: "rev-1",
+    authorName: "Akhtar Zaman",
+    rating: 5,
+    relativeTime: "2 weeks ago",
+    destination: "United Kingdom",
+    university: "University of Birmingham",
+    reviewText:
+      "I am very thankful to StudyPrime for guiding me throughout my study abroad journey. From the very first step, they explained everything clearly and made the process simple for me. The team was always available to answer my questions and supported me with patience. Their guidance in choosing the right university and preparing documents was extremely helpful. Because of their effort, my application and visa process went smoothly without any stress. Highly recommended!",
+    isVerified: true,
+  },
+  {
+    id: "rev-2",
+    authorName: "Sara Sultan",
+    rating: 5,
+    relativeTime: "1 month ago",
+    destination: "United Kingdom",
+    university: "Brunel University London",
+    reviewText:
+      "I did my UK process through this consultancy and it was very smooth and easy. They handled everything professionally, and since I was also working and had limited time, their support made the whole process stress-free. Received my student visa within 14 days without any hassle!",
+    isVerified: true,
+  },
+  {
+    id: "rev-3",
+    authorName: "Farah Mamoona",
+    rating: 5,
+    relativeTime: "1 month ago",
+    destination: "United Kingdom",
+    university: "University of Chester",
+    reviewText:
+      "I had an amazing experience with Study Prime Consultants! Despite my challenging case and study gap, Sir Ehsan and his team provided exceptional guidance and support throughout the process. After struggling for over a year with UK visa applications, their professionalism and smart approach finally made it possible. Alhamdulillah, I'm now in the UK!",
+    isVerified: true,
+  },
+  {
+    id: "rev-4",
+    authorName: "Muhammad Hamza Khan",
+    rating: 5,
+    relativeTime: "3 weeks ago",
+    destination: "Canada",
+    university: "Thompson Rivers University",
+    reviewText:
+      "Best educational consultancy in Islamabad! The advisors are very knowledgeable about Canadian study permits and SDS requirements. They drafted a compelling SOP that clearly justified my career pathway. Got my Canada visa approved on the first attempt!",
+    isVerified: true,
+  },
+  {
+    id: "rev-5",
+    authorName: "Ayesha Tariq",
+    rating: 5,
+    relativeTime: "2 months ago",
+    destination: "Australia",
+    university: "University of Western Australia",
+    reviewText:
+      "Study Prime handled my Australian Student Visa (Subclass 500) application seamlessly. From course matching to genuine temporary entrant (GS) preparation and financial proofs, their attention to detail was exceptional. Truly 5-star service!",
+    isVerified: true,
+  },
+  {
+    id: "rev-6",
+    authorName: "Bilal Ahmed Qureshi",
+    rating: 5,
+    relativeTime: "2 months ago",
+    destination: "Germany",
+    university: "SRH Berlin University of Applied Sciences",
+    reviewText:
+      "Outstanding guidance for English-taught master's programs in Germany. They assisted with APS certificate prerequisites, blocked account setup, and German embassy appointment preparation. Very transparent and cooperative staff.",
+    isVerified: true,
+  },
+];
+
 export const testimonials: Testimonial[] = [
   {
     name: "Akhtar Zaman",
-    role: "Student in UK",
+    role: "Student in UK (University of Birmingham)",
     feedback:
-      "I am very thankful to StudyPrime for guiding me throughout my study abroad journey. From the very first step, they explained everything clearly and made the process simple for me. The team was always available to answer my questions and supported me with patience. Their guidance in choosing the right university and preparing documents was extremely helpful. Because of their effort, my application and visa process went smoothly without any stress. I truly appreciate their dedication and professionalism. I would definitely recommend StudyPrime to anyone planning to study abroad.",
+      "I am very thankful to StudyPrime for guiding me throughout my study abroad journey. From the very first step, they explained everything clearly and made the process simple for me. The team was always available to answer my questions and supported me with patience.",
     rating: 5,
   },
   {
     name: "Sara Sultan",
-    role: "Student in UK",
+    role: "Student in UK (Brunel University)",
     feedback:
       "I did my UK process through this consultancy and it was very smooth and easy. They handled everything professionally, and since I was also working and had limited time, their support made the whole process stress-free. Highly recommended!",
     rating: 5,
   },
   {
     name: "Farah Mamoona",
-    role: "Student in UK",
+    role: "Student in UK (University of Chester)",
     feedback:
-      "I had an amazing experience with Study Prime Consultants! Despite my challenging case, Sir Ehsan and his team provided exceptional guidance and support throughout the process. After struggling for over a year with UK visa applications, their professionalism and smart approach finally made it possible. Alhamdulillah, I’m now in the UK! Highly recommended for anyone looking for reliable and dedicated consultancy.",
+      "I had an amazing experience with Study Prime Consultants! Despite my challenging case, Sir Ehsan and his team provided exceptional guidance and support throughout the process. Alhamdulillah, I'm now in the UK!",
     rating: 5,
   },
 ];
@@ -1849,3 +1938,398 @@ export const blogPosts = [
     image: "/student.webp",
   },
 ];
+
+export const coursesData: CourseItem[] = [
+  {
+    slug: "computer-science-artificial-intelligence",
+    title: "Computer Science & Artificial Intelligence",
+    category: "Computer Science & IT",
+    badge: "Highest Demand",
+    duration: "3 - 4 Years (UG) / 1 Year (PG)",
+    level: "BSc / BEng / MSc",
+    intakes: ["September", "January", "May"],
+    estimatedTuition: "£14,000 - £22,000 / year",
+    averageSalary: "£42,000 - £65,000 / year",
+    shortDescription: "Master generative AI, deep neural networks, software architecture, and cloud ecosystems with top global universities.",
+    fullDescription:
+      "A cutting-edge program designed to equip students with practical skills in algorithmic computing, machine learning, computer vision, and scalable software systems. Leading international tech hubs in the UK, Canada, and Australia offer extended post-study work permits for STEM graduates in this discipline.",
+    whyStudy: [
+      "Critical shortage of skilled AI and software engineers globally",
+      "Eligible for 2 to 3 years Post-Study Work (PSW / PGWP) rights",
+      "High starting graduate salaries and rapid career advancement",
+      "Industry-sponsored capstone projects and internship opportunities",
+    ],
+    topDestinations: ["United Kingdom", "Canada", "Australia", "Germany", "Ireland"],
+    entryRequirements: [
+      "For UG: Minimum 65% in HSSC (Pre-Engineering / ICS) or 3 A-Level passes",
+      "For PG: 4-Year Bachelor's in CS/IT/Engineering with minimum 2.5+ CGPA (or 55%+)",
+      "IELTS 6.0 - 6.5 (or Oxford ELLT / PTE / English MOI Waiver for eligible universities)",
+      "Statement of Purpose (SOP) tailored to technical career objectives",
+    ],
+    careerProspects: [
+      "Artificial Intelligence Engineer",
+      "Full-Stack Software Developer",
+      "Machine Learning Specialist",
+      "Cloud Solutions Architect",
+      "DevOps & Systems Engineer",
+    ],
+    popularUniversities: [
+      "University of Birmingham",
+      "Brunel University London",
+      "University of Greenwich",
+      "University of Hertfordshire",
+      "University of Europe for Applied Sciences",
+      "Thompson Rivers University",
+    ],
+    keyModules: [
+      "Machine Learning & Deep Neural Networks",
+      "Advanced Data Structures & Algorithms",
+      "Cloud Computing & Distributed Systems",
+      "Natural Language Processing (NLP)",
+      "Cyber Security & Software Quality Assurance",
+      "MSc Research Project & Industrial Internship",
+    ],
+    icon: "Laptop",
+  },
+  {
+    slug: "data-science-big-data-analytics",
+    title: "Data Science & Big Data Analytics",
+    category: "Computer Science & IT",
+    badge: "Top STEM Track",
+    duration: "1 - 2 Years (PG) / 3 Years (UG)",
+    level: "BSc / MSc",
+    intakes: ["September", "January"],
+    estimatedTuition: "£13,500 - £19,500 / year",
+    averageSalary: "£40,000 - £58,000 / year",
+    shortDescription: "Turn massive volumes of unstructured data into actionable strategic insights using Python, R, SQL, and predictive AI models.",
+    fullDescription:
+      "Data Science connects mathematical modeling, statistical programming, and modern machine learning to solve complex industrial and commercial challenges. Graduates are heavily recruited across global financial institutions, healthcare giants, logistics networks, and e-commerce leaders.",
+    whyStudy: [
+      "Unprecedented commercial demand for data-driven decision makers",
+      "Strong curriculum covering both technical coding and commercial strategy",
+      "Excellent pathway for career switchers from engineering, math, and business",
+      "Direct pathway to high-paying consultancy and analyst roles",
+    ],
+    topDestinations: ["United Kingdom", "Ireland", "Australia", "Canada", "Germany"],
+    entryRequirements: [
+      "Bachelor's degree with quantitative background (CS, Math, Engineering, Business, Finance) with min 2.4+ CGPA",
+      "IELTS 6.0 - 6.5 or equivalent PTE / Duolingo / MOI certificate",
+      "Updated resume and 2 academic/professional recommendation letters",
+      "Statement of Purpose demonstrating passion for analytical modeling",
+    ],
+    careerProspects: [
+      "Lead Data Scientist",
+      "Big Data Engineer",
+      "Business Intelligence Consultant",
+      "Quantitative Analyst",
+      "Data Visualization Architect",
+    ],
+    popularUniversities: [
+      "University of Chester",
+      "University of Greenwich",
+      "University of Western Australia",
+      "SRH Berlin University",
+      "National College of Ireland",
+    ],
+    keyModules: [
+      "Statistical Methods & Predictive Modeling",
+      "Big Data Engineering & Apache Spark",
+      "Data Visualization & Tableau / PowerBI",
+      "Database Management & Cloud Data Warehouses",
+      "Applied Business Intelligence",
+    ],
+    icon: "BarChart3",
+  },
+  {
+    slug: "fintech-business-analytics",
+    title: "FinTech & Financial Analytics",
+    category: "Business & Finance",
+    badge: "High Growth",
+    duration: "1 Year (PG) / 3 Years (UG)",
+    level: "BSc / MSc",
+    intakes: ["September", "January", "May"],
+    estimatedTuition: "£13,000 - £18,000 / year",
+    averageSalary: "£45,000 - £70,000 / year",
+    shortDescription: "Bridge the gap between modern financial markets, blockchain technologies, algorithmic trading, and data analytics.",
+    fullDescription:
+      "A next-generation business degree tailored for students aiming to lead the digital transformation of banking, investment funds, payments, and risk management. Blends corporate finance fundamentals with Python for financial modeling and digital asset compliance.",
+    whyStudy: [
+      "Rapidly replacing conventional finance degrees in terms of employability",
+      "High demand across London, Dublin, Toronto, and Frankfurt financial districts",
+      "Hands-on trading simulation and financial lab certifications",
+      "Strong visa approval rates for career-focused business profiles",
+    ],
+    topDestinations: ["United Kingdom", "Ireland", "France", "Germany", "Australia"],
+    entryRequirements: [
+      "Undergraduate degree in Business, Commerce, Economics, Banking, or CS/IT",
+      "Minimum 50% - 60% in previous academics (2.3+ CGPA)",
+      "English proficiency proof (IELTS 6.0 - 6.5 or MOI)",
+      "Statement of Purpose detailing financial technology interests",
+    ],
+    careerProspects: [
+      "FinTech Strategy Consultant",
+      "Financial Risk Analyst",
+      "Blockchain & Digital Payments Manager",
+      "Investment Analytics Associate",
+      "Corporate Treasury Officer",
+    ],
+    popularUniversities: [
+      "University of Birmingham",
+      "Brunel University London",
+      "Toulouse Business School",
+      "Dublin Business School",
+      "University of Europe for Applied Sciences",
+    ],
+    keyModules: [
+      "Digital Banking & Payment Systems",
+      "Quantitative Financial Modeling with Python",
+      "Blockchain Architecture & Smart Contracts",
+      "Financial Econometrics & Risk Analytics",
+      "Corporate Finance & Global Investment Strategy",
+    ],
+    icon: "Coins",
+  },
+  {
+    slug: "international-mba-global-management",
+    title: "International MBA & Global Management",
+    category: "Business & Finance",
+    badge: "Executive Favorite",
+    duration: "1 - 2 Years",
+    level: "Master of Business Administration (MBA)",
+    intakes: ["September", "January", "May"],
+    estimatedTuition: "£12,000 - £17,500 / year",
+    averageSalary: "£48,000 - £75,000 / year",
+    shortDescription: "Accelerate your leadership trajectory with an globally accredited MBA program offering flexible entry routes and practical project placements.",
+    fullDescription:
+      "Designed for ambitious professionals and recent graduates looking to develop strategic leadership, international marketing, operations oversight, and venture creation skills. Many partner UK universities offer MBA options with no prior work experience required or with 1-year paid placement years.",
+    whyStudy: [
+      "Globally recognized degree recognized by multinational corporations",
+      "Option to choose specialized tracks (Supply Chain, Marketing, HR, Finance, Project Management)",
+      "Available with 1-Year Professional Placement in the UK",
+      "Generous scholarship discounts available for South Asian students",
+    ],
+    topDestinations: ["United Kingdom", "Canada", "Germany", "France", "Australia"],
+    entryRequirements: [
+      "Bachelor's degree in any discipline (BBA, BCom, BA, BSc, BE, MBBS)",
+      "Fresh graduates accepted at selected universities; work experience preferred for executive tracks",
+      "IELTS 6.0 - 6.5 (or MOI waiver from recognized English-medium institutions)",
+      "Detailed resume & personal statement highlighting leadership ambitions",
+    ],
+    careerProspects: [
+      "Operations Director",
+      "Management Consultant",
+      "International Project Manager",
+      "Business Development Lead",
+      "Enterprise Founder & Startup CEO",
+    ],
+    popularUniversities: [
+      "University of Chester",
+      "University of Greenwich",
+      "SRH Berlin University",
+      "GISMA University of Applied Sciences",
+      "University of Europe for Applied Sciences",
+    ],
+    keyModules: [
+      "Strategic Global Leadership",
+      "Operations & Supply Chain Management",
+      "International Marketing & Brand Positioning",
+      "Strategic Financial Decision Making",
+      "Business Research Project & Consulting Practice",
+    ],
+    icon: "Briefcase",
+  },
+  {
+    slug: "healthcare-public-health-nursing",
+    title: "Public Health (MPH) & Healthcare Management",
+    category: "Healthcare & Life Sciences",
+    badge: "Critical Shortage",
+    duration: "1 - 2 Years (PG) / 3 Years (UG)",
+    level: "BSc / MPH / MSc",
+    intakes: ["September", "January"],
+    estimatedTuition: "£13,000 - £18,000 / year",
+    averageSalary: "£36,000 - £52,000 / year",
+    shortDescription: "Lead disease prevention, healthcare policy, epidemiology, and clinical operations in international healthcare systems like the NHS.",
+    fullDescription:
+      "An essential degree preparing health professionals, doctors, pharmacists, dentists, and science graduates for non-clinical leadership, healthcare analytics, health promotion, and hospital administration in international public and private sectors.",
+    whyStudy: [
+      "High demand across National Health Service (NHS UK), Canadian health authorities, and WHO",
+      "Open to MBBS, BDS, Pharm-D, DPT, Nursing, and Biological Science graduates",
+      "Fast-track visa processing under health shortage provisions in select countries",
+      "Ideal pathway for clinical professionals seeking international career transitions",
+    ],
+    topDestinations: ["United Kingdom", "Australia", "Canada", "Ireland", "Sweden"],
+    entryRequirements: [
+      "Undergraduate degree in Health, Medicine, Pharmacy, Nursing, Allied Health, or Life Sciences",
+      "Minimum 50% - 60% academic grade",
+      "IELTS 6.5 (or 6.0 with pre-sessional English)",
+      "Personal statement outlining public health motivation",
+    ],
+    careerProspects: [
+      "Public Health Specialist",
+      "Healthcare Operations Manager",
+      "Epidemiologist & Health Researcher",
+      "Health Promotion Officer",
+      "Clinical Trial Coordinator",
+    ],
+    popularUniversities: [
+      "University of Birmingham",
+      "Brunel University London",
+      "University of Chester",
+      "University of Greenwich",
+      "Karolinska Institutet",
+    ],
+    keyModules: [
+      "Principles of Epidemiology & Disease Control",
+      "Health Economics & Healthcare Policy",
+      "Global Health Systems & Leadership",
+      "Research Methods in Public Health",
+      "Environmental Health & Occupational Safety",
+    ],
+    icon: "HeartPulse",
+  },
+  {
+    slug: "cyber-security-cloud-engineering",
+    title: "Cyber Security & Cloud Infrastructure",
+    category: "Computer Science & IT",
+    badge: "100% Employability",
+    duration: "1 Year (PG) / 3 - 4 Years (UG)",
+    level: "BSc / MSc",
+    intakes: ["September", "January", "May"],
+    estimatedTuition: "£13,500 - £18,500 / year",
+    averageSalary: "£45,000 - £68,000 / year",
+    shortDescription: "Protect critical infrastructure, enterprise networks, and digital identities against cyber threats and ransomware.",
+    fullDescription:
+      "A comprehensive curriculum integrating ethical hacking, network forensics, cryptography, cloud security architecture (AWS/Azure), and information assurance governance accredited by professional bodies such as BCS and NCSC in the UK.",
+    whyStudy: [
+      "Zero unemployment in certified cyber security professionals across G7 nations",
+      "Specialized training with industry cyber lab simulations",
+      "Eligible for post-study work visas with abundant job opportunities",
+      "Competitive entry scholarships available for Pakistani applicants",
+    ],
+    topDestinations: ["United Kingdom", "Australia", "Canada", "Germany", "Ireland"],
+    entryRequirements: [
+      "Bachelor's in CS, IT, Software Engineering, Telecommunications, or Electrical Engineering",
+      "Minimum 2.4+ CGPA (or 55%+ marks)",
+      "IELTS 6.0 - 6.5 or equivalent",
+      "Statement of Purpose highlighting IT security focus",
+    ],
+    careerProspects: [
+      "Information Security Analyst",
+      "Ethical Hacker / Penetration Tester",
+      "SOC Incident Responder",
+      "Cloud Security Engineer",
+      "Chief Information Security Officer (CISO)",
+    ],
+    popularUniversities: [
+      "University of Greenwich",
+      "University of Hertfordshire",
+      "Birmingham City University",
+      "SRH Berlin University",
+      "National College of Ireland",
+    ],
+    keyModules: [
+      "Network Security & Penetration Testing",
+      "Cloud Architecture & Zero-Trust Security",
+      "Applied Cryptography & Secure Protocols",
+      "Digital Forensics & Incident Response",
+      "Governance, Risk Management & Compliance",
+    ],
+    icon: "ShieldCheck",
+  },
+  {
+    slug: "one-year-top-up-degrees-uk",
+    title: "1-Year Top-Up Bachelor's Degrees (UK)",
+    category: "Pathway & Top-Up",
+    badge: "Fast-Track Pathway",
+    duration: "1 Academic Year (9 - 12 Months)",
+    level: "BA (Hons) / BSc (Hons)",
+    intakes: ["September", "January", "May"],
+    estimatedTuition: "£11,500 - £15,000 (Total Degree)",
+    averageSalary: "£32,000 - £45,000 / year",
+    shortDescription: "Convert your 2-Year Associate Degree (ADP), DAE 3-Year Diploma, or HND directly into an accredited full British Honours Bachelor's Degree in just 1 year.",
+    fullDescription:
+      "A tailored fast-track program enabling Pakistani students with existing diplomas (DAE, B.Com, BA, B.Sc 2-year old system, or HND Pearson qualifications) to enter directly into the Final (3rd) Year of a UK university and graduate with a full British Bachelor’s degree + 2-Year UK Graduate Route PSW Visa.",
+    whyStudy: [
+      "Save 2 years of tuition fees and living expenses compared to 3-year degrees",
+      "Receive the exact same full UK Bachelor (Honours) degree and graduation certificate",
+      "Qualifies you for 2 full years of UK Post-Study Work Visa (Graduate Route)",
+      "Excellent pathway to progress directly into 1-Year UK Master's / MBA programs",
+    ],
+    topDestinations: ["United Kingdom"],
+    entryRequirements: [
+      "Completion of 2-Year Associate Degree (ADP), B.Com / BA / BSc (2 Years), or 3-Year DAE Diploma",
+      "HND / Pearson BTEC Level 5 qualifications with passing grades",
+      "IELTS 6.0 (min 5.5 in each component) or Oxford ELLT / PTE",
+      "Official academic transcripts and passing certificates",
+    ],
+    careerProspects: [
+      "Full Bachelor Graduate Qualifications worldwide",
+      "Eligible for UK 2-Year Post-Study Work Visa",
+      "Direct entry into UK Master's / MSc / MBA degrees",
+      "Mid-level management and technical roles in the UK and overseas",
+    ],
+    popularUniversities: [
+      "University of Greenwich",
+      "University of Chester",
+      "University of Hertfordshire",
+      "Birmingham City University",
+      "London South Bank University",
+    ],
+    keyModules: [
+      "Strategic Business Project / Technical Dissertation",
+      "Advanced Subject Specialization",
+      "Contemporary Issues in International Business/IT",
+      "Professional Development & Enterprise Management",
+    ],
+    icon: "GraduationCap",
+  },
+  {
+    slug: "engineering-robotics-automation",
+    title: "Robotics, Mechatronics & Automation",
+    category: "Engineering & Tech",
+    badge: "Industry 4.0",
+    duration: "1 Year (PG) / 3 - 4 Years (UG)",
+    level: "BEng / MEng / MSc",
+    intakes: ["September", "January"],
+    estimatedTuition: "£14,500 - £20,500 / year",
+    averageSalary: "£42,000 - £62,000 / year",
+    shortDescription: "Design autonomous robots, smart manufacturing lines, sensor systems, and industrial AI controllers for modern automation.",
+    fullDescription:
+      "A forward-looking engineering program uniting electrical engineering, mechanical systems, embedded microcontrollers, and computer intelligence. Positioned at the core of European and North American industrial modernization.",
+    whyStudy: [
+      "High priority on global shortage occupation lists",
+      "State-of-the-art engineering robotics labs with Siemens and ABB hardware",
+      "Direct collaboration with automotive, aerospace, and biomedical sectors",
+      "Access to extensive postgraduate research funding and bursaries",
+    ],
+    topDestinations: ["Germany", "United Kingdom", "Canada", "Australia", "Sweden"],
+    entryRequirements: [
+      "BSc/BEng in Electrical, Mechanical, Mechatronics, Aerospace, or Robotics Engineering (min 2.5 CGPA)",
+      "IELTS 6.0 - 6.5 or equivalent",
+      "Technical Statement of Purpose and portfolio of project work if available",
+    ],
+    careerProspects: [
+      "Robotics Control Engineer",
+      "Automation Systems Architect",
+      "Embedded Software Developer",
+      "Mechatronics Design Specialist",
+      "Smart Manufacturing Consultant",
+    ],
+    popularUniversities: [
+      "University of Birmingham",
+      "Brunel University London",
+      "SRH Berlin University",
+      "University of Europe for Applied Sciences",
+      "University of Western Australia",
+    ],
+    keyModules: [
+      "Autonomous Mobile Robotics & Navigation",
+      "Control Systems Engineering & PLC Programming",
+      "Sensor Fusion & Computer Vision for Robotics",
+      "Industrial IoT & Industry 4.0 Standards",
+      "MSc Engineering Capstone Project",
+    ],
+    icon: "Cpu",
+  },
+];
+

@@ -1,4 +1,4 @@
-import { Award, CheckCircle2, FileSpreadsheet, MessageSquare } from "lucide-react";
+import { Award, CheckCircle2, FileSpreadsheet, MessageSquare, ArrowRight, Sparkles, Compass } from "lucide-react";
 import { processSteps } from "~/data/siteData";
 
 const iconMap: Record<string, any> = {
@@ -8,42 +8,95 @@ const iconMap: Record<string, any> = {
   Award,
 };
 
+const stepTags: Record<string, string> = {
+  "01": "Initial Discovery",
+  "02": "Strategic Choice",
+  "03": "Fast Submission",
+  "04": "Visa Secured",
+};
+
 export function ProcessSection({ onOpenConsultation }: { onOpenConsultation?: () => void }) {
   return (
-    <section className="section-padding" style={{ backgroundColor: "#F1F5F9" }}>
+    <section className="section-padding animated-process-section">
       <div className="container">
+        {/* Header */}
         <div className="section-header">
-          <div className="badge badge-blue">Working Process</div>
-          <h2 className="section-title">A Clear, Transparent Path To Your Study Visa</h2>
-          <p className="section-subtitle">
-            We simplify complex application and immigration protocols into a seamless 4-step experience.
+          <div className="badge badge-gold" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "12px" }}>
+            <Compass size={14} /> Proven 4-Step Methodology
+          </div>
+          <h2 className="section-title" style={{ fontSize: "2.6rem", color: "var(--primary-navy)", lineHeight: "1.2", marginBottom: "10px" }}>
+            A Transparent, Seamless Journey
+          </h2>
+          <p className="section-subtitle" style={{ fontSize: "1.05rem", color: "var(--text-muted)", maxWidth: "620px" }}>
+            From your first free discovery session to landing at your dream campus abroad, our structured roadmap ensures complete clarity.
           </p>
         </div>
 
-        <div className="process-grid">
-          {processSteps.map((step) => {
-            const IconComponent = iconMap[step.icon] || Award;
-            return (
-              <div key={step.step} className="process-card">
-                <div className="process-num">{step.step}</div>
-                <div className="process-icon-box">
-                  <IconComponent size={24} />
+        {/* Process Flow Grid with Connecting Line */}
+        <div className="modern-process-wrapper">
+          <div className="process-timeline-line" />
+          
+          <div className="modern-process-grid">
+            {processSteps.map((step, idx) => {
+              const IconComponent = iconMap[step.icon] || Award;
+              const tag = stepTags[step.step] || `Step ${step.step}`;
+
+              return (
+                <div key={step.step} className="modern-process-card" style={{ animationDelay: `${idx * 0.15}s` }}>
+                  {/* Step Header */}
+                  <div className="process-card-top">
+                    <div className="process-step-pill">
+                      <span className="process-step-num">{step.step}</span>
+                    </div>
+                    <span className="process-stage-badge">{tag}</span>
+                  </div>
+
+                  {/* Icon with glowing pulse ring */}
+                  <div className="process-icon-wrapper">
+                    <div className="icon-glow-ring" />
+                    <div className="process-icon-box">
+                      <IconComponent size={28} />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="process-card-body">
+                    <h3 className="process-card-title">{step.title}</h3>
+                    <p className="process-card-desc">{step.desc}</p>
+                  </div>
+
+                  {/* Micro Progress Indicator */}
+                  <div className="process-card-footer">
+                    <div className="process-step-dot-line">
+                      <div className="step-dot active" />
+                      <div className={`step-line ${idx < processSteps.length - 1 ? "has-next" : "last-step"}`} />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="process-title">{step.title}</h3>
-                <p className="process-desc">{step.desc}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
 
-        <div style={{ marginTop: "50px", textAlign: "center" }}>
-          <button
-            type="button"
-            className="btn btn-accent"
-            onClick={onOpenConsultation}
-          >
-            Start Step 01: Free Consultation
-          </button>
+        {/* Bottom Action CTA */}
+        <div className="process-bottom-cta">
+          <div className="process-cta-box">
+            <div className="cta-text-group">
+              <span className="cta-eyebrow">
+                <Sparkles size={15} color="#FFA700" /> Start With Complete Peace of Mind
+              </span>
+              <h4 className="cta-heading">Ready to Begin Step 01 Today?</h4>
+              <p className="cta-subtext">Get your transcripts evaluated by our senior education consultants with zero obligation.</p>
+            </div>
+            <button
+              type="button"
+              className="btn btn-primary btn-process-start"
+              onClick={onOpenConsultation}
+            >
+              <span>Book Free Consultation</span>
+              <ArrowRight size={16} />
+            </button>
+          </div>
         </div>
       </div>
     </section>
