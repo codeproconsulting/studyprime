@@ -12,12 +12,18 @@ export function FAQSection() {
   return (
     <section className="section-padding" style={{ backgroundColor: "#FFFFFF" }}>
       <div className="container">
-        <div className="section-header">
-          <div className="badge badge-gold">
-            <HelpCircle size={14} /> Got Questions?
+        <div className="section-head centered">
+          <div className="section-eyebrow">
+            <span className="eyebrow-dot" />
+            <HelpCircle size={12} />
+            Got Questions?
           </div>
-          <h2 className="section-title">Frequently Asked Questions</h2>
-          <p className="section-subtitle">
+          <h2 className="section-heading">
+            Frequently Asked{" "}
+            <span className="heading-accent">Questions</span>
+          </h2>
+          <span className="section-heading-underline centered" />
+          <p className="section-desc" style={{ marginTop: "16px", margin: "16px auto 0" }}>
             Find immediate answers regarding university admissions, eligibility criteria, and visa requirements.
           </p>
         </div>

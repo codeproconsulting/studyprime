@@ -1,25 +1,30 @@
 import { useState, useMemo } from "react";
 import { Link } from "@remix-run/react";
 import { 
-  Search, 
   MapPin, 
   Building2, 
-  Globe2, 
-  ChevronDown, 
   CheckCircle2, 
-  Sparkles, 
   ArrowRight, 
-  GraduationCap,
-  Award,
-  X
+  GraduationCap
 } from "lucide-react";
 import { partnerUniversities } from "~/data/siteData";
+import { getOfficialUniversityLogo } from "~/utils/universityLogos";
 
 // Curated palette for authentic university crest badges
 const UNIVERSITY_COLORS: Record<string, { bg: string; text: string; border: string }> = {
+  usa: { bg: "#0F294A", text: "#FFFFFF", border: "#E11D48" },
   uk: { bg: "#0B1B3A", text: "#FFA700", border: "#E2E8F0" },
+  australia: { bg: "#004B87", text: "#FFA700", border: "#BFDBFE" },
+  "new-zealand": { bg: "#00247D", text: "#FFFFFF", border: "#CC0000" },
+  japan: { bg: "#BC002D", text: "#FFFFFF", border: "#FEE2E2" },
+  "czech-republic": { bg: "#11457E", text: "#FFFFFF", border: "#D7141A" },
+  hungary: { bg: "#436F4D", text: "#FFFFFF", border: "#CD2A3E" },
+  latvia: { bg: "#9E3039", text: "#FFFFFF", border: "#E2E8F0" },
+  cyprus: { bg: "#D57800", text: "#FFFFFF", border: "#4E7037" },
+  malta: { bg: "#CF142B", text: "#FFFFFF", border: "#E2E8F0" },
+  portugal: { bg: "#006600", text: "#FFFFFF", border: "#FF0000" },
+  uae: { bg: "#00732F", text: "#FFFFFF", border: "#FED7AA" },
   canada: { bg: "#7F1D1D", text: "#FFFFFF", border: "#FECACA" },
-  australia: { bg: "#065F46", text: "#FFFFFF", border: "#A7F3D0" },
   germany: { bg: "#1E293B", text: "#F59E0B", border: "#E2E8F0" },
   ireland: { bg: "#047857", text: "#FFFFFF", border: "#D1FAE5" },
   turkey: { bg: "#991B1B", text: "#FFFFFF", border: "#FEE2E2" },
@@ -43,9 +48,19 @@ function getUniversityInitials(name: string): string {
 
 function getCountryFlag(country: string): string {
   const c = country.toLowerCase();
+  if (c.includes("malta")) return "🇲🇹";
+  if (c.includes("cyprus")) return "🇨🇾";
+  if (c.includes("latvia")) return "🇱🇻";
+  if (c.includes("hungary")) return "🇭🇺";
+  if (c.includes("czech")) return "🇨🇿";
+  if (c.includes("japan")) return "🇯🇵";
+  if (c.includes("usa") || c.includes("united states")) return "🇺🇸";
   if (c.includes("uk") || c.includes("united kingdom")) return "🇬🇧";
-  if (c.includes("canada")) return "🇨🇦";
+  if (c.includes("zealand") || c.includes("nz")) return "🇳🇿";
+  if (c.includes("portugal")) return "🇵🇹";
+  if (c.includes("uae") || c.includes("emirates") || c.includes("dubai")) return "🇦🇪";
   if (c.includes("australia")) return "🇦🇺";
+  if (c.includes("canada")) return "🇨🇦";
   if (c.includes("germany")) return "🇩🇪";
   if (c.includes("ireland")) return "🇮🇪";
   if (c.includes("turkey")) return "🇹🇷";
@@ -54,278 +69,240 @@ function getCountryFlag(country: string): string {
   if (c.includes("netherlands")) return "🇳🇱";
   if (c.includes("switzerland")) return "🇨🇭";
   if (c.includes("spain")) return "🇪🇸";
-  if (c.includes("usa") || c.includes("united states")) return "🇺🇸";
   return "🌍";
 }
 
 export function PartnersSection() {
-  const [selectedCountry, setSelectedCountry] = useState<string>("all");
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [showAllModal, setShowAllModal] = useState<boolean>(false);
-  const [visibleCount, setVisibleCount] = useState<number>(12);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
 
-  // Top featured partner universities for homepage view
-  const featuredUniversities = useMemo(() => {
+  // Curated prominent partner universities including ProConsulting / FrogConsulting UK institutions + Global Network
+  const slideshowUniversities = useMemo(() => {
     const topKeywords = [
-      "University of Birmingham",
+      "University of Bradford",
+      "Keele University",
+      "Birmingham City University",
+      "Heriot-Watt University",
       "Brunel University London",
-      "University of Oxford",
+      "University of Portsmouth",
+      "University of Greenwich",
+      "Coventry University",
+      "University of East London",
+      "University of Bedfordshire",
+      "Leeds Beckett University",
+      "Anglia Ruskin University",
+      "De Montfort University",
+      "University of Central Lancashire",
+      "University of Derby",
+      "University of Northampton",
+      "University of West London",
+      "Cardiff Metropolitan University",
+      "Oxford Brookes University",
+      "Sheffield Hallam University",
+      "University of Hull",
+      "University of Lincoln",
       "University of Chester",
+      "University of Sunderland",
+      "Teesside University",
+      "Aston University",
+      "University of Huddersfield",
+      "Northumbria University",
+      "University of Hertfordshire",
+      "Middlesex University",
+      "BPP University",
+      "University of Malta",
+      "Middlesex University Malta",
+      "MCAST",
+      "Global College Malta",
+      "GBS Malta",
+      "Kyoto Japanese Language School",
+      "Nippon Academy",
+      "Tokyo Cocoro Japanese Language School",
+      "ISCTE Executive Education",
+      "ISCTE Business School",
+      "Arizona State University",
+      "Northeastern University",
+      "Illinois Institute of Technology",
+      "Johns Hopkins University",
+      "University of California, Riverside",
+      "Lincoln University",
+      "Middlesex University Dubai",
+      "University of Wollongong in Dubai",
+      "Curtin University Dubai",
+      "Hult International Business School",
+      "La Trobe University",
+      "University of Newcastle",
+      "Southern Cross University",
+      "University of New England",
+      "Le Cordon Bleu",
+      "Murdoch College",
+      "Australian Institute of Music",
       "Thompson Rivers University",
-      "University of Victoria",
-      "The University of Sydney",
-      "University of Western Australia",
       "Trinity College Dublin",
-      "University College Dublin",
       "SRH Berlin University",
       "University of Europe for Applied Sciences",
       "Istanbul Aydin University",
       "Bahcesehir University",
-      "Toulouse Business School",
-      "LUT University",
     ];
 
     const found = partnerUniversities.filter((uni) =>
       topKeywords.some((kw) => uni.name.toLowerCase().includes(kw.toLowerCase()))
     );
 
-    return found.length >= 12 ? found.slice(0, 12) : partnerUniversities.slice(0, 12);
+    return found.length > 0 ? found : partnerUniversities.slice(0, 60);
   }, []);
 
-  // Filtered universities for the full catalog modal
-  const modalFilteredUniversities = useMemo(() => {
-    return partnerUniversities.filter((uni) => {
-      const matchesCountry =
-        selectedCountry === "all"
-          ? true
-          : uni.country.toLowerCase().includes(selectedCountry.toLowerCase());
+  // Split into 4 distinct vertical streams for multi-column parallax glide
+  const verticalColumns = useMemo(() => {
+    const col1: typeof slideshowUniversities = [];
+    const col2: typeof slideshowUniversities = [];
+    const col3: typeof slideshowUniversities = [];
+    const col4: typeof slideshowUniversities = [];
 
-      const matchesSearch =
-        uni.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        uni.country.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        ("city" in uni && uni.city && uni.city.toLowerCase().includes(searchQuery.toLowerCase()));
-
-      return matchesCountry && matchesSearch;
+    slideshowUniversities.forEach((uni, i) => {
+      if (i % 4 === 0) col1.push(uni);
+      else if (i % 4 === 1) col2.push(uni);
+      else if (i % 4 === 2) col3.push(uni);
+      else col4.push(uni);
     });
-  }, [selectedCountry, searchQuery]);
+
+    return [col1, col2, col3, col4];
+  }, [slideshowUniversities]);
+
 
   return (
-    <section className="clean-partners-section section-padding">
+    <section className="section-padding partners-section-wrapper" id="partners">
       <div className="container">
         {/* Section Header */}
-        <div className="section-header-flex">
-          <div className="header-text-col">
-            <div className="badge badge-gold" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "12px" }}>
-              <Globe2 size={15} /> Verified Institutional Panels
+        <div className="section-head-split">
+          <div className="section-head-text">
+            <div className="section-eyebrow section-eyebrow-gold">
+              <span className="eyebrow-dot" />
+              450+ Partner Institutions
             </div>
-            <h2 className="section-title" style={{ fontSize: "2.6rem", color: "var(--primary-navy)", lineHeight: "1.2", marginBottom: "10px" }}>
-              450+ Panel Universities Worldwide
+            <h2 className="section-heading">
+              Our Authorized{" "}
+              <span className="heading-accent">Partner Universities</span>
             </h2>
-            <p className="section-subtitle" style={{ fontSize: "1.05rem", color: "var(--text-muted)", maxWidth: "620px" }}>
-              Study Prime is an authorized direct representative for accredited institutions across the UK, Canada, Australia, Germany, Ireland, and Europe.
+            <span className="section-heading-underline" />
+            <p className="section-desc" style={{ marginTop: "16px" }}>
+              Study Prime holds direct representation agreements with 450+ accredited world-class universities and pathway colleges across the UK, USA, Australia, Europe, and Canada.
             </p>
           </div>
 
-          <div className="header-action-col">
-            <button
-              type="button"
+          <div className="header-right">
+            <Link
+              to="/universities"
               className="btn btn-outline btn-view-all-unis"
-              onClick={() => setShowAllModal(true)}
             >
               <Building2 size={16} />
-              <span>Browse All 450+ Universities</span>
+              <span>Explore All Universities</span>
               <ArrowRight size={15} />
-            </button>
+            </Link>
           </div>
         </div>
 
-        {/* Curated 12-Card Grid with High-Resolution Emblem Badges */}
-        <div className="curated-partners-grid">
-          {featuredUniversities.map((uni, idx) => {
-            const initials = getUniversityInitials(uni.name);
-            const flag = getCountryFlag(uni.country);
-            const countryKey = Object.keys(UNIVERSITY_COLORS).find((k) =>
-              uni.country.toLowerCase().includes(k)
-            ) || "uk";
-            const colorTheme = UNIVERSITY_COLORS[countryKey];
+        {/* Vertical Gliding Multi-Column Showcase (Upward Motion with Top/Bottom Disappearance) */}
+        <div 
+          className="uni-vertical-showcase-container"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className="uni-vertical-grid">
+            {verticalColumns.map((col, colIdx) => (
+              <div 
+                key={colIdx} 
+                className={`uni-vertical-column col-${colIdx + 1} ${isPaused ? "paused" : ""}`}
+              >
+                <div className="uni-vertical-column-track">
+                  {[...col, ...col].map((uni, idx) => {
+                    const initials = getUniversityInitials(uni.name);
+                    const flag = getCountryFlag(uni.country);
+                    const countryKey = Object.keys(UNIVERSITY_COLORS).find((k) =>
+                      uni.country.toLowerCase().includes(k)
+                    ) || "uk";
+                    const colorTheme = UNIVERSITY_COLORS[countryKey];
+                    const officialLogo = getOfficialUniversityLogo(uni.name, uni.country, uni.logo);
 
-            return (
-              <div key={idx} className="curated-partner-card">
-                <div className="partner-emblem-header">
-                  <div
-                    className="partner-crest-badge"
-                    style={{
-                      background: `linear-gradient(135deg, ${colorTheme.bg}, #0066FF)`,
-                      color: colorTheme.text,
-                    }}
-                  >
-                    <GraduationCap size={16} />
-                    <span>{initials}</span>
-                  </div>
-                  <span className="partner-flag-bubble">{flag}</span>
-                </div>
+                    return (
+                      <Link
+                        key={`${uni.name}-${colIdx}-${idx}`}
+                        to="/universities"
+                        className="uni-vertical-card"
+                        title={`View all ${uni.country} partner universities`}
+                      >
+                        <div className="partner-emblem-header">
+                          <div className="partner-logo-container">
+                            {officialLogo ? (
+                              <div className="partner-logo-emblem-wrap">
+                                <img
+                                  src={officialLogo}
+                                  alt={`${uni.name} logo`}
+                                  className="partner-official-logo-img"
+                                  loading="lazy"
+                                  onError={(e) => {
+                                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                                  }}
+                                />
+                              </div>
+                            ) : (
+                              <div
+                                className="partner-crest-badge"
+                                style={{
+                                  background: `linear-gradient(135deg, ${colorTheme.bg}, #0066FF)`,
+                                  color: colorTheme.text,
+                                }}
+                              >
+                                <GraduationCap size={14} />
+                                <span>{initials}</span>
+                              </div>
+                            )}
+                          </div>
+                          <span className="partner-flag-bubble">{flag}</span>
+                        </div>
 
-                <div className="partner-card-body">
-                  <div className="partner-meta-row">
-                    <span className="partner-location-pill">
-                      <MapPin size={12} color="#FFA700" />
-                      {uni.country}
-                    </span>
-                    <span className="partner-verified-pill">
-                      <CheckCircle2 size={11} color="#10B981" />
-                      Authorized
-                    </span>
-                  </div>
+                        <div className="partner-card-body">
+                          <div className="partner-meta-row">
+                            <span className="partner-location-pill">
+                              <MapPin size={11} color="#FFA700" />
+                              {uni.country}
+                            </span>
+                            <span className="partner-verified-pill">
+                              <CheckCircle2 size={10} color="#10B981" />
+                              Partner
+                            </span>
+                          </div>
 
-                  <h3 className="partner-uni-name" title={uni.name}>
-                    {uni.name}
-                  </h3>
+                          <h3 className="partner-uni-name" title={uni.name}>
+                            {uni.name}
+                          </h3>
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
 
-        {/* Bottom Banner Triggering Full Directory */}
+        {/* Bottom Banner */}
         <div className="partners-bottom-cta-banner">
           <div className="banner-content">
             <div className="banner-text">
-              <span className="banner-eyebrow">
-                <Sparkles size={14} color="#FFA700" /> Direct University Admissions &amp; CAS Support
-              </span>
               <h4 className="banner-title">Looking for a Specific University or Degree?</h4>
-              <p className="banner-desc">Explore our full global network of 450+ verified partner institutions with instant search and country filters.</p>
+              <p className="banner-desc">Explore our full global network of verified partner institutions across Australia, the UK, Europe, and Canada.</p>
             </div>
-            <button
-              type="button"
+            <Link
+              to="/universities"
               className="btn btn-primary btn-load-all-unis"
-              onClick={() => setShowAllModal(true)}
             >
-              <span>Explore All 450+ Universities</span>
+              <span>Explore All Universities</span>
               <ArrowRight size={16} />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
-
-      {/* Full 450+ Partner Universities Interactive Modal */}
-      {showAllModal && (
-        <div className="dest-modal-backdrop" onClick={() => setShowAllModal(false)}>
-          <div 
-            className="dest-modal-dialog full-unis-modal-dialog" 
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="dest-modal-close-btn"
-              onClick={() => setShowAllModal(false)}
-              aria-label="Close modal"
-            >
-              <X size={18} />
-            </button>
-
-            {/* Modal Header */}
-            <div className="modal-top-header">
-              <div className="badge badge-gold" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "8px" }}>
-                <Building2 size={14} /> Full Panel Directory ({partnerUniversities.length} Institutions)
-              </div>
-              <h3 style={{ fontSize: "1.8rem", fontWeight: 800, color: "var(--primary-navy)", margin: "0 0 16px 0" }}>
-                Verified Partner Universities &amp; Colleges
-              </h3>
-
-              {/* Modal Search Bar */}
-              <div className="modal-search-row">
-                <div className="dest-search-wrap" style={{ flexGrow: 1 }}>
-                  <Search size={18} className="search-icon-inside" />
-                  <input
-                    type="text"
-                    placeholder="Search university by name, city, or keyword..."
-                    className="dest-search-input"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    autoFocus
-                  />
-                </div>
-              </div>
-
-              {/* Country Filter Tabs */}
-              <div className="modal-country-pills">
-                {[
-                  { id: "all", label: "All Countries" },
-                  { id: "uk", label: "🇬🇧 UK" },
-                  { id: "canada", label: "🇨🇦 Canada" },
-                  { id: "australia", label: "🇦🇺 Australia" },
-                  { id: "germany", label: "🇩🇪 Germany" },
-                  { id: "ireland", label: "🇮🇪 Ireland" },
-                  { id: "turkey", label: "🇹🇷 Turkey" },
-                  { id: "france", label: "🇫🇷 France" },
-                  { id: "finland", label: "🇫🇮 Finland" },
-                  { id: "netherlands", label: "🇳🇱 Netherlands" },
-                  { id: "switzerland", label: "🇨🇭 Switzerland" },
-                  { id: "spain", label: "🇪🇸 Spain" },
-                ].map((c) => (
-                  <button
-                    key={c.id}
-                    type="button"
-                    className={`modal-country-btn ${selectedCountry === c.id ? "active" : ""}`}
-                    onClick={() => setSelectedCountry(c.id)}
-                  >
-                    {c.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Modal Body: Searchable Grid */}
-            <div className="modal-unis-scrollable-body">
-              <div className="modal-unis-grid-layout">
-                {modalFilteredUniversities.slice(0, visibleCount * 3).map((uni, i) => {
-                  const initials = getUniversityInitials(uni.name);
-                  const flag = getCountryFlag(uni.country);
-
-                  return (
-                    <div key={i} className="modal-uni-row-card">
-                      <div className="modal-uni-crest-box">
-                        <span className="modal-uni-flag-mini">{flag}</span>
-                        <span className="modal-uni-initials">{initials}</span>
-                      </div>
-                      <div className="modal-uni-info">
-                        <h4 className="modal-uni-title">{uni.name}</h4>
-                        <span className="modal-uni-loc">
-                          <MapPin size={12} color="#FFA700" />
-                          {uni.city ? `${uni.city}, ` : ""}
-                          {uni.country}
-                        </span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {modalFilteredUniversities.length === 0 && (
-                <div style={{ textAlign: "center", padding: "50px 20px", color: "#64748B" }}>
-                  <Building2 size={42} color="#CBD5E1" style={{ margin: "0 auto 12px" }} />
-                  <p>No partner universities found matching "{searchQuery}".</p>
-                </div>
-              )}
-
-              {visibleCount * 3 < modalFilteredUniversities.length && (
-                <div style={{ textAlign: "center", marginTop: "24px" }}>
-                  <button
-                    type="button"
-                    className="btn btn-outline"
-                    onClick={() => setVisibleCount((prev) => prev + 12)}
-                    style={{ padding: "10px 22px", fontSize: "0.9rem" }}
-                  >
-                    <span>Load More Institutions ({modalFilteredUniversities.length - visibleCount * 3} remaining)</span>
-                    <ChevronDown size={16} />
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
+

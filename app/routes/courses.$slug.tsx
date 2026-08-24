@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLoaderData, useOutletContext, Link } from "@remix-run/react";
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
@@ -20,6 +21,7 @@ import {
   FileText
 } from "lucide-react";
 import { coursesData, type CourseItem, siteConfig } from "~/data/siteData";
+import { ConsultationModal } from "~/components/ConsultationModal";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   if (!data?.course) {
@@ -48,7 +50,16 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
 export default function CourseDetailPage() {
   const { course, relatedCourses } = useLoaderData<typeof loader>();
-  const { openConsultation } = useOutletContext<{ openConsultation: () => void }>() || {};
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const context = useOutletContext<{ openConsultation?: () => void }>() || {};
+
+  const handleOpenConsult = () => {
+    if (context.openConsultation) {
+      context.openConsultation();
+    } else {
+      setIsConsultationOpen(true);
+    }
+  };
 
   return (
     <div className="course-detail-page">
@@ -108,7 +119,7 @@ export default function CourseDetailPage() {
                 <button
                   type="button"
                   className="btn btn-accent btn-full-width"
-                  onClick={openConsultation}
+                  onClick={handleOpenConsult}
                 >
                   <span>Apply for This Program</span>
                   <ArrowRight size={16} />
@@ -253,7 +264,7 @@ export default function CourseDetailPage() {
                   <button
                     type="button"
                     className="btn btn-primary btn-full-width"
-                    onClick={openConsultation}
+                    onClick={handleOpenConsult}
                     style={{ marginBottom: "10px" }}
                   >
                     <span>Book Free Counseling</span>
@@ -306,7 +317,7 @@ export default function CourseDetailPage() {
               <button
                 type="button"
                 className="btn btn-accent"
-                onClick={openConsultation}
+                onClick={handleOpenConsult}
               >
                 <span>Start Application</span>
                 <ArrowRight size={16} />
@@ -315,6 +326,11 @@ export default function CourseDetailPage() {
           </div>
         </div>
       </section>
+
+      <ConsultationModal
+        isOpen={isConsultationOpen}
+        onClose={() => setIsConsultationOpen(false)}
+      />
     </div>
   );
 }

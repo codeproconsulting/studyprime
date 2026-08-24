@@ -20,6 +20,7 @@ import {
   Filter
 } from "lucide-react";
 import { coursesData, type CourseItem } from "~/data/siteData";
+import { ConsultationModal } from "~/components/ConsultationModal";
 
 export const meta: MetaFunction = () => {
   return [
@@ -29,9 +30,18 @@ export const meta: MetaFunction = () => {
 };
 
 export default function CoursesPage() {
-  const { openConsultation } = useOutletContext<{ openConsultation: () => void }>() || {};
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const context = useOutletContext<{ openConsultation?: () => void }>() || {};
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+
+  const handleOpenConsult = () => {
+    if (context.openConsultation) {
+      context.openConsultation();
+    } else {
+      setIsConsultationOpen(true);
+    }
+  };
 
   const iconMap: Record<string, any> = {
     Laptop,
@@ -71,9 +81,6 @@ export default function CoursesPage() {
       {/* Header Banner */}
       <section style={{ background: "linear-gradient(135deg, #1B244A 0%, #0D1329 100%)", color: "#FFFFFF", padding: "80px 0", textAlign: "center" }}>
         <div className="container">
-          <div className="badge badge-gold" style={{ marginBottom: "16px", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-            <Sparkles size={14} /> Future-Ready Programs &amp; Degrees
-          </div>
           <h1 style={{ fontSize: "3rem", color: "#FFFFFF", marginBottom: "16px", fontWeight: 800 }}>
             Academic Courses &amp; Programs
           </h1>
@@ -192,7 +199,7 @@ export default function CoursesPage() {
               <button
                 type="button"
                 className="btn btn-accent"
-                onClick={openConsultation}
+                onClick={handleOpenConsult}
               >
                 <span>Free Course Assessment</span>
                 <ArrowRight size={16} />
@@ -201,6 +208,11 @@ export default function CoursesPage() {
           </div>
         </div>
       </section>
+
+      <ConsultationModal
+        isOpen={isConsultationOpen}
+        onClose={() => setIsConsultationOpen(false)}
+      />
     </div>
   );
 }

@@ -38,9 +38,6 @@ export default function About() {
       {/* Hero Banner */}
       <section style={{ background: "linear-gradient(135deg, #1B244A 0%, #0D1329 100%)", color: "#FFFFFF", padding: "90px 0 80px", textAlign: "center", position: "relative", overflow: "hidden" }}>
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <div className="badge badge-gold" style={{ marginBottom: "16px", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-            <Sparkles size={14} /> About Study Prime
-          </div>
           <h1 style={{ fontSize: "3.2rem", color: "#FFFFFF", marginBottom: "18px", fontWeight: 800, lineHeight: 1.15 }}>
             Empowering Global Ambitions with Precision &amp; Integrity
           </h1>
@@ -65,9 +62,6 @@ export default function About() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "50px", alignItems: "center" }}>
             <div>
-              <div className="badge badge-gold" style={{ marginBottom: "12px", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                <Compass size={14} /> Our Journey &amp; Ethos
-              </div>
               <h2 style={{ fontSize: "2.4rem", color: "var(--primary-navy)", fontWeight: 800, marginBottom: "20px", lineHeight: "1.2" }}>
                 We Don't Just File Applications — We Build Careers
               </h2>
@@ -237,14 +231,14 @@ export default function About() {
 
               <div style={{ marginTop: "28px", borderTop: "1px solid rgba(255,255,255,0.15)", paddingTop: "20px" }}>
                 <a
-                  href="https://maps.google.com/?q=Galleria+Mall+I-8+Markaz+Islamabad"
+                  href="https://www.google.com/maps/search/?api=1&query=Study+Prime+Galleria+Mall+I-8+Markaz+Islamabad"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-accent"
                   style={{ width: "100%", justifyContent: "center" }}
                 >
                   <Navigation size={16} />
-                  <span>Get Live Directions</span>
+                  <span>Get Live Directions on Google Maps</span>
                 </a>
               </div>
             </div>
@@ -253,7 +247,7 @@ export default function About() {
             <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid #E2E8F0", minHeight: "420px", position: "relative", boxShadow: "0 10px 30px rgba(0,0,0,0.06)" }}>
               <iframe
                 title="Study Prime Office Location - Galleria Mall I-8 Markaz Islamabad"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.4566367332766!2d73.07221377626307!3d33.684178537072535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfe97d02cb01%3A0x67ee1c0eb3408ec2!2sGalleria%20Islamabad!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                src="https://maps.google.com/maps?q=Study+Prime+Galleria+Mall+I-8+Markaz+Islamabad&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: "420px", width: "100%", height: "100%", display: "block" }}

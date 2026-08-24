@@ -20,14 +20,18 @@ export function ProcessSection({ onOpenConsultation }: { onOpenConsultation?: ()
     <section className="section-padding animated-process-section">
       <div className="container">
         {/* Header */}
-        <div className="section-header">
-          <div className="badge badge-gold" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "12px" }}>
-            <Compass size={14} /> Proven 4-Step Methodology
+        <div className="section-head centered">
+          <div className="section-eyebrow section-eyebrow-gold">
+            <span className="eyebrow-dot" />
+            <Compass size={12} />
+            Proven 4-Step Methodology
           </div>
-          <h2 className="section-title" style={{ fontSize: "2.6rem", color: "var(--primary-navy)", lineHeight: "1.2", marginBottom: "10px" }}>
-            A Transparent, Seamless Journey
+          <h2 className="section-heading">
+            A Transparent,{" "}
+            <span className="heading-accent">Seamless Journey</span>
           </h2>
-          <p className="section-subtitle" style={{ fontSize: "1.05rem", color: "var(--text-muted)", maxWidth: "620px" }}>
+          <span className="section-heading-underline centered" />
+          <p className="section-desc" style={{ marginTop: "18px" }}>
             From your first free discovery session to landing at your dream campus abroad, our structured roadmap ensures complete clarity.
           </p>
         </div>

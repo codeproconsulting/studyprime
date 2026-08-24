@@ -53,14 +53,18 @@ export function TestimonialsSection() {
     <section className="google-reviews-section section-padding">
       <div className="container">
         {/* Header Block */}
-        <div className="google-reviews-header-block">
-          <div className="badge badge-gold" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "12px" }}>
-            <Sparkles size={14} /> Student Success Stories
+        <div className="section-head centered">
+          <div className="section-eyebrow section-eyebrow-gold">
+            <span className="eyebrow-dot" />
+            <Sparkles size={12} />
+            Student Success Stories
           </div>
-          <h2 className="section-title" style={{ fontSize: "2.6rem", color: "var(--primary-navy)", lineHeight: "1.2", marginBottom: "10px" }}>
-            Trusted by Hundreds of Pakistani Students
+          <h2 className="section-heading">
+            Trusted by Hundreds of{" "}
+            <span className="heading-accent">Pakistani Students</span>
           </h2>
-          <p className="section-subtitle" style={{ fontSize: "1.05rem", color: "var(--text-muted)", maxWidth: "620px" }}>
+          <span className="section-heading-underline centered" />
+          <p className="section-desc" style={{ marginTop: "18px", margin: "18px auto 0" }}>
             Real experiences from students who successfully secured their university admissions and study visas with Study Prime.
           </p>
 
@@ -87,7 +91,7 @@ export function TestimonialsSection() {
             </div>
 
             <a
-              href="https://maps.google.com/?q=Study+Prime+Islamabad"
+              href="https://www.google.com/maps/search/?api=1&query=Study+Prime+Galleria+Mall+I-8+Markaz+Islamabad"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-google-maps-link"
@@ -99,8 +103,10 @@ export function TestimonialsSection() {
           </div>
         </div>
 
+
+
         {/* Single Row Swiper Carousel with Controls */}
-        <div 
+        <div
           className="reviews-carousel-wrapper"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -137,8 +143,8 @@ export function TestimonialsSection() {
               const isActive = index === currentIndex;
 
               return (
-                <div 
-                  key={rev.id} 
+                <div
+                  key={rev.id}
                   className={`google-review-card carousel-card ${isActive ? "active-slide" : ""}`}
                 >
                   {/* Top Card Header */}

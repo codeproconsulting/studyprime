@@ -527,6 +527,353 @@ export const destinationDetailsData: Record<
       "Art, Fashion & Creative Media",
     ],
   },
+  uae: {
+    heroTagline: "World-Class Branch Campuses, Tax-Free Career Prospects & Rapid Student Visas",
+    pswBadge: "Green Visa & Golden Visa Pathways • Tax-Free Earnings",
+    intakes: "September (Fall), January/February (Spring) & Summer",
+    visaRate: "99% High Approval Rate",
+    avgTuition: "AED 35,000 - 85,000 / Year (£7,500 - £18,000)",
+    livingCost: "AED 30,000 - 45,000 / Year",
+    overview:
+      "The United Arab Emirates (Dubai, Abu Dhabi, Ras Al Khaimah, and Ajman) is one of the world's fastest-growing higher education and business hubs. Students can graduate with authentic degrees from top British, Australian, European, and American branch campuses with streamlined visa processing and tax-free post-study career opportunities.",
+    keyBenefits: [
+      "Graduate with identical UK, Australian & US degrees from top branch campuses",
+      "High visa approval rate with simplified paperwork and no extensive holding period requirements",
+      "Zero personal income tax on graduate earnings with direct access to Fortune 500 corporate hubs",
+      "5-Year Student Green Visa and 10-Year Golden Visa opportunities for high achievers",
+      "Extremely safe, multicultural environment in Dubai, RAK, and Ajman",
+    ],
+    admissionRequirements: [
+      "Intermediate / A-Levels / High School Certificate (min 55%+)",
+      "Bachelor's degree for Master's programs (min 2.2+ CGPA)",
+      "IELTS Academic 5.5 - 6.5 (or MOI / University internal English test)",
+      "Statement of Purpose (SOP)",
+      "Valid Passport copy and passport-size photographs",
+    ],
+    visaRequirements: [
+      "University Offer Letter and confirmation of student visa sponsorship",
+      "Tuition deposit receipt",
+      "Passport valid for at least 6 months",
+      "UAE Student Entry Permit / E-Visa issuance",
+      "Mandatory UAE Medical Fitness Test and Emirates ID registration on arrival",
+    ],
+    popularFields: [
+      "International Business, Finance & FinTech",
+      "Artificial Intelligence, Data Science & Cybersecurity",
+      "Hospitality, Tourism & Event Management",
+      "Fashion, Interior Design & Creative Media (DIDI & Marangoni)",
+      "Civil, Mechanical & Electrical Engineering",
+    ],
+  },
+  "new-zealand": {
+    heroTagline: "QS Top-Ranked Universities, 3-Year Post-Study Work Visas & Green List PR Pathways",
+    pswBadge: "Up to 3-Year Post-Study Work Visa • Green List PR Pathway",
+    intakes: "February (Semester 1) & July (Semester 2)",
+    visaRate: "95% High Success Rate",
+    avgTuition: "NZD $24,000 - $38,000 / Year",
+    livingCost: "NZD $20,000 / Year",
+    overview:
+      "New Zealand is renowned worldwide for academic prestige (100% of its 8 public universities are ranked in the global top 3%), safety, and progressive innovation. International graduates can access up to 3 years of post-study work rights and direct pathways to New Zealand Permanent Residency under the Green List skill shortage occupations.",
+    keyBenefits: [
+      "All 8 New Zealand public universities rank in the QS World Top 3%",
+      "Up to 3-Year Post-Study Work Visa (PSWV) with open employer work rights",
+      "Fast-track New Zealand Permanent Residency for Green List in-demand professions",
+      "20 hours/week part-time work rights during study & full-time during holidays",
+      "Spouse work rights available for eligible Master's and Level 8 Post-Grad qualifications",
+    ],
+    admissionRequirements: [
+      "Intermediate / A-Levels (min 60%+) for Bachelor's or Bachelor degree (min 2.5+ CGPA) for Master's",
+      "IELTS Academic 6.0 - 6.5 or PTE Academic 50 - 58+ (or NZCEL qualifications)",
+      "Statement of Purpose (SOP) addressing Genuine Student Intent",
+      "Academic transcripts, mark sheets, and certified degree certificates",
+      "CV & Reference letters for postgraduate programs",
+    ],
+    visaRequirements: [
+      "Unconditional Offer of Place from NZQA-accredited university or ITP",
+      "Proof of full tuition fee payment or approved financial undertaking",
+      "Living expenses funds: NZD $20,000 per year held in an acceptable bank account",
+      "Immigration New Zealand (INZ) Medical Certificate & Chest X-Ray",
+      "Police clearance certificate & travel/health insurance",
+    ],
+    popularFields: [
+      "Information Technology, Software Development & AI",
+      "Civil, Structural & Environmental Engineering",
+      "Business Analytics, Supply Chain & Management",
+      "Culinary Arts, Hospitality & Tourism Management (ITC & Le Cordon Bleu)",
+      "Aviation & Commercial Pilot Training (NZAAL)",
+      "Agricultural Science & Viticulture (Lincoln University)",
+    ],
+  },
+  portugal: {
+    heroTagline: "Schengen Mobility, Triple-Accredited Business Schools & 1-Year Job Search Visas",
+    pswBadge: "1-Year Job Search Visa • EU Schengen Residency",
+    intakes: "September/October (Fall) & February (Spring)",
+    visaRate: "96% High Success Rate",
+    avgTuition: "€3,000 - €9,000 / Year",
+    livingCost: "€6,000 - €8,500 / Year",
+    overview:
+      "Portugal has emerged as one of Western Europe's most attractive, welcoming, and cost-effective study destinations. Offering globally ranked institutions such as ISCTE Executive Education and Business School with triple accreditations (AACSB, AMBA, EQUIS), students benefit from 100% English-taught Master's degrees, vibrant tech hubs in Lisbon, and a 1-year post-study job search visa.",
+    keyBenefits: [
+      "1-Year Post-Study Job Search Residence Permit across Portugal",
+      "Triple-accredited world-class business and executive programs (ISCTE)",
+      "Significantly lower cost of living and tuition compared to northern Europe",
+      "Full Schengen visa mobility across 27 EU member states",
+      "Right to work part-time (20 hours/week) during academic semesters",
+    ],
+    admissionRequirements: [
+      "High School Diploma / Intermediate for Bachelor's; Bachelor's degree for Master's/Executive programs",
+      "IELTS Academic 6.0 - 6.5 or verified English Medium of Instruction (MOI)",
+      "Statement of Purpose (SOP) & Updated CV / Resume",
+      "Attested academic transcripts and degree certificates",
+      "Professional references for Executive Education / MBA applications",
+    ],
+    visaRequirements: [
+      "National D4 / D2 Student Visa Application Form",
+      "Official Letter of Acceptance from accredited Portuguese university (e.g. ISCTE)",
+      "Proof of financial means (min ~€8,400 per year in bank account)",
+      "Proof of accommodation in Portugal (lease agreement or university housing letter)",
+      "Valid passport, travel health insurance (€30,000 coverage), and Police Clearance Certificate (attested)",
+    ],
+    popularFields: [
+      "Executive Management, Strategy & Leadership (ISCTE)",
+      "International Management, Finance & Business Analytics",
+      "Data Science, Applied AI & Information Systems",
+      "Tourism, Hospitality & Sustainable Heritage Management",
+      "Software Engineering & Digital Transformation",
+    ],
+  },
+  japan: {
+    heroTagline: "Cutting-Edge Innovation, 28-Hour Work Rights & Direct Pathways to Tech Employment",
+    pswBadge: "28 Hrs/Week Work Rights • SSW & Engineer Work Visas",
+    intakes: "April (Spring - Primary), October (Autumn), July & January",
+    visaRate: "97% High Success Rate with COE",
+    avgTuition: "¥650,000 - ¥1,200,000 / Year (~$4,500 - $8,000)",
+    livingCost: "¥80,000 - ¥140,000 / Month (~$550 - $950)",
+    overview:
+      "Japan is the world's third-largest economy and a global technological powerhouse. Japanese language programs and vocational/university degrees offer high-demand career pathways in software engineering, robotics, business management, tourism, and healthcare. International students are permitted to work up to 28 hours per week with abundant part-time and full-time employment options upon graduation.",
+    keyBenefits: [
+      "Generous part-time work permit: 28 hours/week during semesters & 40 hours/week during official holidays",
+      "Certificate of Eligibility (COE) issued directly by Japanese Immigration Bureau",
+      "Direct progression from Japanese Language Institutes to Top National Universities (Todai, Kyoto, Tokyo Tech) and Senmon Gakko (Vocational Colleges)",
+      "Streamlined transition to 'Specified Skilled Worker (SSW)' or 'Engineer/Specialist in Humanities' full-time work visas",
+      "World-class public safety, futuristic infrastructure, and rich cultural heritage",
+    ],
+    admissionRequirements: [
+      "Minimum 12 years of formal education (FA/FSc/ICS/A-Levels or equivalent)",
+      "Basic Japanese language proficiency (min 150 hours of study or JLPT N5 / NAT-TEST 5Q)",
+      "Statement of Purpose / Study Plan detailing academic goals in Japan",
+      "Academic mark sheets, passing certificates, and attested degrees",
+      "Financial sponsor documentation (bank statement of approx PKR 35-40 Lakhs / $15,000+)",
+    ],
+    visaRequirements: [
+      "Original Certificate of Eligibility (COE) issued by Japan Immigration",
+      "Official Letter of Admission / Acceptance from Japanese Language Institute or University",
+      "Japanese Visa Application Form with 45x35mm photos (white background)",
+      "Sponsor's tax returns, salary certificates, and bank balance confirmation",
+      "Original passport, CNIC, and relationship documents (FRC/birth certificate attested)",
+    ],
+    popularFields: [
+      "Japanese Language & Cultural Immersion Programs",
+      "Robotics, Computer Science & AI Engineering",
+      "Automobile Technology & Advanced Manufacturing",
+      "International Business, Trade & Supply Chain",
+      "Culinary Arts, Hospitality & Tourism Management",
+    ],
+  },
+  "czech-republic": {
+    heroTagline: "Heart of Europe, Dual US/EU Accreditations & 9-Month Job Search Visa",
+    pswBadge: "9-Month Job Search Visa • Schengen EU Mobility",
+    intakes: "September / October (Fall) & February (Spring)",
+    visaRate: "95% Success Rate",
+    avgTuition: "€3,500 - €9,500 / Year",
+    livingCost: "€5,000 - €7,500 / Year",
+    overview:
+      "The Czech Republic is a prime European academic destination celebrated for its rich scholastic heritage, top-ranking engineering faculties, and vibrant student capitals like Prague and Pilsen. Offering prestigious dual-accredited American/European programs and world-class film schools, graduates enjoy full Schengen mobility, low living costs, and 9 months of post-study job seeker residency.",
+    keyBenefits: [
+      "9-Month Post-Study Job Seeker Residence Permit across the Czech Republic",
+      "Dual American and European accredited degrees (Anglo-American University AAU)",
+      "Prestigious hands-on filmmaking and media production (Prague Film Institute)",
+      "High-tech engineering and robotics research (University of West Bohemia)",
+      "Part-time work permitted during studies without a separate work permit",
+      "Central Schengen location with direct access to Germany, Austria, and Poland",
+    ],
+    admissionRequirements: [
+      "Intermediate / High School Diploma for Bachelor's; Bachelor's degree for Master's programs",
+      "IELTS Academic 6.0 - 6.5 / TOEFL or English Medium of Instruction (MOI) certificate",
+      "Statement of Purpose (SOP) & Curriculum Vitae (CV)",
+      "Attested academic transcripts and degree certificates (Nostrification assistance provided)",
+      "Portfolio or creative sample (for Film & Media programs)",
+    ],
+    visaRequirements: [
+      "Long-Term Student Visa (Type D) / Long-Term Residence Permit for Studies Application",
+      "Official Letter of Acceptance from accredited Czech institution",
+      "Proof of funds (approx €5,500 - €6,500 in student or sponsor bank account)",
+      "Proof of accommodation in the Czech Republic (dormitory contract or rental agreement)",
+      "Police Clearance Certificate with Superlegalization / Apostille & Comprehensive Health Insurance (PVZP)",
+    ],
+    popularFields: [
+      "Business Administration, International Relations & Law (AAU Prague)",
+      "Cinematography, Directing & Film Production (Prague Film Institute)",
+      "Electrical Engineering, Electronics & Power Systems (UWB)",
+      "Computer Science & Applied Information Technologies",
+      "Humanities, Journalism & Visual Arts",
+    ],
+  },
+  hungary: {
+    heroTagline: "EU Academic Hub, Stipendium Scholarships & 9-Month Study-to-Work Permit",
+    pswBadge: "9-Month Study-to-Work Permit • Schengen EU Mobility",
+    intakes: "September / October (Fall) & February (Spring)",
+    visaRate: "96% High Success Rate",
+    avgTuition: "€2,500 - €6,500 / Year",
+    livingCost: "€4,500 - €6,500 / Year (~$400-$600/month)",
+    overview:
+      "Hungary is situated in the very center of Europe and is home to centuries-old universities such as the University of Pécs (founded 1367), Budapest Metropolitan University, and Széchenyi István University. With highly affordable tuition fees, world-class English-taught degrees, Stipendium Hungaricum opportunities, and a 9-month Study-to-Work post-study residence permit, Hungary is a premier European gateway.",
+    keyBenefits: [
+      "9-Month Study-to-Work residence permit upon graduation in Hungary",
+      "Full Schengen mobility across all 27 European member states",
+      "Highly affordable tuition fees starting from just €2,500/year",
+      "Part-time work permitted during studies (up to 24 hours/week)",
+      "Vibrant student life in Budapest, Central Europe's safest and most scenic student capital",
+    ],
+    admissionRequirements: [
+      "Intermediate / 12 years education for Bachelor's; Bachelor's degree for Master's programs",
+      "IELTS Academic 5.5 - 6.5 or internal university English language proficiency test / MOI",
+      "Motivation Letter (Statement of Purpose) & CV",
+      "Attested educational documents and transcripts",
+      "Online entrance exam / interview for select universities (BIC, METU, Pécs)",
+    ],
+    visaRequirements: [
+      "D-Type Residence Permit for Studies Application Form (via Enter Hungary portal)",
+      "Official Letter of Admission / Acceptance from accredited Hungarian university",
+      "Proof of payment of tuition fee (first semester/year)",
+      "Bank statement showing minimum €6,000 - €8,000 to cover living expenses",
+      "Proof of accommodation in Hungary (dormitory confirmation or lease agreement)",
+      "Health insurance covering entire stay & clean criminal record certificate",
+    ],
+    popularFields: [
+      "General Medicine, Dentistry & Pharmacy (University of Pécs)",
+      "Business Administration, International Economics & Marketing (BBU & METU)",
+      "Computer Science, Software Engineering & Artificial Intelligence (BIC & SZE)",
+      "Automotive Engineering & Mechatronics (Széchenyi István University)",
+      "Management, Finance & International Business (ESSCA Budapest & Wekerle)",
+    ],
+  },
+  latvia: {
+    heroTagline: "Northern European Knowledge Hub, EU Degrees & 9-Month Job Search Visa",
+    pswBadge: "9-Month Job Search Visa • Schengen EU Mobility",
+    intakes: "September / October (Fall) & February (Spring)",
+    visaRate: "95% Success Rate",
+    avgTuition: "€2,800 - €5,500 / Year",
+    livingCost: "€4,200 - €6,000 / Year (~$350-$500/month)",
+    overview:
+      "Latvia is a progressive Northern European EU member nation with a centuries-old academic culture centered in its historic capital, Riga. The University of Latvia (founded 1919) offers globally recognized degrees in medicine, computer science, business, and humanities, with low tuition fees, affordable living, and 9 months of post-study job search residency.",
+    keyBenefits: [
+      "9-Month Post-Study Job Search Residence Permit in Latvia",
+      "Full Schengen mobility across all 27 EU member countries",
+      "Premier national comprehensive university (University of Latvia, Riga)",
+      "Part-time work permitted during studies (up to 20 hours/week)",
+      "Vibrant IT startup ecosystem and multinational business centers in Riga",
+    ],
+    admissionRequirements: [
+      "High School Diploma / Intermediate for Bachelor's; Bachelor's degree for Master's programs",
+      "IELTS Academic 5.5 - 6.0 or university internal English test / MOI certificate",
+      "Statement of Purpose (SOP) & Updated CV",
+      "Attested educational documents, AIC (Academic Information Centre) diploma recognition",
+      "Passport copy and passport-sized photographs",
+    ],
+    visaRequirements: [
+      "Long-Stay Visa (Type D) / Residence Permit Application Form",
+      "Official Study Agreement & Invitation Letter approved by OCMA (Office of Citizenship and Migration Affairs)",
+      "Bank statement showing minimum €6,000 for annual living expenses",
+      "Proof of accommodation in Latvia (dormitory or rental agreement)",
+      "Police Clearance Certificate with Apostille/Superlegalization & Health insurance",
+    ],
+    popularFields: [
+      "General Medicine & Healthcare Sciences (University of Latvia)",
+      "Computer Science, IT & Software Engineering",
+      "Business Administration & International Economics",
+      "Physics, Optometry & Material Sciences",
+      "European Studies & International Relations",
+    ],
+  },
+  cyprus: {
+    heroTagline: "QS Top-Ranked Mediterranean Education, 50% Scholarships & European Pathways",
+    pswBadge: "EU Degree Recognition • Mediterranean Career Pathways",
+    intakes: "October (Fall Intake) & February (Spring Intake)",
+    visaRate: "97% Very High Approval Rate",
+    avgTuition: "€3,000 - €7,500 / Year (Up to 50% Scholarships)",
+    livingCost: "€3,600 - €5,400 / Year (~$300-$450/month)",
+    overview:
+      "Cyprus is an established Mediterranean educational hub offering globally recognized European degrees taught entirely in English. Home to the University of Nicosia (ranked in the top 500 universities globally by QS and Times Higher Education) and Frederick University, Cyprus offers affordable tuition, generous scholarships up to 50%, a sunny lifestyle, and direct transfer opportunities across Europe.",
+    keyBenefits: [
+      "Top 500 globally ranked institutions (University of Nicosia - UNIC)",
+      "Up to 50% merit and international student scholarships available",
+      "Very high visa success rate with streamlined admission processing",
+      "Part-time student employment permitted during academic sessions",
+      "Safe, English-speaking Mediterranean European lifestyle with low living expenses",
+    ],
+    admissionRequirements: [
+      "Higher Secondary School Certificate / Intermediate for Bachelor's programs",
+      "Bachelor's degree with minimum 2.2 GPA for Master's programs",
+      "English Proficiency: IELTS 5.5-6.0 / TOEFL / University English Placement Test / MOI",
+      "Attested academic transcripts, Statement of Purpose & 2 Reference Letters",
+      "Valid passport (minimum 2 years validity) and police clearance certificate",
+    ],
+    visaRequirements: [
+      "Entry Permit / Student Visa Application Form approved by Migration Department",
+      "Official University Acceptance Letter & Migration Entry Permit (Blue Slip)",
+      "Proof of payment of tuition fee deposit",
+      "Bank solvency letter showing minimum €7,000 in sponsor account",
+      "Attested Medical Fitness Certificates (HIV, Hepatitis B & C, Syphilis, Chest X-ray)",
+      "Attested Police Clearance Certificate & Travel Health Insurance",
+    ],
+    popularFields: [
+      "Human Medicine, Surgery & Pharmacy (University of Nicosia)",
+      "Blockchain, Fintech & Computer Science (UNIC)",
+      "Civil, Mechanical & Electrical Engineering (Frederick University)",
+      "Hospitality, Tourism & Culinary Arts Management",
+      "Business Administration, Digital Marketing & Finance",
+    ],
+  },
+  malta: {
+    heroTagline: "English-Speaking EU Member State, UK-Accredited Degrees & Post-Study Work",
+    pswBadge: "9-Month Job Search Visa • English-Speaking EU Nation",
+    intakes: "October (Fall Intake) & February (Spring Intake)",
+    visaRate: "96% High Success Rate",
+    avgTuition: "€3,000 - €8,500 / Year",
+    livingCost: "€4,000 - €6,000 / Year (~$350-$500/month)",
+    overview:
+      "Malta is an official English-speaking EU and Schengen Member State in the heart of the Mediterranean. Offering British-standard higher education through prestigious institutions like the University of Malta (founded 1592), Middlesex University Malta, MCAST, and Global College Malta, it provides an unbeatable combination of affordable tuition, UK-standard curricula, and post-study employment rights in Europe.",
+    keyBenefits: [
+      "Official English-speaking country with European Union & Schengen membership",
+      "Up to 9-month Post-Study Work Residence Permit upon graduation",
+      "Part-time work permitted (up to 20 hours/week) during academic terms",
+      "Affordable tuition fees and low European living costs",
+      "UK degree validation and direct pathways to European and British employment",
+    ],
+    admissionRequirements: [
+      "Intermediate / HSSC / 12 years schooling for Bachelor's; Bachelor's degree for Master's programs",
+      "English Proficiency: IELTS Academic 5.5 - 6.5 or internal university English test / MOI",
+      "Statement of Purpose (SOP) & Curriculum Vitae (CV)",
+      "Attested academic transcripts, certificates, and 2 Letters of Recommendation",
+      "Valid international passport (minimum 2 years validity)",
+    ],
+    visaRequirements: [
+      "National Long-Stay Student Visa (Type D) / Identità Malta Application",
+      "Official Letter of Acceptance from accredited Maltese higher education institution",
+      "Proof of full tuition fee payment / initial deposit",
+      "Bank statement showing minimum €6,000 - €8,000 for living support",
+      "Proof of verified accommodation in Malta & Travel Medical Insurance (€30,000+ coverage)",
+      "Police Conduct Certificate with Apostille/Superlegalization",
+    ],
+    popularFields: [
+      "Computer Science, Software Development & Artificial Intelligence (Middlesex & MCAST)",
+      "Business Administration, International Finance & Fintech (GBS & Global College)",
+      "International Tourism, Cruise & Hospitality Management (ITS Malta)",
+      "Nursing, Health Sciences & Pharmacy (University of Malta)",
+      "Engineering, Marine Technologies & Applied Sciences",
+    ],
+  },
 };
 
 export default function CountryDetailPage() {
@@ -538,7 +885,7 @@ export default function CountryDetailPage() {
     (d) => d.id.toLowerCase() === rawCountry || d.slug.toLowerCase() === rawCountry
   ) || destinations.find((d) => d.id === "uk")!;
 
-  const details = destinationDetailsData[destination.id] || destinationDetailsData["uk"];
+  const details = destinationDetailsData[destination.id] || destinationDetailsData["new-zealand"] || destinationDetailsData["uk"];
   const { openConsultation } = useOutletContext<{ openConsultation: () => void }>() || {};
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -549,6 +896,15 @@ export default function CountryDetailPage() {
     canada: "Canada",
     uk: "UK",
     australia: "Australia",
+    "new-zealand": "New Zealand",
+    uae: "United Arab Emirates",
+    portugal: "Portugal",
+    japan: "Japan",
+    "czech-republic": "Czech Republic",
+    hungary: "Hungary",
+    latvia: "Latvia",
+    cyprus: "Cyprus",
+    malta: "Malta",
     germany: "Germany",
     france: "France",
     ireland: "Ireland",
@@ -565,7 +921,17 @@ export default function CountryDetailPage() {
   
   const matchedUniversities = partnerUniversities.filter((uni) => 
     uni.country.toLowerCase() === currentCountryName.toLowerCase() ||
-    uni.country.toLowerCase().includes(destination.id)
+    uni.country.toLowerCase().includes(destination.id) ||
+    (destination.id === "malta" && (uni.country.toLowerCase().includes("malta") || uni.city?.toLowerCase().includes("msida") || uni.city?.toLowerCase().includes("valletta") || uni.city?.toLowerCase().includes("paola") || uni.city?.toLowerCase().includes("swieqi") || uni.city?.toLowerCase().includes("sliema") || uni.city?.toLowerCase().includes("bormla") || uni.city?.toLowerCase().includes("floriana") || uni.city?.toLowerCase().includes("mosta") || uni.city?.toLowerCase().includes("birkirkara") || uni.city?.toLowerCase().includes("gzira") || uni.city?.toLowerCase().includes("hamrun") || uni.city?.toLowerCase().includes("luqa") || uni.city?.toLowerCase().includes("smartcity"))) ||
+    (destination.id === "cyprus" && (uni.country.toLowerCase().includes("cyprus") || uni.city?.toLowerCase().includes("nicosia") || uni.city?.toLowerCase().includes("famagusta") || uni.city?.toLowerCase().includes("limassol"))) ||
+    (destination.id === "latvia" && (uni.country.toLowerCase().includes("latvia") || uni.city?.toLowerCase().includes("riga"))) ||
+    (destination.id === "hungary" && (uni.country.toLowerCase().includes("hungary") || uni.city?.toLowerCase().includes("budapest") || uni.city?.toLowerCase().includes("gyor") || uni.city?.toLowerCase().includes("győr") || uni.city?.toLowerCase().includes("pecs") || uni.city?.toLowerCase().includes("pécs") || uni.city?.toLowerCase().includes("miskolc") || uni.city?.toLowerCase().includes("kecskemet"))) ||
+    (destination.id === "czech-republic" && (uni.country.toLowerCase().includes("czech") || uni.city?.toLowerCase().includes("prague") || uni.city?.toLowerCase().includes("pilsen") || uni.city?.toLowerCase().includes("plzeň"))) ||
+    (destination.id === "japan" && (uni.country.toLowerCase().includes("japan") || uni.city?.toLowerCase().includes("tokyo") || uni.city?.toLowerCase().includes("kyoto") || uni.city?.toLowerCase().includes("gunma") || uni.city?.toLowerCase().includes("osaka"))) ||
+    (destination.id === "portugal" && (uni.country.toLowerCase().includes("portugal") || uni.city?.toLowerCase().includes("lisbon"))) ||
+    (destination.id === "usa" && (uni.country.toLowerCase().includes("united states") || uni.country.toLowerCase().includes("usa"))) ||
+    (destination.id === "new-zealand" && (uni.country.toLowerCase().includes("zealand") || uni.country.toLowerCase().includes("nz"))) ||
+    (destination.id === "uae" && (uni.country.toLowerCase().includes("emirates") || uni.city?.toLowerCase().includes("dubai") || uni.city?.toLowerCase().includes("ajman") || uni.city?.toLowerCase().includes("rak")))
   );
 
   const displayUniversities = matchedUniversities.length > 0 
@@ -581,6 +947,15 @@ export default function CountryDetailPage() {
     turkey: "/images/destinations/turkey.jpg",
     uk: "/images/destinations/uk.jpg",
     australia: "/images/destinations/australia.jpg",
+    "new-zealand": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop",
+    uae: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop",
+    portugal: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=1600&auto=format&fit=crop",
+    japan: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1600&auto=format&fit=crop",
+    "czech-republic": "https://images.unsplash.com/photo-1541849546-216549ae216d?q=80&w=1600&auto=format&fit=crop",
+    hungary: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?q=80&w=1600&auto=format&fit=crop",
+    latvia: "https://images.unsplash.com/photo-1578637387939-43c525550085?q=80&w=1600&auto=format&fit=crop",
+    cyprus: "https://images.unsplash.com/photo-1580837119756-563d608dd119?q=80&w=1600&auto=format&fit=crop",
+    malta: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1600&auto=format&fit=crop",
     usa: "/images/destinations/usa.jpg",
     canada: "/images/destinations/canada.jpg",
     ireland: "/images/destinations/ireland.jpg",

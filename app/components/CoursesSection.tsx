@@ -1,10 +1,7 @@
-import { useState } from "react";
 import { Link } from "@remix-run/react";
 import { 
   BookOpen, 
   ArrowRight, 
-  Sparkles, 
-  CheckCircle2, 
   Laptop, 
   BarChart3, 
   Coins, 
@@ -20,8 +17,6 @@ import {
 import { coursesData } from "~/data/siteData";
 
 export function CoursesSection() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
-
   const iconMap: Record<string, any> = {
     Laptop,
     BarChart3,
@@ -33,33 +28,25 @@ export function CoursesSection() {
     Cpu,
   };
 
-  const categories = [
-    { id: "all", label: "All Programs" },
-    { id: "Computer Science & IT", label: "Computer Science & AI" },
-    { id: "Business & Finance", label: "Business & FinTech" },
-    { id: "Healthcare & Life Sciences", label: "Healthcare & Public Health" },
-    { id: "Pathway & Top-Up", label: "1-Year Top-Up (UK)" },
-    { id: "Engineering & Tech", label: "Engineering & Robotics" },
-  ];
-
-  const filteredCourses = coursesData.filter((c) => {
-    if (selectedCategory === "all") return true;
-    return c.category === selectedCategory;
-  });
+  // Featured 3 top programs for a single, impactful row on homepage
+  const featuredCourses = coursesData.slice(0, 3);
 
   return (
     <section className="courses-homepage-section section-padding">
       <div className="container">
         {/* Top Header */}
-        <div className="section-header-flex">
-          <div className="header-text-col">
-            <div className="badge badge-gold" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "12px" }}>
-              <Sparkles size={14} /> High-Demand Academic Programs
+        <div className="section-head-split">
+          <div className="section-head-text">
+            <div className="section-eyebrow">
+              <span className="eyebrow-dot" />
+              Popular Degree Programs
             </div>
-            <h2 className="section-title" style={{ fontSize: "2.6rem", color: "var(--primary-navy)", lineHeight: "1.2", marginBottom: "10px" }}>
-              Top In-Demand Global Courses
+            <h2 className="section-heading">
+              Top In-Demand{" "}
+              <span className="heading-accent">Global Courses</span>
             </h2>
-            <p className="section-subtitle" style={{ fontSize: "1.05rem", color: "var(--text-muted)", maxWidth: "620px" }}>
+            <span className="section-heading-underline" />
+            <p className="section-desc" style={{ marginTop: "16px" }}>
               Explore future-ready degree programs and fast-track pathways across leading universities in the UK, Canada, Australia, and Europe with extended post-study work rights.
             </p>
           </div>
@@ -73,23 +60,9 @@ export function CoursesSection() {
           </div>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="courses-category-pills-row">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              className={`course-cat-pill-btn ${selectedCategory === cat.id ? "active" : ""}`}
-              onClick={() => setSelectedCategory(cat.id)}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Courses Cards Grid */}
-        <div className="courses-cards-grid">
-          {filteredCourses.slice(0, 6).map((course) => {
+        {/* Courses Cards Grid: Exactly 1 Row of 3 Featured Cards */}
+        <div className="courses-cards-grid single-row-featured-grid">
+          {featuredCourses.map((course) => {
             const IconComponent = iconMap[course.icon] || BookOpen;
 
             return (
@@ -138,6 +111,18 @@ export function CoursesSection() {
               </div>
             );
           })}
+        </div>
+
+        {/* Bottom Hub Link */}
+        <div style={{ textAlign: "center", marginTop: "32px" }}>
+          <Link
+            to="/courses"
+            className="btn btn-accent"
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "14px 32px", fontSize: "1rem", fontWeight: 700 }}
+          >
+            <span>Explore All 50+ In-Demand Disciplines &amp; Top-Ups</span>
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
     </section>

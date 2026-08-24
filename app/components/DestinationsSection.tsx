@@ -19,6 +19,15 @@ export function DestinationsSection() {
     turkey: "/images/destinations/turkey.jpg",
     uk: "/images/destinations/uk.jpg",
     australia: "/images/destinations/australia.jpg",
+    "new-zealand": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop",
+    uae: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop",
+    portugal: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=1600&auto=format&fit=crop",
+    japan: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1600&auto=format&fit=crop",
+    "czech-republic": "https://images.unsplash.com/photo-1541849546-216549ae216d?q=80&w=1600&auto=format&fit=crop",
+    hungary: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?q=80&w=1600&auto=format&fit=crop",
+    latvia: "https://images.unsplash.com/photo-1578637387939-43c525550085?q=80&w=1600&auto=format&fit=crop",
+    cyprus: "https://images.unsplash.com/photo-1580837119756-563d608dd119?q=80&w=1600&auto=format&fit=crop",
+    malta: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1600&auto=format&fit=crop",
     usa: "/images/destinations/usa.jpg",
     canada: "/images/destinations/canada.jpg",
     ireland: "/images/destinations/ireland.jpg",
@@ -34,7 +43,16 @@ export function DestinationsSection() {
   const countryUniCounts: Record<string, number> = {
     canada: 103,
     uk: 100,
-    australia: 40,
+    australia: 32,
+    "new-zealand": 33,
+    uae: 23,
+    japan: 7,
+    "czech-republic": 3,
+    hungary: 9,
+    latvia: 1,
+    cyprus: 3,
+    malta: 20,
+    portugal: 3,
     germany: 22,
     france: 30,
     ireland: 42,
@@ -43,7 +61,7 @@ export function DestinationsSection() {
     switzerland: 8,
     spain: 15,
     turkey: 20,
-    usa: 50,
+    usa: 220,
     europe: 35,
   };
 
@@ -97,13 +115,16 @@ export function DestinationsSection() {
         {/* Section Header with Carousel Arrows */}
         <div className="dest-carousel-header">
           <div className="dest-header-text">
-            <div className="badge badge-gold" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "12px" }}>
-              <Globe2 size={15} /> Top Study Destinations
+            <div className="section-eyebrow section-eyebrow-gold">
+              <span className="eyebrow-dot" />
+              <Globe2 size={12} />
+              Top Study Destinations
             </div>
-            <h2 className="section-title" style={{ fontSize: "2.6rem", color: "var(--primary-navy)", lineHeight: "1.2", marginBottom: "10px" }}>
-              Explore Global Academic Hubs
+            <h2 className="section-heading">
+              Explore <span className="heading-accent">Global Academic Hubs</span>
             </h2>
-            <p className="section-subtitle" style={{ fontSize: "1.02rem", color: "var(--text-muted)", maxWidth: "620px" }}>
+            <span className="section-heading-underline" style={{ marginBottom: "12px" }} />
+            <p className="section-desc" style={{ marginTop: "16px" }}>
               Choose your destination to view dedicated admission criteria, post-study work routes, and verified university partner networks.
             </p>
           </div>
