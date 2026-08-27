@@ -166,15 +166,7 @@ export const services: ServiceItem[] = [
 ];
 
 export const destinations: StudyDestination[] = [
-  {
-    id: "turkey",
-    name: "Turkey",
-    slug: "turkey",
-    description: "World-class European accredited degrees, affordable tuition fees, vibrant cultural life, and high visa approval rates for Pakistani students.",
-    popularUniversities: ["Istanbul Aydin University", "Bahcesehir University", "Medipol University", "Sabanci University", "Yeditepe University", "Istinye University"],
-    keyHighlights: ["Affordable tuition & low cost of living", "100% English taught programs available", "No IELTS required in many top universities", "High visa success with swift processing"],
-    flagImage: "/images/flags/turkey.svg",
-  },
+  // 1. UK
   {
     id: "uk",
     name: "United Kingdom",
@@ -184,6 +176,137 @@ export const destinations: StudyDestination[] = [
     keyHighlights: ["1-year Master's degree options", "Post-Study Graduate Visa (PSW)", "World-leading research universities", "Multicultural environment"],
     flagImage: "/images/flags/uk.svg",
   },
+  // 2. NZ
+  {
+    id: "new-zealand",
+    name: "New Zealand",
+    slug: "new-zealand",
+    description: "Ranked among the safest and most scenic study destinations in the world, New Zealand offers 100% of its universities ranked in the QS Top 3%, up to 3-year Post-Study Work Visas, and clear pathways to green list residency.",
+    popularUniversities: [
+      "University of Auckland",
+      "AUT University (Auckland University of Technology)",
+      "Victoria University of Wellington",
+      "University of Waikato",
+      "University of Canterbury",
+      "University of Otago",
+      "Massey University",
+      "Lincoln University",
+      "Ara Institute of Canterbury (Te Pūkenga)",
+      "Otago Polytechnic (Te Pūkenga)",
+      "Eastern Institute of Technology (EIT)",
+      "Auckland Institute of Studies (AIS)",
+      "Whitecliffe College"
+    ],
+    keyHighlights: [
+      "100% of NZ Universities ranked in the QS Top 3% Globally",
+      "Up to 3-Year Post-Study Work Visa (PSWV) with full work rights",
+      "Green List Fast-Track Permanent Residency for in-demand occupations",
+      "Work 20 hours/week during studies & full-time in scheduled vacations"
+    ],
+    flagImage: "/images/flags/new-zealand.svg",
+  },
+  // 3. Malaysia
+  {
+    id: "malaysia",
+    name: "Malaysia",
+    slug: "malaysia",
+    description: "Asia's premier education powerhouse offering globally ranked universities, dual-degree twinning programs with top UK, Australian & US universities, affordable tuition fees, low living costs, and rapid EMGS student visa processing with high success rates.",
+    popularUniversities: [
+      "Universiti Malaya (UM)",
+      "Taylor's University",
+      "Sunway University",
+      "Asia Pacific University of Technology & Innovation (APU)",
+      "Monash University Malaysia",
+      "Curtin University Malaysia",
+      "University of Nottingham Malaysia",
+      "Heriot-Watt University Malaysia",
+      "SEGi University",
+      "INTI International University & Colleges",
+      "UCSI University",
+      "Management & Science University (MSU)"
+    ],
+    keyHighlights: [
+      "Top UK, Australian & US dual-degree and 2+1 / 3+0 twinning programs",
+      "Affordable tuition ($3,500 - $8,500/year) & budget-friendly living expenses",
+      "Rapid EMGS eVAL student visa approvals with no complex bank freeze",
+      "100% English-medium instruction in a safe, dynamic multicultural hub"
+    ],
+    flagImage: "/images/flags/malaysia.svg",
+  },
+  // 4. Turkey
+  {
+    id: "turkey",
+    name: "Turkey",
+    slug: "turkey",
+    description: "World-class European accredited degrees, affordable tuition fees, vibrant cultural life, and high visa approval rates for Pakistani students.",
+    popularUniversities: ["Istanbul Aydin University", "Bahcesehir University", "Medipol University", "Sabanci University", "Yeditepe University", "Istinye University"],
+    keyHighlights: ["Affordable tuition & low cost of living", "100% English taught programs available", "No IELTS required in many top universities", "High visa success with swift processing"],
+    flagImage: "/images/flags/turkey.svg",
+  },
+  // 5. Sweden
+  {
+    id: "sweden",
+    name: "Sweden",
+    slug: "sweden",
+    description: "The global epicenter of innovation, sustainability, and technological design. Sweden offers world-renowned QS Top 100 research universities, prestigious Swedish Institute (SI) scholarships, 100% English-taught Master's degrees, and a 1-year post-study job search residence permit in the Schengen Area.",
+    popularUniversities: [
+      "Lund University",
+      "KTH Royal Institute of Technology",
+      "Uppsala University",
+      "Chalmers University of Technology",
+      "Stockholm University",
+      "Jönköping University",
+      "Linnaeus University",
+      "Halmstad University",
+      "University of Skövde",
+      "Malmö University",
+      "Umeå University",
+      "Linköping University"
+    ],
+    keyHighlights: [
+      "1-Year Post-Study Job Search Residence Permit upon graduation",
+      "Swedish Institute (SI) Scholarships covering 100% tuition & monthly stipend",
+      "Global hub for innovation, startups & tech leaders (Spotify, Ericsson, Volvo, IKEA)",
+      "Unlimited part-time work rights during studies & Schengen Area mobility"
+    ],
+    flagImage: "/images/flags/sweden.svg",
+  },
+  // 6. Finland
+  {
+    id: "finland",
+    name: "Finland",
+    slug: "finland",
+    description: "Ranked the happiest country in the world with Europe's top-rated education system, cutting-edge technology & innovation hubs, generous scholarships, and post-study residence permits.",
+    popularUniversities: ["LUT University", "University of Vaasa", "XAMK University", "Metropolia UAS", "Arcada UAS", "LAB UAS", "Turku UAS", "Edunation Finland"],
+    keyHighlights: ["2-Year Post-Study Work Permit", "Ranked #1 World's Best Education System", "Generous merit-based scholarships up to 100%", "Fast track to Finnish & EU permanent residency"],
+    flagImage: "/images/flags/finland.svg",
+  },
+  // 7. Hungary
+  {
+    id: "hungary",
+    name: "Hungary",
+    slug: "hungary",
+    description: "Centrally located in the EU, Hungary offers affordable English-taught degrees, EU-recognized qualifications, low living expenses, Stipendium Hungaricum scholarship opportunities, and full Schengen Area mobility.",
+    popularUniversities: [
+      "University of Pécs",
+      "Budapest Metropolitan University (METU)",
+      "Budapest University of Economics and Business (BBU)",
+      "Széchenyi István University (SZE)",
+      "Budapest International College (BIC)",
+      "John von Neumann University",
+      "University of Miskolc",
+      "ESSCA School of Management Budapest",
+      "Wekerle International University"
+    ],
+    keyHighlights: [
+      "9-Month Study-to-Work Residence Permit in Hungary upon graduation",
+      "Low tuition fees (€2,500 - €6,500/year) and affordable European living costs",
+      "Schengen 27-country travel mobility across Central and Western Europe",
+      "English-medium undergraduate and postgraduate degrees recognized across the EU"
+    ],
+    flagImage: "/images/flags/hungary.svg",
+  },
+  // 8. USA
   {
     id: "usa",
     name: "United States",
@@ -216,6 +339,62 @@ export const destinations: StudyDestination[] = [
     ],
     flagImage: "/images/flags/usa.svg",
   },
+  // 9. Germany
+  {
+    id: "germany",
+    name: "Germany",
+    slug: "germany",
+    description: "Europe's leading economic and engineering powerhouse offering world-class applied sciences, technology, and management degrees with an 18-month post-study work visa.",
+    popularUniversities: ["University of Europe for Applied Sciences (UE)", "SRH Higher Education", "GISMA University of Applied Sciences", "BSBI Berlin", "Munich Business School", "IU International University", "Macromedia University", "ISM International School of Management"],
+    keyHighlights: ["18-Month Post-Study Job Seeker Visa", "Zero or low tuition fees across partner institutions", "Strongest job market in Europe for tech, business & engineering", "Schengen travel across 27 EU member states"],
+    flagImage: "/images/flags/germany.svg",
+  },
+  // 10. France
+  {
+    id: "france",
+    name: "France",
+    slug: "france",
+    description: "A world-renowned cultural, culinary, fashion, engineering, and business capital. France offers globally accredited Grandes Écoles, 2-year post-study APS work visas, and government housing subsidies (CAF).",
+    popularUniversities: ["Le Cordon Bleu Paris", "Toulouse Business School", "NEOMA Business School", "Montpellier Business School", "ESSCA", "PSB Paris", "EPITECH", "OMNES Education"],
+    keyHighlights: ["2-Year Post-Study Work Visa (APS / RECE)", "French Government CAF Housing Subsidy (up to 40% rent assistance)", "Triple-accredited (EQUIS/AMBA/AACSB) Grandes Écoles", "Schengen visa travel across 27 EU countries"],
+    flagImage: "/images/flags/france.svg",
+  },
+  // 11. Malta
+  {
+    id: "malta",
+    name: "Malta",
+    slug: "malta",
+    description: "An English-speaking European Union & Schengen Member State in the heart of the Mediterranean, Malta offers British-standard education, UK-accredited degrees, 20 hrs/week part-time work rights, and post-study work authorization.",
+    popularUniversities: [
+      "University of Malta",
+      "Middlesex University Malta",
+      "MCAST (Malta College of Arts, Science & Technology)",
+      "Global College Malta",
+      "American University of Malta",
+      "London School of Commerce Malta (LSC)",
+      "Institute of Tourism Studies (ITS)",
+      "GBS Malta (Global Banking School)"
+    ],
+    keyHighlights: [
+      "Official English-speaking country in the European Union & Schengen Area",
+      "Up to 9-month Post-Study Work Visa (Job Search Residence Permit)",
+      "Affordable tuition (€3,000 - €8,500/year) and lower European living costs",
+      "Part-time student employment permitted (20 hours/week after 90 days)",
+      "British curriculum heritage and UK-recognized qualifications"
+    ],
+    flagImage: "/images/flags/malta.svg",
+  },
+  // 12. Canada
+  {
+    id: "canada",
+    name: "Canada",
+    slug: "canada",
+    description: "One of the top study destinations for Pakistani students — offering 100+ partner institutions, Post-Graduation Work Permits, and a clear pathway to permanent residency.",
+    popularUniversities: ["Thompson Rivers University", "Seneca College", "Algonquin College", "Humber Polytechnic", "SAIT", "University of New Brunswick", "Sheridan College", "BCIT"],
+    keyHighlights: ["Post-Graduation Work Permit (PGWP) up to 3 years", "Pathway to Canadian Permanent Residency", "100+ partner colleges & universities", "Co-op & internship programs widely available"],
+    flagImage: "/images/flags/canada.svg",
+  },
+  // Additional Available Destinations Organized Afterwards
   {
     id: "australia",
     name: "Australia",
@@ -240,15 +419,6 @@ export const destinations: StudyDestination[] = [
     flagImage: "/images/flags/australia.svg",
   },
   {
-    id: "canada",
-    name: "Canada",
-    slug: "canada",
-    description: "One of the top study destinations for Pakistani students — offering 100+ partner institutions, Post-Graduation Work Permits, and a clear pathway to permanent residency.",
-    popularUniversities: ["Thompson Rivers University", "Seneca College", "Algonquin College", "Humber Polytechnic", "SAIT", "University of New Brunswick", "Sheridan College", "BCIT"],
-    keyHighlights: ["Post-Graduation Work Permit (PGWP) up to 3 years", "Pathway to Canadian Permanent Residency", "100+ partner colleges & universities", "Co-op & internship programs widely available"],
-    flagImage: "/images/flags/canada.svg",
-  },
-  {
     id: "ireland",
     name: "Ireland",
     slug: "ireland",
@@ -256,60 +426,6 @@ export const destinations: StudyDestination[] = [
     popularUniversities: ["Trinity College Dublin", "University College Dublin", "Dublin City University", "University of Galway", "University of Limerick", "Maynooth University"],
     keyHighlights: ["English-speaking EU country", "2-year Stay Back Visa after graduation", "Thriving tech industry (Google, Meta, Apple HQs)", "Low cost of living vs UK"],
     flagImage: "/images/flags/ireland.svg",
-  },
-  {
-    id: "switzerland",
-    name: "Switzerland",
-    slug: "switzerland",
-    description: "World-renowned for hospitality, business, and management degrees. Switzerland offers prestigious European education with multi-lingual campuses and global career pathways.",
-    popularUniversities: ["EU Business School", "BHMS University Centre", "Rushford Business School"],
-    keyHighlights: ["Top-ranked hospitality & business programs", "Multi-campus: Switzerland, Spain & Germany", "Strong career network in European industry", "Prestigious European diploma recognition"],
-    flagImage: "/images/flags/switzerland.svg",
-  },
-  {
-    id: "spain",
-    name: "Spain",
-    slug: "spain",
-    description: "A vibrant European destination with top-ranked business, design, tourism, and hospitality programs in Barcelona, Madrid, and beyond — all at an affordable cost of living.",
-    popularUniversities: ["Universidad Europea", "Toulouse Business School Barcelona", "UCAM", "EU Business School", "CETT Barcelona", "SBS Swiss Business School"],
-    keyHighlights: ["Affordable tuition & sunny lifestyle", "World-class business & design schools", "Schengen zone – travel across 27 EU countries", "English-taught degree programs available"],
-    flagImage: "/images/flags/spain.svg",
-  },
-  {
-    id: "netherlands",
-    name: "Netherlands",
-    slug: "netherlands",
-    description: "A European innovation powerhouse offering world-class applied sciences, sustainable energy, and business education taught 100% in English in Amsterdam, Haarlem, and Utrecht.",
-    popularUniversities: ["CEG ONCAMPUS Amsterdam", "SRH Haarlem University", "Tio Business School", "EIT InnoEnergy & ISE"],
-    keyHighlights: ["1-Year Orientation Year (Zoekjaar) Post-Study Visa", "95%+ English proficiency across the country", "Hub for tech, sustainable energy & logistics", "High graduate employability across the EU"],
-    flagImage: "/images/flags/netherlands.svg",
-  },
-  {
-    id: "germany",
-    name: "Germany",
-    slug: "germany",
-    description: "Europe's leading economic and engineering powerhouse offering world-class applied sciences, technology, and management degrees with an 18-month post-study work visa.",
-    popularUniversities: ["University of Europe for Applied Sciences (UE)", "SRH Higher Education", "GISMA University of Applied Sciences", "BSBI Berlin", "Munich Business School", "IU International University", "Macromedia University", "ISM International School of Management"],
-    keyHighlights: ["18-Month Post-Study Job Seeker Visa", "Zero or low tuition fees across partner institutions", "Strongest job market in Europe for tech, business & engineering", "Schengen travel across 27 EU member states"],
-    flagImage: "/images/flags/germany.svg",
-  },
-  {
-    id: "finland",
-    name: "Finland",
-    slug: "finland",
-    description: "Ranked the happiest country in the world with Europe's top-rated education system, cutting-edge technology & innovation hubs, generous scholarships, and post-study residence permits.",
-    popularUniversities: ["LUT University", "University of Vaasa", "XAMK University", "Metropolia UAS", "Arcada UAS", "LAB UAS", "Turku UAS", "Edunation Finland"],
-    keyHighlights: ["2-Year Post-Study Work Permit", "Ranked #1 World's Best Education System", "Generous merit-based scholarships up to 100%", "Fast track to Finnish & EU permanent residency"],
-    flagImage: "/images/flags/finland.svg",
-  },
-  {
-    id: "france",
-    name: "France",
-    slug: "france",
-    description: "A world-renowned cultural, culinary, fashion, engineering, and business capital. France offers globally accredited Grandes Écoles, 2-year post-study APS work visas, and government housing subsidies (CAF).",
-    popularUniversities: ["Le Cordon Bleu Paris", "Toulouse Business School", "NEOMA Business School", "Montpellier Business School", "ESSCA", "PSB Paris", "EPITECH", "OMNES Education"],
-    keyHighlights: ["2-Year Post-Study Work Visa (APS / RECE)", "French Government CAF Housing Subsidy (up to 40% rent assistance)", "Triple-accredited (EQUIS/AMBA/AACSB) Grandes Écoles", "Schengen visa travel across 27 EU countries"],
-    flagImage: "/images/flags/france.svg",
   },
   {
     id: "uae",
@@ -340,32 +456,31 @@ export const destinations: StudyDestination[] = [
     flagImage: "/images/flags/uae.svg",
   },
   {
-    id: "new-zealand",
-    name: "New Zealand",
-    slug: "new-zealand",
-    description: "Ranked among the safest and most scenic study destinations in the world, New Zealand offers 100% of its universities ranked in the QS Top 3%, up to 3-year Post-Study Work Visas, and clear pathways to green list residency.",
-    popularUniversities: [
-      "University of Auckland",
-      "AUT University (Auckland University of Technology)",
-      "Victoria University of Wellington",
-      "University of Waikato",
-      "University of Canterbury",
-      "University of Otago",
-      "Massey University",
-      "Lincoln University",
-      "Ara Institute of Canterbury (Te Pūkenga)",
-      "Otago Polytechnic (Te Pūkenga)",
-      "Eastern Institute of Technology (EIT)",
-      "Auckland Institute of Studies (AIS)",
-      "Whitecliffe College"
-    ],
-    keyHighlights: [
-      "100% of NZ Universities ranked in the QS Top 3% Globally",
-      "Up to 3-Year Post-Study Work Visa (PSWV) with full work rights",
-      "Green List Fast-Track Permanent Residency for in-demand occupations",
-      "Work 20 hours/week during studies & full-time in scheduled vacations"
-    ],
-    flagImage: "/images/flags/new-zealand.svg",
+    id: "spain",
+    name: "Spain",
+    slug: "spain",
+    description: "A vibrant European destination with top-ranked business, design, tourism, and hospitality programs in Barcelona, Madrid, and beyond — all at an affordable cost of living.",
+    popularUniversities: ["Universidad Europea", "Toulouse Business School Barcelona", "UCAM", "EU Business School", "CETT Barcelona", "SBS Swiss Business School"],
+    keyHighlights: ["Affordable tuition & sunny lifestyle", "World-class business & design schools", "Schengen zone – travel across 27 EU countries", "English-taught degree programs available"],
+    flagImage: "/images/flags/spain.svg",
+  },
+  {
+    id: "netherlands",
+    name: "Netherlands",
+    slug: "netherlands",
+    description: "A European innovation powerhouse offering world-class applied sciences, sustainable energy, and business education taught 100% in English in Amsterdam, Haarlem, and Utrecht.",
+    popularUniversities: ["CEG ONCAMPUS Amsterdam", "SRH Haarlem University", "Tio Business School", "EIT InnoEnergy & ISE"],
+    keyHighlights: ["1-Year Orientation Year (Zoekjaar) Post-Study Visa", "95%+ English proficiency across the country", "Hub for tech, sustainable energy & logistics", "High graduate employability across the EU"],
+    flagImage: "/images/flags/netherlands.svg",
+  },
+  {
+    id: "switzerland",
+    name: "Switzerland",
+    slug: "switzerland",
+    description: "World-renowned for hospitality, business, and management degrees. Switzerland offers prestigious European education with multi-lingual campuses and global career pathways.",
+    popularUniversities: ["EU Business School", "BHMS University Centre", "Rushford Business School"],
+    keyHighlights: ["Top-ranked hospitality & business programs", "Multi-campus: Switzerland, Spain & Germany", "Strong career network in European industry", "Prestigious European diploma recognition"],
+    flagImage: "/images/flags/switzerland.svg",
   },
   {
     id: "portugal",
@@ -426,30 +541,6 @@ export const destinations: StudyDestination[] = [
     flagImage: "/images/flags/czech-republic.svg",
   },
   {
-    id: "hungary",
-    name: "Hungary",
-    slug: "hungary",
-    description: "Centrally located in the EU, Hungary offers affordable English-taught degrees, EU-recognized qualifications, low living expenses, Stipendium Hungaricum scholarship opportunities, and full Schengen Area mobility.",
-    popularUniversities: [
-      "University of Pécs",
-      "Budapest Metropolitan University (METU)",
-      "Budapest University of Economics and Business (BBU)",
-      "Széchenyi István University (SZE)",
-      "Budapest International College (BIC)",
-      "John von Neumann University",
-      "University of Miskolc",
-      "ESSCA School of Management Budapest",
-      "Wekerle International University"
-    ],
-    keyHighlights: [
-      "9-Month Study-to-Work Residence Permit in Hungary upon graduation",
-      "Low tuition fees (€2,500 - €6,500/year) and affordable European living costs",
-      "Schengen 27-country travel mobility across Central and Western Europe",
-      "English-medium undergraduate and postgraduate degrees recognized across the EU"
-    ],
-    flagImage: "/images/flags/hungary.svg",
-  },
-  {
     id: "latvia",
     name: "Latvia",
     slug: "latvia",
@@ -482,30 +573,6 @@ export const destinations: StudyDestination[] = [
       "Part-time work rights and Mediterranean lifestyle with 300+ days of sunshine"
     ],
     flagImage: "/images/flags/cyprus.svg",
-  },
-  {
-    id: "malta",
-    name: "Malta",
-    slug: "malta",
-    description: "An English-speaking European Union & Schengen Member State in the heart of the Mediterranean, Malta offers British-standard education, UK-accredited degrees, 20 hrs/week part-time work rights, and post-study work authorization.",
-    popularUniversities: [
-      "University of Malta",
-      "Middlesex University Malta",
-      "MCAST (Malta College of Arts, Science & Technology)",
-      "Global College Malta",
-      "American University of Malta",
-      "London School of Commerce Malta (LSC)",
-      "Institute of Tourism Studies (ITS)",
-      "GBS Malta (Global Banking School)"
-    ],
-    keyHighlights: [
-      "Official English-speaking country in the European Union & Schengen Area",
-      "Up to 9-month Post-Study Work Visa (Job Search Residence Permit)",
-      "Affordable tuition (€3,000 - €8,500/year) and lower European living costs",
-      "Part-time student employment permitted (20 hours/week after 90 days)",
-      "British curriculum heritage and UK-recognized qualifications"
-    ],
-    flagImage: "/images/flags/malta.svg",
   },
   {
     id: "europe",
@@ -2456,6 +2523,35 @@ export const maltaUniversities = [
   { name: "SSM Group Malta", city: "Hamrun", country: "Malta", logo: "https://www.google.com/s2/favicons?domain=ssmgroup.org&sz=128" }
 ];
 
+export const malaysianUniversities = [
+  { name: "Universiti Malaya (UM)", city: "Kuala Lumpur", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=um.edu.my&sz=128" },
+  { name: "Taylor's University", city: "Subang Jaya", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=taylors.edu.my&sz=128" },
+  { name: "Sunway University", city: "Petaling Jaya", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=sunwayuniversity.edu.my&sz=128" },
+  { name: "Asia Pacific University of Technology & Innovation (APU)", city: "Kuala Lumpur", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=apu.edu.my&sz=128" },
+  { name: "Monash University Malaysia", city: "Bandar Sunway", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=monash.edu.my&sz=128" },
+  { name: "Curtin University Malaysia", city: "Miri", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=curtin.edu.my&sz=128" },
+  { name: "University of Nottingham Malaysia", city: "Semenyih", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=nottingham.edu.my&sz=128" },
+  { name: "Heriot-Watt University Malaysia", city: "Putrajaya", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=hw.ac.uk&sz=128" },
+  { name: "SEGi University", city: "Kota Damansara", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=segi.edu.my&sz=128" },
+  { name: "INTI International University", city: "Nilai", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=newinti.edu.my&sz=128" },
+  { name: "UCSI University", city: "Kuala Lumpur", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=ucsiuniversity.edu.my&sz=128" },
+  { name: "Management and Science University (MSU)", city: "Shah Alam", country: "Malaysia", logo: "https://www.google.com/s2/favicons?domain=msu.edu.my&sz=128" }
+];
+
+export const swedishUniversities = [
+  { name: "Lund University", city: "Lund", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=lunduniversity.lu.se&sz=128" },
+  { name: "KTH Royal Institute of Technology", city: "Stockholm", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=kth.se&sz=128" },
+  { name: "Uppsala University", city: "Uppsala", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=uu.se&sz=128" },
+  { name: "Chalmers University of Technology", city: "Gothenburg", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=chalmers.se&sz=128" },
+  { name: "Stockholm University", city: "Stockholm", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=su.se&sz=128" },
+  { name: "Jönköping University", city: "Jönköping", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=ju.se&sz=128" },
+  { name: "Linnaeus University", city: "Växjö", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=lnu.se&sz=128" },
+  { name: "Halmstad University", city: "Halmstad", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=hh.se&sz=128" },
+  { name: "University of Skövde", city: "Skövde", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=his.se&sz=128" },
+  { name: "Malmö University", city: "Malmö", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=mau.se&sz=128" },
+  { name: "Linköping University (LiU)", city: "Linköping", country: "Sweden", logo: "https://www.google.com/s2/favicons?domain=liu.se&sz=128" }
+];
+
 export const partnerUniversities: UniversityPartner[] = [
   ...turkishUniversities,
   ...irishUniversities,
@@ -2477,7 +2573,9 @@ export const partnerUniversities: UniversityPartner[] = [
   ...hungarianUniversities,
   ...latvianUniversities,
   ...cyprusUniversities,
-  ...maltaUniversities
+  ...maltaUniversities,
+  ...malaysianUniversities,
+  ...swedishUniversities
 ];
 
 export const processSteps = [

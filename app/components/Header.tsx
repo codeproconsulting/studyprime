@@ -59,6 +59,13 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       flag: "/images/flags/uk.svg",
     },
     {
+      name: "New Zealand",
+      href: "/destinations/new-zealand",
+      badge: "PSW up to 3-Yr",
+      desc: "QS Top 3% Unis & Green List PR Pathways",
+      flag: "/images/flags/new-zealand.svg",
+    },
+    {
       name: "United States",
       href: "/destinations/usa",
       badge: "3-Yr STEM OPT",
@@ -66,28 +73,28 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       flag: "/images/flags/usa.svg",
     },
     {
-      name: "Australia",
-      href: "/destinations/australia",
-      badge: "High PSW",
-      desc: "Regional Post-Study Work & High Wages",
-      flag: "/images/flags/australia.svg",
-    },
-    {
       name: "Canada",
       href: "/destinations/canada",
       badge: "PGWP up to 3-Yr",
-      desc: "Direct PR Pathways, Co-op Internships",
+      desc: "Direct PR Pathways & Co-op Internships",
       flag: "/images/flags/canada.svg",
     },
   ];
 
   const europeHubs = [
     {
-      name: "Europe (Schengen)",
-      href: "/destinations/europe",
-      badge: "Free / Low Tuition",
-      desc: "Access 27 European Schengen Countries",
-      flag: "/images/flags/europe.svg",
+      name: "Sweden",
+      href: "/destinations/sweden",
+      badge: "SI Scholarships",
+      desc: "Global Innovation Leader & 1-Yr PSW",
+      flag: "/images/flags/sweden.svg",
+    },
+    {
+      name: "Finland",
+      href: "/destinations/finland",
+      badge: "2-Yr PSW",
+      desc: "World #1 Education & 100% Scholarships",
+      flag: "/images/flags/finland.svg",
     },
     {
       name: "Germany",
@@ -97,22 +104,22 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       flag: "/images/flags/germany.svg",
     },
     {
-      name: "Ireland",
-      href: "/destinations/ireland",
-      badge: "2-Yr PSW",
-      desc: "Silicon Valley of Europe & Tech Jobs",
-      flag: "/images/flags/ireland.svg",
-    },
-    {
       name: "France",
       href: "/destinations/france",
       badge: "Post-Study Visa",
-      desc: "Grande École Business & Culinary Arts",
+      desc: "Grande École Business & French CAF Subsidy",
       flag: "/images/flags/france.svg",
     },
   ];
 
   const fastTrackHubs = [
+    {
+      name: "Malaysia",
+      href: "/destinations/malaysia",
+      badge: "Dual Degrees",
+      desc: "UK/Aus Dual Degrees & Fast EMGS Visa",
+      flag: "/images/flags/malaysia.svg",
+    },
     {
       name: "Turkey",
       href: "/destinations/turkey",
@@ -121,25 +128,18 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       flag: "/images/flags/turkey.svg",
     },
     {
-      name: "New Zealand",
-      href: "/destinations/new-zealand",
-      badge: "PSW up to 3-Yr",
-      desc: "High Quality of Life & Tech Pathways",
-      flag: "/images/flags/new-zealand.svg",
+      name: "Hungary",
+      href: "/destinations/hungary",
+      badge: "Schengen Hub",
+      desc: "Stipendium Scholarships & Low Tuition",
+      flag: "/images/flags/hungary.svg",
     },
     {
-      name: "United Arab Emirates",
-      href: "/destinations/uae",
-      badge: "Direct Transfer",
-      desc: "British & Australian Branch Campuses",
-      flag: "/images/flags/uae.svg",
-    },
-    {
-      name: "Cyprus & Malta",
-      href: "/destinations/cyprus",
-      badge: "Budget Friendly",
-      desc: "No IELTS Options & Fast Processing",
-      flag: "/images/flags/cyprus.svg",
+      name: "Malta",
+      href: "/destinations/malta",
+      badge: "English EU",
+      desc: "British Standard Degrees & 20h Work Rights",
+      flag: "/images/flags/malta.svg",
     },
   ];
 
@@ -247,7 +247,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
     },
   ];
 
-  const mobileDestinationsList = [...englishHubs, ...europeHubs.slice(0, 2), ...fastTrackHubs.slice(0, 2)];
+  const mobileDestinationsList = [...englishHubs, ...europeHubs, ...fastTrackHubs];
 
   return (
     <header className="main-site-header">

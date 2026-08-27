@@ -442,7 +442,11 @@ export function getOfficialUniversityLogo(uniName: string, country?: string, exi
                                         ? ".ch"
                                         : country?.toLowerCase().includes("spain")
                                           ? ".es"
-                                          : ".edu";
+                                          : country?.toLowerCase().includes("malaysia")
+                                            ? ".edu.my"
+                                            : country?.toLowerCase().includes("sweden")
+                                              ? ".se"
+                                              : ".edu";
 
   return `https://www.google.com/s2/favicons?domain=${cleanName}${tld}&sz=128`;
 }

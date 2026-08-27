@@ -22,6 +22,8 @@ const UNIVERSITY_COLORS: Record<string, { bg: string; text: string; border: stri
   latvia: { bg: "#9E3039", text: "#FFFFFF", border: "#E2E8F0" },
   cyprus: { bg: "#D57800", text: "#FFFFFF", border: "#4E7037" },
   malta: { bg: "#CF142B", text: "#FFFFFF", border: "#E2E8F0" },
+  malaysia: { bg: "#010066", text: "#FFA700", border: "#CC0001" },
+  sweden: { bg: "#005B99", text: "#FFCD00", border: "#FFCD00" },
   portugal: { bg: "#006600", text: "#FFFFFF", border: "#FF0000" },
   uae: { bg: "#00732F", text: "#FFFFFF", border: "#FED7AA" },
   canada: { bg: "#7F1D1D", text: "#FFFFFF", border: "#FECACA" },
@@ -48,6 +50,8 @@ function getUniversityInitials(name: string): string {
 
 function getCountryFlag(country: string): string {
   const c = country.toLowerCase();
+  if (c.includes("malaysia")) return "🇲🇾";
+  if (c.includes("sweden")) return "🇸🇪";
   if (c.includes("malta")) return "🇲🇹";
   if (c.includes("cyprus")) return "🇨🇾";
   if (c.includes("latvia")) return "🇱🇻";

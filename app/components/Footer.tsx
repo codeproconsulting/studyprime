@@ -103,25 +103,28 @@ export function Footer() {
                 <Link to="/destinations/uk"><ChevronRight size={14} /> Study in UK</Link>
               </li>
               <li>
-                <Link to="/destinations/usa"><ChevronRight size={14} /> Study in USA</Link>
+                <Link to="/destinations/new-zealand"><ChevronRight size={14} /> Study in New Zealand</Link>
               </li>
               <li>
-                <Link to="/destinations/australia"><ChevronRight size={14} /> Study in Australia</Link>
-              </li>
-              <li>
-                <Link to="/destinations/canada"><ChevronRight size={14} /> Study in Canada</Link>
-              </li>
-              <li>
-                <Link to="/destinations/europe"><ChevronRight size={14} /> Study in Europe</Link>
+                <Link to="/destinations/malaysia"><ChevronRight size={14} /> Study in Malaysia</Link>
               </li>
               <li>
                 <Link to="/destinations/turkey"><ChevronRight size={14} /> Study in Turkey</Link>
               </li>
               <li>
+                <Link to="/destinations/sweden"><ChevronRight size={14} /> Study in Sweden</Link>
+              </li>
+              <li>
+                <Link to="/destinations/finland"><ChevronRight size={14} /> Study in Finland</Link>
+              </li>
+              <li>
+                <Link to="/destinations/usa"><ChevronRight size={14} /> Study in USA</Link>
+              </li>
+              <li>
                 <Link to="/destinations/germany"><ChevronRight size={14} /> Study in Germany</Link>
               </li>
               <li>
-                <Link to="/destinations/ireland"><ChevronRight size={14} /> Study in Ireland</Link>
+                <Link to="/destinations/canada"><ChevronRight size={14} /> Study in Canada</Link>
               </li>
             </ul>
           </div>

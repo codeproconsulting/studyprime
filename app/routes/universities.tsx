@@ -21,26 +21,28 @@ export const meta: MetaFunction = () => [
 const COUNTRY_FILTERS = [
   { id: "all", label: "All Countries" },
   { id: "uk", label: "🇬🇧 UK" },
-  { id: "australia", label: "🇦🇺 Australia" },
-  { id: "usa", label: "🇺🇸 USA" },
-  { id: "canada", label: "🇨🇦 Canada" },
   { id: "new-zealand", label: "🇳🇿 New Zealand" },
-  { id: "ireland", label: "🇮🇪 Ireland" },
-  { id: "germany", label: "🇩🇪 Germany" },
-  { id: "malta", label: "🇲🇹 Malta" },
-  { id: "cyprus", label: "🇨🇾 Cyprus" },
-  { id: "hungary", label: "🇭🇺 Hungary" },
-  { id: "netherlands", label: "🇳🇱 Netherlands" },
-  { id: "latvia", label: "🇱🇻 Latvia" },
-  { id: "czech-republic", label: "🇨🇿 Czech Republic" },
-  { id: "japan", label: "🇯🇵 Japan" },
-  { id: "uae", label: "🇦🇪 UAE" },
-  { id: "portugal", label: "🇵🇹 Portugal" },
-  { id: "france", label: "🇫🇷 France" },
-  { id: "finland", label: "🇫🇮 Finland" },
+  { id: "malaysia", label: "🇲🇾 Malaysia" },
   { id: "turkey", label: "🇹🇷 Turkey" },
-  { id: "switzerland", label: "🇨🇭 Switzerland" },
+  { id: "sweden", label: "🇸🇪 Sweden" },
+  { id: "finland", label: "🇫🇮 Finland" },
+  { id: "hungary", label: "🇭🇺 Hungary" },
+  { id: "usa", label: "🇺🇸 USA" },
+  { id: "germany", label: "🇩🇪 Germany" },
+  { id: "france", label: "🇫🇷 France" },
+  { id: "malta", label: "🇲🇹 Malta" },
+  { id: "canada", label: "🇨🇦 Canada" },
+  { id: "australia", label: "🇦🇺 Australia" },
+  { id: "ireland", label: "🇮🇪 Ireland" },
+  { id: "uae", label: "🇦🇪 UAE" },
   { id: "spain", label: "🇪🇸 Spain" },
+  { id: "netherlands", label: "🇳🇱 Netherlands" },
+  { id: "switzerland", label: "🇨🇭 Switzerland" },
+  { id: "portugal", label: "🇵🇹 Portugal" },
+  { id: "japan", label: "🇯🇵 Japan" },
+  { id: "czech-republic", label: "🇨🇿 Czech Republic" },
+  { id: "latvia", label: "🇱🇻 Latvia" },
+  { id: "cyprus", label: "🇨🇾 Cyprus" },
 ];
 
 function getUniversityInitials(name: string): string {
@@ -56,6 +58,8 @@ function getUniversityInitials(name: string): string {
 
 function getCountryFlag(country: string): string {
   const c = country.toLowerCase();
+  if (c.includes("malaysia")) return "🇲🇾";
+  if (c.includes("sweden")) return "🇸🇪";
   if (c.includes("malta")) return "🇲🇹";
   if (c.includes("cyprus")) return "🇨🇾";
   if (c.includes("latvia")) return "🇱🇻";
@@ -85,6 +89,8 @@ function matchesCountryFilter(uni: { name: string; country: string; city?: strin
   const country = uni.country.toLowerCase();
   const city = (uni.city ?? "").toLowerCase();
   switch (selectedCountry) {
+    case "malaysia": return country.includes("malaysia") || ["kuala lumpur","subang","petaling","sunway","miri","semenyih","putrajaya","damansara","nilai","shah alam"].some(c => city.includes(c));
+    case "sweden": return country.includes("sweden") || ["lund","stockholm","uppsala","gothenburg","jönköping","växjö","halmstad","skövde","malmö","linköping"].some(c => city.includes(c));
     case "malta": return country.includes("malta") || ["msida","valletta","paola","swieqi","sliema","bormla","floriana","mosta","birkirkara","gzira","hamrun","luqa","smartcity"].some(c => city.includes(c));
     case "cyprus": return country.includes("cyprus") || ["nicosia","famagusta","limassol"].some(c => city.includes(c));
     case "latvia": return country.includes("latvia") || city.includes("riga");

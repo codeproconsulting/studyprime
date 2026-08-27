@@ -32,6 +32,8 @@ export default function AllDestinationsPage() {
     latvia: "https://images.unsplash.com/photo-1578637387939-43c525550085?q=80&w=1600&auto=format&fit=crop",
     cyprus: "https://images.unsplash.com/photo-1580837119756-563d608dd119?q=80&w=1600&auto=format&fit=crop",
     malta: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1600&auto=format&fit=crop",
+    malaysia: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=1600&auto=format&fit=crop",
+    sweden: "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=1600&auto=format&fit=crop",
     usa: "/images/destinations/usa.jpg",
     canada: "/images/destinations/canada.jpg",
     ireland: "/images/destinations/ireland.jpg",
@@ -50,6 +52,7 @@ export default function AllDestinationsPage() {
     france: "europe",
     ireland: "europe",
     finland: "europe",
+    sweden: "europe",
     netherlands: "europe",
     switzerland: "europe",
     spain: "europe",
@@ -67,6 +70,7 @@ export default function AllDestinationsPage() {
     "new-zealand": "oceania",
     uae: "middle-east",
     japan: "asia",
+    malaysia: "asia",
   };
 
   const countryUniCounts: Record<string, number> = {
@@ -81,6 +85,8 @@ export default function AllDestinationsPage() {
     latvia: 1,
     cyprus: 3,
     malta: 20,
+    malaysia: 18,
+    sweden: 15,
     portugal: 3,
     germany: 22,
     france: 30,

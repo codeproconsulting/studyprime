@@ -874,6 +874,84 @@ export const destinationDetailsData: Record<
       "Engineering, Marine Technologies & Applied Sciences",
     ],
   },
+  malaysia: {
+    heroTagline: "Asia's Premier Education Powerhouse, UK/US/Aus Dual Degrees & Affordable Excellence",
+    pswBadge: "Dual Degrees • Rapid EMGS Visa • Low Living Cost",
+    intakes: "February, July, September & October",
+    visaRate: "98% High Approval Rate",
+    avgTuition: "USD $3,500 - $8,500 / Year (MYR 16,000 - 38,000)",
+    livingCost: "USD $3,000 - $4,500 / Year (~$250-$350/month)",
+    overview:
+      "Malaysia is one of the world's most dynamic and affordable higher education destinations. It hosts top-ranked international branch campuses from the UK and Australia (Monash, Nottingham, Curtin, Heriot-Watt) alongside premier domestic universities (Universiti Malaya, Taylor's, Sunway, APU). Students earn globally recognized degrees at a fraction of Western tuition costs, with fast EMGS student visa approvals and no stringent bank freeze requirements.",
+    keyBenefits: [
+      "Prestigious UK, Australian & US dual-degree, twinning (2+1, 3+0), and transfer options",
+      "Extremely affordable tuition fees ($3,500 - $8,500/year) and low living expenses",
+      "Fast electronic visa approval (EMGS eVAL) with high visa success for Pakistani students",
+      "100% English-medium instruction in a safe, multicultural, and modern environment",
+      "Hub for international tech, finance, and engineering multinationals across Southeast Asia",
+    ],
+    admissionRequirements: [
+      "Intermediate / HSSC / A-Levels (min 50%+) for Bachelor's; 16-year education for Master's",
+      "English Proficiency: IELTS Academic 5.0 - 6.0 or Pearson PTE / Medium of Instruction letter (MOI)",
+      "Complete academic transcripts and educational certificates",
+      "Statement of Purpose (SOP) & Updated CV / Resume",
+      "Valid passport with minimum 18 months validity & passport-size white background photos",
+    ],
+    visaRequirements: [
+      "EMGS (Education Malaysia Global Services) Visa Approval Letter (eVAL) application",
+      "Letter of Offer from accredited Malaysian higher education institution",
+      "Pre-arrival Medical Screening / Health Declaration Form",
+      "Proof of payment of EMGS processing fees and initial university registration fee",
+      "Bank statement showing basic living expense maintenance",
+      "Single Entry Visa (SEV) endorsement from Malaysian Embassy / High Commission",
+    ],
+    popularFields: [
+      "Computer Science, Software Engineering, AI & Cybersecurity (APU & Sunway)",
+      "Business Administration, International Marketing & FinTech (Taylor's & Monash)",
+      "Civil, Mechanical, Electrical & Chemical Engineering (Curtin & Nottingham)",
+      "Hospitality, Tourism & Event Management (Taylor's QS #16 Worldwide)",
+      "Biotechnology, Biomedical Sciences & Pharmacy (UCSI & MSU)",
+    ],
+  },
+  sweden: {
+    heroTagline: "Global Innovation Leader, SI Full Scholarships & 1-Year Post-Study Job Seeker Visa",
+    pswBadge: "1-Year Post-Study Work Visa • Swedish Institute Scholarships",
+    intakes: "August / September (Autumn Main Round) & January (Spring)",
+    visaRate: "95% High Success Rate",
+    avgTuition: "SEK 90,000 - 150,000 / Year (~€8,000 - €14,000)",
+    livingCost: "SEK 10,000 / Month (~€850 - €950/month)",
+    overview:
+      "Sweden ranks among the most innovative, sustainable, and forward-thinking nations in the world. Home to prestigious QS Top 100 research universities such as Lund University, KTH Royal Institute of Technology, Uppsala University, and Chalmers, Sweden delivers cutting-edge English-taught degree programs. International graduates enjoy full Schengen mobility, generous Swedish Institute (SI) full-ride scholarships, and a 12-month post-study residence permit to launch careers in Europe.",
+    keyBenefits: [
+      "1-Year Post-Study Job Search Residence Permit in Sweden upon graduation",
+      "Prestigious Swedish Institute (SI) Scholarships covering 100% tuition + monthly stipend",
+      "Birthplace of global tech and design leaders: Spotify, Ericsson, Volvo, IKEA, Klarna",
+      "No legal limit on student part-time work hours during studies",
+      "Schengen 27-country residence permit with complete European travel freedom",
+    ],
+    admissionRequirements: [
+      "12 years of education (min 65%+) for Bachelor's; 4-year Bachelor's degree (min 2.7+ CGPA) for Master's",
+      "IELTS Academic 6.5 (no band below 5.5) or TOEFL iBT 90 / PTE Academic 62",
+      "Motivation Letter / Statement of Intent tailored to the program syllabus",
+      "Official degree certificates, transcripts, and syllabus descriptions where required",
+      "CV / Portfolio (for architecture, design, and interactive media programs)",
+    ],
+    visaRequirements: [
+      "Swedish Migration Agency (Migrationsverket) Residence Permit for Higher Education Studies",
+      "Official Notification of Selection Results / Admission Letter from University Admissions Sweden",
+      "Proof of full tuition fee payment for the first semester",
+      "Maintenance fund requirement: SEK 10,314 per month held in student's personal bank account",
+      "Comprehensive comprehensive health and accident insurance coverage",
+      "Valid passport covering the full duration of the intended study permit",
+    ],
+    popularFields: [
+      "Software Engineering, Autonomous Systems & Artificial Intelligence (KTH & Chalmers)",
+      "Renewable Energy, Sustainable Engineering & Smart Cities (Lund & Uppsala)",
+      "Industrial Design, Interaction Design & Innovation Management (Umeå & Jönköping)",
+      "International Business, Supply Chain & Sustainability Leadership (Stockholm & Linnaeus)",
+      "Public Health, Biomedicine & Biotechnology (Karolinska & Skövde)",
+    ],
+  },
 };
 
 export default function CountryDetailPage() {
@@ -914,6 +992,8 @@ export default function CountryDetailPage() {
     spain: "Spain",
     turkey: "Turkey",
     usa: "USA",
+    malaysia: "Malaysia",
+    sweden: "Sweden",
     europe: "Europe",
   };
 
@@ -922,6 +1002,8 @@ export default function CountryDetailPage() {
   const matchedUniversities = partnerUniversities.filter((uni) => 
     uni.country.toLowerCase() === currentCountryName.toLowerCase() ||
     uni.country.toLowerCase().includes(destination.id) ||
+    (destination.id === "malaysia" && (uni.country.toLowerCase().includes("malaysia") || uni.city?.toLowerCase().includes("kuala lumpur") || uni.city?.toLowerCase().includes("subang") || uni.city?.toLowerCase().includes("petaling") || uni.city?.toLowerCase().includes("sunway") || uni.city?.toLowerCase().includes("miri") || uni.city?.toLowerCase().includes("semenyih") || uni.city?.toLowerCase().includes("putrajaya") || uni.city?.toLowerCase().includes("damansara") || uni.city?.toLowerCase().includes("nilai") || uni.city?.toLowerCase().includes("shah alam"))) ||
+    (destination.id === "sweden" && (uni.country.toLowerCase().includes("sweden") || uni.city?.toLowerCase().includes("lund") || uni.city?.toLowerCase().includes("stockholm") || uni.city?.toLowerCase().includes("uppsala") || uni.city?.toLowerCase().includes("gothenburg") || uni.city?.toLowerCase().includes("jönköping") || uni.city?.toLowerCase().includes("växjö") || uni.city?.toLowerCase().includes("halmstad") || uni.city?.toLowerCase().includes("skövde") || uni.city?.toLowerCase().includes("malmö") || uni.city?.toLowerCase().includes("linköping"))) ||
     (destination.id === "malta" && (uni.country.toLowerCase().includes("malta") || uni.city?.toLowerCase().includes("msida") || uni.city?.toLowerCase().includes("valletta") || uni.city?.toLowerCase().includes("paola") || uni.city?.toLowerCase().includes("swieqi") || uni.city?.toLowerCase().includes("sliema") || uni.city?.toLowerCase().includes("bormla") || uni.city?.toLowerCase().includes("floriana") || uni.city?.toLowerCase().includes("mosta") || uni.city?.toLowerCase().includes("birkirkara") || uni.city?.toLowerCase().includes("gzira") || uni.city?.toLowerCase().includes("hamrun") || uni.city?.toLowerCase().includes("luqa") || uni.city?.toLowerCase().includes("smartcity"))) ||
     (destination.id === "cyprus" && (uni.country.toLowerCase().includes("cyprus") || uni.city?.toLowerCase().includes("nicosia") || uni.city?.toLowerCase().includes("famagusta") || uni.city?.toLowerCase().includes("limassol"))) ||
     (destination.id === "latvia" && (uni.country.toLowerCase().includes("latvia") || uni.city?.toLowerCase().includes("riga"))) ||
@@ -956,6 +1038,8 @@ export default function CountryDetailPage() {
     latvia: "https://images.unsplash.com/photo-1578637387939-43c525550085?q=80&w=1600&auto=format&fit=crop",
     cyprus: "https://images.unsplash.com/photo-1580837119756-563d608dd119?q=80&w=1600&auto=format&fit=crop",
     malta: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1600&auto=format&fit=crop",
+    malaysia: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=1600&auto=format&fit=crop",
+    sweden: "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=1600&auto=format&fit=crop",
     usa: "/images/destinations/usa.jpg",
     canada: "/images/destinations/canada.jpg",
     ireland: "/images/destinations/ireland.jpg",
