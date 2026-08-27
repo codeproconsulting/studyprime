@@ -187,7 +187,7 @@ export default function Services() {
                   <div className="service-card-left">
                     <div className="service-header-row">
                       <div className="service-icon-box-lg">
-                        <IconComponent size={28} color="#0066FF" />
+                        <IconComponent size={28} color="#081736" />
                       </div>
                       <h2 className="service-card-title">{srv.title}</h2>
                     </div>
@@ -228,7 +228,7 @@ export default function Services() {
                   {/* Right Column: Deliverables & Quality Guarantee Panel */}
                   <div className="service-deliverables-panel">
                     <h3 className="deliverables-title">
-                      <FileText size={18} color="#0066FF" />
+                      <FileText size={18} color="#081736" />
                       <span>{deliverables.title}</span>
                     </h3>
 
@@ -268,7 +268,7 @@ export default function Services() {
           <div className="service-assurance-grid">
             <div className="assurance-card">
               <div className="assurance-icon">
-                <ShieldCheck size={24} color="#0066FF" />
+                <ShieldCheck size={24} color="#081736" />
               </div>
               <h3 className="assurance-title">100% Direct Partnerships</h3>
               <p className="assurance-desc">

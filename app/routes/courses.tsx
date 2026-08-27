@@ -91,7 +91,7 @@ export default function CoursesPage() {
           {/* Search Bar */}
           <div style={{ maxWidth: "600px", margin: "32px auto 0", position: "relative" }}>
             <div className="dest-search-wrap" style={{ background: "#FFFFFF", borderRadius: "50px", padding: "4px 8px" }}>
-              <Search size={20} className="search-icon-inside" style={{ color: "#0066FF" }} />
+              <Search size={20} className="search-icon-inside" style={{ color: "#081736" }} />
               <input
                 type="text"
                 placeholder="Search by course name, field, or destination (e.g. AI, Top-Up, UK)..."
@@ -131,7 +131,7 @@ export default function CoursesPage() {
                 <div key={course.slug} className="course-card-enhanced">
                   <div className="course-card-top-bar">
                     <div className="course-icon-box">
-                      <IconComponent size={24} color="#0066FF" />
+                      <IconComponent size={24} color="#081736" />
                     </div>
                     <span className="course-badge-pill">{course.badge}</span>
                   </div>

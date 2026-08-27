@@ -69,7 +69,7 @@ export function CoursesSection() {
               <div key={course.slug} className="course-card-enhanced">
                 <div className="course-card-top-bar">
                   <div className="course-icon-box">
-                    <IconComponent size={24} color="#0066FF" />
+                    <IconComponent size={24} color="#081736" />
                   </div>
                   <span className="course-badge-pill">{course.badge}</span>
                 </div>

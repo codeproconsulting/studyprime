@@ -383,8 +383,8 @@ export default function ServiceDetailPage() {
               {/* 1. Service Overview Card */}
               <div style={{ background: "#FFFFFF", borderRadius: "18px", border: "1px solid #E2E8F0", padding: "36px", marginBottom: "32px", boxShadow: "0 4px 18px rgba(8,23,54,0.03)" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px" }}>
-                  <div style={{ width: "50px", height: "50px", borderRadius: "12px", background: "#EFF6FF", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <IconComponent size={26} color="#0066FF" />
+                  <div style={{ width: "50px", height: "50px", borderRadius: "12px", background: "rgba(8, 23, 54, 0.08)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <IconComponent size={26} color="#081736" />
                   </div>
                   <div>
                     <h2 style={{ fontSize: "1.7rem", fontWeight: 800, color: "var(--primary-navy)", margin: 0 }}>
@@ -452,7 +452,7 @@ export default function ServiceDetailPage() {
               {/* 3. Required Documents Checklist */}
               <div style={{ background: "#FFFFFF", borderRadius: "18px", border: "1px solid #E2E8F0", padding: "36px", marginBottom: "32px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-                  <FileText size={22} color="#0066FF" />
+                  <FileText size={22} color="#081736" />
                   <h3 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--primary-navy)", margin: 0 }}>
                     Documents Checklist for This Service
                   </h3>
@@ -478,7 +478,7 @@ export default function ServiceDetailPage() {
                         fontWeight: 600
                       }}
                     >
-                      <CheckCircle2 size={16} color="#0066FF" style={{ flexShrink: 0 }} />
+                      <CheckCircle2 size={16} color="#081736" style={{ flexShrink: 0 }} />
                       <span>{doc}</span>
                     </div>
                   ))}
@@ -551,7 +551,7 @@ export default function ServiceDetailPage() {
 
                 <div className="consult-contact-row">
                   <div className="office-tag">
-                    <Award size={14} color="#0066FF" />
+                    <Award size={14} color="#081736" />
                     <span>Office: 1st Floor, Galleria Mall, I-8 Markaz</span>
                   </div>
                 </div>

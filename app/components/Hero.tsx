@@ -95,9 +95,24 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
               {/* Mobile-Only Floating Trust Badge (Bottom Right of Student) */}
               <div className="mobile-floating-trust-badge">
                 <div className="mobile-avatars-group">
-                  <div className="mobile-avatar-circle circle-1"></div>
-                  <div className="mobile-avatar-circle circle-2"></div>
-                  <div className="mobile-avatar-circle circle-3"></div>
+                  <div className="mobile-avatar-circle circle-1">
+                    <img
+                      src="/images/avatars/student-1.jpg"
+                      alt="Student"
+                    />
+                  </div>
+                  <div className="mobile-avatar-circle circle-2">
+                    <img
+                      src="/images/avatars/student-2.jpg"
+                      alt="Student"
+                    />
+                  </div>
+                  <div className="mobile-avatar-circle circle-3">
+                    <img
+                      src="/images/avatars/student-3.jpg"
+                      alt="Student"
+                    />
+                  </div>
                 </div>
                 <div className="mobile-trust-info">
                   <span className="mobile-trust-label">Trusted by</span>

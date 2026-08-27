@@ -248,7 +248,7 @@ export function PartnersSection() {
                               <div
                                 className="partner-crest-badge"
                                 style={{
-                                  background: `linear-gradient(135deg, ${colorTheme.bg}, #0066FF)`,
+                                  background: `linear-gradient(135deg, ${colorTheme.bg}, #081736)`,
                                   color: colorTheme.text,
                                 }}
                               >

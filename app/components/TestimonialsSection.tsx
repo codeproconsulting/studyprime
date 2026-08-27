@@ -185,7 +185,7 @@ export function TestimonialsSection() {
                   {/* Destination & University Tag */}
                   {rev.university && (
                     <div className="rev-uni-pill">
-                      <GraduationCap size={13} color="#0066FF" />
+                      <GraduationCap size={13} color="#081736" />
                       <span>{rev.university} ({rev.destination})</span>
                     </div>
                   )}

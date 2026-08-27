@@ -1,25 +1,259 @@
 import { Link, useLocation } from "@remix-run/react";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { 
+  ChevronDown, 
+  ArrowRight, 
+  Globe2, 
+  GraduationCap, 
+  Laptop, 
+  BarChart3, 
+  Briefcase, 
+  Coins, 
+  HeartPulse, 
+  ShieldCheck, 
+  Sparkles, 
+  FileText, 
+  Plane,
+  Cpu,
+  Building2,
+  X 
+} from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 
 export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Study Destinations", href: "/destinations" },
-    { name: "Courses", href: "/courses" },
-    { name: "Services", href: "/services" },
-    { name: "About Us", href: "/about" },
-    { name: "Blog", href: "/blog" },
+  // Close mobile menu & dropdown on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setActiveDropdown(null);
+  }, [location.pathname]);
+
+  const handleMouseEnter = (menuKey: string) => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    setActiveDropdown(menuKey);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 180);
+  };
+
+  const toggleMobileAccordion = (key: string) => {
+    setMobileAccordion(mobileAccordion === key ? null : key);
+  };
+
+  // Grouped Destinations for Full-Width Grid
+  const englishHubs = [
+    {
+      name: "United Kingdom",
+      href: "/destinations/uk",
+      badge: "PSW 2-Yr",
+      desc: "1-Yr Master's & Russell Group Universities",
+      flag: "/images/flags/uk.svg",
+    },
+    {
+      name: "United States",
+      href: "/destinations/usa",
+      badge: "3-Yr STEM OPT",
+      desc: "Top Global Research & State Universities",
+      flag: "/images/flags/usa.svg",
+    },
+    {
+      name: "Australia",
+      href: "/destinations/australia",
+      badge: "High PSW",
+      desc: "Regional Post-Study Work & High Wages",
+      flag: "/images/flags/australia.svg",
+    },
+    {
+      name: "Canada",
+      href: "/destinations/canada",
+      badge: "PGWP up to 3-Yr",
+      desc: "Direct PR Pathways, Co-op Internships",
+      flag: "/images/flags/canada.svg",
+    },
   ];
+
+  const europeHubs = [
+    {
+      name: "Europe (Schengen)",
+      href: "/destinations/europe",
+      badge: "Free / Low Tuition",
+      desc: "Access 27 European Schengen Countries",
+      flag: "/images/flags/europe.svg",
+    },
+    {
+      name: "Germany",
+      href: "/destinations/germany",
+      badge: "Zero Tuition",
+      desc: "Tuition-Free Public Tech & Engineering",
+      flag: "/images/flags/germany.svg",
+    },
+    {
+      name: "Ireland",
+      href: "/destinations/ireland",
+      badge: "2-Yr PSW",
+      desc: "Silicon Valley of Europe & Tech Jobs",
+      flag: "/images/flags/ireland.svg",
+    },
+    {
+      name: "France",
+      href: "/destinations/france",
+      badge: "Post-Study Visa",
+      desc: "Grande École Business & Culinary Arts",
+      flag: "/images/flags/france.svg",
+    },
+  ];
+
+  const fastTrackHubs = [
+    {
+      name: "Turkey",
+      href: "/destinations/turkey",
+      badge: "High Approval",
+      desc: "Affordable European Degrees in English",
+      flag: "/images/flags/turkey.svg",
+    },
+    {
+      name: "New Zealand",
+      href: "/destinations/new-zealand",
+      badge: "PSW up to 3-Yr",
+      desc: "High Quality of Life & Tech Pathways",
+      flag: "/images/flags/new-zealand.svg",
+    },
+    {
+      name: "United Arab Emirates",
+      href: "/destinations/uae",
+      badge: "Direct Transfer",
+      desc: "British & Australian Branch Campuses",
+      flag: "/images/flags/uae.svg",
+    },
+    {
+      name: "Cyprus & Malta",
+      href: "/destinations/cyprus",
+      badge: "Budget Friendly",
+      desc: "No IELTS Options & Fast Processing",
+      flag: "/images/flags/cyprus.svg",
+    },
+  ];
+
+  // Grouped Courses for Full-Width Grid
+  const techCourses = [
+    {
+      title: "Computer Science & AI",
+      href: "/courses/computer-science-software-engineering",
+      desc: "Software, Machine Learning & Cloud",
+      icon: Laptop,
+      color: "#081736",
+    },
+    {
+      title: "Data Science & Analytics",
+      href: "/courses/data-science-business-analytics",
+      desc: "Big Data & Business Intelligence",
+      icon: BarChart3,
+      color: "#FFA000",
+    },
+    {
+      title: "Cybersecurity & Cloud",
+      href: "/courses/cyber-security-cloud-computing",
+      desc: "Network Security & Infrastructure",
+      icon: ShieldCheck,
+      color: "#081736",
+    },
+  ];
+
+  const businessCourses = [
+    {
+      title: "MBA & Global Management",
+      href: "/courses/business-administration-management",
+      desc: "Strategic Leadership & Corporate",
+      icon: Briefcase,
+      color: "#FFA000",
+    },
+    {
+      title: "Accounting, Finance & Fintech",
+      href: "/courses/accounting-finance-fintech",
+      desc: "ACCA/CPA Exemptions & Banking",
+      icon: Coins,
+      color: "#081736",
+    },
+    {
+      title: "Digital Marketing & Analytics",
+      href: "/courses/business-administration-management",
+      desc: "E-Commerce, Brand & Growth",
+      icon: Sparkles,
+      color: "#FFA000",
+    },
+  ];
+
+  const healthEngineeringCourses = [
+    {
+      title: "Healthcare & Nursing",
+      href: "/courses/nursing-healthcare-biomedical",
+      desc: "Hospital Practicums & Clinical",
+      icon: HeartPulse,
+      color: "#081736",
+    },
+    {
+      title: "Robotics & Embedded Systems",
+      href: "/courses/artificial-intelligence-robotics",
+      desc: "Automation & Future Hardware",
+      icon: Cpu,
+      color: "#FFA000",
+    },
+    {
+      title: "Biomedical & Life Sciences",
+      href: "/courses/nursing-healthcare-biomedical",
+      desc: "Pharmaceutical & Lab Research",
+      icon: GraduationCap,
+      color: "#081736",
+    },
+  ];
+
+  const featuredServices = [
+    {
+      title: "Student Visa Assistance",
+      href: "/services/student-visa",
+      desc: "100% compliant documentation, financial proof structuring & 1-on-1 mock interviews",
+      icon: ShieldCheck,
+      color: "#FFA000",
+    },
+    {
+      title: "University & Course Matching",
+      href: "/services/university-matching",
+      desc: "Profile assessment & maximum scholarship matching for 200+ partner universities",
+      icon: GraduationCap,
+      color: "#081736",
+    },
+    {
+      title: "SOP & Document Drafting",
+      href: "/services/sop-writing",
+      desc: "Compelling personal statements, cover letters & academic recommendation review",
+      icon: FileText,
+      color: "#FFA000",
+    },
+    {
+      title: "Pre-Departure & Forex Guidance",
+      href: "/services/pre-departure",
+      desc: "Flight briefing, student accommodation assistance, airport pickup & currency exchange",
+      icon: Plane,
+      color: "#081736",
+    },
+  ];
+
+  const mobileDestinationsList = [...englishHubs, ...europeHubs.slice(0, 2), ...fastTrackHubs.slice(0, 2)];
 
   return (
     <header className="main-site-header">
       <div className="container">
         <div className="header-inner">
-          {/* Logo matching exact mockup */}
+          {/* Brand Logo */}
           <Link to="/" className="site-brand-logo">
             <div className="logo-text-wrap">
               <div className="logo-main-text">
@@ -33,23 +267,96 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
           {/* Desktop Navigation */}
           <nav className="desktop-nav">
             <ul className="nav-menu-list">
-              {navLinks.map((item) => {
-                const isActive = location.pathname === item.href;
-                return (
-                  <li key={item.name}>
-                    <Link
-                      to={item.href}
-                      className={`nav-menu-item ${isActive ? "active" : ""}`}
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                );
-              })}
+              <li>
+                <Link
+                  to="/"
+                  className={`nav-menu-item ${location.pathname === "/" ? "active" : ""}`}
+                >
+                  Home
+                </Link>
+              </li>
+
+              {/* Study Destinations (Full-Width Trigger) */}
+              <li
+                className="nav-dropdown-wrapper"
+                onMouseEnter={() => handleMouseEnter("destinations")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link
+                  to="/destinations"
+                  className={`nav-menu-item nav-dropdown-trigger ${
+                    location.pathname.startsWith("/destinations") ? "active" : ""
+                  }`}
+                >
+                  <span>Study Destinations</span>
+                  <ChevronDown
+                    size={15}
+                    className={`dropdown-arrow-icon ${activeDropdown === "destinations" ? "open" : ""}`}
+                  />
+                </Link>
+              </li>
+
+              {/* Courses & Degrees (Full-Width Trigger) */}
+              <li
+                className="nav-dropdown-wrapper"
+                onMouseEnter={() => handleMouseEnter("courses")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link
+                  to="/courses"
+                  className={`nav-menu-item nav-dropdown-trigger ${
+                    location.pathname.startsWith("/courses") ? "active" : ""
+                  }`}
+                >
+                  <span>Courses</span>
+                  <ChevronDown
+                    size={15}
+                    className={`dropdown-arrow-icon ${activeDropdown === "courses" ? "open" : ""}`}
+                  />
+                </Link>
+              </li>
+
+              {/* Services (Full-Width Trigger) */}
+              <li
+                className="nav-dropdown-wrapper"
+                onMouseEnter={() => handleMouseEnter("services")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link
+                  to="/services"
+                  className={`nav-menu-item nav-dropdown-trigger ${
+                    location.pathname.startsWith("/services") ? "active" : ""
+                  }`}
+                >
+                  <span>Services</span>
+                  <ChevronDown
+                    size={15}
+                    className={`dropdown-arrow-icon ${activeDropdown === "services" ? "open" : ""}`}
+                  />
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/about"
+                  className={`nav-menu-item ${location.pathname === "/about" ? "active" : ""}`}
+                >
+                  About Us
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/blog"
+                  className={`nav-menu-item ${location.pathname === "/blog" ? "active" : ""}`}
+                >
+                  Blog
+                </Link>
+              </li>
             </ul>
           </nav>
 
-          {/* Header Action Button */}
+          {/* Header Assessment Button */}
           <div className="header-right-action">
             <button
               type="button"
@@ -78,39 +385,547 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Dropdown Menu */}
-        {mobileMenuOpen && (
-          <div className="mobile-nav-dropdown">
-            <ul className="mobile-nav-list">
-              {navLinks.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    to={item.href}
-                    className="mobile-nav-link"
-                    onClick={() => setMobileMenuOpen(false)}
+      {/* ============================================================
+          FULL-VIEWPORT-WIDTH ACETERNITY / SHADCN MEGA DROPDOWN
+      ============================================================ */}
+      {activeDropdown && (
+        <div
+          className="aceternity-fullwidth-dropdown"
+          onMouseEnter={() => handleMouseEnter(activeDropdown)}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="container">
+            {/* --- DESTINATIONS MEGA DROPDOWN --- */}
+            {activeDropdown === "destinations" && (
+              <div className="fullwidth-dropdown-content">
+                {/* Left Spotlight Card */}
+                <div className="dropdown-spotlight-card spotlight-destinations">
+                  <div className="spotlight-badge">
+                    <Globe2 size={15} /> <span>Global Hubs</span>
+                  </div>
+                  <h4 className="spotlight-title">Study at Top Global Universities</h4>
+                  <p className="spotlight-desc">
+                    Fast-track admissions, high visa approval rates, and extended post-study work rights across 20+ countries.
+                  </p>
+                  <div className="spotlight-stats-pill">
+                    <span className="spotlight-stat-item"><strong>98%</strong> Visa Rate</span>
+                    <span className="spotlight-stat-divider">•</span>
+                    <span className="spotlight-stat-item"><strong>200+</strong> Panel Unis</span>
+                  </div>
+                  <button
+                    type="button"
+                    className="btn-spotlight-action"
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      onOpenConsultation?.();
+                    }}
                   >
-                    {item.name}
+                    <span>Get Free Assessment</span>
+                    <ArrowRight size={14} />
+                  </button>
+                </div>
+
+                {/* Right 3-Column Categorized Grid */}
+                <div className="dropdown-grid-wrapper destinations-3col-grid">
+                  {/* Col 1: Popular English Hubs */}
+                  <div className="dropdown-category-col">
+                    <div className="dropdown-col-heading">
+                      <span>Popular English Hubs</span>
+                      <span className="col-count-tag">Top Choice</span>
+                    </div>
+                    <div className="dropdown-col-items">
+                      {englishHubs.map((dest) => (
+                        <Link
+                          key={dest.name}
+                          to={dest.href}
+                          className="fullwidth-menu-item"
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          <div className="fullwidth-flag-box">
+                            <img src={dest.flag} alt="" className="fullwidth-flag-img" />
+                          </div>
+                          <div className="fullwidth-item-text">
+                            <div className="fullwidth-item-title-row">
+                              <span className="fullwidth-item-title">{dest.name}</span>
+                              <span className="fullwidth-item-badge">{dest.badge}</span>
+                            </div>
+                            <p className="fullwidth-item-desc">{dest.desc}</p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Col 2: Europe & Schengen */}
+                  <div className="dropdown-category-col">
+                    <div className="dropdown-col-heading">
+                      <span>Europe &amp; Schengen</span>
+                      <span className="col-count-tag">Affordable</span>
+                    </div>
+                    <div className="dropdown-col-items">
+                      {europeHubs.map((dest) => (
+                        <Link
+                          key={dest.name}
+                          to={dest.href}
+                          className="fullwidth-menu-item"
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          <div className="fullwidth-flag-box">
+                            <img src={dest.flag} alt="" className="fullwidth-flag-img" />
+                          </div>
+                          <div className="fullwidth-item-text">
+                            <div className="fullwidth-item-title-row">
+                              <span className="fullwidth-item-title">{dest.name}</span>
+                              <span className="fullwidth-item-badge">{dest.badge}</span>
+                            </div>
+                            <p className="fullwidth-item-desc">{dest.desc}</p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Col 3: Fast-Track & Budget */}
+                  <div className="dropdown-category-col">
+                    <div className="dropdown-col-heading">
+                      <span>Fast-Track &amp; Emerging</span>
+                      <span className="col-count-tag">High Approval</span>
+                    </div>
+                    <div className="dropdown-col-items">
+                      {fastTrackHubs.map((dest) => (
+                        <Link
+                          key={dest.name}
+                          to={dest.href}
+                          className="fullwidth-menu-item"
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          <div className="fullwidth-flag-box">
+                            <img src={dest.flag} alt="" className="fullwidth-flag-img" />
+                          </div>
+                          <div className="fullwidth-item-text">
+                            <div className="fullwidth-item-title-row">
+                              <span className="fullwidth-item-title">{dest.name}</span>
+                              <span className="fullwidth-item-badge">{dest.badge}</span>
+                            </div>
+                            <p className="fullwidth-item-desc">{dest.desc}</p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* --- COURSES MEGA DROPDOWN --- */}
+            {activeDropdown === "courses" && (
+              <div className="fullwidth-dropdown-content">
+                {/* Left Spotlight Card */}
+                <div className="dropdown-spotlight-card spotlight-courses">
+                  <div className="spotlight-badge">
+                    <GraduationCap size={15} /> <span>Degree Programs</span>
+                  </div>
+                  <h4 className="spotlight-title">In-Demand Global Degrees &amp; Top-Ups</h4>
+                  <p className="spotlight-desc">
+                    Explore accredited undergraduate, postgraduate, and fast-track pathways tailored for global employability.
+                  </p>
+                  <div className="spotlight-stats-pill">
+                    <span className="spotlight-stat-item"><strong>50+</strong> Disciplines</span>
+                    <span className="spotlight-stat-divider">•</span>
+                    <span className="spotlight-stat-item"><strong>2-3 Yrs</strong> PSW</span>
+                  </div>
+                  <Link
+                    to="/courses"
+                    className="btn-spotlight-action"
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    <span>Browse All Degrees</span>
+                    <ArrowRight size={14} />
                   </Link>
-                </li>
-              ))}
-              <li style={{ marginTop: "12px" }}>
+                </div>
+
+                {/* Right 3-Column Categorized Grid */}
+                <div className="dropdown-grid-wrapper courses-3col-grid">
+                  {/* Col 1: Tech & AI */}
+                  <div className="dropdown-category-col">
+                    <div className="dropdown-col-heading">
+                      <span>Tech &amp; Artificial Intelligence</span>
+                      <span className="col-count-tag">STEM</span>
+                    </div>
+                    <div className="dropdown-col-items">
+                      {techCourses.map((c) => {
+                        const Icon = c.icon;
+                        return (
+                          <Link
+                            key={c.title}
+                            to={c.href}
+                            className="fullwidth-menu-item"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            <div className="fullwidth-icon-box" style={{ background: `${c.color}15` }}>
+                              <Icon size={18} color={c.color} />
+                            </div>
+                            <div className="fullwidth-item-text">
+                              <span className="fullwidth-item-title">{c.title}</span>
+                              <p className="fullwidth-item-desc">{c.desc}</p>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Col 2: Business & Management */}
+                  <div className="dropdown-category-col">
+                    <div className="dropdown-col-heading">
+                      <span>Business &amp; Finance</span>
+                      <span className="col-count-tag">High ROI</span>
+                    </div>
+                    <div className="dropdown-col-items">
+                      {businessCourses.map((c) => {
+                        const Icon = c.icon;
+                        return (
+                          <Link
+                            key={c.title}
+                            to={c.href}
+                            className="fullwidth-menu-item"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            <div className="fullwidth-icon-box" style={{ background: `${c.color}15` }}>
+                              <Icon size={18} color={c.color} />
+                            </div>
+                            <div className="fullwidth-item-text">
+                              <span className="fullwidth-item-title">{c.title}</span>
+                              <p className="fullwidth-item-desc">{c.desc}</p>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Col 3: Healthcare & Engineering */}
+                  <div className="dropdown-category-col">
+                    <div className="dropdown-col-heading">
+                      <span>Healthcare &amp; Engineering</span>
+                      <span className="col-count-tag">In-Demand</span>
+                    </div>
+                    <div className="dropdown-col-items">
+                      {healthEngineeringCourses.map((c) => {
+                        const Icon = c.icon;
+                        return (
+                          <Link
+                            key={c.title}
+                            to={c.href}
+                            className="fullwidth-menu-item"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            <div className="fullwidth-icon-box" style={{ background: `${c.color}15` }}>
+                              <Icon size={18} color={c.color} />
+                            </div>
+                            <div className="fullwidth-item-text">
+                              <span className="fullwidth-item-title">{c.title}</span>
+                              <p className="fullwidth-item-desc">{c.desc}</p>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* --- SERVICES MEGA DROPDOWN --- */}
+            {activeDropdown === "services" && (
+              <div className="fullwidth-dropdown-content">
+                {/* Left Spotlight Card */}
+                <div className="dropdown-spotlight-card spotlight-services">
+                  <div className="spotlight-badge">
+                    <Sparkles size={15} /> <span>Student Services</span>
+                  </div>
+                  <h4 className="spotlight-title">Complete 360° Visa Consultancy</h4>
+                  <p className="spotlight-desc">
+                    Personalized counseling, error-free visa filing, SOP drafting, and pre-departure briefings.
+                  </p>
+                  <div className="spotlight-stats-pill">
+                    <span className="spotlight-stat-item"><strong>100%</strong> Transparent</span>
+                    <span className="spotlight-stat-divider">•</span>
+                    <span className="spotlight-stat-item"><strong>1-on-1</strong> Mock Prep</span>
+                  </div>
+                  <Link
+                    to="/services"
+                    className="btn-spotlight-action"
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    <span>View All Services</span>
+                    <ArrowRight size={14} />
+                  </Link>
+                </div>
+
+                {/* Right 4-Grid Services Cards */}
+                <div className="dropdown-grid-wrapper services-4col-grid">
+                  {featuredServices.map((service) => {
+                    const Icon = service.icon;
+                    return (
+                      <Link
+                        key={service.title}
+                        to={service.href}
+                        className="fullwidth-service-card"
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        <div className="fullwidth-service-icon-box" style={{ background: `${service.color}15` }}>
+                          <Icon size={24} color={service.color} />
+                        </div>
+                        <h5 className="fullwidth-service-title">{service.title}</h5>
+                        <p className="fullwidth-service-desc">{service.desc}</p>
+                        <div className="fullwidth-service-link-text">
+                          <span>Learn More</span>
+                          <ArrowRight size={13} />
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Bottom Full-Width Strip */}
+          <div className="fullwidth-dropdown-bottom-bar">
+            <div className="container">
+              <div className="dropdown-bottom-inner">
+                <span className="dropdown-bottom-tagline">
+                  <Sparkles size={15} color="#FFA700" />
+                  <span>Ready to start your journey? Get an expert profile evaluation today with zero consultation fee.</span>
+                </span>
                 <button
                   type="button"
-                  className="btn-header-assessment"
-                  style={{ width: "100%" }}
+                  className="dropdown-bottom-cta-link"
                   onClick={() => {
-                    setMobileMenuOpen(false);
+                    setActiveDropdown(null);
                     onOpenConsultation?.();
                   }}
                 >
-                  Get Free Assessment
+                  <span>Book Free Consultation</span>
+                  <ArrowRight size={14} />
                 </button>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
+
+      {/* ============================================================
+          MOBILE NAVIGATION DROPDOWN WITH ACCORDIONS
+      ============================================================ */}
+      {mobileMenuOpen && (
+        <div className="mobile-nav-dropdown">
+          <ul className="mobile-nav-list">
+            <li>
+              <Link
+                to="/"
+                className="mobile-nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
+
+            {/* Mobile Destinations Accordion */}
+            <li className="mobile-accordion-item">
+              <div
+                className="mobile-accordion-trigger"
+                onClick={() => toggleMobileAccordion("destinations")}
+              >
+                <Link
+                  to="/destinations"
+                  className="mobile-nav-link"
+                >
+                  Study Destinations
+                </Link>
+                <button
+                  type="button"
+                  className="mobile-accordion-arrow-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleMobileAccordion("destinations");
+                  }}
+                >
+                  <ChevronDown
+                    size={18}
+                    className={`mobile-chevron ${mobileAccordion === "destinations" ? "open" : ""}`}
+                  />
+                </button>
+              </div>
+
+              {mobileAccordion === "destinations" && (
+                <div className="mobile-accordion-content">
+                  {mobileDestinationsList.map((dest) => (
+                    <Link
+                      key={dest.name}
+                      to={dest.href}
+                      className="mobile-sub-link"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <img src={dest.flag} alt="" className="mobile-sub-flag" />
+                      <span>{dest.name}</span>
+                      <span className="mobile-sub-badge">{dest.badge}</span>
+                    </Link>
+                  ))}
+                  <Link
+                    to="/destinations"
+                    className="mobile-sub-view-all"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>View All 20+ Destinations</span>
+                    <ArrowRight size={13} />
+                  </Link>
+                </div>
+              )}
+            </li>
+
+            {/* Mobile Courses Accordion */}
+            <li className="mobile-accordion-item">
+              <div
+                className="mobile-accordion-trigger"
+                onClick={() => toggleMobileAccordion("courses")}
+              >
+                <Link
+                  to="/courses"
+                  className="mobile-nav-link"
+                >
+                  Degree Programs
+                </Link>
+                <button
+                  type="button"
+                  className="mobile-accordion-arrow-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleMobileAccordion("courses");
+                  }}
+                >
+                  <ChevronDown
+                    size={18}
+                    className={`mobile-chevron ${mobileAccordion === "courses" ? "open" : ""}`}
+                  />
+                </button>
+              </div>
+
+              {mobileAccordion === "courses" && (
+                <div className="mobile-accordion-content">
+                  {[...techCourses, ...businessCourses, ...healthEngineeringCourses.slice(0, 1)].map((c) => (
+                    <Link
+                      key={c.title}
+                      to={c.href}
+                      className="mobile-sub-link"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span>{c.title}</span>
+                    </Link>
+                  ))}
+                  <Link
+                    to="/courses"
+                    className="mobile-sub-view-all"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>View All 50+ Degrees</span>
+                    <ArrowRight size={13} />
+                  </Link>
+                </div>
+              )}
+            </li>
+
+            {/* Mobile Services Accordion */}
+            <li className="mobile-accordion-item">
+              <div
+                className="mobile-accordion-trigger"
+                onClick={() => toggleMobileAccordion("services")}
+              >
+                <Link
+                  to="/services"
+                  className="mobile-nav-link"
+                >
+                  Services
+                </Link>
+                <button
+                  type="button"
+                  className="mobile-accordion-arrow-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleMobileAccordion("services");
+                  }}
+                >
+                  <ChevronDown
+                    size={18}
+                    className={`mobile-chevron ${mobileAccordion === "services" ? "open" : ""}`}
+                  />
+                </button>
+              </div>
+
+              {mobileAccordion === "services" && (
+                <div className="mobile-accordion-content">
+                  {featuredServices.map((s) => (
+                    <Link
+                      key={s.title}
+                      to={s.href}
+                      className="mobile-sub-link"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span>{s.title}</span>
+                    </Link>
+                  ))}
+                  <Link
+                    to="/services"
+                    className="mobile-sub-view-all"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>Explore All Services</span>
+                    <ArrowRight size={13} />
+                  </Link>
+                </div>
+              )}
+            </li>
+
+            <li>
+              <Link
+                to="/about"
+                className="mobile-nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About Us
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/blog"
+                className="mobile-nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog &amp; Updates
+              </Link>
+            </li>
+
+            <li style={{ marginTop: "12px" }}>
+              <button
+                type="button"
+                className="btn-header-assessment"
+                style={{ width: "100%" }}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenConsultation?.();
+                }}
+              >
+                Get Free Assessment
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
+

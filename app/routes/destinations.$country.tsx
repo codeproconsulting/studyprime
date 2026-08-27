@@ -1136,7 +1136,7 @@ export default function CountryDetailPage() {
                   <div className="dest-fields-chips">
                     {details.popularFields.map((f, i) => (
                       <div key={i} className="field-chip">
-                        <GraduationCap size={15} color="#0066FF" />
+                        <GraduationCap size={15} color="#081736" />
                         <span>{f}</span>
                       </div>
                     ))}

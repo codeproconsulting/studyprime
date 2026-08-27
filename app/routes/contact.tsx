@@ -41,7 +41,7 @@ export default function Contact() {
 
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                  <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "rgba(0, 102, 255, 0.1)", color: "#0066FF", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "rgba(8, 23, 54, 0.08)", color: "#081736", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <MapPin size={22} />
                   </div>
                   <div>

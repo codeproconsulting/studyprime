@@ -100,19 +100,28 @@ export function Footer() {
             <h4 className="footer-title">Study Destinations</h4>
             <ul className="footer-links">
               <li>
-                <Link to="/destinations"><ChevronRight size={14} /> Study in UK</Link>
+                <Link to="/destinations/uk"><ChevronRight size={14} /> Study in UK</Link>
               </li>
               <li>
-                <Link to="/destinations"><ChevronRight size={14} /> Study in USA</Link>
+                <Link to="/destinations/usa"><ChevronRight size={14} /> Study in USA</Link>
               </li>
               <li>
-                <Link to="/destinations"><ChevronRight size={14} /> Study in Australia</Link>
+                <Link to="/destinations/australia"><ChevronRight size={14} /> Study in Australia</Link>
               </li>
               <li>
-                <Link to="/destinations"><ChevronRight size={14} /> Study in Canada</Link>
+                <Link to="/destinations/canada"><ChevronRight size={14} /> Study in Canada</Link>
               </li>
               <li>
-                <Link to="/destinations"><ChevronRight size={14} /> Study in Europe (Schengen)</Link>
+                <Link to="/destinations/europe"><ChevronRight size={14} /> Study in Europe</Link>
+              </li>
+              <li>
+                <Link to="/destinations/turkey"><ChevronRight size={14} /> Study in Turkey</Link>
+              </li>
+              <li>
+                <Link to="/destinations/germany"><ChevronRight size={14} /> Study in Germany</Link>
+              </li>
+              <li>
+                <Link to="/destinations/ireland"><ChevronRight size={14} /> Study in Ireland</Link>
               </li>
             </ul>
           </div>

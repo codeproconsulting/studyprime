@@ -93,8 +93,8 @@ export default function About() {
             </div>
 
             <div style={{ position: "relative" }}>
-              <div style={{ background: "linear-gradient(135deg, #0B1B3A, #0066FF)", padding: "40px", borderRadius: "24px", color: "#FFFFFF", boxShadow: "0 20px 40px rgba(11, 27, 58, 0.15)" }}>
-                <div style={{ display: "inline-flex", padding: "10px 16px", borderRadius: "50px", background: "rgba(255, 167, 0, 0.2)", color: "#FFA700", fontWeight: 700, fontSize: "0.85rem", marginBottom: "20px" }}>
+              <div style={{ background: "linear-gradient(135deg, #081736, #0F2552)", padding: "40px", borderRadius: "24px", color: "#FFFFFF", boxShadow: "0 20px 40px rgba(8, 23, 54, 0.2)" }}>
+                <div style={{ display: "inline-flex", padding: "10px 16px", borderRadius: "50px", background: "rgba(255, 160, 0, 0.2)", color: "#FFA000", fontWeight: 700, fontSize: "0.85rem", marginBottom: "20px" }}>
                   <ShieldCheck size={16} style={{ marginRight: "6px" }} /> Authorized Advisory
                 </div>
                 <h3 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#FFFFFF", marginBottom: "14px" }}>
@@ -128,7 +128,7 @@ export default function About() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "36px" }}>
             <div style={{ background: "#FFFFFF", padding: "40px", borderRadius: "20px", border: "1px solid #E2E8F0", boxShadow: "0 4px 20px rgba(0,0,0,0.03)" }}>
-              <div style={{ width: "54px", height: "54px", borderRadius: "14px", background: "rgba(0, 102, 255, 0.1)", color: "#0066FF", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
+              <div style={{ width: "54px", height: "54px", borderRadius: "14px", background: "rgba(8, 23, 54, 0.08)", color: "#081736", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
                 <Eye size={28} />
               </div>
               <h3 style={{ fontSize: "1.6rem", color: "var(--primary-navy)", fontWeight: 800, marginBottom: "14px" }}>Our Vision</h3>
