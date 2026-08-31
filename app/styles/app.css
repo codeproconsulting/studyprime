@@ -956,10 +956,10 @@ button, input, select, textarea {
   background: var(--primary-navy);
   color: #FFFFFF;
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   font-weight: 700;
-  padding: 15px 32px;
-  border-radius: 8px;
+  padding: 16px 36px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   transition: var(--transition);
@@ -3543,7 +3543,7 @@ button, input, select, textarea {
     top: 18%;
     right: 2px;
     z-index: 20;
-    max-width: 102px;
+    max-width: 120px;
   }
 
   .btn-mobile-hero-assessment {
@@ -3551,18 +3551,18 @@ button, input, select, textarea {
     color: #FFA700;
     font-family: var(--font-body);
     font-weight: 800;
-    font-size: clamp(0.72rem, 2.1vw, 0.78rem);
-    padding: 6px 10px;
-    border-radius: 8px;
+    font-size: clamp(0.82rem, 2.5vw, 0.9rem);
+    padding: 8px 14px;
+    border-radius: 9px;
     border: 1.5px solid rgba(255, 167, 0, 0.4);
-    box-shadow: 0 4px 14px rgba(1, 30, 62, 0.35);
+    box-shadow: 0 5px 18px rgba(1, 30, 62, 0.4);
     cursor: pointer;
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    line-height: 1.15;
+    line-height: 1.2;
     text-align: center;
     letter-spacing: 0.1px;
   }
