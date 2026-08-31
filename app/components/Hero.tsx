@@ -34,8 +34,8 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
               </span>
             </h1>
 
-            {/* Main Action Button */}
-            <div className="hero-action-row">
+            {/* Desktop-only action button */}
+            <div className="hero-action-row desktop-only-hero-action">
               <Link
                 to="/assessment"
                 className="btn-hero-assessment"
@@ -73,7 +73,7 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
             </div>
           </div>
 
-          {/* Right Column (Desktop) / Student Media Frame with Floating Mobile Badge */}
+          {/* Right Column (Desktop) / Student Media Frame with Floating Mobile Elements */}
           <div className="hero-student-media-col">
             <div className="student-image-frame">
               <img
@@ -81,6 +81,17 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
                 alt="Study Prime Student"
                 className="student-cutout-img"
               />
+
+              {/* Mobile-Only Floating Action Button (Beside student, 2 lines, no face overlap) */}
+              <div className="mobile-floating-cta">
+                <Link
+                  to="/assessment"
+                  className="btn-mobile-hero-assessment"
+                >
+                  <span>Get Free</span>
+                  <span>Assessment</span>
+                </Link>
+              </div>
 
               {/* Mobile-Only Floating Trust Badge (Bottom Right of Student) */}
               <div className="mobile-floating-trust-badge">

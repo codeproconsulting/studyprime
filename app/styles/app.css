@@ -3435,7 +3435,7 @@ button, input, select, textarea {
 
   .hero-tagline-text {
     font-family: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: clamp(0.92rem, 2.9vw, 1.1rem);
+    font-size: clamp(0.82rem, 2.5vw, 0.95rem);
     font-style: italic;
     font-weight: 800;
     color: #011E3E;
@@ -3446,12 +3446,12 @@ button, input, select, textarea {
 
   .hero-main-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: clamp(1.35rem, 4.3vw, 1.68rem);
+    font-size: clamp(1.22rem, 3.8vw, 1.48rem);
     font-weight: 900;
     color: #011E3E;
-    line-height: 1.06;
+    line-height: 1.08;
     margin-bottom: 0px;
-    letter-spacing: -0.4px;
+    letter-spacing: -0.3px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3469,13 +3469,13 @@ button, input, select, textarea {
   }
 
   .highlight-future-box {
-    padding: 0 8px 2px 6px;
+    padding: 0 6px 2px 5px;
     position: relative;
     display: inline-block;
   }
 
   .highlight-future-brush-bg {
-    inset: -3px -12px -2px -8px;
+    inset: -2px -10px -2px -6px;
     position: absolute;
     background-image: url('/brush-stroke.svg');
     background-size: 100% 100%;
@@ -3492,40 +3492,10 @@ button, input, select, textarea {
   }
 
   /* Hide desktop items */
+  .desktop-only-hero-action  { display: none !important; }
   .desktop-only-trust-badge  { display: none !important; }
 
-  /* ── Action Button (Centered beneath heading on mobile) ── */
-  .hero-action-row {
-    margin-top: 10px;
-    margin-bottom: 6px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .btn-hero-assessment {
-    background: #011E3E;
-    color: #FFA700;
-    font-family: var(--font-body);
-    font-size: clamp(0.84rem, 2.7vw, 0.94rem);
-    font-weight: 800;
-    padding: 10px 22px;
-    border-radius: 8px;
-    border: 1.5px solid rgba(255, 167, 0, 0.35);
-    box-shadow: 0 4px 14px rgba(1, 30, 62, 0.25);
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.1px;
-  }
-
-  .btn-hero-assessment:active {
-    transform: scale(0.97);
-  }
-
-  /* ── Student Column & Floating Badge (Anchored to Results Banner) ── */
+  /* ── Student Column & Floating Elements (Anchored to Results Banner) ── */
   .hero-student-media-col {
     width: 100%;
     position: relative;
@@ -3544,7 +3514,7 @@ button, input, select, textarea {
   .student-image-frame {
     position: relative;
     width: 100%;
-    max-width: 360px;
+    max-width: 330px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -3553,7 +3523,7 @@ button, input, select, textarea {
   }
 
   .student-cutout-img {
-    height: clamp(190px, 30vh, 250px);
+    height: clamp(190px, 30vh, 240px);
     max-height: 30vh;
     width: auto;
     max-width: none;
@@ -3561,8 +3531,49 @@ button, input, select, textarea {
     object-position: bottom center;
     display: block;
     margin: 0 auto;
+    margin-left: -24px;
     margin-bottom: 0;
     vertical-align: bottom;
+  }
+
+  /* ── Floating CTA Button (Beside Student, 2-line layout, No face overlap) ── */
+  .mobile-floating-cta {
+    display: block;
+    position: absolute;
+    top: 18%;
+    right: 2px;
+    z-index: 20;
+    max-width: 102px;
+  }
+
+  .btn-mobile-hero-assessment {
+    background: #011E3E;
+    color: #FFA700;
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: clamp(0.72rem, 2.1vw, 0.78rem);
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(255, 167, 0, 0.4);
+    box-shadow: 0 4px 14px rgba(1, 30, 62, 0.35);
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.1px;
+  }
+
+  .btn-mobile-hero-assessment span {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .btn-mobile-hero-assessment:active {
+    transform: scale(0.97);
   }
 
   /* ── Floating Trust Badge (Lifted above the Results Banner) ── */
@@ -3572,7 +3583,7 @@ button, input, select, textarea {
     gap: 6px;
     position: absolute;
     bottom: 42px;
-    right: clamp(4px, 2vw, 16px);
+    right: 2px;
     z-index: 20;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
