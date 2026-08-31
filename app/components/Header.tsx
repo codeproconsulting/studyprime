@@ -256,7 +256,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
           {/* Brand Logo */}
           <Link to="/" className="site-brand-logo" aria-label="Study Prime Home">
             <img
-              src="/studyprimelogo.png"
+              src="/studyprime.png"
               alt="Study Prime - Study Abroad Experts"
               className="site-header-logo-img"
             />
