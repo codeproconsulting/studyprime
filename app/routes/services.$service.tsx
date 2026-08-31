@@ -21,7 +21,6 @@ import {
   BookOpen
 } from "lucide-react";
 import { siteConfig } from "~/data/siteData";
-import { ConsultationModal } from "~/components/ConsultationModal";
 
 // Rich specific data for each individual service
 const SERVICE_DETAILS: Record<string, {
@@ -352,15 +351,14 @@ export default function ServiceDetailPage() {
             </p>
 
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-              <button
-                type="button"
+              <Link
+                to="/assessment"
                 className="btn btn-accent"
-                onClick={handleOpenConsult}
                 style={{ padding: "14px 28px", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: "8px" }}
               >
                 <span>Book Free Consultation</span>
                 <ArrowRight size={16} />
-              </button>
+              </Link>
               <a
                 href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
                 className="btn btn-outline"
@@ -541,13 +539,13 @@ export default function ServiceDetailPage() {
                   </div>
                 </div>
 
-                <button
-                  type="button"
+                <Link
+                  to="/assessment"
                   className="btn btn-accent consult-btn-full"
-                  onClick={handleOpenConsult}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
                 >
                   Book Free Assessment
-                </button>
+                </Link>
 
                 <div className="consult-contact-row">
                   <div className="office-tag">
@@ -585,11 +583,6 @@ export default function ServiceDetailPage() {
           </div>
         </div>
       </section>
-
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-      />
     </div>
   );
 }

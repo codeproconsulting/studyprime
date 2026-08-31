@@ -7,10 +7,8 @@ import {
 } from "@remix-run/react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import stylesHref from "~/styles/app.css?url";
-import { useState } from "react";
 import { Header } from "~/components/Header";
 import { Footer } from "~/components/Footer";
-import { ConsultationModal } from "~/components/ConsultationModal";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesHref },
@@ -29,8 +27,6 @@ export const meta: MetaFunction = () => {
 };
 
 export default function App() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <html lang="en">
       <head>
@@ -41,12 +37,11 @@ export default function App() {
         
       </head>
       <body>
-        <Header onOpenConsultation={() => setModalOpen(true)} />
+        <Header />
         <main>
-          <Outlet context={{ openConsultation: () => setModalOpen(true) }} />
+          <Outlet />
         </main>
         <Footer />
-        <ConsultationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
         <ScrollRestoration />
         <Scripts />
       </body>

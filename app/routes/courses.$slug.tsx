@@ -21,7 +21,6 @@ import {
   FileText
 } from "lucide-react";
 import { coursesData, type CourseItem, siteConfig } from "~/data/siteData";
-import { ConsultationModal } from "~/components/ConsultationModal";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   if (!data?.course) {
@@ -50,16 +49,6 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
 export default function CourseDetailPage() {
   const { course, relatedCourses } = useLoaderData<typeof loader>();
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  const context = useOutletContext<{ openConsultation?: () => void }>() || {};
-
-  const handleOpenConsult = () => {
-    if (context.openConsultation) {
-      context.openConsultation();
-    } else {
-      setIsConsultationOpen(true);
-    }
-  };
 
   return (
     <div className="course-detail-page">
@@ -261,15 +250,14 @@ export default function CourseDetailPage() {
                   <p className="advisor-sub">
                     Our team assesses your profile against eligibility criteria for 450+ universities.
                   </p>
-                  <button
-                    type="button"
+                  <Link
+                    to="/assessment"
                     className="btn btn-primary btn-full-width"
-                    onClick={handleOpenConsult}
-                    style={{ marginBottom: "10px" }}
+                    style={{ marginBottom: "10px", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
                   >
                     <span>Book Free Counseling</span>
                     <ArrowRight size={15} />
-                  </button>
+                  </Link>
                   <a
                     href="https://wa.me/923101193888"
                     target="_blank"
@@ -278,6 +266,29 @@ export default function CourseDetailPage() {
                   >
                     <span>Chat on WhatsApp</span>
                   </a>
+                </div>
+
+                {/* Course Details Snapshot Card */}
+                <div className="sidebar-snapshot-card">
+                  <h4 className="snapshot-title">Program Snapshot</h4>
+                  <ul className="snapshot-list">
+                    <li>
+                      <span className="snapshot-label">Discipline:</span>
+                      <span className="snapshot-val">{course.category.toUpperCase()}</span>
+                    </li>
+                    <li>
+                      <span className="snapshot-label">Avg. Duration:</span>
+                      <span className="snapshot-val">{course.duration}</span>
+                    </li>
+                    <li>
+                      <span className="snapshot-label">Direct Admissions:</span>
+                      <span className="snapshot-val" style={{ color: "#10B981", fontWeight: 700 }}>Open Now</span>
+                    </li>
+                    <li>
+                      <span className="snapshot-label">Scholarship Status:</span>
+                      <span className="snapshot-val" style={{ color: "#FFA700", fontWeight: 700 }}>Up to 50%</span>
+                    </li>
+                  </ul>
                 </div>
 
                 {/* Top Study Hubs */}
@@ -314,23 +325,18 @@ export default function CourseDetailPage() {
                   Get your free document assessment and fast-track university application processed through Study Prime.
                 </p>
               </div>
-              <button
-                type="button"
+              <Link
+                to="/assessment"
                 className="btn btn-accent"
-                onClick={handleOpenConsult}
+                style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
               >
                 <span>Start Application</span>
                 <ArrowRight size={16} />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
-
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-      />
     </div>
   );
 }

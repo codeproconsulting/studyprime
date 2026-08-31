@@ -22,7 +22,6 @@ import {
 } from "lucide-react";
 import { services, siteConfig } from "~/data/siteData";
 import { FAQSection } from "~/components/FAQSection";
-import { ConsultationModal } from "~/components/ConsultationModal";
 
 export const meta: MetaFunction = () => {
   return [
@@ -74,37 +73,27 @@ const serviceDeliverables: Record<string, { title: string; items: string[]; guar
   "sop-guidance": {
     title: "Document Vetting Deliverables",
     items: [
-      "Authentic, plagiarism-free Statement of Purpose (SOP) drafting mentorship",
-      "Alignment with strict GTE, SDS, and Genuine Student (GS) standards",
-      "Academic CV & Resume optimization for foreign faculty reviewers",
-      "Letters of Recommendation (LOR) & intent structure validation",
+      "Comprehensive SOP and Personal Statement narrative review",
+      "Academic Letter of Recommendation (LOR) structure guidance",
+      "Curriculum Vitae (CV) formatting for university admission panels",
+      "Plagiarism checks and original voice enhancement",
     ],
-    guarantee: "Zero AI Boilerplate — 100% Human Expert Review",
+    guarantee: "100% Plagiarism-free & Bespoke SOP Content",
   },
   "departure-briefing": {
-    title: "Settlement Deliverables",
+    title: "Relocation Deliverables",
     items: [
-      "Verified student housing & private accommodation assistance",
-      "Flight booking guidance and student baggage allowance advice",
-      "International SIM cards, health insurance & banking setup guidance",
-      "On-arrival orientation and alumni networking connections",
+      "Student accommodation booking and on-campus housing guidance",
+      "Student flight ticket itinerary and baggage quota discounts",
+      "International SIM card and overseas bank account assistance",
+      "Airport pickup coordination and local student community connect",
     ],
-    guarantee: "End-to-End Support Beyond Visa Grant",
+    guarantee: "Full End-to-End Post-Visa Settlement Support",
   },
 };
 
 export default function Services() {
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  const context = useOutletContext<{ openConsultation?: () => void }>() || {};
-
-  const handleOpenConsult = () => {
-    if (context.openConsultation) {
-      context.openConsultation();
-    } else {
-      setIsConsultationOpen(true);
-    }
-  };
 
   const filterTabs = [
     { id: "all", label: "All Services" },
@@ -214,14 +203,13 @@ export default function Services() {
                         <span>Explore Step-by-Step Guide</span>
                         <ArrowRight size={15} />
                       </Link>
-                      <button
-                        type="button"
+                      <Link
+                        to="/assessment"
                         className="btn btn-outline"
-                        onClick={handleOpenConsult}
-                        style={{ padding: "12px 20px", fontWeight: 600 }}
+                        style={{ padding: "12px 20px", fontWeight: 600, display: "inline-flex", alignItems: "center" }}
                       >
                         Free Case Assessment
-                      </button>
+                      </Link>
                     </div>
                   </div>
 
@@ -322,14 +310,13 @@ export default function Services() {
               </p>
             </div>
             <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
-              <button
-                type="button"
+              <Link
+                to="/assessment"
                 className="btn btn-accent"
-                onClick={handleOpenConsult}
-                style={{ padding: "14px 28px", fontWeight: 700 }}
+                style={{ padding: "14px 28px", fontWeight: 700, display: "inline-flex", alignItems: "center" }}
               >
                 Book Free Advisory Session
-              </button>
+              </Link>
               <a
                 href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
                 className="btn btn-outline-white"
@@ -344,12 +331,6 @@ export default function Services() {
 
       {/* ── 5. FAQs ── */}
       <FAQSection />
-
-      {/* Consultation Modal */}
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-      />
     </div>
   );
 }

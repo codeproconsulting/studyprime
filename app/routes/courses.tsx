@@ -20,7 +20,6 @@ import {
   Filter
 } from "lucide-react";
 import { coursesData, type CourseItem } from "~/data/siteData";
-import { ConsultationModal } from "~/components/ConsultationModal";
 
 export const meta: MetaFunction = () => {
   return [
@@ -30,18 +29,8 @@ export const meta: MetaFunction = () => {
 };
 
 export default function CoursesPage() {
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  const context = useOutletContext<{ openConsultation?: () => void }>() || {};
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-
-  const handleOpenConsult = () => {
-    if (context.openConsultation) {
-      context.openConsultation();
-    } else {
-      setIsConsultationOpen(true);
-    }
-  };
 
   const iconMap: Record<string, any> = {
     Laptop,
@@ -196,23 +185,18 @@ export default function CoursesPage() {
                   Our senior consultants assess your qualifications, career aspirations, and budget to shortlist the best-fit programs.
                 </p>
               </div>
-              <button
-                type="button"
+              <Link
+                to="/assessment"
                 className="btn btn-accent"
-                onClick={handleOpenConsult}
+                style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
               >
                 <span>Free Course Assessment</span>
                 <ArrowRight size={16} />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
-
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-      />
     </div>
   );
 }
