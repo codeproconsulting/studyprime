@@ -4,7 +4,7 @@
   --font-heading: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
-  --primary-navy: #081736;
+  --primary-navy: #011E3E;
   --brand-yellow: #FFA000;
   --brand-yellow-gold: #FDB813;
   --bg-light: #F8FAFC;
@@ -245,7 +245,7 @@ button, input, select, textarea {
 
 /* Left Spotlight Card */
 .dropdown-spotlight-card {
-  background: linear-gradient(145deg, #081736 0%, #0F2552 100%);
+  background: linear-gradient(145deg, #011E3E 0%, #082A54 100%);
   border-radius: 16px;
   padding: 24px;
   display: flex;
@@ -254,59 +254,53 @@ button, input, select, textarea {
   color: #FFFFFF;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(8, 23, 54, 0.2);
+  box-shadow: 0 12px 30px rgba(1, 30, 62, 0.2);
 }
 
 .dropdown-spotlight-card::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -40px;
   right: -40px;
   width: 140px;
   height: 140px;
-  background: radial-gradient(circle, rgba(255, 160, 0, 0.25) 0%, transparent 70%);
   border-radius: 50%;
-  pointer-events: none;
-}
-
-.spotlight-courses::before {
-  background: radial-gradient(circle, rgba(255, 160, 0, 0.3) 0%, transparent 70%);
-}
-
-.spotlight-services::before {
   background: radial-gradient(circle, rgba(255, 160, 0, 0.25) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .spotlight-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.76rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
   color: #FFA000;
-  background: rgba(255, 160, 0, 0.14);
-  border: 1px solid rgba(255, 160, 0, 0.25);
+  background: rgba(255, 160, 0, 0.15);
+  border: 1px solid rgba(255, 160, 0, 0.3);
   padding: 4px 10px;
   border-radius: 20px;
-  align-self: flex-start;
-  margin-bottom: 14px;
+  width: fit-content;
+  margin-bottom: 12px;
 }
 
 .spotlight-title {
   font-family: var(--font-heading);
-  font-size: 1.18rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: #FFFFFF;
-  line-height: 1.3;
+  line-height: 1.25;
   margin-bottom: 8px;
-  letter-spacing: -0.2px;
 }
 
 .spotlight-desc {
   font-family: var(--font-body);
-  font-size: 0.84rem;
-  color: #CBD5E1;
-  line-height: 1.5;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.45;
   margin-bottom: 16px;
 }
 
@@ -314,22 +308,23 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
   padding: 6px 12px;
   border-radius: 8px;
-  font-size: 0.78rem;
-  color: #E2E8F0;
   margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.spotlight-stat-item {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: #FFFFFF;
 }
 
 .spotlight-stat-item strong {
   color: #FFA000;
   font-weight: 800;
-}
-
-.spotlight-stat-divider {
-  color: rgba(255, 255, 255, 0.3);
 }
 
 .btn-spotlight-action {
@@ -338,7 +333,7 @@ button, input, select, textarea {
   justify-content: center;
   gap: 8px;
   background: #FFA000;
-  color: #081736;
+  color: #011E3E;
   font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 800;
@@ -398,7 +393,7 @@ button, input, select, textarea {
 .col-count-tag {
   font-size: 0.65rem;
   font-weight: 700;
-  color: #081736;
+  color: #011E3E;
   background: #F1F5F9;
   border: 1px solid #E2E8F0;
   padding: 2px 6px;
@@ -428,7 +423,7 @@ button, input, select, textarea {
   background: #F8FAFC;
   border-color: #E2E8F0;
   transform: translateX(2px);
-  box-shadow: 0 2px 8px rgba(8, 23, 54, 0.03);
+  box-shadow: 0 2px 8px rgba(1, 30, 62, 0.03);
 }
 
 .fullwidth-flag-box {
@@ -494,8 +489,8 @@ button, input, select, textarea {
 .fullwidth-item-badge {
   font-size: 0.62rem;
   font-weight: 700;
-  color: #081736;
-  background: rgba(8, 23, 54, 0.07);
+  color: #011E3E;
+  background: rgba(1, 30, 62, 0.07);
   padding: 1px 5px;
   border-radius: 3px;
   white-space: nowrap;
@@ -770,8 +765,8 @@ button, input, select, textarea {
 .mobile-sub-badge {
   font-size: 0.65rem;
   font-weight: 700;
-  color: #081736;
-  background: rgba(8, 23, 54, 0.07);
+  color: #011E3E;
+  background: rgba(1, 30, 62, 0.07);
   padding: 2px 6px;
   border-radius: 4px;
   margin-left: auto;
@@ -1678,7 +1673,7 @@ button, input, select, textarea {
    ALL DESTINATIONS CATALOG PAGE (/destinations)
 ============================================================ */
 .dest-all-hero-banner {
-  background: linear-gradient(135deg, #081736 0%, #0F2A5E 100%);
+  background: linear-gradient(135deg, #011E3E 0%, #082A54 100%);
   color: #FFFFFF;
   padding: 70px 0 60px 0;
   text-align: center;
@@ -1729,7 +1724,7 @@ button, input, select, textarea {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: #FFFFFF;
-  color: #081736;
+  color: #011E3E;
   font-size: 1rem;
   outline: none;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -1758,7 +1753,7 @@ button, input, select, textarea {
 .region-pill-btn:hover,
 .region-pill-btn.active {
   background: #FFA700;
-  color: #081736;
+  color: #011E3E;
   border-color: #FFA700;
   font-weight: 700;
 }
@@ -1987,7 +1982,7 @@ button, input, select, textarea {
 }
 
 .breadcrumb-link:hover {
-  color: #081736;
+  color: #011E3E;
 }
 
 .breadcrumb-sep {
@@ -2987,7 +2982,7 @@ button, input, select, textarea {
 }
 
 .cta-banner {
-  background: linear-gradient(135deg, var(--primary-navy) 0%, #061024 100%);
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #001226 100%);
   border-radius: var(--radius-lg);
   padding: 54px 44px;
   color: #FFFFFF;
@@ -3054,7 +3049,7 @@ button, input, select, textarea {
 }
 
 .site-footer {
-  background: #061024;
+  background: #01142B;
   color: rgba(255, 255, 255, 0.8);
   padding-top: 70px;
   padding-bottom: 25px;
@@ -3323,7 +3318,7 @@ button, input, select, textarea {
 @media (max-width: 768px) {
   /* ── Header ── */
   .header-inner {
-    height: 64px;
+    height: 60px;
   }
   .logo-main-text {
     font-size: 1.85rem;
@@ -3333,27 +3328,30 @@ button, input, select, textarea {
     letter-spacing: 1.8px;
   }
 
-  /* ── Hero Section Shell ── */
+  /* ── Hero Section Shell (Viewport Locked without Scrolling) ── */
   .exact-hero-section {
-    padding-top: 14px;
+    padding-top: 6px;
     padding-bottom: 0px;
     text-align: center;
     overflow: hidden;
-    min-height: auto;
+    min-height: calc(100vh - 60px);
+    min-height: calc(100svh - 60px);
+    max-height: calc(100vh - 60px);
+    max-height: calc(100svh - 60px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     position: relative;
     background: #FFFFFF;
   }
 
   /* Landmarks and Grid Watermark on Mobile */
   .hero-grid-pattern {
-    background-size: 30px 30px;
+    background-size: 28px 28px;
     background-image: 
       linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
-    opacity: 0.8;
+    opacity: 0.75;
   }
 
   .hero-background-landmarks {
@@ -3370,20 +3368,21 @@ button, input, select, textarea {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 32%;
-    filter: grayscale(100%) opacity(0.24);
+    object-position: center 30%;
+    filter: grayscale(100%) opacity(0.22);
   }
 
   .hero-container-relative {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 100%;
     position: relative;
     z-index: 2;
+    min-height: 0;
   }
 
   /* ── Main Grid ── */
@@ -3392,8 +3391,8 @@ button, input, select, textarea {
     flex-direction: column;
     align-items: center;
     flex: 1;
-    justify-content: flex-start;
-    min-height: auto;
+    justify-content: space-between;
+    min-height: 0;
     gap: 0;
     position: relative;
     width: 100%;
@@ -3407,7 +3406,7 @@ button, input, select, textarea {
     text-align: center;
     width: 100%;
     flex-shrink: 0;
-    margin-top: 4px;
+    margin-top: 2px;
   }
 
   .desktop-tagline-text { display: none; }
@@ -3415,23 +3414,23 @@ button, input, select, textarea {
 
   .hero-tagline-text {
     font-family: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: 1.85rem;
+    font-size: clamp(1.3rem, 4.2vw, 1.55rem);
     font-style: italic;
     font-weight: 800;
-    color: var(--primary-navy);
+    color: #011E3E;
     line-height: 1.1;
-    margin-bottom: 4px;
-    letter-spacing: -0.3px;
+    margin-bottom: 2px;
+    letter-spacing: -0.2px;
   }
 
   .hero-main-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: clamp(2.75rem, 8.5vw, 3.2rem);
+    font-size: clamp(2.15rem, 7.2vw, 2.65rem);
     font-weight: 900;
-    color: var(--primary-navy);
-    line-height: 1.02;
+    color: #011E3E;
+    line-height: 1.04;
     margin-bottom: 0px;
-    letter-spacing: -1.2px;
+    letter-spacing: -0.8px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3439,23 +3438,23 @@ button, input, select, textarea {
 
   .title-row-1 {
     display: block;
-    color: var(--primary-navy);
+    color: #011E3E;
   }
 
   .title-row-2 {
-    margin-top: 2px;
+    margin-top: 0px;
     position: relative;
     display: inline-block;
   }
 
   .highlight-future-box {
-    padding: 0 16px 4px 14px;
+    padding: 0 14px 2px 12px;
     position: relative;
     display: inline-block;
   }
 
   .highlight-future-brush-bg {
-    inset: -10px -24px -6px -20px;
+    inset: -6px -20px -4px -16px;
     position: absolute;
     background-image: url('/brush-stroke.svg');
     background-size: 100% 100%;
@@ -3466,7 +3465,7 @@ button, input, select, textarea {
   .highlight-future-text {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     font-weight: 900;
-    color: var(--primary-navy);
+    color: #011E3E;
     position: relative;
     z-index: 2;
   }
@@ -3482,10 +3481,11 @@ button, input, select, textarea {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-top: 6px;
-    margin-bottom: -24px;
+    margin-top: 0px;
+    margin-bottom: -10px;
     z-index: 5;
     flex: 1;
+    min-height: 0;
     overflow: visible;
     line-height: 0;
   }
@@ -3493,7 +3493,7 @@ button, input, select, textarea {
   .student-image-frame {
     position: relative;
     width: 100%;
-    max-width: 440px;
+    max-width: 380px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -3502,14 +3502,15 @@ button, input, select, textarea {
   }
 
   .student-cutout-img {
-    height: 460px;
+    height: clamp(260px, 37vh, 340px);
+    max-height: 100%;
     width: auto;
     max-width: none;
     object-fit: contain;
     object-position: bottom center;
     display: block;
     margin: 0 auto;
-    margin-left: -20px;
+    margin-left: -12px;
     margin-bottom: 0;
     vertical-align: bottom;
   }
@@ -3518,24 +3519,26 @@ button, input, select, textarea {
   .mobile-floating-cta {
     display: block;
     position: absolute;
-    top: 50px;
-    right: 0px;
+    top: clamp(20px, 5vh, 45px);
+    right: clamp(-6px, 1.5vw, 6px);
     z-index: 15;
   }
 
   .btn-mobile-hero-assessment {
-    background: #081736;
+    background: #011E3E;
     color: #FFA700;
     font-family: var(--font-body);
     font-weight: 700;
-    font-size: 0.95rem;
-    padding: 13px 18px;
-    border-radius: 8px;
+    font-size: clamp(0.78rem, 2.5vw, 0.88rem);
+    padding: 8px 14px;
+    border-radius: 7px;
     border: none;
-    box-shadow: 0 4px 18px rgba(8, 23, 54, 0.35);
+    box-shadow: 0 4px 16px rgba(1, 30, 62, 0.35);
     cursor: pointer;
     white-space: nowrap;
     transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
   }
 
   .btn-mobile-hero-assessment:active {
@@ -3546,18 +3549,18 @@ button, input, select, textarea {
   .mobile-floating-trust-badge {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     position: absolute;
-    bottom: 38px;
-    right: 2px;
+    bottom: clamp(8px, 1.8vh, 18px);
+    right: clamp(-6px, 1.5vw, 6px);
     z-index: 15;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    padding: 4px 12px 4px 6px;
+    padding: 3px 8px 3px 4px;
     border-radius: 9999px;
-    box-shadow: 0 4px 16px rgba(8, 23, 54, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 3px 12px rgba(1, 30, 62, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.95);
   }
 
   .mobile-avatars-group {
@@ -3566,12 +3569,12 @@ button, input, select, textarea {
   }
 
   .mobile-avatar-circle {
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid #FFFFFF;
-    margin-left: -8px;
+    border: 1.5px solid #FFFFFF;
+    margin-left: -6px;
     background: #CBD5E1;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
@@ -3596,36 +3599,37 @@ button, input, select, textarea {
 
   .mobile-trust-label {
     font-family: var(--font-body);
-    font-size: 0.64rem;
+    font-size: 0.58rem;
     color: #64748B;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1;
     text-transform: uppercase;
     letter-spacing: 0.2px;
   }
 
   .mobile-trust-count {
     font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.74rem;
     font-weight: 800;
-    color: #081736;
+    color: #011E3E;
     line-height: 1.1;
   }
 
   /* ── Results Banner on Mobile ── */
   .results-partnership-banner {
-    background: #081736;
-    border-radius: 22px 22px 0 0;
-    padding: 16px 16px 20px 16px;
+    background: #011E3E;
+    border-radius: 20px 20px 0 0;
+    padding: 10px 12px 14px 12px;
     margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0;
-    box-shadow: 0 -4px 24px rgba(8, 23, 54, 0.25);
+    box-shadow: 0 -4px 20px rgba(1, 30, 62, 0.25);
     position: relative;
     z-index: 10;
     width: 100%;
+    flex-shrink: 0;
   }
 
   .desktop-badge-text { display: none; }
@@ -3633,46 +3637,47 @@ button, input, select, textarea {
   .mobile-badge-text {
     display: block;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: 1.02rem;
+    font-size: clamp(0.76rem, 2.4vw, 0.86rem);
     font-weight: 800;
-    color: #081736;
+    color: #011E3E;
     letter-spacing: -0.2px;
+    white-space: nowrap;
   }
 
   .results-badge-white {
     background: #FFFFFF;
     border-radius: 9999px;
-    padding: 9px 18px;
-    width: 100%;
-    max-width: 360px;
+    padding: 5px 14px;
+    width: fit-content;
+    max-width: 95%;
     text-align: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   }
 
   .results-yellow-divider {
     display: block;
-    width: 92%;
-    max-width: 350px;
-    height: 3.5px;
+    width: 86%;
+    max-width: 290px;
+    height: 3px;
     background: #FFA700;
     border-radius: 2px;
-    margin: 10px auto 14px auto;
+    margin: 5px auto 8px auto;
   }
 
   .results-stats-row-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 10px;
     width: 100%;
-    max-width: 360px;
+    max-width: 320px;
     padding: 0 4px;
   }
 
   .results-stat-group {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     text-align: left;
   }
 
@@ -3684,26 +3689,27 @@ button, input, select, textarea {
   }
 
   .results-stat-icon-wrap svg {
-    width: 44px;
-    height: 40px;
+    width: 34px;
+    height: 30px;
   }
 
   .results-stat-number {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: 1.85rem;
+    font-size: clamp(1.35rem, 3.8vw, 1.55rem);
     font-weight: 800;
     color: #FFA700;
     line-height: 1;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
     letter-spacing: -0.5px;
   }
 
   .results-stat-label {
     font-family: var(--font-body);
-    font-size: 0.88rem;
-    font-weight: 600;
+    font-size: clamp(0.72rem, 2vw, 0.78rem);
+    font-weight: 700;
     color: #FFA700;
-    line-height: 1.15;
+    line-height: 1.1;
+    white-space: nowrap;
   }
 
   .services-grid,
@@ -4040,7 +4046,7 @@ button, input, select, textarea {
 }
 
 .process-bottom-cta {
-  background: linear-gradient(135deg, #081736 0%, #0F2A5E 100%);
+  background: linear-gradient(135deg, #011E3E 0%, #082A54 100%);
   border-radius: 18px;
   padding: 32px 36px;
   color: #FFFFFF;
@@ -4058,33 +4064,28 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 800;
   color: #FFA700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   margin-bottom: 6px;
 }
 
-.cta-heading {
+.cta-main-head {
   font-family: var(--font-heading);
-  font-size: 1.65rem;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
   font-weight: 800;
   color: #FFFFFF;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  line-height: 1.2;
 }
 
-.cta-subtext {
+.cta-sub-head {
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
-}
-
-.btn-process-start {
-  padding: 13px 26px;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
 }
 
 /* ============================================================

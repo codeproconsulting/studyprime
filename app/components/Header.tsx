@@ -1,21 +1,21 @@
 import { Link, useLocation } from "@remix-run/react";
-import { 
-  ChevronDown, 
-  ArrowRight, 
-  Globe2, 
-  GraduationCap, 
-  Laptop, 
-  BarChart3, 
-  Briefcase, 
-  Coins, 
-  HeartPulse, 
-  ShieldCheck, 
-  Sparkles, 
-  FileText, 
+import {
+  ChevronDown,
+  ArrowRight,
+  Globe2,
+  GraduationCap,
+  Laptop,
+  BarChart3,
+  Briefcase,
+  Coins,
+  HeartPulse,
+  ShieldCheck,
+  Sparkles,
+  FileText,
   Plane,
   Cpu,
   Building2,
-  X 
+  X
 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
@@ -282,9 +282,8 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
               >
                 <Link
                   to="/destinations"
-                  className={`nav-menu-item nav-dropdown-trigger ${
-                    location.pathname.startsWith("/destinations") ? "active" : ""
-                  }`}
+                  className={`nav-menu-item nav-dropdown-trigger ${location.pathname.startsWith("/destinations") ? "active" : ""
+                    }`}
                 >
                   <span>Study Destinations</span>
                   <ChevronDown
@@ -302,9 +301,8 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
               >
                 <Link
                   to="/courses"
-                  className={`nav-menu-item nav-dropdown-trigger ${
-                    location.pathname.startsWith("/courses") ? "active" : ""
-                  }`}
+                  className={`nav-menu-item nav-dropdown-trigger ${location.pathname.startsWith("/courses") ? "active" : ""
+                    }`}
                 >
                   <span>Courses</span>
                   <ChevronDown
@@ -322,9 +320,8 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
               >
                 <Link
                   to="/services"
-                  className={`nav-menu-item nav-dropdown-trigger ${
-                    location.pathname.startsWith("/services") ? "active" : ""
-                  }`}
+                  className={`nav-menu-item nav-dropdown-trigger ${location.pathname.startsWith("/services") ? "active" : ""
+                    }`}
                 >
                   <span>Services</span>
                   <ChevronDown
@@ -371,7 +368,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
               aria-label="Toggle navigation"
             >
               {mobileMenuOpen ? (
-                <X size={28} color="#081736" strokeWidth={2.5} />
+                <X size={28} color="#011E3E" strokeWidth={2.5} />
               ) : (
                 <div className="custom-hamburger-bars">
                   <span></span>

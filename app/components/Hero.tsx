@@ -147,9 +147,9 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
                   {/* Card base */}
                   <rect x="2" y="3" width="50" height="38" rx="6" fill="#FFA700"/>
                   {/* Card top stripe */}
-                  <rect x="2" y="9" width="50" height="6" fill="#081736"/>
+                  <rect x="2" y="9" width="50" height="6" fill="#011E3E"/>
                   {/* Checkmark in bottom right */}
-                  <path d="M22 28 L30 36 L46 18" stroke="#081736" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M22 28 L30 36 L46 18" stroke="#011E3E" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <div className="results-stat-text-wrap">
@@ -165,12 +165,12 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
                   {/* Passport card base */}
                   <rect x="2" y="2" width="36" height="44" rx="5" fill="#FFA700"/>
                   {/* Globe circle */}
-                  <circle cx="20" cy="18" r="9" stroke="#081736" strokeWidth="2.5" fill="none"/>
-                  <ellipse cx="20" cy="18" rx="4.5" ry="9" stroke="#081736" strokeWidth="2" fill="none"/>
-                  <line x1="11" y1="18" x2="29" y2="18" stroke="#081736" strokeWidth="2.2"/>
+                  <circle cx="20" cy="18" r="9" stroke="#011E3E" strokeWidth="2.5" fill="none"/>
+                  <ellipse cx="20" cy="18" rx="4.5" ry="9" stroke="#011E3E" strokeWidth="2" fill="none"/>
+                  <line x1="11" y1="18" x2="29" y2="18" stroke="#011E3E" strokeWidth="2.2"/>
                   {/* Document lines */}
-                  <line x1="8" y1="34" x2="32" y2="34" stroke="#081736" strokeWidth="3" strokeLinecap="round"/>
-                  <line x1="12" y1="39" x2="28" y2="39" stroke="#081736" strokeWidth="2.5" strokeLinecap="round"/>
+                  <line x1="8" y1="34" x2="32" y2="34" stroke="#011E3E" strokeWidth="3" strokeLinecap="round"/>
+                  <line x1="12" y1="39" x2="28" y2="39" stroke="#011E3E" strokeWidth="2.5" strokeLinecap="round"/>
                 </svg>
               </div>
               <div className="results-stat-text-wrap">
