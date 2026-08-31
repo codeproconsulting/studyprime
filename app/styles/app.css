@@ -5669,8 +5669,9 @@ button, input, select, textarea {
   width: 100%;
   padding: 16px 0;
   margin: 32px 0 28px;
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 16%, rgba(0, 0, 0, 1) 84%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 16%, rgba(0, 0, 0, 1) 84%, transparent 100%);
+  touch-action: pan-y;
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 14%, rgba(0, 0, 0, 1) 86%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 14%, rgba(0, 0, 0, 1) 86%, transparent 100%);
 }
 
 .uni-vertical-grid {
@@ -5680,50 +5681,19 @@ button, input, select, textarea {
   height: 100%;
 }
 
-@media (max-width: 1100px) {
-  .uni-vertical-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .uni-vertical-column.col-4 {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .uni-vertical-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-  .uni-vertical-column.col-3,
-  .uni-vertical-column.col-4 {
-    display: none;
-  }
-  .uni-vertical-showcase-container {
-    height: 440px;
-  }
-}
-
-@media (max-width: 480px) {
-  .uni-vertical-grid {
-    grid-template-columns: 1fr;
-  }
-  .uni-vertical-column.col-2,
-  .uni-vertical-column.col-3,
-  .uni-vertical-column.col-4 {
-    display: none;
-  }
-}
-
 .uni-vertical-column {
   overflow: hidden;
   height: 100%;
   position: relative;
+  touch-action: pan-y;
 }
 
 .uni-vertical-column-track {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* Upward continuous gliding animations at staggered speeds */
@@ -5763,6 +5733,7 @@ button, input, select, textarea {
   padding: 20px 22px;
   box-shadow: 0 4px 14px rgba(8, 23, 54, 0.04);
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -5773,6 +5744,142 @@ button, input, select, textarea {
   transform: translateY(-4px);
   border-color: var(--brand-yellow);
   box-shadow: 0 14px 30px rgba(8, 23, 54, 0.12);
+}
+
+@media (max-width: 1100px) {
+  .uni-vertical-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .uni-vertical-column.col-4 {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .uni-vertical-showcase-container {
+    height: 400px;
+    margin: 22px 0 18px;
+    padding: 10px 0;
+  }
+  .uni-vertical-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .uni-vertical-column.col-3,
+  .uni-vertical-column.col-4 {
+    display: none;
+  }
+  .uni-vertical-column-track {
+    gap: 12px;
+  }
+  .uni-vertical-card {
+    padding: 14px 12px;
+    border-radius: 14px;
+  }
+  .partner-logo-emblem-wrap {
+    width: 38px;
+    height: 38px;
+  }
+  .partner-flag-bubble {
+    font-size: 1.15rem;
+  }
+  .partner-uni-name {
+    font-size: 0.85rem;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.25;
+    min-height: 2.1em;
+  }
+  .partners-section-wrapper .section-head-split {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .partners-section-wrapper .header-right,
+  .btn-view-all-unis {
+    width: 100%;
+    justify-content: center;
+  }
+  .partners-bottom-cta-banner {
+    padding: 22px 18px;
+  }
+  .partners-bottom-cta-banner .banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .btn-load-all-unis {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .uni-vertical-showcase-container {
+    height: 350px;
+    margin: 16px 0 14px;
+    padding: 6px 0;
+  }
+  .uni-vertical-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .uni-vertical-column-track {
+    gap: 8px;
+  }
+  .uni-vertical-card {
+    padding: 10px 8px;
+    border-radius: 12px;
+  }
+  .partner-emblem-header {
+    margin-bottom: 6px;
+  }
+  .partner-logo-emblem-wrap {
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+    border-radius: 8px;
+  }
+  .partner-crest-badge {
+    padding: 3px 6px;
+    font-size: 0.68rem;
+    gap: 3px;
+  }
+  .partner-flag-bubble {
+    font-size: 0.95rem;
+  }
+  .partner-meta-row {
+    gap: 4px;
+    margin-bottom: 2px;
+  }
+  .partner-location-pill {
+    font-size: 0.65rem;
+    gap: 2px;
+  }
+  .partner-verified-pill {
+    font-size: 0.58rem;
+    padding: 1px 3px;
+    gap: 2px;
+  }
+  .partner-uni-name {
+    font-size: 0.76rem;
+    line-height: 1.2;
+    min-height: 2.4em;
+    word-break: break-word;
+  }
+  .partners-bottom-cta-banner {
+    padding: 18px 14px;
+  }
+  .banner-title {
+    font-size: 1.12rem;
+  }
+  .banner-desc {
+    font-size: 0.84rem;
+  }
 }
 
 /* ============================================================
