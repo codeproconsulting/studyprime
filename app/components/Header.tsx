@@ -727,30 +727,17 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
 
             {/* Mobile Destinations Accordion */}
             <li className="mobile-accordion-item">
-              <div
+              <button
+                type="button"
                 className="mobile-accordion-trigger"
                 onClick={() => toggleMobileAccordion("destinations")}
               >
-                <Link
-                  to="/destinations"
-                  className="mobile-nav-link"
-                >
-                  Study Destinations
-                </Link>
-                <button
-                  type="button"
-                  className="mobile-accordion-arrow-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleMobileAccordion("destinations");
-                  }}
-                >
-                  <ChevronDown
-                    size={18}
-                    className={`mobile-chevron ${mobileAccordion === "destinations" ? "open" : ""}`}
-                  />
-                </button>
-              </div>
+                <span className="mobile-nav-link-text">Study Destinations</span>
+                <ChevronDown
+                  size={18}
+                  className={`mobile-chevron ${mobileAccordion === "destinations" ? "open" : ""}`}
+                />
+              </button>
 
               {mobileAccordion === "destinations" && (
                 <div className="mobile-accordion-content">
@@ -778,32 +765,30 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
               )}
             </li>
 
+            {/* Mobile Universities Direct Link */}
+            <li>
+              <Link
+                to="/universities"
+                className="mobile-nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Partner Universities
+              </Link>
+            </li>
+
             {/* Mobile Courses Accordion */}
             <li className="mobile-accordion-item">
-              <div
+              <button
+                type="button"
                 className="mobile-accordion-trigger"
                 onClick={() => toggleMobileAccordion("courses")}
               >
-                <Link
-                  to="/courses"
-                  className="mobile-nav-link"
-                >
-                  Degree Programs
-                </Link>
-                <button
-                  type="button"
-                  className="mobile-accordion-arrow-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleMobileAccordion("courses");
-                  }}
-                >
-                  <ChevronDown
-                    size={18}
-                    className={`mobile-chevron ${mobileAccordion === "courses" ? "open" : ""}`}
-                  />
-                </button>
-              </div>
+                <span className="mobile-nav-link-text">Degree Programs</span>
+                <ChevronDown
+                  size={18}
+                  className={`mobile-chevron ${mobileAccordion === "courses" ? "open" : ""}`}
+                />
+              </button>
 
               {mobileAccordion === "courses" && (
                 <div className="mobile-accordion-content">
@@ -831,30 +816,17 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
 
             {/* Mobile Services Accordion */}
             <li className="mobile-accordion-item">
-              <div
+              <button
+                type="button"
                 className="mobile-accordion-trigger"
                 onClick={() => toggleMobileAccordion("services")}
               >
-                <Link
-                  to="/services"
-                  className="mobile-nav-link"
-                >
-                  Services
-                </Link>
-                <button
-                  type="button"
-                  className="mobile-accordion-arrow-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleMobileAccordion("services");
-                  }}
-                >
-                  <ChevronDown
-                    size={18}
-                    className={`mobile-chevron ${mobileAccordion === "services" ? "open" : ""}`}
-                  />
-                </button>
-              </div>
+                <span className="mobile-nav-link-text">Services</span>
+                <ChevronDown
+                  size={18}
+                  className={`mobile-chevron ${mobileAccordion === "services" ? "open" : ""}`}
+                />
+              </button>
 
               {mobileAccordion === "services" && (
                 <div className="mobile-accordion-content">

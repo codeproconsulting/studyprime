@@ -672,17 +672,27 @@ button, input, select, textarea {
 
 /* Mobile Nav Dropdown & Accordions */
 .mobile-nav-dropdown {
-  display: none;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   background: #FFFFFF;
   border-top: 1px solid #ECEFF3;
-  padding: 16px 0 24px 0;
+  border-bottom: 2px solid #E2E8F0;
+  box-shadow: 0 14px 36px rgba(1, 30, 62, 0.18);
+  padding: 14px 16px 24px 16px;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  z-index: 999;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-nav-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .mobile-nav-link {
@@ -692,33 +702,39 @@ button, input, select, textarea {
   color: var(--primary-navy);
   text-decoration: none;
   display: block;
-  padding: 4px 0;
+  padding: 8px 4px;
 }
 
 .mobile-accordion-item {
   border-bottom: 1px solid #F1F5F9;
-  padding-bottom: 8px;
+  padding-bottom: 4px;
 }
 
 .mobile-accordion-trigger {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
-}
-
-.mobile-accordion-arrow-btn {
+  width: 100%;
   background: none;
   border: none;
-  padding: 6px 10px;
+  padding: 8px 4px;
   cursor: pointer;
-  color: #64748B;
-  display: flex;
-  align-items: center;
+  text-align: left;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav-link-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-navy);
 }
 
 .mobile-chevron {
   transition: transform 0.2s ease, color 0.2s ease;
+  color: #64748B;
+  flex-shrink: 0;
 }
 
 .mobile-chevron.open {
@@ -730,7 +746,7 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 8px 0 6px 10px;
+  padding: 6px 0 8px 6px;
   animation: aceternityFadeIn 0.2s ease;
 }
 
@@ -748,7 +764,8 @@ button, input, select, textarea {
   transition: all 0.15s ease;
 }
 
-.mobile-sub-link:hover {
+.mobile-sub-link:hover,
+.mobile-sub-link:active {
   background: #F1F5F9;
   color: var(--primary-navy);
 }
@@ -3414,7 +3431,7 @@ button, input, select, textarea {
 
   .hero-tagline-text {
     font-family: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: clamp(1.3rem, 4.2vw, 1.55rem);
+    font-size: clamp(1.05rem, 3.4vw, 1.22rem);
     font-style: italic;
     font-weight: 800;
     color: #011E3E;
@@ -3425,12 +3442,12 @@ button, input, select, textarea {
 
   .hero-main-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: clamp(2.15rem, 7.2vw, 2.65rem);
+    font-size: clamp(1.68rem, 5.2vw, 1.95rem);
     font-weight: 900;
     color: #011E3E;
-    line-height: 1.04;
+    line-height: 1.06;
     margin-bottom: 0px;
-    letter-spacing: -0.8px;
+    letter-spacing: -0.5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3448,13 +3465,13 @@ button, input, select, textarea {
   }
 
   .highlight-future-box {
-    padding: 0 14px 2px 12px;
+    padding: 0 10px 2px 8px;
     position: relative;
     display: inline-block;
   }
 
   .highlight-future-brush-bg {
-    inset: -6px -20px -4px -16px;
+    inset: -4px -14px -3px -10px;
     position: absolute;
     background-image: url('/brush-stroke.svg');
     background-size: 100% 100%;
@@ -3519,8 +3536,8 @@ button, input, select, textarea {
   .mobile-floating-cta {
     display: block;
     position: absolute;
-    top: clamp(20px, 5vh, 45px);
-    right: clamp(-6px, 1.5vw, 6px);
+    top: clamp(24px, 6vh, 50px);
+    right: clamp(-2px, 1.5vw, 8px);
     z-index: 15;
   }
 
@@ -3528,17 +3545,18 @@ button, input, select, textarea {
     background: #011E3E;
     color: #FFA700;
     font-family: var(--font-body);
-    font-weight: 700;
-    font-size: clamp(0.78rem, 2.5vw, 0.88rem);
-    padding: 8px 14px;
-    border-radius: 7px;
-    border: none;
-    box-shadow: 0 4px 16px rgba(1, 30, 62, 0.35);
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(255, 167, 0, 0.3);
+    box-shadow: 0 4px 18px rgba(1, 30, 62, 0.45);
     cursor: pointer;
     white-space: nowrap;
     transition: var(--transition);
     display: inline-block;
     text-decoration: none;
+    letter-spacing: 0.2px;
   }
 
   .btn-mobile-hero-assessment:active {
