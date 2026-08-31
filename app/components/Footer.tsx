@@ -9,10 +9,14 @@ export function Footer() {
         <div className="footer-grid">
           {/* Brand Col */}
           <div className="footer-brand">
-            <h3 style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <span>Study Prime</span>
-            </h3>
-            <p>
+            <Link to="/" className="footer-brand-logo-link" aria-label="Study Prime Home">
+              <img
+                src="/logoforfooter.png"
+                alt="Study Prime"
+                className="site-footer-logo-img"
+              />
+            </Link>
+            <p style={{ marginTop: "14px" }}>
               Study Prime is a premier overseas education consultancy committed to helping Pakistani students secure university admissions and visas worldwide with transparency and excellence.
             </p>
             <div style={{ display: "flex", gap: "12px", marginTop: "16px" }}>

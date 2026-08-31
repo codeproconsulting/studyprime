@@ -254,14 +254,12 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       <div className="container">
         <div className="header-inner">
           {/* Brand Logo */}
-          <Link to="/" className="site-brand-logo">
-            <div className="logo-text-wrap">
-              <div className="logo-main-text">
-                <span className="logo-yellow">Study</span>
-                <span className="logo-navy">Prime</span>
-              </div>
-              <div className="logo-sub-text">STUDY ABROAD EXPERTS</div>
-            </div>
+          <Link to="/" className="site-brand-logo" aria-label="Study Prime Home">
+            <img
+              src="/studyprimelogo.png"
+              alt="Study Prime - Study Abroad Experts"
+              className="site-header-logo-img"
+            />
           </Link>
 
           {/* Desktop Navigation */}
