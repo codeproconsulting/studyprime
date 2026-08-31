@@ -226,7 +226,7 @@ export default function AllDestinationsPage() {
                     {/* Partner Preview */}
                     <div className="dest-catalog-uni-preview">
                       <div className="preview-label">
-                        <GraduationCap size={14} color="#081736" />
+                        <GraduationCap size={14} color="#011E3E" />
                         <span>Top Panel Institutions:</span>
                       </div>
                       <div className="preview-uni-names">

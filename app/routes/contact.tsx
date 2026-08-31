@@ -19,7 +19,7 @@ export default function Contact() {
 
   return (
     <div>
-      <section style={{ background: "linear-gradient(135deg, #1B244A 0%, #0D1329 100%)", color: "#FFFFFF", padding: "80px 0", textAlign: "center" }}>
+      <section style={{ background: "linear-gradient(135deg, #011E3E 0%, #082A54 100%)", color: "#FFFFFF", padding: "80px 0", textAlign: "center" }}>
         <div className="container">
           <div className="badge badge-gold" style={{ marginBottom: "16px" }}>Get In Touch</div>
           <h1 style={{ fontSize: "3rem", color: "#FFFFFF", marginBottom: "16px" }}>Contact Study Prime</h1>
@@ -41,7 +41,7 @@ export default function Contact() {
 
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                  <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "rgba(8, 23, 54, 0.08)", color: "#081736", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "rgba(1, 30, 62, 0.08)", color: "#011E3E", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <MapPin size={22} />
                   </div>
                   <div>

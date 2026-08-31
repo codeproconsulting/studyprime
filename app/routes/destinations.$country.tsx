@@ -1220,7 +1220,7 @@ export default function CountryDetailPage() {
                   <div className="dest-fields-chips">
                     {details.popularFields.map((f, i) => (
                       <div key={i} className="field-chip">
-                        <GraduationCap size={15} color="#081736" />
+                        <GraduationCap size={15} color="#011E3E" />
                         <span>{f}</span>
                       </div>
                     ))}
@@ -1259,7 +1259,7 @@ export default function CountryDetailPage() {
                         <div key={idx} className="dest-uni-card">
                           <div className="uni-card-header">
                             <div className="uni-icon-square">
-                              <Building2 size={22} color="#081736" />
+                              <Building2 size={22} color="#011E3E" />
                             </div>
                             <span className="uni-verified-tag">Official Partner</span>
                           </div>
@@ -1317,7 +1317,7 @@ export default function CountryDetailPage() {
                   <div className="dest-highlight-callout">
                     <Sparkles size={22} color="#FFA700" style={{ flexShrink: 0 }} />
                     <div>
-                      <h4 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#081736", marginBottom: "4px" }}>
+                      <h4 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#011E3E", marginBottom: "4px" }}>
                         Need help with SOP drafting or IELTS preparation?
                       </h4>
                       <p style={{ fontSize: "0.9rem", color: "#64748B", margin: 0 }}>
@@ -1341,7 +1341,7 @@ export default function CountryDetailPage() {
                       <div key={idx} className="visa-step-card">
                         <ShieldCheck size={20} color="#10B981" className="visa-step-icon" />
                         <div className="visa-step-text">
-                          <h4 style={{ fontSize: "1rem", fontWeight: 700, color: "#081736", marginBottom: "4px" }}>
+                          <h4 style={{ fontSize: "1rem", fontWeight: 700, color: "#011E3E", marginBottom: "4px" }}>
                             Step {idx + 1} Requirement
                           </h4>
                           <p style={{ fontSize: "0.9rem", color: "#475569", margin: 0 }}>{vReq}</p>
@@ -1393,7 +1393,7 @@ export default function CountryDetailPage() {
 
                 <div className="consult-contact-row">
                   <div className="office-tag">
-                    <MapPin size={13} color="#081736" />
+                    <MapPin size={13} color="#011E3E" />
                     <span>Galleria Mall, I-8 Markaz, Islamabad</span>
                   </div>
                 </div>
@@ -1401,7 +1401,7 @@ export default function CountryDetailPage() {
 
               {/* Other Destinations Quick Navigation */}
               <div className="other-destinations-card">
-                <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#081736", marginBottom: "14px" }}>
+                <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#011E3E", marginBottom: "14px" }}>
                   Other Top Destinations
                 </h4>
                 <div className="other-dest-links">

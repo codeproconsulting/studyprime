@@ -187,7 +187,7 @@ export default function Services() {
                   <div className="service-card-left">
                     <div className="service-header-row">
                       <div className="service-icon-box-lg">
-                        <IconComponent size={28} color="#081736" />
+                        <IconComponent size={28} color="#011E3E" />
                       </div>
                       <h2 className="service-card-title">{srv.title}</h2>
                     </div>
@@ -228,7 +228,7 @@ export default function Services() {
                   {/* Right Column: Deliverables & Quality Guarantee Panel */}
                   <div className="service-deliverables-panel">
                     <h3 className="deliverables-title">
-                      <FileText size={18} color="#081736" />
+                      <FileText size={18} color="#011E3E" />
                       <span>{deliverables.title}</span>
                     </h3>
 
@@ -268,7 +268,7 @@ export default function Services() {
           <div className="service-assurance-grid">
             <div className="assurance-card">
               <div className="assurance-icon">
-                <ShieldCheck size={24} color="#081736" />
+                <ShieldCheck size={24} color="#011E3E" />
               </div>
               <h3 className="assurance-title">100% Direct Partnerships</h3>
               <p className="assurance-desc">
@@ -310,7 +310,7 @@ export default function Services() {
       </section>
 
       {/* ── 4. Call to Action Banner ── */}
-      <section className="section-padding" style={{ backgroundColor: "#081736", color: "#FFFFFF" }}>
+      <section className="section-padding" style={{ backgroundColor: "#011E3E", color: "#FFFFFF" }}>
         <div className="container">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "28px" }}>
             <div style={{ maxWidth: "600px" }}>

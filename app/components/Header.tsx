@@ -150,7 +150,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       href: "/courses/computer-science-software-engineering",
       desc: "Software, Machine Learning & Cloud",
       icon: Laptop,
-      color: "#081736",
+      color: "#011E3E",
     },
     {
       title: "Data Science & Analytics",
@@ -164,7 +164,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       href: "/courses/cyber-security-cloud-computing",
       desc: "Network Security & Infrastructure",
       icon: ShieldCheck,
-      color: "#081736",
+      color: "#011E3E",
     },
   ];
 
@@ -181,7 +181,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       href: "/courses/accounting-finance-fintech",
       desc: "ACCA/CPA Exemptions & Banking",
       icon: Coins,
-      color: "#081736",
+      color: "#011E3E",
     },
     {
       title: "Digital Marketing & Analytics",
@@ -198,7 +198,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       href: "/courses/nursing-healthcare-biomedical",
       desc: "Hospital Practicums & Clinical",
       icon: HeartPulse,
-      color: "#081736",
+      color: "#011E3E",
     },
     {
       title: "Robotics & Embedded Systems",
@@ -212,7 +212,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       href: "/courses/nursing-healthcare-biomedical",
       desc: "Pharmaceutical & Lab Research",
       icon: GraduationCap,
-      color: "#081736",
+      color: "#011E3E",
     },
   ];
 
@@ -229,7 +229,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       href: "/services/university-matching",
       desc: "Profile assessment & maximum scholarship matching for 200+ partner universities",
       icon: GraduationCap,
-      color: "#081736",
+      color: "#011E3E",
     },
     {
       title: "SOP & Document Drafting",
@@ -243,7 +243,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
       href: "/services/pre-departure",
       desc: "Flight briefing, student accommodation assistance, airport pickup & currency exchange",
       icon: Plane,
-      color: "#081736",
+      color: "#011E3E",
     },
   ];
 

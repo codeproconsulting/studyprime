@@ -79,7 +79,7 @@ export default function CoursesPage() {
   return (
     <div>
       {/* Header Banner */}
-      <section style={{ background: "linear-gradient(135deg, #1B244A 0%, #0D1329 100%)", color: "#FFFFFF", padding: "80px 0", textAlign: "center" }}>
+      <section style={{ background: "linear-gradient(135deg, #011E3E 0%, #082A54 100%)", color: "#FFFFFF", padding: "80px 0", textAlign: "center" }}>
         <div className="container">
           <h1 style={{ fontSize: "3rem", color: "#FFFFFF", marginBottom: "16px", fontWeight: 800 }}>
             Academic Courses &amp; Programs
@@ -91,7 +91,7 @@ export default function CoursesPage() {
           {/* Search Bar */}
           <div style={{ maxWidth: "600px", margin: "32px auto 0", position: "relative" }}>
             <div className="dest-search-wrap" style={{ background: "#FFFFFF", borderRadius: "50px", padding: "4px 8px" }}>
-              <Search size={20} className="search-icon-inside" style={{ color: "#081736" }} />
+              <Search size={20} className="search-icon-inside" style={{ color: "#011E3E" }} />
               <input
                 type="text"
                 placeholder="Search by course name, field, or destination (e.g. AI, Top-Up, UK)..."
@@ -131,7 +131,7 @@ export default function CoursesPage() {
                 <div key={course.slug} className="course-card-enhanced">
                   <div className="course-card-top-bar">
                     <div className="course-icon-box">
-                      <IconComponent size={24} color="#081736" />
+                      <IconComponent size={24} color="#011E3E" />
                     </div>
                     <span className="course-badge-pill">{course.badge}</span>
                   </div>

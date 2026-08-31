@@ -160,7 +160,7 @@ export default function CourseDetailPage() {
               {/* 1. Program Overview */}
               <div className="course-content-block">
                 <h2 className="block-title">
-                  <BookOpen size={22} color="#081736" /> Program Overview
+                  <BookOpen size={22} color="#011E3E" /> Program Overview
                 </h2>
                 <p className="block-text">{course.fullDescription}</p>
 
@@ -180,7 +180,7 @@ export default function CourseDetailPage() {
               {/* 2. Key Modules & Curriculum */}
               <div className="course-content-block">
                 <h2 className="block-title">
-                  <FileText size={22} color="#081736" /> Key Curriculum &amp; Core Modules
+                  <FileText size={22} color="#011E3E" /> Key Curriculum &amp; Core Modules
                 </h2>
                 <p className="block-text">
                   Below are representative foundational and elective modules offered by partner universities in this program:
@@ -198,13 +198,13 @@ export default function CourseDetailPage() {
               {/* 3. Entry Requirements */}
               <div className="course-content-block">
                 <h2 className="block-title">
-                  <ShieldCheck size={22} color="#081736" /> Admission &amp; Entry Requirements
+                  <ShieldCheck size={22} color="#011E3E" /> Admission &amp; Entry Requirements
                 </h2>
                 <div className="requirements-box">
                   <ul className="requirements-list">
                     {course.entryRequirements.map((req, idx) => (
                       <li key={idx} className="requirement-item">
-                        <CheckCircle2 size={16} color="#081736" className="req-icon" />
+                        <CheckCircle2 size={16} color="#011E3E" className="req-icon" />
                         <span>{req}</span>
                       </li>
                     ))}
@@ -215,7 +215,7 @@ export default function CourseDetailPage() {
               {/* 4. Career Prospects */}
               <div className="course-content-block">
                 <h2 className="block-title">
-                  <TrendingUp size={22} color="#081736" /> Career Opportunities &amp; Graduate Roles
+                  <TrendingUp size={22} color="#011E3E" /> Career Opportunities &amp; Graduate Roles
                 </h2>
                 <p className="block-text">
                   Graduates from accredited programs in this field can pursue competitive roles worldwide:
@@ -233,12 +233,12 @@ export default function CourseDetailPage() {
               {/* 5. Popular Partner Universities */}
               <div className="course-content-block">
                 <h2 className="block-title">
-                  <Building2 size={22} color="#081736" /> Top Panel Universities Offering This Course
+                  <Building2 size={22} color="#011E3E" /> Top Panel Universities Offering This Course
                 </h2>
                 <div className="course-unis-grid">
                   {course.popularUniversities.map((uni, idx) => (
                     <div key={idx} className="course-uni-card">
-                      <Building2 size={20} color="#081736" />
+                      <Building2 size={20} color="#011E3E" />
                       <div>
                         <span className="course-uni-name">{uni}</span>
                         <span className="course-uni-badge">Panel Partner</span>
@@ -255,7 +255,7 @@ export default function CourseDetailPage() {
                 {/* Advisor Contact Card */}
                 <div className="sidebar-advisor-card">
                   <div className="advisor-avatar-circle">
-                    <Users size={24} color="#081736" />
+                    <Users size={24} color="#011E3E" />
                   </div>
                   <h4 className="advisor-heading">Talk to a Course Advisor</h4>
                   <p className="advisor-sub">

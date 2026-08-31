@@ -119,7 +119,7 @@ export default function AssessmentPage() {
               </p>
 
               <div className="assessment-success-box">
-                <h4 style={{ color: "#0B1B3A", marginBottom: "8px", fontWeight: 800 }}>Next Steps:</h4>
+                <h4 style={{ color: "#011E3E", marginBottom: "8px", fontWeight: 800 }}>Next Steps:</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, textAlign: "left", display: "flex", flexDirection: "column", gap: "8px" }}>
                   <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.92rem", color: "#475569" }}>
                     <CheckCircle2 size={16} color="#FFA700" /> A senior education counselor will review your grades and shortlisted institutions.
@@ -490,15 +490,15 @@ export default function AssessmentPage() {
                   
                   <div className="sidebar-contact-list">
                     <a href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`} className="sidebar-contact-link">
-                      <Phone size={16} color="#0B1B3A" />
+                      <Phone size={16} color="#011E3E" />
                       <span>{siteConfig.contact.phone}</span>
                     </a>
                     <a href={`mailto:${siteConfig.contact.email}`} className="sidebar-contact-link">
-                      <Mail size={16} color="#0B1B3A" />
+                      <Mail size={16} color="#011E3E" />
                       <span>{siteConfig.contact.email}</span>
                     </a>
                     <div className="sidebar-contact-link">
-                      <Clock size={16} color="#0B1B3A" />
+                      <Clock size={16} color="#011E3E" />
                       <span>{siteConfig.contact.timing}</span>
                     </div>
                   </div>

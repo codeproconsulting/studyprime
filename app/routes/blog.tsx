@@ -5,7 +5,7 @@ import { blogPosts } from "~/data/siteData";
 export default function Blog() {
   return (
     <div>
-      <section style={{ background: "linear-gradient(135deg, #1B244A 0%, #0D1329 100%)", color: "#FFFFFF", padding: "80px 0", textAlign: "center" }}>
+      <section style={{ background: "linear-gradient(135deg, #011E3E 0%, #082A54 100%)", color: "#FFFFFF", padding: "80px 0", textAlign: "center" }}>
         <div className="container">
           <div className="badge badge-gold" style={{ marginBottom: "16px" }}>Knowledge Hub</div>
           <h1 style={{ fontSize: "3rem", color: "#FFFFFF", marginBottom: "16px" }}>Latest Insights &amp; Visa Updates</h1>

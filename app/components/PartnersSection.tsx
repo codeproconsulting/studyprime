@@ -13,7 +13,7 @@ import { getOfficialUniversityLogo } from "~/utils/universityLogos";
 // Curated palette for authentic university crest badges
 const UNIVERSITY_COLORS: Record<string, { bg: string; text: string; border: string }> = {
   usa: { bg: "#0F294A", text: "#FFFFFF", border: "#E11D48" },
-  uk: { bg: "#0B1B3A", text: "#FFA700", border: "#E2E8F0" },
+  uk: { bg: "#011E3E", text: "#FFA700", border: "#E2E8F0" },
   australia: { bg: "#004B87", text: "#FFA700", border: "#BFDBFE" },
   "new-zealand": { bg: "#00247D", text: "#FFFFFF", border: "#CC0000" },
   japan: { bg: "#BC002D", text: "#FFFFFF", border: "#FEE2E2" },
@@ -252,7 +252,7 @@ export function PartnersSection() {
                               <div
                                 className="partner-crest-badge"
                                 style={{
-                                  background: `linear-gradient(135deg, ${colorTheme.bg}, #081736)`,
+                                  background: `linear-gradient(135deg, ${colorTheme.bg}, #011E3E)`,
                                   color: colorTheme.text,
                                 }}
                               >

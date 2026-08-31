@@ -3000,7 +3000,7 @@ button, input, select, textarea {
 }
 
 .cta-banner {
-  background: linear-gradient(135deg, var(--primary-navy) 0%, #001226 100%);
+  background: linear-gradient(135deg, #011E3E 0%, #082A54 100%);
   border-radius: var(--radius-lg);
   padding: 54px 44px;
   color: #FFFFFF;
@@ -3067,7 +3067,7 @@ button, input, select, textarea {
 }
 
 .site-footer {
-  background: #01142B;
+  background: #011E3E;
   color: rgba(255, 255, 255, 0.8);
   padding-top: 70px;
   padding-bottom: 25px;
@@ -4575,7 +4575,7 @@ button, input, select, textarea {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #081736 0%, #1E40AF 100%);
+  background: linear-gradient(135deg, #011E3E 0%, #1E40AF 100%);
   color: #FFA700;
   font-weight: 800;
   font-size: 0.9rem;
@@ -4648,7 +4648,7 @@ button, input, select, textarea {
 ============================================================ */
 .vibrant-services-section {
   position: relative;
-  background: linear-gradient(145deg, #08132A 0%, #0B1B3A 45%, #050D1E 100%);
+  background: linear-gradient(145deg, #011E3E 0%, #082A54 100%);
   padding: 85px 0 95px;
   overflow: hidden;
   color: #FFFFFF;
@@ -4746,7 +4746,7 @@ button, input, select, textarea {
 
 .btn-vibrant-services:hover {
   background: #FFA700;
-  color: #0B1B3A;
+  color: #011E3E;
   border-color: #FFA700;
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(255, 167, 0, 0.3);
@@ -4845,7 +4845,7 @@ button, input, select, textarea {
 }
 
 .vibrant-service-card:hover .vibrant-icon {
-  color: #0B1B3A;
+  color: #011E3E;
   transform: scale(1.08);
 }
 
@@ -5150,7 +5150,7 @@ button, input, select, textarea {
    COURSE DETAIL PAGE
 ============================================================ */
 .course-hero-header {
-  background: linear-gradient(135deg, #0B1B3A 0%, #0F2450 60%, #050D1E 100%);
+  background: linear-gradient(135deg, #011E3E 0%, #082A54 100%);
   color: #FFFFFF;
   padding: 60px 0 70px;
   position: relative;
@@ -6028,7 +6028,7 @@ button, input, select, textarea {
    REDESIGNED /SERVICES PAGE STYLES
 ============================================================ */
 .services-hero-banner {
-  background: linear-gradient(135deg, #081736 0%, #0F2A5E 100%);
+  background: linear-gradient(135deg, #011E3E 0%, #082A54 100%);
   color: #FFFFFF;
   padding: 84px 0 64px;
   text-align: center;
@@ -6328,7 +6328,7 @@ button, input, select, textarea {
 }
 
 .unis-hero-strip {
-  background: linear-gradient(145deg, #08132A 0%, #0B1B3A 55%, #081020 100%);
+  background: linear-gradient(145deg, #011E3E 0%, #082A54 100%);
   padding: 64px 0 72px;
   position: relative;
   overflow: hidden;
@@ -6637,7 +6637,7 @@ button, input, select, textarea {
 .unis-empty-state p { font-size: 1rem; margin-bottom: 24px; }
 
 .unis-cta-section {
-  background: linear-gradient(135deg, #0B1B3A 0%, #0F2860 100%);
+  background: linear-gradient(135deg, #011E3E 0%, #082A54 100%);
   padding: 64px 0;
 }
 
@@ -6691,7 +6691,7 @@ button, input, select, textarea {
    FREE ASSESSMENT PAGE STYLING
 ============================================================ */
 .assessment-hero-strip {
-  background: linear-gradient(145deg, #08132A 0%, #0B1B3A 50%, #050D1E 100%);
+  background: linear-gradient(145deg, #011E3E 0%, #082A54 100%);
   padding: 65px 0 55px;
   color: #FFFFFF;
   position: relative;
@@ -6864,8 +6864,8 @@ button, input, select, textarea {
 }
 
 .form-control:focus {
-  border-color: #0B1B3A;
-  box-shadow: 0 0 0 3px rgba(11, 27, 58, 0.12);
+  border-color: #011E3E;
+  box-shadow: 0 0 0 3px rgba(1, 30, 62, 0.12);
 }
 
 .btn-submit-assessment {
@@ -6879,13 +6879,13 @@ button, input, select, textarea {
   gap: 10px;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(11, 27, 58, 0.18);
+  box-shadow: 0 6px 18px rgba(1, 30, 62, 0.18);
   transition: all 0.25s ease;
 }
 
 .btn-submit-assessment:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(11, 27, 58, 0.25);
+  box-shadow: 0 10px 24px rgba(1, 30, 62, 0.25);
 }
 
 .assessment-sidebar {
@@ -6901,7 +6901,7 @@ button, input, select, textarea {
   border: 1px solid #E2E8F0;
   border-radius: 18px;
   padding: 26px 24px;
-  box-shadow: 0 4px 16px rgba(8, 23, 54, 0.04);
+  box-shadow: 0 4px 16px rgba(1, 30, 62, 0.04);
 }
 
 .sidebar-title {
@@ -6979,8 +6979,8 @@ button, input, select, textarea {
 
 .sidebar-contact-link:hover {
   background: #FFFFFF;
-  border-color: #0B1B3A;
-  color: #0B1B3A;
+  border-color: #011E3E;
+  color: #011E3E;
 }
 
 .assessment-success-card {
