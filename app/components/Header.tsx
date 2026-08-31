@@ -356,13 +356,12 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
 
           {/* Header Assessment Button */}
           <div className="header-right-action">
-            <button
-              type="button"
+            <Link
+              to="/assessment"
               className="btn-header-assessment"
-              onClick={onOpenConsultation}
             >
               Get Free Assessment
-            </button>
+            </Link>
 
             {/* Mobile Hamburger Toggle Button */}
             <button
@@ -412,17 +411,14 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
                     <span className="spotlight-stat-divider">•</span>
                     <span className="spotlight-stat-item"><strong>200+</strong> Panel Unis</span>
                   </div>
-                  <button
-                    type="button"
+                  <Link
+                    to="/assessment"
                     className="btn-spotlight-action"
-                    onClick={() => {
-                      setActiveDropdown(null);
-                      onOpenConsultation?.();
-                    }}
+                    onClick={() => setActiveDropdown(null)}
                   >
                     <span>Get Free Assessment</span>
                     <ArrowRight size={14} />
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Right 3-Column Categorized Grid */}
@@ -908,17 +904,14 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
             </li>
 
             <li style={{ marginTop: "12px" }}>
-              <button
-                type="button"
+              <Link
+                to="/assessment"
                 className="btn-header-assessment"
-                style={{ width: "100%" }}
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenConsultation?.();
-                }}
+                style={{ width: "100%", textAlign: "center", display: "block" }}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Get Free Assessment
-              </button>
+              </Link>
             </li>
           </ul>
         </div>

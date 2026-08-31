@@ -178,21 +178,6 @@ export function DestinationsSection() {
                     />
                     <div className="dest-carousel-img-overlay" />
                     
-                    {/* Country Badge */}
-                    <div className="dest-carousel-flag-badge">
-                      {dest.flagImage && (
-                        <img
-                          src={dest.flagImage}
-                          alt={dest.name}
-                          className="flag-icon-mini"
-                          onError={(e) => {
-                            (e.target as HTMLElement).style.display = "none";
-                          }}
-                        />
-                      )}
-                      <span>{dest.name}</span>
-                    </div>
-
                     {/* Uni Count Tag */}
                     <div className="dest-carousel-uni-tag">
                       <GraduationCap size={13} color="#FFA700" />

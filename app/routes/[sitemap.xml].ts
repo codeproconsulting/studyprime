@@ -14,6 +14,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     "/courses",
     "/about",
     "/contact",
+    "/assessment",
     "/blog",
   ];
 

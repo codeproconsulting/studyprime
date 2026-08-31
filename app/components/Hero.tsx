@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }) {
   return (
     <section className="exact-hero-section">
@@ -23,10 +25,11 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
             </div>
 
             <h1 className="hero-main-title">
-              <span className="title-row-1">We Invest In</span>
-              <span className="title-row-2">
-                <span className="highlight-future-box">
-                  <span className="highlight-future-brush-bg"></span>
+              <span className="hero-title-line-1">Opening Global Doors</span>
+              <span className="hero-title-line-2">
+                For{" "}
+                <span className="future-highlight-wrapper">
+                  <span className="future-sketch-brush"></span>
                   <span className="highlight-future-text">Your Future</span>
                 </span>
               </span>
@@ -34,13 +37,12 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
 
             {/* Desktop-only action button */}
             <div className="hero-action-row desktop-only-hero-action">
-              <button
-                type="button"
+              <Link
+                to="/assessment"
                 className="btn-hero-assessment"
-                onClick={onOpenConsultation}
               >
                 Get Free Assessment
-              </button>
+              </Link>
             </div>
 
             {/* Desktop-only 200+ Satisfied Students Badge */}
@@ -83,13 +85,12 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
 
               {/* Mobile-Only Floating Action Button (Right Side of Student) */}
               <div className="mobile-floating-cta">
-                <button
-                  type="button"
+                <Link
+                  to="/assessment"
                   className="btn-mobile-hero-assessment"
-                  onClick={onOpenConsultation}
                 >
                   Get Free Assessment
-                </button>
+                </Link>
               </div>
 
               {/* Mobile-Only Floating Trust Badge (Bottom Right of Student) */}

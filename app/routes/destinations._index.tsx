@@ -201,19 +201,6 @@ export default function AllDestinationsPage() {
                       
                       {/* Top Badges */}
                       <div className="dest-card-top-badges">
-                        <div className="dest-flag-badge-pill">
-                          {dest.flagImage && (
-                            <img
-                              src={dest.flagImage}
-                              alt={dest.name}
-                              className="flag-icon-mini"
-                              onError={(e) => {
-                                (e.target as HTMLElement).style.display = "none";
-                              }}
-                            />
-                          )}
-                          <span>{dest.name}</span>
-                        </div>
                         <span className="dest-unis-badge">{uniCount}+ Universities</span>
                       </div>
                     </div>
