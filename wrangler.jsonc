@@ -5,6 +5,10 @@
   "observability": {
     "enabled": true
   },
+  "main": "worker.js",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "assets": {
     "directory": "build/client"
   }
