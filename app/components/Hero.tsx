@@ -25,11 +25,10 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
             </div>
 
             <h1 className="hero-main-title">
-              <span className="hero-title-line-1">Opening Global Doors</span>
-              <span className="hero-title-line-2">
-                For{" "}
-                <span className="future-highlight-wrapper">
-                  <span className="future-sketch-brush"></span>
+              <span className="title-row-1">We Invest In</span>
+              <span className="title-row-2">
+                <span className="highlight-future-box">
+                  <span className="highlight-future-brush-bg"></span>
                   <span className="highlight-future-text">Your Future</span>
                 </span>
               </span>
