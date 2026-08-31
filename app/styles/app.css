@@ -3492,10 +3492,40 @@ button, input, select, textarea {
   }
 
   /* Hide desktop items */
-  .desktop-only-hero-action  { display: none !important; }
   .desktop-only-trust-badge  { display: none !important; }
 
-  /* ── Student Column & Floating Elements (Anchored to Results Banner) ── */
+  /* ── Action Button (Centered beneath heading on mobile) ── */
+  .hero-action-row {
+    margin-top: 10px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn-hero-assessment {
+    background: #011E3E;
+    color: #FFA700;
+    font-family: var(--font-body);
+    font-size: clamp(0.84rem, 2.7vw, 0.94rem);
+    font-weight: 800;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(255, 167, 0, 0.35);
+    box-shadow: 0 4px 14px rgba(1, 30, 62, 0.25);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.1px;
+  }
+
+  .btn-hero-assessment:active {
+    transform: scale(0.97);
+  }
+
+  /* ── Student Column & Floating Badge (Anchored to Results Banner) ── */
   .hero-student-media-col {
     width: 100%;
     position: relative;
@@ -3523,70 +3553,34 @@ button, input, select, textarea {
   }
 
   .student-cutout-img {
-    height: clamp(200px, 31vh, 260px);
-    max-height: 31vh;
+    height: clamp(190px, 30vh, 250px);
+    max-height: 30vh;
     width: auto;
     max-width: none;
     object-fit: contain;
     object-position: bottom center;
     display: block;
     margin: 0 auto;
-    margin-left: -18px;
     margin-bottom: 0;
     vertical-align: bottom;
   }
 
-  /* ── Floating CTA Button (Right of Student Head/Shoulder, No Overlap) ── */
-  .mobile-floating-cta {
-    display: block;
-    position: absolute;
-    top: clamp(6px, 1.5vh, 18px);
-    right: clamp(2px, 1.2vw, 10px);
-    z-index: 15;
-    max-width: 118px;
-  }
-
-  .btn-mobile-hero-assessment {
-    background: #011E3E;
-    color: #FFA700;
-    font-family: var(--font-body);
-    font-weight: 800;
-    font-size: clamp(0.74rem, 2.2vw, 0.84rem);
-    padding: 7px 11px;
-    border-radius: 8px;
-    border: 1.5px solid rgba(255, 167, 0, 0.35);
-    box-shadow: 0 4px 14px rgba(1, 30, 62, 0.35);
-    cursor: pointer;
-    white-space: normal;
-    text-align: center;
-    line-height: 1.2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    letter-spacing: 0.1px;
-  }
-
-  .btn-mobile-hero-assessment:active {
-    transform: scale(0.97);
-  }
-
-  /* ── Floating Trust Badge (Bottom Right under passport) ── */
+  /* ── Floating Trust Badge (Lifted above the Results Banner) ── */
   .mobile-floating-trust-badge {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     position: absolute;
-    bottom: clamp(6px, 1.4vh, 12px);
-    right: clamp(2px, 1.2vw, 10px);
-    z-index: 15;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 2px 8px 2px 4px;
+    bottom: 42px;
+    right: clamp(4px, 2vw, 16px);
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3px 10px 3px 5px;
     border-radius: 9999px;
-    box-shadow: 0 3px 10px rgba(1, 30, 62, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 14px rgba(1, 30, 62, 0.2);
+    border: 1.5px solid rgba(255, 255, 255, 0.95);
   }
 
   .mobile-avatars-group {
@@ -3625,7 +3619,7 @@ button, input, select, textarea {
 
   .mobile-trust-label {
     font-family: var(--font-body);
-    font-size: 0.6rem;
+    font-size: 0.62rem;
     color: #64748B;
     font-weight: 700;
     line-height: 1;
@@ -3635,7 +3629,7 @@ button, input, select, textarea {
 
   .mobile-trust-count {
     font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 800;
     color: #011E3E;
     line-height: 1.1;

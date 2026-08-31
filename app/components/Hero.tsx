@@ -34,8 +34,8 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
               </span>
             </h1>
 
-            {/* Desktop-only action button */}
-            <div className="hero-action-row desktop-only-hero-action">
+            {/* Main Action Button */}
+            <div className="hero-action-row">
               <Link
                 to="/assessment"
                 className="btn-hero-assessment"
@@ -44,7 +44,7 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
               </Link>
             </div>
 
-            {/* Desktop-only 200+ Satisfied Students Badge */}
+            {/* Desktop-only 5,000+ Satisfied Students Badge */}
             <div className="satisfied-students-badge desktop-only-trust-badge">
               <div className="student-avatars-group">
                 <div className="avatar-circle avatar-1">
@@ -67,13 +67,13 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
                 </div>
               </div>
               <div className="satisfied-students-info">
-                <span className="students-count-num">200+</span>
+                <span className="students-count-num">5,000+</span>
                 <span className="students-count-label">Satisfied Students</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column (Desktop) / Student Media Frame with Floating Mobile Elements */}
+          {/* Right Column (Desktop) / Student Media Frame with Floating Mobile Badge */}
           <div className="hero-student-media-col">
             <div className="student-image-frame">
               <img
@@ -81,16 +81,6 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
                 alt="Study Prime Student"
                 className="student-cutout-img"
               />
-
-              {/* Mobile-Only Floating Action Button (Right Side of Student) */}
-              <div className="mobile-floating-cta">
-                <Link
-                  to="/assessment"
-                  className="btn-mobile-hero-assessment"
-                >
-                  Get Free Assessment
-                </Link>
-              </div>
 
               {/* Mobile-Only Floating Trust Badge (Bottom Right of Student) */}
               <div className="mobile-floating-trust-badge">
@@ -116,7 +106,7 @@ export function Hero({ onOpenConsultation }: { onOpenConsultation?: () => void }
                 </div>
                 <div className="mobile-trust-info">
                   <span className="mobile-trust-label">Trusted by</span>
-                  <span className="mobile-trust-count">200+ Students</span>
+                  <span className="mobile-trust-count">5,000+ Students</span>
                 </div>
               </div>
             </div>
