@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import { Award, CheckCircle2, FileSpreadsheet, MessageSquare, ArrowRight, Sparkles, Compass } from "lucide-react";
 import { processSteps } from "~/data/siteData";
 
