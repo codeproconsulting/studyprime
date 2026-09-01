@@ -692,17 +692,14 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
                   <Sparkles size={15} color="#FFA700" />
                   <span>Ready to start your journey? Get an expert profile evaluation today with zero consultation fee.</span>
                 </span>
-                <button
-                  type="button"
+                <Link
+                  to="/assessment"
                   className="dropdown-bottom-cta-link"
-                  onClick={() => {
-                    setActiveDropdown(null);
-                    onOpenConsultation?.();
-                  }}
+                  onClick={() => setActiveDropdown(null)}
                 >
                   <span>Book Free Consultation</span>
                   <ArrowRight size={14} />
-                </button>
+                </Link>
               </div>
             </div>
           </div>

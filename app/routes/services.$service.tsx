@@ -301,8 +301,6 @@ export const meta: MetaFunction = ({ params }) => {
 
 export default function ServiceDetailPage() {
   const { service: serviceParam } = useParams();
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  const { openConsultation } = useOutletContext<{ openConsultation: () => void }>() || {};
 
   // Find exact or matching service
   const param = serviceParam || "student-visa";
@@ -311,14 +309,6 @@ export default function ServiceDetailPage() {
 
   const IconComponent = service.icon || ShieldCheck;
   const allOtherKeys = Object.keys(SERVICE_DETAILS).filter((k) => k !== matchedKey);
-
-  const handleOpenConsult = () => {
-    if (openConsultation) {
-      openConsultation();
-    } else {
-      setIsConsultationOpen(true);
-    }
-  };
 
   return (
     <div className="service-detail-page-wrapper">

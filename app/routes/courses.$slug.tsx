@@ -105,14 +105,14 @@ export default function CourseDetailPage() {
               </div>
 
               <div className="cta-action-group">
-                <button
-                  type="button"
+                <Link
+                  to="/assessment"
                   className="btn btn-accent btn-full-width"
-                  onClick={handleOpenConsult}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", textDecoration: "none" }}
                 >
                   <span>Apply for This Program</span>
                   <ArrowRight size={16} />
-                </button>
+                </Link>
                 <a
                   href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
                   className="btn btn-outline-navy btn-full-width"

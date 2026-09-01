@@ -964,7 +964,6 @@ export default function CountryDetailPage() {
   ) || destinations.find((d) => d.id === "uk")!;
 
   const details = destinationDetailsData[destination.id] || destinationDetailsData["new-zealand"] || destinationDetailsData["uk"];
-  const { openConsultation } = useOutletContext<{ openConsultation: () => void }>() || {};
 
   const [searchTerm, setSearchTerm] = useState("");
   const [activeTab, setActiveTab] = useState<"overview" | "universities" | "requirements" | "visa">("overview");
@@ -1139,14 +1138,14 @@ export default function CountryDetailPage() {
 
           {/* Hero CTAs */}
           <div className="dest-hero-cta-group">
-            <button
-              type="button"
+            <Link
+              to="/assessment"
               className="btn btn-accent"
-              onClick={openConsultation}
-              style={{ padding: "14px 28px", fontSize: "1rem", fontWeight: 700 }}
+              style={{ padding: "14px 28px", fontSize: "1rem", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: "8px" }}
             >
-              Get Free Assessment for {destination.name} <ArrowRight size={18} />
-            </button>
+              <span>Get Free Assessment for {destination.name}</span>
+              <ArrowRight size={18} />
+            </Link>
             <a 
               href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
               className="btn btn-outline-white"
@@ -1271,14 +1270,14 @@ export default function CountryDetailPage() {
                             </div>
                           )}
                           <div className="uni-card-footer">
-                            <button
-                              type="button"
-                              onClick={openConsultation}
+                            <Link
+                              to="/assessment"
                               className="btn-apply-uni"
+                              style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}
                             >
                               <span>Apply to this University</span>
                               <ArrowRight size={14} />
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       ))
@@ -1383,13 +1382,14 @@ export default function CountryDetailPage() {
                   </div>
                 </div>
 
-                <button
-                  type="button"
+                <Link
+                  to="/assessment"
                   className="btn btn-accent consult-btn-full"
-                  onClick={openConsultation}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", textDecoration: "none" }}
                 >
-                  Book Free Appointment <ArrowRight size={16} />
-                </button>
+                  <span>Book Free Appointment</span>
+                  <ArrowRight size={16} />
+                </Link>
 
                 <div className="consult-contact-row">
                   <div className="office-tag">

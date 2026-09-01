@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useOutletContext } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 import { 
   ArrowRight, 
   Globe2, 
@@ -15,7 +15,6 @@ import {
 import { destinations, partnerUniversities, siteConfig } from "~/data/siteData";
 
 export default function AllDestinationsPage() {
-  const { openConsultation } = useOutletContext<{ openConsultation: () => void }>() || {};
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("all");
 
@@ -280,13 +279,14 @@ export default function AllDestinationsPage() {
                 </p>
               </div>
               <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-                <button
-                  type="button"
+                <Link
+                  to="/assessment"
                   className="btn btn-accent"
-                  onClick={openConsultation}
+                  style={{ display: "inline-flex", alignItems: "center", gap: "8px", textDecoration: "none" }}
                 >
-                  Get Free Country Assessment <ArrowRight size={16} />
-                </button>
+                  <span>Get Free Country Assessment</span>
+                  <ArrowRight size={16} />
+                </Link>
               </div>
             </div>
           </div>

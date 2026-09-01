@@ -92,14 +92,14 @@ export function ProcessSection({ onOpenConsultation }: { onOpenConsultation?: ()
               <h4 className="cta-heading">Ready to Begin Step 01 Today?</h4>
               <p className="cta-subtext">Get your transcripts evaluated by our senior education consultants with zero obligation.</p>
             </div>
-            <button
-              type="button"
+            <Link
+              to="/assessment"
               className="btn btn-primary btn-process-start"
-              onClick={onOpenConsultation}
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", textDecoration: "none" }}
             >
               <span>Book Free Consultation</span>
               <ArrowRight size={16} />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useOutletContext, Link } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 import { ArrowRight, Sparkles, CheckCircle2, Globe2, ShieldCheck, Award } from "lucide-react";
 import { Hero } from "~/components/Hero";
 import { DestinationsSection } from "~/components/DestinationsSection";
@@ -11,15 +11,13 @@ import { FAQSection } from "~/components/FAQSection";
 import { siteConfig } from "~/data/siteData";
 
 export default function Index() {
-  const { openConsultation } = useOutletContext<{ openConsultation: () => void }>() || {};
-
   return (
     <div>
       {/* 1. Hero Section with Attached Media */}
-      <Hero onOpenConsultation={openConsultation} />
+      <Hero />
 
       {/* 2. Our Services Section (Directly After Hero) */}
-      <ServicesSection onOpenConsultation={openConsultation} />
+      <ServicesSection />
 
       {/* 3. Destinations Section */}
       <DestinationsSection />
@@ -28,7 +26,7 @@ export default function Index() {
       <CoursesSection />
 
       {/* 5. Working Process Section */}
-      <ProcessSection onOpenConsultation={openConsultation} />
+      <ProcessSection />
 
       {/* 6. Partner Universities */}
       <PartnersSection />
@@ -51,13 +49,14 @@ export default function Index() {
                 </p>
               </div>
               <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-                <button
-                  type="button"
+                <Link
+                  to="/assessment"
                   className="btn btn-accent"
-                  onClick={openConsultation}
+                  style={{ display: "inline-flex", alignItems: "center", gap: "8px", textDecoration: "none" }}
                 >
-                  Get Free Consultation <ArrowRight size={16} />
-                </button>
+                  <span>Get Free Consultation</span>
+                  <ArrowRight size={16} />
+                </Link>
                 <a
                   href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`}
                   className="btn btn-outline-white"

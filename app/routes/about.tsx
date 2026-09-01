@@ -1,23 +1,23 @@
-import { useOutletContext, Link } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
 import { 
-  Award, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Target, 
-  Eye, 
-  Users, 
+  Building2, 
   MapPin, 
+  Clock, 
   Phone, 
   Mail, 
-  Clock, 
-  Sparkles, 
+  ShieldCheck, 
+  GraduationCap, 
   Globe2, 
-  ArrowRight,
+  Award, 
+  CheckCircle2, 
+  HeartHandshake, 
+  Users, 
   Navigation,
   Compass,
   FileCheck,
-  GraduationCap
+  Eye,
+  Target
 } from "lucide-react";
 import { siteConfig } from "~/data/siteData";
 import { PartnersSection } from "~/components/PartnersSection";
@@ -25,14 +25,12 @@ import { TestimonialsSection } from "~/components/TestimonialsSection";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "About Us | Study Prime - Pakistan's Trusted Study Abroad Consultants" },
-    { name: "description", content: "Learn about Study Prime's mission, values, and expert visa advisory team located at Galleria Mall, I-8 Markaz, Islamabad." },
+    { title: "About Study Prime | Premier Study Abroad Consultants in Islamabad" },
+    { name: "description", content: "Learn about Study Prime's mission, certified education advisors, direct global university partnerships, and student-first consultancy standards in Islamabad, Pakistan." },
   ];
 };
 
 export default function About() {
-  const { openConsultation } = useOutletContext<{ openConsultation: () => void }>() || {};
-
   return (
     <div className="about-page-container">
       {/* Hero Banner */}
@@ -108,14 +106,13 @@ export default function About() {
                     <div style={{ fontWeight: 800, color: "#FFFFFF" }}>Study Prime Advisory Board</div>
                     <div style={{ fontSize: "0.825rem", color: "#94A3B8" }}>Islamabad, Pakistan</div>
                   </div>
-                  <button
-                    type="button"
+                  <Link
+                    to="/assessment"
                     className="btn btn-accent"
-                    onClick={openConsultation}
-                    style={{ padding: "8px 18px", fontSize: "0.85rem" }}
+                    style={{ padding: "8px 18px", fontSize: "0.85rem", display: "inline-flex", alignItems: "center", textDecoration: "none" }}
                   >
                     Consult With Us
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
