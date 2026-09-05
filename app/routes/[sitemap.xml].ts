@@ -1,10 +1,11 @@
 import type { LoaderFunctionArgs } from "@remix-run/server-runtime";
 import { destinations, coursesData, services } from "~/data/siteData";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const host = request.headers.get("host") || "studyprime.withered-hill-9746.workers.dev";
-  const protocol = host.includes("localhost") ? "http" : "https";
-  const baseUrl = `${protocol}://${host}`;
+  const host = request.headers.get("host") || "";
+  const isLocal = host.includes("localhost") || host.includes("127.0.0.1");
+  const baseUrl = isLocal ? `http://${host}` : CANONICAL_BASE_URL;
 
   const staticRoutes = [
     "",

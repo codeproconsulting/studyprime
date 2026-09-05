@@ -25,15 +25,24 @@ import {
   Share2
 } from "lucide-react";
 import { siteConfig, destinations } from "~/data/siteData";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Book 1-on-1 Free Consultation & Study Abroad Assessment | Study Prime" },
+    { title: "Free Visa Assessment & Consultation | Study Prime" },
     {
       name: "description",
       content:
-        "Schedule a free 1-on-1 study abroad consultation session. Choose your date & time, evaluate university eligibility, explore merit scholarships, and plan your student visa strategy.",
+        "Schedule a free 1-on-1 study abroad consultation session. Check university eligibility, scholarship chances, and student visa requirements with Study Prime.",
     },
+    { property: "og:title", content: "Free Visa Assessment & Consultation | Study Prime" },
+    {
+      property: "og:description",
+      content:
+        "Schedule a free 1-on-1 study abroad consultation session. Check university eligibility, scholarship chances, and student visa requirements with Study Prime.",
+    },
+    { property: "og:url", content: `${CANONICAL_BASE_URL}/assessment` },
+    { tagName: "link", rel: "canonical", href: `${CANONICAL_BASE_URL}/assessment` },
   ];
 };
 

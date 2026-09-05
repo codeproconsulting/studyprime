@@ -1,5 +1,6 @@
 import { useParams, Link, useOutletContext } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
 import { useState } from "react";
 import { 
   ShieldCheck, 
@@ -293,9 +294,14 @@ export const meta: MetaFunction = ({ params }) => {
   const param = params.service || "student-visa";
   const matchedKey = Object.keys(SERVICE_DETAILS).find((k) => param.includes(k) || k.includes(param)) || "student-visa";
   const srv = SERVICE_DETAILS[matchedKey];
+  const canonicalUrl = `${CANONICAL_BASE_URL}/services/${matchedKey}`;
   return [
     { title: `${srv.title} | Study Prime Educational Consultancy` },
     { name: "description", content: srv.heroSubtitle },
+    { property: "og:title", content: `${srv.title} | Study Prime Educational Consultancy` },
+    { property: "og:description", content: srv.heroSubtitle },
+    { property: "og:url", content: canonicalUrl },
+    { tagName: "link", rel: "canonical", href: canonicalUrl },
   ];
 };
 

@@ -22,11 +22,24 @@ import {
 import { siteConfig } from "~/data/siteData";
 import { PartnersSection } from "~/components/PartnersSection";
 import { TestimonialsSection } from "~/components/TestimonialsSection";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "About Study Prime | Premier Study Abroad Consultants in Islamabad" },
-    { name: "description", content: "Learn about Study Prime's mission, certified education advisors, direct global university partnerships, and student-first consultancy standards in Islamabad, Pakistan." },
+    { title: "About Study Prime - Leadership & Study Abroad Experts" },
+    {
+      name: "description",
+      content:
+        "Learn about Study Prime's mission, certified education advisors, direct global university partnerships, and student-first consultancy standards in Islamabad, Pakistan.",
+    },
+    { property: "og:title", content: "About Study Prime - Leadership & Study Abroad Experts" },
+    {
+      property: "og:description",
+      content:
+        "Learn about Study Prime's mission, certified education advisors, direct global university partnerships, and student-first consultancy standards in Islamabad, Pakistan.",
+    },
+    { property: "og:url", content: `${CANONICAL_BASE_URL}/about` },
+    { tagName: "link", rel: "canonical", href: `${CANONICAL_BASE_URL}/about` },
   ];
 };
 

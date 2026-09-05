@@ -263,7 +263,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="desktop-nav">
+          <nav className="desktop-nav" aria-label="Main Navigation">
             <ul className="nav-menu-list">
               <li>
                 <Link

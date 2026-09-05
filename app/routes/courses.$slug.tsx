@@ -21,14 +21,20 @@ import {
   FileText
 } from "lucide-react";
 import { coursesData, type CourseItem, siteConfig } from "~/data/siteData";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   if (!data?.course) {
     return [{ title: "Course Not Found | Study Prime" }];
   }
+  const canonicalUrl = `${CANONICAL_BASE_URL}/courses/${data.course.slug}`;
   return [
-    { title: `${data.course.title} | Study Abroad Admissions - Study Prime` },
+    { title: `${data.course.title} | Degree Programs Abroad - Study Prime` },
     { name: "description", content: data.course.shortDescription },
+    { property: "og:title", content: `${data.course.title} | Degree Programs Abroad - Study Prime` },
+    { property: "og:description", content: data.course.shortDescription },
+    { property: "og:url", content: canonicalUrl },
+    { tagName: "link", rel: "canonical", href: canonicalUrl },
   ];
 };
 

@@ -12,10 +12,23 @@ import {
 } from "lucide-react";
 import { partnerUniversities } from "~/data/siteData";
 import { getOfficialUniversityLogo } from "~/utils/universityLogos";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
 
 export const meta: MetaFunction = () => [
-  { title: "Partner Universities | Study Prime — 450+ Global Partner Institutions" },
-  { name: "description", content: "Browse Study Prime's full network of 450+ authorized partner universities across the UK, USA, Australia, Canada, Europe, and beyond." },
+  { title: "Partner Universities & Global Colleges | Study Prime" },
+  {
+    name: "description",
+    content:
+      "Explore Study Prime's network of 450+ authorized partner universities across the UK, USA, Australia, Canada, Europe, and Asia. Apply with scholarship assistance.",
+  },
+  { property: "og:title", content: "Partner Universities & Global Colleges | Study Prime" },
+  {
+    property: "og:description",
+    content:
+      "Explore Study Prime's network of 450+ authorized partner universities across the UK, USA, Australia, Canada, Europe, and Asia. Apply with scholarship assistance.",
+  },
+  { property: "og:url", content: `${CANONICAL_BASE_URL}/universities` },
+  { tagName: "link", rel: "canonical", href: `${CANONICAL_BASE_URL}/universities` },
 ];
 
 const COUNTRY_FILTERS = [

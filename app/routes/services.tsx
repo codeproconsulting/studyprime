@@ -22,11 +22,24 @@ import {
 } from "lucide-react";
 import { services, siteConfig } from "~/data/siteData";
 import { FAQSection } from "~/components/FAQSection";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Professional Overseas Education & Visa Services | Study Prime" },
-    { name: "description", content: "Explore Study Prime's comprehensive study abroad services: university admissions, student visa filing, SOP vetting, scholarship aid, and pre-departure briefings." },
+    { title: "Our Services - Study Visa, Admissions & SOP Assistance | Study Prime" },
+    {
+      name: "description",
+      content:
+        "Explore Study Prime's comprehensive study abroad services: university admissions, student visa filing, SOP drafting, scholarship matching, and pre-departure briefings.",
+    },
+    { property: "og:title", content: "Our Services - Study Visa, Admissions & SOP Assistance | Study Prime" },
+    {
+      property: "og:description",
+      content:
+        "Explore Study Prime's comprehensive study abroad services: university admissions, student visa filing, SOP drafting, scholarship matching, and pre-departure briefings.",
+    },
+    { property: "og:url", content: `${CANONICAL_BASE_URL}/services` },
+    { tagName: "link", rel: "canonical", href: `${CANONICAL_BASE_URL}/services` },
   ];
 };
 

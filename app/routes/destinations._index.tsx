@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/node";
 import { 
   ArrowRight, 
   Globe2, 
@@ -13,6 +14,26 @@ import {
   ShieldCheck 
 } from "lucide-react";
 import { destinations, partnerUniversities, siteConfig } from "~/data/siteData";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Study Destinations - UK, USA, Canada, Australia & Europe | Study Prime" },
+    {
+      name: "description",
+      content:
+        "Explore top study abroad destinations with Study Prime. Complete guides on admissions, visas, tuition fees, scholarships, and post-study work permits.",
+    },
+    { property: "og:title", content: "Study Destinations - UK, USA, Canada, Australia & Europe | Study Prime" },
+    {
+      property: "og:description",
+      content:
+        "Explore top study abroad destinations with Study Prime. Complete guides on admissions, visas, tuition fees, scholarships, and post-study work permits.",
+    },
+    { property: "og:url", content: `${CANONICAL_BASE_URL}/destinations` },
+    { tagName: "link", rel: "canonical", href: `${CANONICAL_BASE_URL}/destinations` },
+  ];
+};
 
 export default function AllDestinationsPage() {
   const [searchQuery, setSearchQuery] = useState("");

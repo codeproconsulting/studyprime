@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/node";
 import { ArrowRight, Sparkles, CheckCircle2, Globe2, ShieldCheck, Award } from "lucide-react";
 import { Hero } from "~/components/Hero";
 import { DestinationsSection } from "~/components/DestinationsSection";
@@ -9,6 +10,27 @@ import { PartnersSection } from "~/components/PartnersSection";
 import { TestimonialsSection } from "~/components/TestimonialsSection";
 import { FAQSection } from "~/components/FAQSection";
 import { siteConfig } from "~/data/siteData";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Study Prime: Study Visa Consultant in Pakistan - Study Abroad Experts" },
+    {
+      name: "description",
+      content:
+        "Study Prime is a leading study visa consultant in Pakistan with 10+ years of experience. Providing expert guidance for university admissions and visas across UK, USA, Australia, Canada, and Europe.",
+    },
+    { property: "og:title", content: "Study Prime: Study Visa Consultant in Pakistan - Study Abroad Experts" },
+    {
+      property: "og:description",
+      content:
+        "Study Prime is a leading study visa consultant in Pakistan with 10+ years of experience. Providing expert guidance for university admissions and visas across UK, USA, Australia, Canada, and Europe.",
+    },
+    { property: "og:url", content: CANONICAL_BASE_URL },
+    { property: "og:image", content: `${CANONICAL_BASE_URL}/student.webp` },
+    { tagName: "link", rel: "canonical", href: CANONICAL_BASE_URL },
+  ];
+};
 
 export default function Index() {
   return (

@@ -79,22 +79,28 @@ export function Footer() {
             <h4 className="footer-title">Quick Links</h4>
             <ul className="footer-links">
               <li>
-                <Link to="/"><ChevronRight size={14} /> Home</Link>
+                <Link to="/" title="Study Prime Homepage"><ChevronRight size={14} /> Home</Link>
               </li>
               <li>
-                <Link to="/about"><ChevronRight size={14} /> About Us</Link>
+                <Link to="/destinations" title="Explore Study Destinations"><ChevronRight size={14} /> Study Destinations</Link>
               </li>
               <li>
-                <Link to="/services"><ChevronRight size={14} /> Our Services</Link>
+                <Link to="/services" title="Study Abroad Services"><ChevronRight size={14} /> Our Services</Link>
               </li>
               <li>
-                <Link to="/destinations"><ChevronRight size={14} /> Study Destinations</Link>
+                <Link to="/courses" title="Degree Programs & Courses"><ChevronRight size={14} /> Degree Programs</Link>
               </li>
               <li>
-                <Link to="/courses"><ChevronRight size={14} /> Degree Programs</Link>
+                <Link to="/universities" title="Partner Universities Worldwide"><ChevronRight size={14} /> Partner Universities</Link>
               </li>
               <li>
-                <Link to="/blog"><ChevronRight size={14} /> Blog &amp; Updates</Link>
+                <Link to="/assessment" title="Free Study Visa Assessment"><ChevronRight size={14} /> Free Assessment</Link>
+              </li>
+              <li>
+                <Link to="/about" title="About Study Prime"><ChevronRight size={14} /> About Us</Link>
+              </li>
+              <li>
+                <Link to="/contact" title="Contact Study Prime"><ChevronRight size={14} /> Contact Us</Link>
               </li>
             </ul>
           </div>

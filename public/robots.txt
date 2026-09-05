@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://studyprime.withered-hill-9746.workers.dev/sitemap.xml
+Sitemap: https://studyprime.pk/sitemap.xml

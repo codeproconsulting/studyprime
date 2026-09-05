@@ -20,11 +20,24 @@ import {
   Filter
 } from "lucide-react";
 import { coursesData, type CourseItem } from "~/data/siteData";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Academic Courses & In-Demand Programs | Study Prime" },
-    { name: "description", content: "Explore accredited in-demand degree programs and fast-track 1-year top-up degrees across leading global universities." },
+    { title: "Degree Programs & Courses Abroad | Study Prime" },
+    {
+      name: "description",
+      content:
+        "Explore top bachelor's, master's, and STEM degree programs abroad. Get guidance on program selection, eligibility, and scholarship options with Study Prime.",
+    },
+    { property: "og:title", content: "Degree Programs & Courses Abroad | Study Prime" },
+    {
+      property: "og:description",
+      content:
+        "Explore top bachelor's, master's, and STEM degree programs abroad. Get guidance on program selection, eligibility, and scholarship options with Study Prime.",
+    },
+    { property: "og:url", content: `${CANONICAL_BASE_URL}/courses` },
+    { tagName: "link", rel: "canonical", href: `${CANONICAL_BASE_URL}/courses` },
   ];
 };
 

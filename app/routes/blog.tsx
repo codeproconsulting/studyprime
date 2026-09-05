@@ -1,6 +1,27 @@
 import { Link } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/node";
 import { ArrowRight, Calendar, User, BookOpen } from "lucide-react";
 import { blogPosts } from "~/data/siteData";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Study Abroad Blog & Visa Updates | Study Prime" },
+    {
+      name: "description",
+      content:
+        "Latest study visa updates, university admission guidelines, scholarship announcements, and study abroad tips from Study Prime experts.",
+    },
+    { property: "og:title", content: "Study Abroad Blog & Visa Updates | Study Prime" },
+    {
+      property: "og:description",
+      content:
+        "Latest study visa updates, university admission guidelines, scholarship announcements, and study abroad tips from Study Prime experts.",
+    },
+    { property: "og:url", content: `${CANONICAL_BASE_URL}/blog` },
+    { tagName: "link", rel: "canonical", href: `${CANONICAL_BASE_URL}/blog` },
+  ];
+};
 
 export default function Blog() {
   return (

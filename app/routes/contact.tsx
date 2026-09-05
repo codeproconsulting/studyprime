@@ -1,6 +1,27 @@
 import { useState } from "react";
+import type { MetaFunction } from "@remix-run/node";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import { siteConfig } from "~/data/siteData";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Contact Study Prime - Islamabad Head Office | Study Abroad Consultants" },
+    {
+      name: "description",
+      content:
+        "Contact Study Prime at Galleria Mall, I-8 Markaz, Islamabad. Call +92 310 1193888 or book an appointment for student visa and university admission counseling.",
+    },
+    { property: "og:title", content: "Contact Study Prime - Islamabad Head Office | Study Abroad Consultants" },
+    {
+      property: "og:description",
+      content:
+        "Contact Study Prime at Galleria Mall, I-8 Markaz, Islamabad. Call +92 310 1193888 or book an appointment for student visa and university admission counseling.",
+    },
+    { property: "og:url", content: `${CANONICAL_BASE_URL}/contact` },
+    { tagName: "link", rel: "canonical", href: `${CANONICAL_BASE_URL}/contact` },
+  ];
+};
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);

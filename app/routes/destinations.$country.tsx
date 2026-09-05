@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useParams, Link, useOutletContext } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/node";
+import { CANONICAL_BASE_URL } from "~/utils/seo";
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -952,6 +954,26 @@ export const destinationDetailsData: Record<
       "Public Health, Biomedicine & Biotechnology (Karolinska & Skövde)",
     ],
   },
+};
+
+export const meta: MetaFunction = ({ params }) => {
+  const rawCountry = (params.country || "").toLowerCase().trim();
+  const dest = destinations.find(
+    (d) => d.id.toLowerCase() === rawCountry || d.slug.toLowerCase() === rawCountry
+  );
+  const name = dest?.name || "Study Abroad";
+  const title = `Study in ${name} - Admissions, Visas & Scholarships | Study Prime`;
+  const description = `Complete Pakistani student guide for studying in ${name}. Explore partner universities, entry requirements, tuition fees, scholarships, and visa processing with Study Prime.`;
+  const canonicalUrl = `${CANONICAL_BASE_URL}/destinations/${dest?.id || rawCountry}`;
+
+  return [
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:url", content: canonicalUrl },
+    { tagName: "link", rel: "canonical", href: canonicalUrl },
+  ];
 };
 
 export default function CountryDetailPage() {
