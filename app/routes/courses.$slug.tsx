@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLoaderData, useOutletContext, Link } from "@remix-run/react";
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import { json, redirect } from "@remix-run/node";
 import { 
   BookOpen, 
   ArrowRight, 
@@ -23,7 +23,18 @@ import {
 import { coursesData, type CourseItem, siteConfig } from "~/data/siteData";
 import { CANONICAL_BASE_URL } from "~/utils/seo";
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
+const SLUG_REDIRECTS: Record<string, string> = {
+  "computer-science-software-engineering": "computer-science-artificial-intelligence",
+  "data-science-business-analytics": "data-science-big-data-analytics",
+  "cyber-security-cloud-computing": "cyber-security-cloud-engineering",
+  "business-administration-management": "international-mba-global-management",
+  "accounting-finance-fintech": "fintech-business-analytics",
+  "nursing-healthcare-biomedical": "healthcare-public-health-nursing",
+  "artificial-intelligence-robotics": "engineering-robotics-automation",
+  "robotics-autonomous-systems": "engineering-robotics-automation",
+};
+
+export const meta: MetaFunction = ({ data }: { data?: any }) => {
   if (!data?.course) {
     return [{ title: "Course Not Found | Study Prime" }];
   }
@@ -40,6 +51,11 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const { slug } = params;
+
+  if (slug && SLUG_REDIRECTS[slug]) {
+    return redirect(`/courses/${SLUG_REDIRECTS[slug]}`, { status: 301 });
+  }
+
   const course = coursesData.find((c) => c.slug === slug);
 
   if (!course) {
@@ -54,7 +70,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
 }
 
 export default function CourseDetailPage() {
-  const { course, relatedCourses } = useLoaderData<typeof loader>();
+  const { course, relatedCourses } = useLoaderData<{ course: CourseItem; relatedCourses: CourseItem[] }>();
 
   return (
     <div className="course-detail-page">
