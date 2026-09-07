@@ -4,19 +4,11 @@ import { useLoaderData, Link } from "@remix-run/react";
 import { useState } from "react";
 import {
   Calendar,
-  Clock,
-  User,
-  ArrowLeft,
   Share2,
   Check,
-  ExternalLink,
   MessageCircle,
-  GraduationCap,
-  Sparkles,
   ArrowRight,
-  ShieldCheck,
   Phone,
-  Bookmark,
 } from "lucide-react";
 import { getWordPressPostBySlug, type WordPressPost } from "~/services/wordpress.server";
 import { CANONICAL_BASE_URL, getBreadcrumbSchema } from "~/utils/seo";
@@ -155,12 +147,6 @@ export default function BlogPostDetail() {
           <div style={{ maxWidth: "880px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px", flexWrap: "wrap" }}>
               <span className="badge badge-gold">{post.category}</span>
-              {isWordPressConnected && (
-                <span style={{ fontSize: "0.75rem", background: "rgba(16, 185, 129, 0.2)", color: "#10B981", padding: "4px 10px", borderRadius: "12px", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                  <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#10B981" }} />
-                  Live WordPress Feed
-                </span>
-              )}
             </div>
 
             <h1 style={{ fontSize: "clamp(2rem, 4vw, 2.75rem)", color: "#FFFFFF", lineHeight: "1.3", marginBottom: "20px", fontWeight: 800 }}>
@@ -311,25 +297,6 @@ export default function BlogPostDetail() {
                   </p>
                 </div>
               </div>
-
-              {/* Admin Manage Shortcut */}
-              {post.adminEditUrl && (
-                <div style={{ marginTop: "24px", padding: "14px 20px", background: "#EFF6FF", borderRadius: "12px", border: "1px dashed #3B82F6", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" }}>
-                  <span style={{ fontSize: "0.85rem", color: "#1E40AF" }}>
-                    <strong>WordPress Admin Shortcut:</strong> Edit this post directly in your WordPress CMS dashboard.
-                  </span>
-                  <a
-                    href={post.adminEditUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary"
-                    style={{ padding: "6px 14px", fontSize: "0.8rem", display: "inline-flex", alignItems: "center", gap: "6px" }}
-                  >
-                    <span>Edit in WP Admin</span>
-                    <ExternalLink size={13} />
-                  </a>
-                </div>
-              )}
             </article>
 
             {/* Right/Sidebar Column */}

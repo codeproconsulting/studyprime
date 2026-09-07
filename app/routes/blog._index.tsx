@@ -4,17 +4,8 @@ import { Link, useLoaderData, useSearchParams, Form } from "@remix-run/react";
 import {
   ArrowRight,
   Calendar,
-  User,
-  Clock,
   Search,
-  ExternalLink,
   BookOpen,
-  Sparkles,
-  Settings,
-  RefreshCw,
-  AlertCircle,
-  CheckCircle2,
-  GraduationCap,
 } from "lucide-react";
 import {
   getWordPressPosts,
@@ -125,7 +116,7 @@ export default function Blog() {
           <p
             style={{
               maxWidth: "680px",
-              margin: "0 auto 28px",
+              margin: "0 auto",
               fontSize: "1.1rem",
               color: "rgba(255,255,255,0.85)",
               lineHeight: "1.6",
@@ -133,76 +124,6 @@ export default function Blog() {
           >
             Real-time updates on international student visa regulations, intake deadlines, SOP guidelines, and scholarship announcements.
           </p>
-
-          {/* WordPress Connection & Management Bar */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "14px",
-              background: "rgba(255, 255, 255, 0.08)",
-              backdropFilter: "blur(12px)",
-              padding: "10px 20px",
-              borderRadius: "30px",
-              border: "1px solid rgba(255, 255, 255, 0.15)",
-              fontSize: "0.85rem",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
-            {isWordPressConnected ? (
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  color: "#10B981",
-                  fontWeight: 600,
-                }}
-              >
-                <CheckCircle2 size={16} color="#10B981" />
-                <span>Connected to WordPress CMS</span>
-              </span>
-            ) : (
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  color: "#FBBF24",
-                  fontWeight: 600,
-                }}
-              >
-                <AlertCircle size={16} color="#FBBF24" />
-                <span>Local Data Mode (Configure WORDPRESS_URL to sync live)</span>
-              </span>
-            )}
-
-            {wpBaseUrl ? (
-              <a
-                href={`${wpBaseUrl}/wp-admin/edit.php`}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  color: "#FFFFFF",
-                  background: "#E09A18",
-                  padding: "5px 14px",
-                  borderRadius: "20px",
-                  textDecoration: "none",
-                  fontWeight: 600,
-                  fontSize: "0.8rem",
-                  transition: "all 0.2s ease",
-                }}
-              >
-                <Settings size={13} />
-                <span>Manage in WordPress Admin</span>
-                <ExternalLink size={12} />
-              </a>
-            ) : null}
-          </div>
         </div>
       </section>
 
@@ -502,9 +423,6 @@ export default function Blog() {
                     {/* Action Bar */}
                     <div
                       style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
                         paddingTop: "16px",
                         borderTop: "1px solid #F1F5F9",
                       }}
@@ -516,33 +434,12 @@ export default function Blog() {
                           justifyContent: "space-between",
                           padding: "10px 18px",
                           fontSize: "0.875rem",
-                          flex: 1,
+                          width: "100%",
                         }}
                       >
                         <span>Read Full Guide</span>
                         <ArrowRight size={15} />
                       </Link>
-
-                      {post.adminEditUrl && (
-                        <a
-                          href={post.adminEditUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="Edit this post in WordPress Admin"
-                          style={{
-                            marginLeft: "10px",
-                            padding: "9px 12px",
-                            borderRadius: "10px",
-                            border: "1px solid var(--border-light)",
-                            color: "#64748B",
-                            display: "inline-flex",
-                            alignItems: "center",
-                            background: "#FFFFFF",
-                          }}
-                        >
-                          <Settings size={15} />
-                        </a>
-                      )}
                     </div>
                   </div>
                 </article>
