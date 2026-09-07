@@ -6905,14 +6905,130 @@ button, input, select, textarea {
 
 .booking-mode-toggle-group {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 992px) {
   .booking-mode-toggle-group {
     grid-template-columns: 1fr;
   }
+}
+
+.booking-mode-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #FEF3C7;
+  color: #B45309;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.booking-mode-badge.gold {
+  background: #FFA700;
+  color: #011E3E;
+}
+
+/* ── Inner Form Multi-Step Progress Tracker ── */
+.form-step-progress-wrapper {
+  margin-bottom: 28px;
+  background: #F8FAFC;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid #E2E8F0;
+}
+
+.form-step-progress-track {
+  width: 100%;
+  height: 8px;
+  background: #E2E8F0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.form-step-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #011E3E 0%, #FFA700 100%);
+  border-radius: 10px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-step-indicator-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.86rem;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.form-step-indicator-title {
+  font-weight: 800;
+  color: #011E3E;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-step-indicator-stage {
+  color: #64748B;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.form-step-tabs-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #F1F5F9;
+  padding-bottom: 12px;
+  overflow-x: auto;
+}
+
+.form-step-tab-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.form-step-tab-btn.active {
+  background: #011E3E;
+  color: #FFFFFF;
+}
+
+.form-step-tab-btn.completed {
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.form-step-tab-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
 }
 
 .booking-mode-btn {
