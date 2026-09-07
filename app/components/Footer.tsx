@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { Mail, Phone, MapPin, ChevronRight, Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, ChevronRight, Facebook, Instagram, Linkedin, Youtube, Twitter, MessageCircle } from "lucide-react";
 import { siteConfig } from "~/data/siteData";
 
 export function Footer() {
@@ -16,14 +16,15 @@ export function Footer() {
                 className="site-footer-logo-img"
               />
             </Link>
-            <p style={{ marginTop: "14px" }}>
-              Study Prime is a premier overseas education consultancy committed to helping Pakistani students secure university admissions and visas worldwide with transparency and excellence.
+            <p style={{ marginTop: "14px", lineHeight: "1.6", color: "rgba(255,255,255,0.8)" }}>
+              Study Prime is Pakistan's premier overseas education consultancy committed to helping students secure university admissions, scholarships, and visas worldwide with transparency and excellence.
             </p>
             <div style={{ display: "flex", gap: "12px", marginTop: "16px" }}>
               <a
                 href={siteConfig.socials.facebook}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Study Prime Facebook"
                 style={{
                   width: "36px",
                   height: "36px",
@@ -41,6 +42,7 @@ export function Footer() {
                 href={siteConfig.socials.instagram}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Study Prime Instagram"
                 style={{
                   width: "36px",
                   height: "36px",
@@ -58,6 +60,7 @@ export function Footer() {
                 href={siteConfig.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Study Prime LinkedIn"
                 style={{
                   width: "36px",
                   height: "36px",
@@ -94,6 +97,9 @@ export function Footer() {
                 <Link to="/universities" title="Partner Universities Worldwide"><ChevronRight size={14} /> Partner Universities</Link>
               </li>
               <li>
+                <Link to="/blog" title="Study Abroad Blog & Visa Updates"><ChevronRight size={14} /> Blog &amp; Visa Updates</Link>
+              </li>
+              <li>
                 <Link to="/assessment" title="Free Study Visa Assessment"><ChevronRight size={14} /> Free Assessment</Link>
               </li>
               <li>
@@ -113,6 +119,21 @@ export function Footer() {
                 <Link to="/destinations/uk"><ChevronRight size={14} /> Study in UK</Link>
               </li>
               <li>
+                <Link to="/destinations/australia"><ChevronRight size={14} /> Study in Australia</Link>
+              </li>
+              <li>
+                <Link to="/destinations/canada"><ChevronRight size={14} /> Study in Canada</Link>
+              </li>
+              <li>
+                <Link to="/destinations/usa"><ChevronRight size={14} /> Study in USA</Link>
+              </li>
+              <li>
+                <Link to="/destinations/germany"><ChevronRight size={14} /> Study in Germany</Link>
+              </li>
+              <li>
+                <Link to="/destinations/ireland"><ChevronRight size={14} /> Study in Ireland</Link>
+              </li>
+              <li>
                 <Link to="/destinations/new-zealand"><ChevronRight size={14} /> Study in New Zealand</Link>
               </li>
               <li>
@@ -123,18 +144,6 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/destinations/sweden"><ChevronRight size={14} /> Study in Sweden</Link>
-              </li>
-              <li>
-                <Link to="/destinations/finland"><ChevronRight size={14} /> Study in Finland</Link>
-              </li>
-              <li>
-                <Link to="/destinations/usa"><ChevronRight size={14} /> Study in USA</Link>
-              </li>
-              <li>
-                <Link to="/destinations/germany"><ChevronRight size={14} /> Study in Germany</Link>
-              </li>
-              <li>
-                <Link to="/destinations/canada"><ChevronRight size={14} /> Study in Canada</Link>
               </li>
             </ul>
           </div>
@@ -149,13 +158,31 @@ export function Footer() {
             <div className="footer-contact-item">
               <Phone size={18} />
               <div>
-                <div>{siteConfig.contact.phone}</div>
-                <div>{siteConfig.contact.altPhone}</div>
+                <a href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, "")}`} style={{ color: "inherit", textDecoration: "none" }}>
+                  {siteConfig.contact.phone}
+                </a>
+                <div style={{ fontSize: "0.85rem", opacity: 0.8 }}>
+                  {siteConfig.contact.altPhone}
+                </div>
               </div>
             </div>
             <div className="footer-contact-item">
               <Mail size={18} />
-              <span>{siteConfig.contact.email}</span>
+              <a href={`mailto:${siteConfig.contact.email}`} style={{ color: "inherit", textDecoration: "none" }}>
+                {siteConfig.contact.email}
+              </a>
+            </div>
+            <div style={{ marginTop: "14px" }}>
+              <a
+                href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hello Study Prime! I need assistance with university admission and visa guidance.")}`}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-outline-white"
+                style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "8px 16px", fontSize: "0.85rem", textDecoration: "none" }}
+              >
+                <MessageCircle size={15} color="#25D366" />
+                <span>WhatsApp Helpline</span>
+              </a>
             </div>
           </div>
         </div>
@@ -164,10 +191,10 @@ export function Footer() {
           <div>
             &copy; {new Date().getFullYear()} Study Prime (PVT) Ltd. All rights reserved.
           </div>
-          <div style={{ display: "flex", gap: "20px" }}>
-            <Link to="/contact">Privacy Policy</Link>
-            <Link to="/contact">Terms &amp; Conditions</Link>
-            <Link to="/contact">Support</Link>
+          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms &amp; Conditions</Link>
+            <Link to="/contact">Contact &amp; Support</Link>
           </div>
         </div>
       </div>

@@ -69,6 +69,7 @@ export const siteConfig = {
   contact: {
     phone: "+92 310 1193888",
     altPhone: "+92 51 8740888",
+    whatsapp: "+92 310 1193888",
     email: "info@studyprime.pk",
     address: "Office #F-15, First Floor, Galleria Mall, I-8 Markaz, Islamabad, Pakistan",
     timing: "Mon - Fri: 10:00 AM - 6:00 PM | Sat: 10:00 AM - 3:00 PM",
