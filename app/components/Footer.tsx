@@ -108,6 +108,9 @@ export function Footer() {
               <li>
                 <Link to="/contact" title="Contact Study Prime"><ChevronRight size={14} /> Contact Us</Link>
               </li>
+              <li>
+                <Link to="/services-location" title="Services Location"><ChevronRight size={14} /> Services Location</Link>
+              </li>
             </ul>
           </div>
 

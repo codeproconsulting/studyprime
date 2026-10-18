@@ -20,6 +20,10 @@ export async function loader({ request, context }: LoaderFunctionArgs) {
     "/blog",
     "/privacy",
     "/terms",
+    "/services-location",
+    "/services-location/islamabad",
+    "/services-location/islamabad/study-abroad-consultant",
+    "/study-abroad-consultant-islamabad",
   ];
 
   const destinationRoutes = destinations.map((d) => `/destinations/${d.id}`);
