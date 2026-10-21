@@ -26,7 +26,17 @@ export async function loader({ request, context }: LoaderFunctionArgs) {
     "/study-abroad-consultant-islamabad",
   ];
 
-  const destinationRoutes = destinations.map((d) => `/destinations/${d.id}`);
+  const dedicatedDestinations = [
+    "/destinations/study-in-france",
+    "/destinations/study-in-new-zealand",
+    "/destinations/study-in-hungary",
+  ];
+
+  const excludedFromGeneric = ["france", "new-zealand", "hungary"];
+  const destinationRoutes = destinations
+    .filter((d) => !excludedFromGeneric.includes(d.id.toLowerCase()))
+    .map((d) => `/destinations/${d.id}`);
+
   const courseRoutes = coursesData.map((c) => `/courses/${c.slug}`);
   const serviceRoutes = services.map((s) => `/services/${s.id}`);
 
@@ -41,6 +51,7 @@ export async function loader({ request, context }: LoaderFunctionArgs) {
 
   const allUrls = [
     ...staticRoutes,
+    ...dedicatedDestinations,
     ...destinationRoutes,
     ...courseRoutes,
     ...serviceRoutes,

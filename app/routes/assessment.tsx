@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import type { MetaFunction, ActionFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Link, useFetcher } from "@remix-run/react";
+import { Link, useFetcher, useSearchParams } from "@remix-run/react";
 import { 
   CheckCircle2, 
   GraduationCap, 
@@ -126,6 +126,29 @@ export default function AssessmentPage() {
   const fetcher = useFetcher<{ success: boolean; bookingRef: string; webhookForwarded: boolean }>();
   const isSubmitting = fetcher.state === "submitting";
 
+  const [searchParams] = useSearchParams();
+  const destParam = (searchParams.get("destination") || "").toLowerCase().trim();
+
+  const destinationMap: Record<string, string> = useMemo(
+    () => ({
+      france: "France",
+      "new-zealand": "New Zealand",
+      hungary: "Hungary",
+      uk: "United Kingdom",
+      usa: "United States",
+      canada: "Canada",
+      australia: "Australia",
+      germany: "Germany & Europe",
+      ireland: "Ireland",
+      sweden: "Sweden",
+      turkey: "Turkey",
+      malaysia: "Malaysia",
+    }),
+    []
+  );
+
+  const initialTargetCountry = destinationMap[destParam] || "United Kingdom";
+
   // Main Page Level Steps: 1 = Calendar/Time, 2 = Multi-Step Form, 3 = Confirmed
   const [step, setStep] = useState<1 | 2 | 3>(1);
 
@@ -158,7 +181,7 @@ export default function AssessmentPage() {
     gradeScore: "",
     passingYear: "2024",
     targetDegree: "master",
-    targetCountry: "United Kingdom",
+    targetCountry: initialTargetCountry,
     targetIntake: "September / Fall 2026",
     englishTest: "none_yet",
     englishScore: "",
@@ -168,6 +191,15 @@ export default function AssessmentPage() {
     studyGap: "no",
     notes: "",
   });
+
+  useEffect(() => {
+    if (destParam && destinationMap[destParam]) {
+      setFormData((prev) => ({
+        ...prev,
+        targetCountry: destinationMap[destParam],
+      }));
+    }
+  }, [destParam, destinationMap]);
 
   // Calendar helper calculation
   const calendarDays = useMemo(() => {
@@ -916,6 +948,9 @@ Please confirm my consultation slot!`
                             className="form-control"
                           >
                             <option value="United Kingdom">United Kingdom (UK)</option>
+                            <option value="France">France</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Hungary">Hungary</option>
                             <option value="Australia">Australia</option>
                             <option value="Canada">Canada</option>
                             <option value="United States">United States (USA)</option>

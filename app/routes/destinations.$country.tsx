@@ -1,7 +1,21 @@
 import { useState } from "react";
 import { useParams, Link, useOutletContext } from "@remix-run/react";
-import type { MetaFunction } from "@remix-run/node";
+import { redirect, type MetaFunction, type LoaderFunctionArgs } from "@remix-run/node";
 import { CANONICAL_BASE_URL } from "~/utils/seo";
+
+export const loader = async ({ params }: LoaderFunctionArgs) => {
+  const country = (params.country || "").toLowerCase().trim();
+  if (country === "france") {
+    return redirect("/destinations/study-in-france", 301);
+  }
+  if (country === "new-zealand") {
+    return redirect("/destinations/study-in-new-zealand", 301);
+  }
+  if (country === "hungary") {
+    return redirect("/destinations/study-in-hungary", 301);
+  }
+  return null;
+};
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -1075,6 +1089,33 @@ export default function CountryDetailPage() {
 
   const coverImage = destinationCovers[destination.id] || "/Countries Background - Study Prime.jpg";
 
+  const renderMetricValue = (val: string, isGreen = false) => {
+    if (!val) return null;
+    const parenMatch = val.match(/^(.*?)\s*(\(.*?\))\s*$/);
+    if (parenMatch) {
+      return (
+        <div className={`metric-val ${isGreen ? "highlight-green" : ""}`}>
+          <span className="metric-val-main">{parenMatch[1]}</span>
+          <span className="metric-val-sub">{parenMatch[2]}</span>
+        </div>
+      );
+    }
+    if (val.includes(" & ")) {
+      const parts = val.split(" & ");
+      return (
+        <div className={`metric-val ${isGreen ? "highlight-green" : ""}`}>
+          <span className="metric-val-main">{parts[0]}</span>
+          <span className="metric-val-sub">&amp; {parts.slice(1).join(" & ")}</span>
+        </div>
+      );
+    }
+    return (
+      <div className={`metric-val ${isGreen ? "highlight-green" : ""}`}>
+        <span className="metric-val-main">{val}</span>
+      </div>
+    );
+  };
+
   return (
     <div className="destination-page-container">
       {/* Breadcrumb Bar */}
@@ -1127,33 +1168,33 @@ export default function CountryDetailPage() {
           <div className="dest-quick-metrics-grid">
             <div className="metric-box">
               <div className="metric-icon-wrap"><Clock size={20} color="#FFA700" /></div>
-              <div>
+              <div className="metric-content">
                 <div className="metric-lbl">Main Intakes</div>
-                <div className="metric-val">{details.intakes}</div>
+                {renderMetricValue(details.intakes)}
               </div>
             </div>
 
             <div className="metric-box">
               <div className="metric-icon-wrap"><ShieldCheck size={20} color="#10B981" /></div>
-              <div>
+              <div className="metric-content">
                 <div className="metric-lbl">Visa Success</div>
-                <div className="metric-val highlight-green">{details.visaRate}</div>
+                {renderMetricValue(details.visaRate, true)}
               </div>
             </div>
 
             <div className="metric-box">
               <div className="metric-icon-wrap"><DollarSign size={20} color="#38BDF8" /></div>
-              <div>
+              <div className="metric-content">
                 <div className="metric-lbl">Avg. Tuition</div>
-                <div className="metric-val">{details.avgTuition}</div>
+                {renderMetricValue(details.avgTuition)}
               </div>
             </div>
 
             <div className="metric-box">
               <div className="metric-icon-wrap"><Building2 size={20} color="#A855F7" /></div>
-              <div>
+              <div className="metric-content">
                 <div className="metric-lbl">Est. Living Cost</div>
-                <div className="metric-val">{details.livingCost}</div>
+                {renderMetricValue(details.livingCost)}
               </div>
             </div>
           </div>

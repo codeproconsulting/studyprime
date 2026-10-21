@@ -164,12 +164,17 @@ export function DestinationsSection() {
           {featuredDestinations.map((dest, idx) => {
             const coverImage = destinationCovers[dest.id] || "/Countries Background - Study Prime.jpg";
             const uniCount = countryUniCounts[dest.id] || dest.popularUniversities.length;
+            const destHref = 
+              dest.id === "france" ? "/destinations/study-in-france" :
+              dest.id === "new-zealand" ? "/destinations/study-in-new-zealand" :
+              dest.id === "hungary" ? "/destinations/study-in-hungary" :
+              `/destinations/${dest.id}`;
 
             return (
               <div key={dest.id} className="dest-carousel-item">
                 <div className="dest-carousel-card">
                   {/* Card Banner Image */}
-                  <Link to={`/destinations/${dest.id}`} className="dest-carousel-img-wrap">
+                  <Link to={destHref} className="dest-carousel-img-wrap">
                     <img
                       src={coverImage}
                       alt={`${dest.name} Landscape`}
@@ -188,7 +193,7 @@ export function DestinationsSection() {
                   {/* Card Body */}
                   <div className="dest-carousel-body">
                     <h3 className="dest-carousel-title">
-                      <Link to={`/destinations/${dest.id}`}>{dest.name}</Link>
+                      <Link to={destHref}>{dest.name}</Link>
                     </h3>
                     <p className="dest-carousel-desc">{dest.description}</p>
 
@@ -204,8 +209,8 @@ export function DestinationsSection() {
 
                     {/* Action Button: Dedicated Page Link */}
                     <div className="dest-carousel-footer">
-                      <Link to={`/destinations/${dest.id}`} className="btn-dest-explore">
-                        <span>Explore {dest.name} Guide</span>
+                      <Link to={destHref} className="btn-dest-explore">
+                        <span>Explore {dest.name} Details</span>
                         <ArrowRight size={15} className="arrow-right-icon" />
                       </Link>
                     </div>

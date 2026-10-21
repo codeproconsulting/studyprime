@@ -210,11 +210,16 @@ export default function AllDestinationsPage() {
             {filteredDestinations.map((dest) => {
               const coverImg = destinationCovers[dest.id] || "/Countries Background - Study Prime.jpg";
               const uniCount = countryUniCounts[dest.id] || dest.popularUniversities.length;
+              const destHref = 
+                dest.id === "france" ? "/destinations/study-in-france" :
+                dest.id === "new-zealand" ? "/destinations/study-in-new-zealand" :
+                dest.id === "hungary" ? "/destinations/study-in-hungary" :
+                `/destinations/${dest.id}`;
 
               return (
                 <div key={dest.id} className="dest-catalog-card">
                   {/* Card Image Banner */}
-                  <Link to={`/destinations/${dest.id}`} className="dest-card-img-link">
+                  <Link to={destHref} className="dest-card-img-link">
                     <div className="dest-catalog-img-wrap">
                       <img src={coverImg} alt={`${dest.name} Landscape`} className="dest-catalog-img" />
                       <div className="dest-catalog-img-overlay" />
@@ -229,7 +234,7 @@ export default function AllDestinationsPage() {
                   {/* Card Content Body */}
                   <div className="dest-catalog-body">
                     <h3 className="dest-catalog-title">
-                      <Link to={`/destinations/${dest.id}`}>{dest.name}</Link>
+                      <Link to={destHref}>{dest.name}</Link>
                     </h3>
                     <p className="dest-catalog-desc">{dest.description}</p>
 
@@ -257,7 +262,7 @@ export default function AllDestinationsPage() {
 
                     {/* Action Button Link */}
                     <div className="dest-catalog-footer">
-                      <Link to={`/destinations/${dest.id}`} className="btn-explore-destination">
+                      <Link to={destHref} className="btn-explore-destination">
                         <span>Explore {dest.name} Details</span>
                         <ArrowRight size={16} />
                       </Link>

@@ -137,7 +137,7 @@ export function Footer() {
                 <Link to="/destinations/ireland"><ChevronRight size={14} /> Study in Ireland</Link>
               </li>
               <li>
-                <Link to="/destinations/new-zealand"><ChevronRight size={14} /> Study in New Zealand</Link>
+                <Link to="/destinations/study-in-new-zealand"><ChevronRight size={14} /> Study in New Zealand</Link>
               </li>
               <li>
                 <Link to="/destinations/malaysia"><ChevronRight size={14} /> Study in Malaysia</Link>

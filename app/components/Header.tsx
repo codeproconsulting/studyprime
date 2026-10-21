@@ -60,7 +60,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
     },
     {
       name: "New Zealand",
-      href: "/destinations/new-zealand",
+      href: "/destinations/study-in-new-zealand",
       badge: "PSW up to 3-Yr",
       desc: "QS Top 3% Unis & Green List PR Pathways",
       flag: "/images/flags/new-zealand.svg",
@@ -105,7 +105,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
     },
     {
       name: "France",
-      href: "/destinations/france",
+      href: "/destinations/study-in-france",
       badge: "Post-Study Visa",
       desc: "Grande École Business & French CAF Subsidy",
       flag: "/images/flags/france.svg",
@@ -129,7 +129,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
     },
     {
       name: "Hungary",
-      href: "/destinations/hungary",
+      href: "/destinations/study-in-hungary",
       badge: "Schengen Hub",
       desc: "Stipendium Scholarships & Low Tuition",
       flag: "/images/flags/hungary.svg",

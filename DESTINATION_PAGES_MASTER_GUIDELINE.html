@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Prime — Destination Pages Master Guideline</title>
+  <style>
+    :root {
+      --primary: #011E3E;
+      --accent: #FFA000;
+      --text: #1E293B;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --bg-light: #F8FAFC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background-color: #F1F5F9;
+      line-height: 1.65;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #011E3E 0%, #082A54 50%, #031830 100%);
+      color: #FFFFFF;
+      padding: 48px 40px;
+      border-bottom: 4px solid var(--accent);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 160, 0, 0.2);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .header p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 700px;
+    }
+    .content {
+      padding: 40px;
+    }
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #F1F5F9;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2:first-of-type { margin-top: 0; }
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 20px 0 10px;
+    }
+    p { margin-bottom: 14px; font-size: 1rem; color: #334155; }
+    ul, ol { margin: 0 0 18px 24px; color: #334155; }
+    li { margin-bottom: 8px; font-size: 0.98rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0 28px;
+      font-size: 0.92rem;
+    }
+    th, td {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    th {
+      background: var(--bg-light);
+      font-weight: 700;
+      color: var(--primary);
+    }
+    tr:nth-child(even) { background: #FCFDFE; }
+    code {
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      background: #F1F5F9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      color: #0F172A;
+      border: 1px solid #E2E8F0;
+    }
+    pre {
+      background: #02162C;
+      color: #E2E8F0;
+      padding: 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin: 16px 0 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+      border: none;
+    }
+    .box-warning {
+      background: #FEF3C7;
+      border-left: 4px solid #D97706;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+      color: #92400E;
+    }
+    .box-success {
+      background: #ECFDF5;
+      border-left: 4px solid #059669;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+      color: #065F46;
+    }
+    .print-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+    }
+    @media print {
+      body { background: #FFFFFF; padding: 0; }
+      .container { box-shadow: none; border: none; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="badge">Study Prime Architecture Directive</div>
+      <h1>Destination Pages Master Guidelines</h1>
+      <p>Official Developer &amp; AI Agent specification for URL naming conventions, ultra-premium UI rules, 301 server redirects, and technical SEO integration.</p>
+      <button class="print-btn" onclick="window.print()">📥 Print / Save as PDF</button>
+    </div>
+
+    <div class="content">
+
+      <h2>1. URL Architecture &amp; Slug Convention (Strict Rule)</h2>
+      <p>Every destination landing page on Study Prime <strong>MUST</strong> use the <code>/destinations/study-in-[country]</code> URL slug structure under the <code>destinations</code> parent route.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Required Canonical URL</th>
+            <th>Remix Flat Route File Path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>France</strong></td>
+            <td><code>https://studyprime.pk/destinations/study-in-france</code></td>
+            <td><code>app/routes/destinations.study-in-france.tsx</code></td>
+          </tr>
+          <tr>
+            <td><strong>New Zealand</strong></td>
+            <td><code>https://studyprime.pk/destinations/study-in-new-zealand</code></td>
+            <td><code>app/routes/destinations.study-in-new-zealand.tsx</code></td>
+          </tr>
+          <tr>
+            <td><strong>Hungary</strong></td>
+            <td><code>https://studyprime.pk/destinations/study-in-hungary</code></td>
+            <td><code>app/routes/destinations.study-in-hungary.tsx</code></td>
+          </tr>
+          <tr>
+            <td><strong>UK</strong></td>
+            <td><code>https://studyprime.pk/destinations/study-in-uk</code></td>
+            <td><code>app/routes/destinations.study-in-uk.tsx</code></td>
+          </tr>
+          <tr>
+            <td><strong>Canada</strong></td>
+            <td><code>https://studyprime.pk/destinations/study-in-canada</code></td>
+            <td><code>app/routes/destinations.study-in-canada.tsx</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="box-warning">
+        <strong>❌ What NOT to do:</strong>
+        <ul style="margin: 6px 0 0 20px;">
+          <li>Never create root slugs like <code>/study-in-france</code>.</li>
+          <li>Never leave old duplicate indexable URLs (e.g. <code>/destinations/france</code>).</li>
+        </ul>
+      </div>
+
+      <h2>2. Server 301 Permanent Redirects</h2>
+      <p>In <code>app/routes/destinations.$country.tsx</code>, the loader must permanently 301 redirect legacy country slugs to the new dedicated route:</p>
+
+<pre><code>// File: app/routes/destinations.$country.tsx
+export const loader = async ({ params }: LoaderFunctionArgs) => {
+  const country = (params.country || "").toLowerCase().trim();
+  
+  if (country === "france") {
+    return redirect("/destinations/study-in-france", 301);
+  }
+  if (country === "new-zealand") {
+    return redirect("/destinations/study-in-new-zealand", 301);
+  }
+  if (country === "hungary") {
+    return redirect("/destinations/study-in-hungary", 301);
+  }
+  
+  return null;
+};</code></pre>
+
+      <h2>3. Visual &amp; Aesthetic Standards (Ultra-Premium Only)</h2>
+      <p>Plain, unstyled black-and-white text pages are completely prohibited. All destination pages must reuse the Study Prime design system (<code>app/styles/destination-landing.css</code>):</p>
+
+      <h3>A. Dark Luxury Hero Section</h3>
+      <ul>
+        <li><strong>Theme</strong>: Deep Navy gradient (<code>#011E3E</code> to <code>#02162C</code>).</li>
+        <li><strong>Backdrop</strong>: High-resolution destination photo overlay (16% opacity, blur &amp; radial vignette).</li>
+        <li><strong>Eyebrow Badge</strong>: Gold/Orange pill badge (<code>OFFICIAL STUDY DESTINATION GUIDE</code>).</li>
+        <li><strong>Trust Chips</strong>: Frosted glass badges (<em>"No False Guarantees"</em>, <em>"Official Visa Guidance"</em>).</li>
+        <li><strong>Dual CTAs</strong>: Primary button in Gold/Orange (<code>#FFA000</code>) with Navy text (<code>#011E3E</code>), plus glass secondary button.</li>
+        <li><strong>Showcase Floating Card (Right Column)</strong>: Arched destination photo, country flag, key facts pills, and direct assessment booking button.</li>
+      </ul>
+
+      <h3>B. Sticky Sub-Navigation Bar</h3>
+      <ul>
+        <li>Positioned below global header with <code>backdrop-filter: blur(14px)</code>.</li>
+        <li>Quick anchor links: Suitability, Courses, Fees &amp; Budget, Admissions, Visa, Scholarships, FAQs.</li>
+      </ul>
+
+      <h3>C. Card-Based Systems</h3>
+      <ul>
+        <li><strong>2-Column Comparison</strong>: Emerald border for "Worth Exploring", Amber border for "Pause and Review".</li>
+        <li><strong>Step Timeline</strong>: Numbered steps (1 to 4) with dark navy circles and gold numerals.</li>
+        <li><strong>Cost Cards</strong>: Structured cards for Tuition, Daily Living, and Immigration Funding Minimums.</li>
+        <li><strong>SSR FAQs</strong>: Semantic <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags for 100% crawlable server-rendered FAQ text.</li>
+        <li><strong>Mobile Floating CTA Bar</strong>: Safe-area compliant bar fixed at the bottom of mobile screens.</li>
+      </ul>
+
+      <h2>4. SEO, Sitemap &amp; Funnel Integration</h2>
+      <ul>
+        <li><strong>Sitemap (<code>app/routes/[sitemap.xml].ts</code>)</strong>: Add <code>/destinations/study-in-[country]</code> to dedicatedDestinations and filter out the old slug from generic routes.</li>
+        <li><strong>Internal Links</strong>: Update Header dropdowns, Footer links, and <code>DestinationsSection.tsx</code> carousel cards to the new URL.</li>
+        <li><strong>JSON-LD Schema</strong>: Include <code>Service</code>, <code>BreadcrumbList</code>, and <code>FAQPage</code> schemas in initial HTML.</li>
+        <li><strong>Assessment Integration</strong>: Primary CTAs link to <code>/assessment?destination=[country]</code>, and <code>assessment.tsx</code> must automatically pre-populate the selected country.</li>
+      </ul>
+
+      <h2>5. Git &amp; Deployment Safety</h2>
+      <div class="box-success">
+        <strong>Safety Protocols:</strong>
+        <ul style="margin: 6px 0 0 20px;">
+          <li><strong>NEVER</strong> run <code>git push</code> without explicit confirmation from the repository owner.</li>
+          <li>Always verify <code>npm.cmd run typecheck</code> passes with <code>exit code 0</code>.</li>
+          <li>Test direct loads, mobile responsiveness, and redirects locally at <code>http://localhost:3000</code>.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1288,7 +1288,7 @@ export function StudyAbroadConsultantIslamabadView({
               <p style={{ color: "#475569", fontSize: "0.92rem", lineHeight: 1.6, marginBottom: "16px" }}>
                 Highly ranked universities, generous post-study work, pathway to a green-list residency.
               </p>
-              <Link to="/destinations/new-zealand" style={{ color: "#011E3E", fontWeight: 700, fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "4px" }}>
+              <Link to="/destinations/study-in-new-zealand" style={{ color: "#011E3E", fontWeight: 700, fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "4px" }}>
                 NZ guide &rarr;
               </Link>
             </div>
