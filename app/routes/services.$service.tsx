@@ -1,5 +1,5 @@
 import { useParams, Link, useOutletContext } from "@remix-run/react";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { CANONICAL_BASE_URL } from "~/utils/seo";
 import { useState } from "react";
 import { 
@@ -94,48 +94,63 @@ const SERVICE_DETAILS: Record<string, {
   "university-matching": {
     id: "university-matching",
     title: "University & Course Matching",
-    heroSubtitle: "Finding the right accredited institutions and in-demand academic programs tailored to your budget and future career.",
+    heroSubtitle: "Compare courses, entry requirements and costs with Study Prime. Build a shortlist that fits your background and plans.",
     overview:
-      "Choosing where and what to study is one of the most critical decisions of your academic journey. At Study Prime, our senior counselors evaluate your academic transcripts, career ambitions, budget constraints, and post-study work goals to shortlist the top matching institutions from our network of 450+ partner universities.",
+      "Too many university options can make a simple decision feel impossible. University and course matching helps you compare what matters before you apply. Study Prime helps you weigh your background, course interests and budget, starting with your goals and narrowing choices with clear reasons.",
     highlights: [
-      "Access to direct admission panels across 450+ accredited global universities",
-      "Detailed tuition fee and scholarship comparison across multiple countries",
-      "Future-proof program selection aligned with global job shortage occupation lists",
-      "Fast-track 1-Year Top-Up Degree options for DAE and 2-Year Associate Degree holders",
+      "Look beyond a familiar university name to evaluate real fit",
+      "Compare curriculum modules, campus location and entry requirements",
+      "Understand which qualification questions still need provider confirmation",
+      "Structure fee timing, living costs and refund terms before applications",
     ],
     processSteps: [
       {
-        title: "1. Academic Profile & Transcript Evaluation",
-        desc: "We review your grades, GPA, prerequisite subjects, and English proficiency to identify universities where you meet direct entry requirements.",
+        title: "1. Start with your goals",
+        desc: "Tell us what you have studied and what you want next. Explain any limits around budget, location or family plans.",
       },
       {
-        title: "2. Career Alignment & In-Demand Programs",
-        desc: "We analyze high-growth industries (e.g. AI, Data Science, FinTech, Public Health, Robotics) and connect you with degrees that offer maximum post-study work permits.",
+        title: "2. Compare realistic options",
+        desc: "Review course content, entry requirements and costs together. Ask why an option fits rather than accepting a list without reasons.",
       },
       {
-        title: "3. Shortlisting & Budget Optimization",
-        desc: "We present a curated list of Dream, Target, and Safe universities with transparent tuition fees, living costs, and automatic scholarship opportunities.",
+        title: "3. Resolve the open questions",
+        desc: "Check missing information with the relevant provider or official source. An uncertain entry route should stay uncertain until confirmed.",
       },
       {
-        title: "4. Final Selection & Application Roadmap",
-        desc: "Together with the student and parents, we finalize the target institutions and set deadlines for admissions intake submission.",
+        title: "4. Decide what to apply for",
+        desc: "Choose which options to pursue and discuss application support separately. You stay involved in the choice before any commitment.",
       },
     ],
     requiredDocs: [
-      "Matric / O-Levels & Intermediate / A-Levels Marksheets",
-      "Bachelor's Degree Transcripts & Degree Certificate (for PG applicants)",
-      "Updated CV / Resume highlighting academic & extracurricular projects",
-      "Current Passport copy",
-      "English Proficiency Certificate (IELTS, PTE, or Medium of Instruction letter)",
+      "Academic Transcripts & Certificates for starting profile review",
+      "Detailed CV / Resume outlining work history and subjects studied",
+      "Valid Passport copy",
+      "English Proficiency results (if already completed)",
     ],
     faqs: [
       {
-        q: "Can I apply to multiple universities at the same time?",
-        a: "Yes! We typically apply to 3 to 5 universities simultaneously to maximize your chance of securing unconditional offer letters and scholarships.",
+        q: "Can you help if I am unsure what to study?",
+        a: "Yes. Start with your previous subjects, interests and practical limits. The discussion can help narrow your options before choosing a provider.",
       },
       {
-        q: "Are scholarships available for Pakistani students?",
-        a: "Yes, many partner universities offer automatic merit scholarships ranging from £1,500 to £5,000 (or up to 30% tuition fee discounts). We ensure all scholarship criteria are met during application.",
+        q: "Will my grades guarantee entry?",
+        a: "No. Providers assess applications under their own requirements. Meeting a published minimum does not guarantee an offer.",
+      },
+      {
+        q: "Can I compare more than one country?",
+        a: "Discuss that during your assessment. Compare education, total cost and entry requirements rather than work rights alone. Confirm the countries covered by your agreed service.",
+      },
+      {
+        q: "Is a scholarship included with admission?",
+        a: "Not automatically. Each award has its own eligibility, coverage and decision. Keep unconfirmed awards out of your funding plan.",
+      },
+      {
+        q: "Can I choose a course for post-study work?",
+        a: "You can consider it, but check the exact course and current rules. Work or family eligibility is not automatic, and future rules may change.",
+      },
+      {
+        q: "What does the matching service cost?",
+        a: "The initial assessment is free. Ask which follow-on services carry charges and what the agreed scope includes. Confirm those terms before paid work starts.",
       },
     ],
     icon: GraduationCap,
@@ -143,31 +158,31 @@ const SERVICE_DETAILS: Record<string, {
   "admission-support": {
     id: "admission-support",
     title: "Admissions & Application Support",
-    heroSubtitle: "Complete application submission through direct university portals for expedited offer letter issuance.",
+    heroSubtitle: "Get help with university applications, offer conditions and next steps. Understand what remains outstanding before paying.",
     overview:
-      "Study Prime manages the entire university application lifecycle on your behalf. As official representatives, our applications bypass standard agent queues, granting you direct admission portal access, application fee waivers where available, and rapid unconditional offer turnaround.",
+      "A university application has more moving parts than the submit button suggests. University application support helps you understand the requirements and keep the next steps clear. Study Prime supports applications, offer reviews and follow-up. You stay involved in what is submitted and what you agree to pay.",
     highlights: [
-      "Direct portal application submission with priority processing",
-      "Application fee waivers at select partner universities",
-      "Continuous admissions follow-up with international admissions officers",
-      "Assistance in meeting conditional offer criteria and CAS/I-20 release",
+      "Review course and intake requirements to identify missing details before submission",
+      "Verify consistency across qualifications, identity documents and study choices",
+      "Track provider correspondence and understand conditional offer terms",
+      "Clarify deposit deadlines, refund policies and visa handover steps",
     ],
     processSteps: [
       {
-        title: "1. Document Compilation & Verification",
-        desc: "We ensure all transcripts, certificates, recommendation letters, and identification files are formatted, attested, and ready for official submission.",
+        title: "1. Confirm the course and intake",
+        desc: "Start with the exact programme and campus. If the choice is unsettled, resolve that before preparing the application.",
       },
       {
-        title: "2. Direct Portal Submission",
-        desc: "Applications are submitted directly into university partner management systems, ensuring priority review by admissions committees.",
+        title: "2. Review and approve",
+        desc: "Check the application details and any supporting explanations. Correct errors before they become part of the submitted record.",
       },
       {
-        title: "3. Conditional Offer Assessment",
-        desc: "Upon receiving your conditional offer, we guide you on fulfilling remaining prerequisites (e.g. English test scores, final year transcripts).",
+        title: "3. Track the response",
+        desc: "The university controls its review process. Respond to requests carefully and keep copies of the correspondence.",
       },
       {
-        title: "4. Tuition Deposit & CAS / I-20 Issuance",
-        desc: "We assist with secure tuition deposit transfers and prompt issuance of the Confirmation of Acceptance for Studies (CAS) needed for your visa.",
+        title: "4. Act on the decision",
+        desc: "An offer, request for information or refusal needs a different response. Discuss the options before paying or applying elsewhere.",
       },
     ],
     requiredDocs: [
@@ -180,12 +195,32 @@ const SERVICE_DETAILS: Record<string, {
     ],
     faqs: [
       {
-        q: "How long does it take to receive an offer letter?",
-        a: "Through our direct university partner channels, initial offer letters typically arrive within 3 to 10 working days, depending on the university and intake season.",
+        q: "Can you help after I have started an application?",
+        a: "Discuss what has already been submitted and through which channel. Confirm whether support can continue without creating duplicate applications or conflicting representation.",
       },
       {
-        q: "Do I have to pay university application fees?",
-        a: "At most of our partner universities in the UK, Australia, and Europe, application fees are 100% waived for students applying through Study Prime.",
+        q: "How long will an offer take?",
+        a: "There is no fixed timeline for every application. The university, course, intake and missing information can affect the review. Treat estimated timings as estimates.",
+      },
+      {
+        q: "Are application fees always waived?",
+        a: "No. Check the exact provider, course and application channel. Only rely on a waiver once its terms are confirmed.",
+      },
+      {
+        q: "Can you turn a conditional offer into an unconditional offer?",
+        a: "The university decides whether its conditions have been met. Support can help explain the requirements and next steps, but cannot guarantee that decision.",
+      },
+      {
+        q: "Does paying a deposit guarantee a visa?",
+        a: "No. A deposit and a visa decision are separate. Review the provider's refund policy and current immigration requirements before paying.",
+      },
+      {
+        q: "Can my parents join the assessment?",
+        a: "You can discuss involving them when arranging the session. Agree what information may be shared and who makes the study decisions.",
+      },
+      {
+        q: "What will the support cost?",
+        a: "The initial assessment is free. Ask for the follow-on scope and any charges in writing. University charges should be explained separately from service fees.",
       },
     ],
     icon: FileCheck,
@@ -193,48 +228,72 @@ const SERVICE_DETAILS: Record<string, {
   "sop-guidance": {
     id: "sop-guidance",
     title: "SOP & Recommendation Support",
-    heroSubtitle: "Professional structuring and constructive editing for Statements of Purpose, CVs, and reference letters.",
+    heroSubtitle: "Explain your study plans in your own voice. Get guidance on SOP structure, CV clarity and references with Study Prime.",
     overview:
-      "A compelling Statement of Purpose (SOP) is often the decisive factor between an acceptance and a rejection. Our expert advisors work closely with you to craft a cohesive, authentic, and persuasive personal narrative that highlights your academic strengths, career logic, and reasons for choosing the institution without resorting to generic templates.",
+      "A blank page can make your study plans hard to explain. SOP guidance helps you turn your own experience into a clear statement of purpose. Study Prime offers help with structure, draft review and academic CVs. Recommendation guidance keeps the referee's own judgement at the centre.",
     highlights: [
-      "100% original, plagiarism-free drafting assistance highlighting your unique journey",
-      "Alignment with specific university academic rubrics and visa case officer guidelines",
-      "Professional resume formatting tailored to international academic standards",
-      "Guidance for academic referees to draft strong, credible recommendation letters",
+      "Follow the actual institution prompt rather than forcing every statement into one template",
+      "Improve sentence order, clarity and evidence while preserving your personal voice",
+      "Format academic CVs with readable structure, accurate dates and verified achievements",
+      "Explain the referee role accurately so recommendations reflect the referee's genuine judgement",
     ],
     processSteps: [
       {
-        title: "1. One-on-One Questionnaire & Brainstorming",
-        desc: "We discuss your academic background, pivotal learning experiences, career aspirations, and motivations for studying abroad.",
+        title: "1. Check the prompt first",
+        desc: "Find out what the institution asks, including the format and length. Different courses and application routes may ask different questions.",
       },
       {
-        title: "2. Strategic Narrative Structuring",
-        desc: "We establish a clear outline connecting your previous studies to the chosen program and explaining how it bridges your long-term career goals.",
+        title: "2. Build from your notes",
+        desc: "Start with your own reasons, experiences and examples. You do not need a polished draft before discussing the structure.",
       },
       {
-        title: "3. In-Depth Review & Grammar Polish",
-        desc: "Our senior editors review your drafts, refining vocabulary, tone, and logical transitions while keeping your personal voice 100% authentic.",
+        title: "3. Review for clarity",
+        desc: "Look for unsupported claims and weak connections to the course. Then improve the order, sentences and grammar.",
       },
       {
-        title: "4. Final Verification & Approval",
-        desc: "A final check is completed against strict university and embassy plagiarism benchmarks before formal submission.",
+        title: "4. Read and approve",
+        desc: "Check every detail and make sure the wording still feels like yours. Follow the institution's rules before submitting.",
       },
     ],
     requiredDocs: [
-      "Detailed Academic Background & Marksheets",
-      "Rough Notes / Initial Draft of your SOP",
+      "Application prompt and formatting requirements",
+      "Rough Notes / Initial Draft of your reasons and experiences",
       "Target Course Syllabus & University Details",
-      "Current CV / Resume",
-      "Details of Academic Referees (Professors / Supervisors)",
+      "Current Academic CV / Resume",
+      "Referee Guidelines (if institutional instructions provided)",
     ],
     faqs: [
       {
-        q: "Do you use AI or generic templates for SOPs?",
-        a: "No. University admissions teams and visa officers now use sophisticated AI and plagiarism detection tools. We work with your authentic thoughts, guiding you to write an original, high-impact statement.",
+        q: "Can I start without a draft?",
+        a: "Yes. Start with your reasons for the course and your actual experience. Discuss the structure before trying to make every sentence sound finished.",
       },
       {
-        q: "Can you help explain a low GPA or study gap in the SOP?",
-        a: "Yes. We strategically address study gaps or grade fluctuations by highlighting relevant work experience, practical projects, or personal circumstances constructively.",
+        q: "Will you invent a stronger story for me?",
+        a: "No. Your statement must be based on your own experience. Support should make accurate information clearer, not create events or achievements.",
+      },
+      {
+        q: "Can you help explain a study gap?",
+        a: "Guidance can help you explain the facts in a clear order. It cannot remove the gap or guarantee how an institution will assess it.",
+      },
+      {
+        q: "Can I use the same statement for every course?",
+        a: "Check the application instructions and how closely the courses relate. A generic statement may miss important questions. Adapt your reasons without changing the facts.",
+      },
+      {
+        q: "Can you write a recommendation on behalf of my referee?",
+        a: "The recommendation must reflect the referee's own judgement. Guidance can clarify the requested format, but cannot invent their opinion or approval.",
+      },
+      {
+        q: "Can editing guarantee that AI tools will not flag my statement?",
+        a: "No. Do not rely on a promised detector score. Follow the institution's rules and make sure the work honestly represents you.",
+      },
+      {
+        q: "Is this the same as visa application advice?",
+        a: "No. Academic statements and immigration requirements are not interchangeable. Discuss visa questions through the relevant service and current official guidance.",
+      },
+      {
+        q: "What does SOP support cost?",
+        a: "The initial assessment is free. Confirm any paid scope, revision terms and charges before work starts. There is no outcome guarantee.",
       },
     ],
     icon: PenTool,
@@ -288,6 +347,16 @@ const SERVICE_DETAILS: Record<string, {
     ],
     icon: PlaneTakeoff,
   },
+};
+
+export const loader = async ({ params }: LoaderFunctionArgs) => {
+  const service = params.service || "";
+  const validKeys = Object.keys(SERVICE_DETAILS);
+  const matchedKey = validKeys.find((k) => service === k || service.includes(k) || k.includes(service));
+  if (!matchedKey) {
+    throw new Response("Service Not Found", { status: 404 });
+  }
+  return null;
 };
 
 export const meta: MetaFunction = ({ params }) => {
