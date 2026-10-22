@@ -1,5 +1,5 @@
 import { useParams, Link, useOutletContext } from "@remix-run/react";
-import type { MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { redirect, type MetaFunction, type LoaderFunctionArgs } from "@remix-run/node";
 import { CANONICAL_BASE_URL } from "~/utils/seo";
 import { useState } from "react";
 import { 
@@ -350,7 +350,24 @@ const SERVICE_DETAILS: Record<string, {
 };
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-  const service = params.service || "";
+  const service = (params.service || "").toLowerCase().trim();
+  
+  if (service === "departure-briefing") {
+    return redirect("/services/departure-briefing", 301);
+  }
+  if (service === "admission-support") {
+    return redirect("/services/admission-support", 301);
+  }
+  if (service === "sop-guidance") {
+    return redirect("/services/sop-guidance", 301);
+  }
+  if (service === "university-matching") {
+    return redirect("/services/university-matching", 301);
+  }
+  if (service === "student-visa") {
+    return redirect("/services/student-visa", 301);
+  }
+
   const validKeys = Object.keys(SERVICE_DETAILS);
   const matchedKey = validKeys.find((k) => service === k || service.includes(k) || k.includes(service));
   if (!matchedKey) {
