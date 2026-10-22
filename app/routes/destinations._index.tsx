@@ -214,6 +214,7 @@ export default function AllDestinationsPage() {
                 dest.id === "france" ? "/destinations/study-in-france" :
                 dest.id === "new-zealand" ? "/destinations/study-in-new-zealand" :
                 dest.id === "hungary" ? "/destinations/study-in-hungary" :
+                dest.id === "australia" ? "/destinations/study-in-australia" :
                 `/destinations/${dest.id}`;
 
               return (

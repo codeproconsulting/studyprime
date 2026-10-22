@@ -14,6 +14,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   if (country === "hungary") {
     return redirect("/destinations/study-in-hungary", 301);
   }
+  if (country === "australia") {
+    return redirect("/destinations/study-in-australia", 301);
+  }
   return null;
 };
 import { 
