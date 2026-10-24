@@ -53,7 +53,7 @@ export function Header({ onOpenConsultation }: { onOpenConsultation?: () => void
   const englishHubs = [
     {
       name: "United Kingdom",
-      href: "/destinations/uk",
+      href: "/destinations/study-in-uk",
       badge: "PSW 2-Yr",
       desc: "1-Yr Master's & Russell Group Universities",
       flag: "/images/flags/uk.svg",

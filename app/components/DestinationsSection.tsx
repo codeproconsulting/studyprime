@@ -169,6 +169,7 @@ export function DestinationsSection() {
               dest.id === "new-zealand" ? "/destinations/study-in-new-zealand" :
               dest.id === "hungary" ? "/destinations/study-in-hungary" :
               dest.id === "australia" ? "/destinations/study-in-australia" :
+              dest.id === "uk" ? "/destinations/study-in-uk" :
               `/destinations/${dest.id}`;
 
             return (

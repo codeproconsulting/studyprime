@@ -31,9 +31,10 @@ export async function loader({ request, context }: LoaderFunctionArgs) {
     "/destinations/study-in-new-zealand",
     "/destinations/study-in-hungary",
     "/destinations/study-in-australia",
+    "/destinations/study-in-uk",
   ];
 
-  const excludedFromGeneric = ["france", "new-zealand", "hungary", "australia"];
+  const excludedFromGeneric = ["france", "new-zealand", "hungary", "australia", "uk"];
   const destinationRoutes = destinations
     .filter((d) => !excludedFromGeneric.includes(d.id.toLowerCase()))
     .map((d) => `/destinations/${d.id}`);

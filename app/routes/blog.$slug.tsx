@@ -344,7 +344,7 @@ export default function BlogPostDetail() {
                 </h4>
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                   {[
-                    { name: "Study in the United Kingdom", link: "/destinations/uk" },
+                    { name: "Study in the United Kingdom", link: "/destinations/study-in-uk" },
                     { name: "Study in Australia", link: "/destinations/study-in-australia" },
                     { name: "Study in Canada", link: "/destinations/canada" },
                     { name: "Study in the USA", link: "/destinations/usa" },

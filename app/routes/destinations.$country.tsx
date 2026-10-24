@@ -3,19 +3,24 @@ import { useParams, Link, useOutletContext } from "@remix-run/react";
 import { redirect, type MetaFunction, type LoaderFunctionArgs } from "@remix-run/node";
 import { CANONICAL_BASE_URL } from "~/utils/seo";
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   const country = (params.country || "").toLowerCase().trim();
+  const url = new URL(request.url);
+  const search = url.search;
   if (country === "france") {
-    return redirect("/destinations/study-in-france", 301);
+    return redirect(`/destinations/study-in-france${search}`, 301);
   }
   if (country === "new-zealand") {
-    return redirect("/destinations/study-in-new-zealand", 301);
+    return redirect(`/destinations/study-in-new-zealand${search}`, 301);
   }
   if (country === "hungary") {
-    return redirect("/destinations/study-in-hungary", 301);
+    return redirect(`/destinations/study-in-hungary${search}`, 301);
   }
   if (country === "australia") {
-    return redirect("/destinations/study-in-australia", 301);
+    return redirect(`/destinations/study-in-australia${search}`, 301);
+  }
+  if (country === "uk" || country === "united-kingdom" || country === "study-in-uk") {
+    return redirect(`/destinations/study-in-uk${search}`, 301);
   }
   return null;
 };

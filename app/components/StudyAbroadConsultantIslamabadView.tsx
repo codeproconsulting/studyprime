@@ -1264,7 +1264,7 @@ export function StudyAbroadConsultantIslamabadView({
               <p style={{ color: "#475569", fontSize: "0.92rem", lineHeight: 1.6, marginBottom: "16px" }}>
                 100+ partner universities, 1-year masters, graduate route back.
               </p>
-              <Link to="/destinations/uk" style={{ color: "#011E3E", fontWeight: 700, fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "4px" }}>
+              <Link to="/destinations/study-in-uk" style={{ color: "#011E3E", fontWeight: 700, fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "4px" }}>
                 Explore the UK guide &rarr;
               </Link>
             </div>

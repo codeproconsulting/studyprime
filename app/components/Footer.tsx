@@ -119,7 +119,7 @@ export function Footer() {
             <h4 className="footer-title">Study Destinations</h4>
             <ul className="footer-links">
               <li>
-                <Link to="/destinations/uk"><ChevronRight size={14} /> Study in UK</Link>
+                <Link to="/destinations/study-in-uk"><ChevronRight size={14} /> Study in UK</Link>
               </li>
               <li>
                 <Link to="/destinations/study-in-australia"><ChevronRight size={14} /> Study in Australia</Link>
